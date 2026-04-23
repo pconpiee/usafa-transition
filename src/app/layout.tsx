@@ -4,9 +4,9 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "The Long Blue Line | USAFA Transition Guide",
+  title: "Blue Canopy | USAFA Pilot Transition Guide",
   description:
-    "A formation-driven transition guide for USAFA graduates leaving active duty. Built by a grad, for grads.",
+    "A transition guide for USAFA pilots leaving active duty. Built by a PTWOB who's been on the other side — free, no login, no paywall.",
 };
 
 export default function RootLayout({

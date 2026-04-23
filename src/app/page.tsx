@@ -1,41 +1,104 @@
 import Link from "next/link";
 
-const tools = [
+const stages = [
   {
-    href: "/playbook",
-    title: "The Playbook",
-    desc: "What the highest-performing USAFA grads did when they left. Not theory. The actual moves, mindset, and sequence.",
-    tag: "Start here",
+    num: "01",
+    href: "/the-reckoning",
+    title: "Who Are You Now",
+    desc: "The question nobody asks but everybody is asking. Your identity just got complicated. Start here.",
   },
+  {
+    num: "02",
+    href: "/know-your-gifts",
+    title: "Know Your Gifts",
+    desc: "Not StrengthsFinder. What you actually bring, translated into language civilians understand.",
+  },
+  {
+    num: "03",
+    href: "/the-map",
+    title: "The Map",
+    desc: "The civilian career ecosystem, explained honestly. Six paths. The airline fork. How hiring actually works.",
+  },
+  {
+    num: "04",
+    href: "/networking",
+    title: "Networking",
+    desc: "Undertaught, underused, and learnable. The research on why it works and how to actually do it.",
+  },
+  {
+    num: "05",
+    href: "/the-search",
+    title: "The Search",
+    desc: "A stage-gated system for running your job search without wasting effort or losing track.",
+  },
+  {
+    num: "06",
+    href: "/application-package",
+    title: "Applications",
+    desc: "The resume, cover letter, and bullet translation work. What the machine is looking for vs. what the human is.",
+  },
+  {
+    num: "07",
+    href: "/interview-prep",
+    title: "Interviews",
+    desc: "Behavioral interviewing is closer to a stan eval than it feels. Here's how to run your story bank.",
+  },
+  {
+    num: "08",
+    href: "/managing-the-pipeline",
+    title: "Managing the Pipeline",
+    desc: "Competing offers, exploding deadlines, timeline conflicts. How to handle it without burning bridges.",
+  },
+  {
+    num: "09",
+    href: "/negotiation",
+    title: "Negotiation",
+    desc: "Most people leave money on the table here. The frameworks, the scripts, and what to do when they offer $Y.",
+  },
+  {
+    num: "10",
+    href: "/first-90-days",
+    title: "First 90 Days",
+    desc: "The research on what actually matters after you land. You are not the flight lead anymore — here's what that means.",
+  },
+  {
+    num: "11",
+    href: "/the-long-game",
+    title: "The Long Game",
+    desc: "What the 6-month, 1-year, and 3-year version of a civilian career actually looks like.",
+  },
+  {
+    num: "12",
+    href: "/the-chain",
+    title: "The Chain",
+    desc: "At some point you reach back. This is why it matters — and what it looks like when you do it well.",
+  },
+];
+
+const tools = [
   {
     href: "/comp-translator",
     title: "Know Your Worth",
-    desc: "Your O-3 pay is worth more than you think. Translate military total comp to civilian equivalents.",
+    desc: "Your military total comp is probably worth more than you think. Translate it to a civilian number before any salary conversation.",
     tag: "Tool",
-  },
-  {
-    href: "/resources",
-    title: "Resource Ratings",
-    desc: "Honest ratings of every transition program. What actually works, what's performative, what's missing.",
-    tag: "Intel",
   },
   {
     href: "/timeline",
     title: "Timeline Builder",
-    desc: "Enter your separation date. Get a personalized checklist built from the 18-month outlier standard.",
+    desc: "Enter your separation date. Get a personalized 18-month checklist built from what the people who did it well actually did.",
     tag: "Tool",
   },
   {
     href: "/bold-face",
     title: "Bold Face",
-    desc: "Memorized emergency procedures for your transition. The 60-second story. The response to rejection. The ask.",
+    desc: "The things you memorize cold because when the moment comes, you won't have time to think.",
     tag: "Drills",
   },
   {
-    href: "/first-90-days",
-    title: "First 90 Days",
-    desc: "The research on what matters after you land. Early wins, trust-building, and the five-year architecture.",
-    tag: "Post-sep",
+    href: "/resources",
+    title: "Resources",
+    desc: "Honest ratings of the programs, nonprofits, and tools available to you. What's worth your time and what isn't.",
+    tag: "Intel",
   },
 ];
 
@@ -47,172 +110,131 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-blue-600/5 via-transparent to-transparent" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-24 pb-16 sm:pt-32 sm:pb-24 relative">
           <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
-            For USAFA grads leaving active duty
+            For USAFA PTWOBs leaving active duty
           </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-100 leading-tight tracking-tight">
-            You&rsquo;re not behind.
+            You know how to fly.
             <br />
-            <span className="text-slate-400">You&rsquo;re deploying to a new theater.</span>
+            <span className="text-slate-400">Nobody taught you the rest.</span>
           </h1>
-          <p className="mt-6 text-lg sm:text-xl text-slate-400 max-w-2xl leading-relaxed">
-            The research says 62% of veterans are underemployed 6.5 years out.
-            The outliers&mdash;the ones who crushed it&mdash;did specific things, in a
-            specific order, with a specific mindset. This site is their playbook.
-          </p>
+          <div className="mt-6 space-y-4 text-lg text-slate-400 max-w-2xl leading-relaxed">
+            <p>
+              I got out in 2021. PTWOB 487. Flew space &mdash; GNobs and I left around the same time,
+              figuring it out as we went. In the five years since I&rsquo;ve worked in family business,
+              a startup, a nonprofit, government and defense sales, and academia.
+              Three countries. Been broke. Lived with my parents. Lived pretty well in Europe.
+            </p>
+            <p>
+              This is what I wish someone had given us.
+            </p>
+          </div>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
-              href="/playbook"
+              href="/the-reckoning"
               className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-lg transition-colors"
             >
-              Read the Playbook
+              Start at Stage 01
             </Link>
             <Link
-              href="/comp-translator"
+              href="/the-map"
               className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium rounded-lg border border-slate-700 transition-colors"
             >
-              Know Your Worth
+              See the Map
             </Link>
           </div>
         </div>
       </section>
 
-      {/* The Numbers */}
-      <section className="border-y border-slate-800 bg-slate-900/50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {[
-              { num: "62%", label: "of veterans underemployed at 6.5 years" },
-              { num: "46.2", label: "per 100K suicide rate in first year post-sep" },
-              { num: "4/10", label: "TAP rating from actual veterans" },
-              { num: "#3", label: "USAFA AOG alumni support vs. West Point, Annapolis" },
-            ].map((s) => (
-              <div key={s.label}>
-                <p className="text-3xl sm:text-4xl font-bold text-slate-100">
-                  {s.num}
-                </p>
-                <p className="mt-2 text-sm text-slate-500">{s.label}</p>
-              </div>
-            ))}
+      {/* How to use this */}
+      <section className="border-y border-slate-800 bg-slate-900/40">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+          <h2 className="text-lg font-semibold text-slate-200 mb-4">How to use this</h2>
+          <div className="grid sm:grid-cols-3 gap-6 text-sm text-slate-400">
+            <div>
+              <p className="font-medium text-slate-300 mb-1">Work the pipeline in sequence.</p>
+              <p>The 12 stages are designed to build on each other. Jumping straight to interview prep without doing the identity work first is like briefing a sortie without a threat assessment.</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-300 mb-1">Use the tools when you need them.</p>
+              <p>The Comp Translator, Timeline, and Bold Face drills aren&rsquo;t stages &mdash; they&rsquo;re tools you&rsquo;ll reach for at specific moments. They&rsquo;re in the nav.</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-300 mb-1">This isn&rsquo;t what ChatGPT gives you.</p>
+              <p>Basic resume tips you can zero-prompt. This is for the nuanced stuff &mdash; the connected dots, the pilot-specific translations, the things you only know after you&rsquo;ve done it.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Conviction */}
+      {/* The 12 Stages */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-        <h2 className="text-2xl sm:text-3xl font-bold text-slate-100 mb-6">
-          Why this exists
-        </h2>
-        <div className="space-y-4 text-slate-400 leading-relaxed">
-          <p>
-            There are 45+ federal transition programs. RAND found virtually no
-            evidence they work. TAP is associated with <em>lower</em> wages. The
-            AOG is mostly a fundraising operation. Everything is fragmented, and
-            the burden of stitching it together falls on you at the most
-            stressful moment of your career.
-          </p>
-          <p>
-            Meanwhile, the grads who thrived did specific things: they started 18
-            months early, did 50-100 informational interviews, stacked
-            credentials, chose geography intentionally, and optimized for
-            trajectory over first-job comp. They treated transition like a
-            military campaign.
-          </p>
-          <p>
-            This site puts their playbook in your hands. Every tool here is
-            free. No login. No paywall. No fundraising ask.
+        <div className="mb-10">
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-100">The pipeline</h2>
+          <p className="mt-2 text-slate-500 text-sm">
+            Twelve stages from &ldquo;I&rsquo;m leaving soon&rdquo; to &ldquo;I&rsquo;m thriving and helping the next group.&rdquo;
           </p>
         </div>
-      </section>
 
-      {/* Tools Grid */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-24">
-        <h2 className="text-2xl sm:text-3xl font-bold text-slate-100 mb-8">
-          The tools
-        </h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {tools.map((t) => (
+        <div className="space-y-2">
+          {stages.map((s) => (
             <Link
-              key={t.href}
-              href={t.href}
-              className="group block p-6 rounded-xl border border-slate-800 bg-slate-900/50 hover:bg-slate-800/50 hover:border-slate-700 transition-all"
+              key={s.href}
+              href={s.href}
+              className="group flex items-start gap-4 p-4 rounded-lg border border-slate-800 bg-slate-900/30 hover:bg-slate-800/50 hover:border-slate-700 transition-all"
             >
-              <span className="text-xs font-medium text-blue-400 uppercase tracking-wide">
-                {t.tag}
+              <span className="font-mono text-sm text-slate-600 group-hover:text-blue-400 transition-colors pt-0.5 flex-shrink-0 w-6">
+                {s.num}
               </span>
-              <h3 className="mt-2 text-lg font-semibold text-slate-100 group-hover:text-blue-400 transition-colors">
-                {t.title}
-              </h3>
-              <p className="mt-2 text-sm text-slate-500 leading-relaxed">
-                {t.desc}
-              </p>
+              <div>
+                <h3 className="font-semibold text-slate-200 group-hover:text-blue-400 transition-colors">
+                  {s.title}
+                </h3>
+                <p className="mt-0.5 text-sm text-slate-500 leading-relaxed">{s.desc}</p>
+              </div>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* The Emotional Arc */}
+      {/* Tools */}
       <section className="border-t border-slate-800 bg-slate-900/30">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-          <h2 className="text-2xl sm:text-3xl font-bold text-slate-100 mb-8">
-            What you&rsquo;re going to feel
-          </h2>
-          <p className="text-slate-400 mb-8">
-            Every outlier went through this arc. Even the most successful. It is
-            not a sign of weakness. It is the terrain.
-          </p>
-          <div className="space-y-6">
-            {[
-              {
-                phase: "Anticipatory anxiety",
-                time: "12-18 months out",
-                feel: '"Who am I without the uniform?"',
-              },
-              {
-                phase: "Imposter syndrome",
-                time: "0-6 months post",
-                feel: "Feeling years behind civilian peers who never served.",
-              },
-              {
-                phase: "Translation frustration",
-                time: "0-12 months",
-                feel: '"$50M weapons program manager" doesn\'t land like "PM at Google."',
-              },
-              {
-                phase: "Identity reconstruction",
-                time: "6-18 months",
-                feel: "Building a new professional identity that integrates service without being defined by it.",
-              },
-              {
-                phase: "Acceleration",
-                time: "18-36 months",
-                feel: "Military-trained leaders often advance faster than civilian peers once they find footing.",
-              },
-              {
-                phase: "Giving back",
-                time: "3+ years",
-                feel: "Reaching back to help the next wave. The chain continues.",
-              },
-            ].map((item, i) => (
-              <div
-                key={item.phase}
-                className="flex gap-4 sm:gap-6 items-start"
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16">
+          <h2 className="text-2xl font-bold text-slate-100 mb-2">Tools</h2>
+          <p className="text-slate-500 text-sm mb-8">Reach for these at the right moment in the pipeline.</p>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {tools.map((t) => (
+              <Link
+                key={t.href}
+                href={t.href}
+                className="group block p-5 rounded-xl border border-slate-800 bg-slate-900/50 hover:bg-slate-800/50 hover:border-slate-700 transition-all"
               >
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-sm font-mono text-slate-500">
-                  {i + 1}
-                </div>
-                <div>
-                  <div className="flex flex-wrap items-baseline gap-2">
-                    <h3 className="font-semibold text-slate-200">
-                      {item.phase}
-                    </h3>
-                    <span className="text-xs text-slate-600">
-                      {item.time}
-                    </span>
-                  </div>
-                  <p className="mt-1 text-sm text-slate-500 italic">
-                    {item.feel}
-                  </p>
-                </div>
+                <span className="text-xs font-medium text-blue-400 uppercase tracking-wide">
+                  {t.tag}
+                </span>
+                <h3 className="mt-1.5 font-semibold text-slate-100 group-hover:text-blue-400 transition-colors">
+                  {t.title}
+                </h3>
+                <p className="mt-1 text-sm text-slate-500 leading-relaxed">{t.desc}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* The numbers */}
+      <section className="border-t border-slate-800">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+          <p className="text-xs text-slate-600 uppercase tracking-wide mb-6">Why this matters</p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+            {[
+              { num: "62%", label: "veterans underemployed at 6.5 years out" },
+              { num: "18mo", label: "head start the people who did it well actually took" },
+              { num: "4/10", label: "average veteran rating of TAP" },
+              { num: "56%", label: "of professionals find jobs through personal contacts" },
+            ].map((s) => (
+              <div key={s.label}>
+                <p className="text-2xl sm:text-3xl font-bold text-slate-100">{s.num}</p>
+                <p className="mt-1 text-xs text-slate-600 leading-snug">{s.label}</p>
               </div>
             ))}
           </div>
