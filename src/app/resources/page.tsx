@@ -6,8 +6,18 @@ const resources = [
     url: "https://skillbridge.osd.mil",
     verdict: "The best thing DOD has done for transition.",
     detail:
-      "Spend your last 180 days on active duty doing a civilian internship while keeping military pay and benefits. 70-90% hire rate. AF is the most SkillBridge-friendly branch. Start the process 12+ months out. Approval is commander-dependent — that's the biggest complaint.",
-    tip: "The best opportunities go fast. Research companies early and have backup options. Some placements are beneath O-3/O-4 experience — negotiate for substantive roles.",
+      "Spend your final months on active duty doing a civilian internship while keeping full military pay and benefits. 70–90% hire rate. AF is the most SkillBridge-friendly branch. Duration limits changed April 2026: O-3 and below = 180 days, O-4 = 90 days, O-5 = 120 days. Start the process 12+ months out — approval is commander-dependent.",
+    tip: "The best opportunities fill fast. Research companies early and have backup options. Some placements are beneath O-3/O-4 experience — negotiate for substantive roles, not administrative ones.",
+  },
+  {
+    name: "Hire Our Heroes (HOH) Fellowship",
+    rating: 8.5,
+    category: "Nonprofit",
+    url: "https://www.hiringourheroes.org/career-development/fellowships/",
+    verdict: "SkillBridge done right. Chamber of Commerce connects you to a real company.",
+    detail:
+      "A 12-week fellowship through the U.S. Chamber of Commerce Foundation. You do your SkillBridge through HOH and they place you at a corporate partner — no need to cold-pitch companies yourself or navigate the paperwork alone. Partners include major Fortune 500 employers. Billy Vine (PTWOB) did it. Corporate Fellowship Track is the most competitive and most rewarding.",
+    tip: "If you're eligible for SkillBridge and want corporate exposure, this handles the hardest part: getting in the door. Apply early — cohort spots are limited.",
   },
   {
     name: "Hire Heroes USA",
@@ -41,13 +51,13 @@ const resources = [
   },
   {
     name: "VET TEC",
-    rating: 9,
+    rating: 8,
     category: "VA Benefit",
     url: "https://www.va.gov/education/about-gi-bill-benefits/how-to-use-benefits/vettec-high-tech-program/",
-    verdict: "Free tech training WITHOUT burning your GI Bill. The best kept secret in VA benefits.",
+    verdict: "VA-funded tech training — verify current GI Bill impact before enrolling.",
     detail:
-      "VA pays for approved coding/tech bootcamps with no GI Bill usage. Partners include Galvanize, Flatiron, General Assembly, and others. You keep your entire GI Bill entitlement for something else (MBA, etc.).",
-    tip: "Almost nobody knows about this. If you want tech training, use VET TEC and save your GI Bill for a top MBA or graduate program.",
+      "VA funds approved coding and tech bootcamps through this program. Partners have included Galvanize, Flatiron, General Assembly, and others. Officially designed not to count against your GI Bill entitlement, but program details and eligibility have evolved — the VA website can be ambiguous. Verify the current GI Bill impact directly with VA before enrolling if preserving GI Bill for an MBA matters to you.",
+    tip: "If the program is available and genuinely doesn't touch your GI Bill, it's an excellent option. Confirm that in writing before you commit. Check va.gov for current program status.",
   },
   {
     name: "Veterati",
@@ -121,26 +131,19 @@ const resources = [
   },
 ];
 
-function RatingBar({ rating }: { rating: number }) {
-  const width = (rating / 10) * 100;
-  const color =
-    rating >= 8
-      ? "bg-emerald-500"
-      : rating >= 6
-        ? "bg-amber-500"
-        : "bg-red-500";
-
+function StarRating({ rating }: { rating: number }) {
+  const filled = Math.round(rating / 2);
   return (
-    <div className="flex items-center gap-2">
-      <div className="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
-        <div
-          className={`h-full rounded-full ${color}`}
-          style={{ width: `${width}%` }}
-        />
-      </div>
-      <span className="text-sm font-mono text-slate-300 w-8 text-right">
-        {rating}
-      </span>
+    <div className="flex items-center gap-0.5">
+      {[1, 2, 3, 4, 5].map((i) => (
+        <span
+          key={i}
+          className={`text-base leading-none ${i <= filled ? "text-amber-400" : "text-slate-700"}`}
+        >
+          ★
+        </span>
+      ))}
+      <span className="text-xs text-slate-600 ml-1.5">{rating}/10</span>
     </div>
   );
 }
@@ -189,7 +192,7 @@ export default function ResourcesPage() {
                   Visit site
                 </a>
               </div>
-              <RatingBar rating={r.rating} />
+              <StarRating rating={r.rating} />
               <p className="mt-4 text-sm text-slate-400">{r.detail}</p>
               <div className="mt-3 bg-slate-800/50 rounded-lg px-4 py-3">
                 <p className="text-xs text-slate-300">

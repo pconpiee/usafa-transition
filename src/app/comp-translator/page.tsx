@@ -10,19 +10,23 @@ const BASE_PAY: Record<string, Record<number, number>> = {
   "O-5": { 10: 107436, 12: 112440, 14: 116532, 16: 120768, 18: 124872, 20: 128964 },
 };
 
-const BAH_RATES: Record<string, number> = {
-  "Colorado Springs, CO": 22536,
-  "Washington, DC": 33876,
-  "San Antonio, TX": 22272,
-  "Omaha, NE": 19404,
-  "Dayton, OH": 18276,
-  "Tampa, FL": 24252,
-  "Los Angeles, CA": 39852,
-  "Hampton Roads, VA": 24132,
-  "Albuquerque, NM": 19476,
-  "Huntsville, AL": 19944,
-  "National Average": 23400,
-};
+// Geographic BAH tiers (annual, with dependents)
+const BAH_TIERS = [
+  { label: "National Average (default)", examples: "", annual: 23400 },
+  { label: "Major metro — NYC, LA, DC, SF, Boston", examples: "", annual: 36000 },
+  { label: "Mid-size city — Seattle, Raleigh, Denver", examples: "", annual: 27600 },
+  { label: "Small city — Wichita Falls, Columbus", examples: "", annual: 19200 },
+  { label: "Enter my own BAH", examples: "", annual: -1 },
+];
+
+// Aviation Career Incentive Pay (ACIP) monthly → annual
+const ACIP_OPTIONS = [
+  { label: "None", annual: 0 },
+  { label: "< 6 years aviation (~$188/mo)", annual: 2256 },
+  { label: "6–9 years aviation (~$650/mo)", annual: 7800 },
+  { label: "10–13 years aviation (~$750/mo)", annual: 9000 },
+  { label: "14+ years aviation (~$840/mo)", annual: 10080 },
+];
 
 const BAS = 3276; // annual officer BAS 2025
 
@@ -33,18 +37,37 @@ function formatCurrency(n: number): string {
 export default function CompTranslatorPage() {
   const [rank, setRank] = useState("O-3");
   const [years, setYears] = useState(6);
-  const [location, setLocation] = useState("National Average");
+  const [bahTierIdx, setBahTierIdx] = useState(0);
+  const [customBahMonthly, setCustomBahMonthly] = useState("");
   const [dependents, setDependents] = useState(true);
+  const [acipIdx, setAcipIdx] = useState(0);
 
-  const basePay = BASE_PAY[rank]?.[years] ?? BASE_PAY[rank]?.[Object.keys(BASE_PAY[rank]).map(Number).filter(y => y <= years).sort((a, b) => b - a)[0]] ?? 70000;
-  const bah = BAH_RATES[location] ?? BAH_RATES["National Average"];
-  const bahAdjusted = dependents ? bah : Math.round(bah * 0.85);
-  const taxFreeAllowances = bahAdjusted + BAS;
-  const tricareSavings = 5849; // civilian equivalent cost difference
-  const retirementContrib = Math.round(basePay * 0.05); // BRS 5% match
-  const totalMilitaryComp = basePay + taxFreeAllowances + tricareSavings + retirementContrib;
+  const basePay =
+    BASE_PAY[rank]?.[years] ??
+    BASE_PAY[rank]?.[
+      Object.keys(BASE_PAY[rank])
+        .map(Number)
+        .filter((y) => y <= years)
+        .sort((a, b) => b - a)[0]
+    ] ??
+    70000;
 
-  // Tax advantage of tax-free allowances (est 22% bracket)
+  const selectedTier = BAH_TIERS[bahTierIdx];
+  const isCustomBah = selectedTier.annual === -1;
+  const customBahAnnual = customBahMonthly
+    ? parseFloat(customBahMonthly) * 12
+    : 0;
+  const bahWithDeps = isCustomBah
+    ? customBahAnnual
+    : selectedTier.annual;
+  const bah = dependents ? bahWithDeps : Math.round(bahWithDeps * 0.85);
+
+  const flightPay = ACIP_OPTIONS[acipIdx].annual;
+  const taxFreeAllowances = bah + BAS;
+  const tricareSavings = 5849;
+  const retirementContrib = Math.round(basePay * 0.05);
+  const totalMilitaryComp =
+    basePay + flightPay + taxFreeAllowances + tricareSavings + retirementContrib;
   const taxAdvantage = Math.round(taxFreeAllowances * 0.22);
   const civEquivalent = totalMilitaryComp + taxAdvantage;
 
@@ -93,19 +116,46 @@ export default function CompTranslatorPage() {
         </div>
         <div>
           <label className="block text-sm font-medium text-slate-300 mb-1">
-            Duty Station / BAH Location
+            Job opportunity location
           </label>
           <select
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
+            value={bahTierIdx}
+            onChange={(e) => setBahTierIdx(Number(e.target.value))}
             className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-slate-200 focus:outline-none focus:border-blue-500"
           >
-            {Object.keys(BAH_RATES).map((loc) => (
-              <option key={loc} value={loc}>{loc}</option>
+            {BAH_TIERS.map((t, i) => (
+              <option key={i} value={i}>{t.label}</option>
             ))}
           </select>
+          {isCustomBah && (
+            <div className="mt-2">
+              <input
+                type="number"
+                min={0}
+                placeholder="Your monthly BAH (e.g. 1950)"
+                value={customBahMonthly}
+                onChange={(e) => setCustomBahMonthly(e.target.value)}
+                className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-slate-200 focus:outline-none focus:border-blue-500 placeholder:text-slate-600"
+              />
+              <p className="text-xs text-slate-600 mt-1">Monthly BAH amount — check your LES or MyPay</p>
+            </div>
+          )}
         </div>
-        <div className="flex items-end">
+        <div className="space-y-3">
+          <div>
+            <label className="block text-sm font-medium text-slate-300 mb-1">
+              Flight pay (ACIP)
+            </label>
+            <select
+              value={acipIdx}
+              onChange={(e) => setAcipIdx(Number(e.target.value))}
+              className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-slate-200 focus:outline-none focus:border-blue-500"
+            >
+              {ACIP_OPTIONS.map((o, i) => (
+                <option key={i} value={i}>{o.label}</option>
+              ))}
+            </select>
+          </div>
           <label className="flex items-center gap-2 cursor-pointer">
             <input
               type="checkbox"
@@ -130,9 +180,15 @@ export default function CompTranslatorPage() {
               <span className="text-slate-400">Base Pay</span>
               <span className="text-slate-200 font-mono">{formatCurrency(basePay)}</span>
             </div>
+            {flightPay > 0 && (
+              <div className="flex justify-between">
+                <span className="text-slate-400">Flight Pay (ACIP)</span>
+                <span className="text-slate-200 font-mono">{formatCurrency(flightPay)}</span>
+              </div>
+            )}
             <div className="flex justify-between">
               <span className="text-slate-400">BAH (tax-free)</span>
-              <span className="text-emerald-400 font-mono">{formatCurrency(bahAdjusted)}</span>
+              <span className="text-emerald-400 font-mono">{formatCurrency(bah)}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-slate-400">BAS (tax-free)</span>
