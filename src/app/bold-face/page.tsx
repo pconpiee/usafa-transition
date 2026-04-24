@@ -277,6 +277,194 @@ export default function BoldFacePage() {
       </section>
 
       {/* PEDL Protocol */}
+      {/* Drill 6: What salary are you looking for? */}
+      <section className="mt-6">
+        <div className="bg-slate-900/70 border border-slate-800 rounded-xl p-6 sm:p-8">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-xs font-mono text-amber-400 bg-amber-400/10 border border-amber-400/20 px-2 py-0.5 rounded">
+              DRILL 06
+            </span>
+          </div>
+          <h2 className="text-xl font-bold text-slate-100">
+            &ldquo;What salary are you looking for?&rdquo;
+          </h2>
+          <p className="mt-2 text-sm text-slate-400">
+            Most pilots either low-ball (out of fear of seeming greedy) or give
+            a number blind (because they don&rsquo;t know the market). Neither
+            works. Prepare this before every interview.
+          </p>
+          <div className="mt-6 space-y-4">
+            <div className="bg-red-500/5 border border-red-500/20 rounded-lg p-4">
+              <p className="text-xs text-red-400 font-semibold mb-2">Wrong:</p>
+              <ul className="text-sm text-slate-500 space-y-1">
+                <li>&ldquo;Whatever is fair.&rdquo; (No anchor. They will set it.)</li>
+                <li>&ldquo;I made $90K in the military.&rdquo; (Military comp does not translate. Never lead with this.)</li>
+                <li>&ldquo;I&rsquo;m flexible.&rdquo; (You&rsquo;re not. You have bills.)</li>
+              </ul>
+            </div>
+            <div className="bg-emerald-500/5 border border-emerald-500/20 rounded-lg p-4">
+              <p className="text-xs text-emerald-400 font-semibold mb-2">Right:</p>
+              <p className="text-sm text-slate-300 italic">
+                &ldquo;Based on what I&rsquo;ve seen in the market for this type
+                of role in [city], I&rsquo;m targeting [range]. That said, I&rsquo;m
+                looking at total compensation — I&rsquo;d want to understand the
+                full package before locking in a number.&rdquo;
+              </p>
+            </div>
+          </div>
+          <p className="mt-4 text-xs text-slate-500">
+            Before this conversation: use the{" "}
+            <a href="/comp-translator" className="text-blue-400 hover:text-blue-300">
+              Comp Translator
+            </a>{" "}
+            to calculate your real military total comp baseline. Most pilots
+            discover their equivalent civilian number is $20–40K higher than
+            their base pay.
+          </p>
+        </div>
+      </section>
+
+      {/* Drill 7: The STAR answer */}
+      <section className="mt-6">
+        <div className="bg-slate-900/70 border border-slate-800 rounded-xl p-6 sm:p-8">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-xs font-mono text-amber-400 bg-amber-400/10 border border-amber-400/20 px-2 py-0.5 rounded">
+              DRILL 07
+            </span>
+          </div>
+          <h2 className="text-xl font-bold text-slate-100">
+            The STAR Answer
+          </h2>
+          <p className="mt-2 text-sm text-slate-400">
+            Behavioral interviews are where pilots lose. Not because the stories
+            aren&rsquo;t there — they&rsquo;re there. Because pilots tell them
+            wrong: too much situation, not enough action, no result.
+          </p>
+          <div className="mt-6 bg-slate-800/50 rounded-lg p-5 border border-slate-700">
+            <div className="space-y-3 text-sm">
+              {[
+                { label: "S — Situation", desc: "One sentence. Just enough context. Not the full briefing." },
+                { label: "T — Task", desc: "Your specific responsibility. Not the team&rsquo;s. Yours." },
+                { label: "A — Action", desc: "What you actually did. Specific choices, specific reasoning. This is the longest part." },
+                { label: "R — Result", desc: "What happened. Quantify if possible. Then: what you learned." },
+              ].map((row) => (
+                <div key={row.label} className="flex gap-3">
+                  <span className="text-blue-400 font-semibold w-32 flex-shrink-0">{row.label}</span>
+                  <span className="text-slate-400">{row.desc}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="mt-4 bg-amber-500/5 border border-amber-500/20 rounded-lg p-4">
+            <p className="text-xs text-amber-400 font-semibold mb-1">The pilot trap:</p>
+            <p className="text-xs text-slate-400">
+              We are trained to say &ldquo;we&rdquo; — because in the jet, the
+              mission succeeds collectively. In an interview, they are evaluating
+              you. Say &ldquo;I.&rdquo; You are not taking credit from your
+              crew. You are answering the question they asked.
+            </p>
+          </div>
+          <p className="mt-3 text-xs text-slate-500">
+            Build 5 STAR stories before any interview: a technical challenge, a
+            team failure, a time you led up, a time you learned from a mistake,
+            and a time you built something from nothing.
+          </p>
+        </div>
+      </section>
+
+      {/* Drill 8: Why are you leaving? */}
+      <section className="mt-6">
+        <div className="bg-slate-900/70 border border-slate-800 rounded-xl p-6 sm:p-8">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-xs font-mono text-amber-400 bg-amber-400/10 border border-amber-400/20 px-2 py-0.5 rounded">
+              DRILL 08
+            </span>
+          </div>
+          <h2 className="text-xl font-bold text-slate-100">
+            &ldquo;Why are you leaving the military?&rdquo;
+          </h2>
+          <p className="mt-2 text-sm text-slate-400">
+            This is the question that reveals the most. Hiring managers are
+            listening for bitterness, disillusionment, or a lack of self-awareness.
+            They are also listening for honesty. Give them honest.
+          </p>
+          <div className="mt-6 space-y-4">
+            <div className="bg-red-500/5 border border-red-500/20 rounded-lg p-4">
+              <p className="text-xs text-red-400 font-semibold mb-2">Answers that kill the room:</p>
+              <ul className="text-sm text-slate-500 space-y-1">
+                <li>&ldquo;I got passed over / the promotion system is broken.&rdquo;</li>
+                <li>&ldquo;The Air Force isn&rsquo;t what it used to be.&rdquo;</li>
+                <li>&ldquo;I was basically forced out.&rdquo;</li>
+                <li>&ldquo;I just want to make more money.&rdquo; (True but incomplete.)</li>
+              </ul>
+            </div>
+            <div className="bg-emerald-500/5 border border-emerald-500/20 rounded-lg p-4">
+              <p className="text-xs text-emerald-400 font-semibold mb-2">What actually works:</p>
+              <p className="text-sm text-slate-300 italic">
+                &ldquo;I served X years and I&rsquo;m proud of it. I reached a point
+                where I&rsquo;d accomplished what I set out to do, and I&rsquo;m
+                genuinely ready for the next chapter. What drew me toward [this
+                field] specifically is [honest, specific reason]. That&rsquo;s what
+                I&rsquo;m moving toward, not just what I&rsquo;m moving away from.&rdquo;
+              </p>
+            </div>
+          </div>
+          <p className="mt-4 text-xs text-slate-500">
+            The key: forward-looking + specific + honest. You don&rsquo;t need
+            to perform gratitude for your service or fake enthusiasm for
+            corporate life. Just be real about where you are and where
+            you&rsquo;re going.
+          </p>
+        </div>
+      </section>
+
+      {/* Drill 9: The follow-up */}
+      <section className="mt-6">
+        <div className="bg-slate-900/70 border border-slate-800 rounded-xl p-6 sm:p-8">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-xs font-mono text-amber-400 bg-amber-400/10 border border-amber-400/20 px-2 py-0.5 rounded">
+              DRILL 09
+            </span>
+          </div>
+          <h2 className="text-xl font-bold text-slate-100">
+            The Follow-Up
+          </h2>
+          <p className="mt-2 text-sm text-slate-400">
+            Within 24 hours of any interview or informational conversation.
+            Not optional. Most pilots don&rsquo;t do this. It&rsquo;s a
+            significant differentiator.
+          </p>
+          <div className="mt-6 bg-slate-800/50 rounded-lg p-5 border border-slate-700">
+            <h3 className="text-sm font-semibold text-slate-300 mb-3">
+              After an informational conversation:
+            </h3>
+            <p className="text-sm text-slate-400 italic">
+              &ldquo;[Name] — genuinely appreciated your time today. The point
+              about [something specific they said] gave me a lot to think about.
+              I&rsquo;m going to [specific next action based on their advice].
+              If I can ever be useful to you in return, please don&rsquo;t
+              hesitate. I&rsquo;ll keep you updated on how things develop.&rdquo;
+            </p>
+          </div>
+          <div className="mt-4 bg-slate-800/50 rounded-lg p-5 border border-slate-700">
+            <h3 className="text-sm font-semibold text-slate-300 mb-3">
+              After a formal interview:
+            </h3>
+            <p className="text-sm text-slate-400 italic">
+              &ldquo;[Name] — thank you for the conversation today. I appreciated
+              learning about [specific thing from the interview]. I left more
+              interested in the role, not less — particularly [specific aspect
+              they mentioned]. I look forward to next steps.&rdquo;
+            </p>
+          </div>
+          <p className="mt-4 text-xs text-slate-500">
+            Keep it short. Reference something specific — proves you were
+            listening. Never: &ldquo;Just following up to see if there&rsquo;s
+            any news.&rdquo; That is not a follow-up. That is noise.
+          </p>
+        </div>
+      </section>
+
       <section className="mt-12 border-t border-slate-800 pt-12">
         <h2 className="text-2xl font-bold text-slate-100 mb-4">
           The PEDL Debrief Protocol

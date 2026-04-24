@@ -250,6 +250,121 @@ export default function First90DaysPage() {
           </p>
         </div>
       </section>
+
+      {/* You are not the flight lead */}
+      <section className="mt-16 border-t border-slate-800 pt-16">
+        <h2 className="text-2xl font-bold text-slate-100 mb-4">
+          You are not the flight lead
+        </h2>
+        <p className="text-sm text-slate-400 mb-6">
+          The hardest part of the first 90 days for pilots specifically.
+        </p>
+        <div className="space-y-4 text-slate-400 leading-relaxed">
+          <p>
+            In the jet, you earned authority through demonstrated competence.
+            You got the patch. You got the checkride. You got the flight lead
+            qualification. People followed because the system said you were
+            qualified to lead and the evidence said you were competent to
+            execute.
+          </p>
+          <p>
+            Your first civilian job does not work this way. You do not have
+            patches. You are new. The people around you have been there longer,
+            know the system better, have established relationships you
+            don&rsquo;t have yet. In the military, a new guy with your
+            credentials would have been given early authority. In the civilian
+            world, credentials are table stakes — not authority.
+          </p>
+          <div className="bg-amber-500/5 border border-amber-500/20 rounded-xl p-6 my-6">
+            <h3 className="text-sm font-semibold text-amber-400 mb-3">
+              What this looks like if you&rsquo;re not careful
+            </h3>
+            <ul className="space-y-2 text-sm text-slate-400">
+              <li className="flex gap-2">
+                <span className="text-red-400 flex-shrink-0">✗</span>
+                Proposing major changes before you understand the system
+              </li>
+              <li className="flex gap-2">
+                <span className="text-red-400 flex-shrink-0">✗</span>
+                Implying (or stating) that military processes are better
+              </li>
+              <li className="flex gap-2">
+                <span className="text-red-400 flex-shrink-0">✗</span>
+                Treating your military rank as a proxy for civilian credibility
+              </li>
+              <li className="flex gap-2">
+                <span className="text-red-400 flex-shrink-0">✗</span>
+                Moving at military planning speed when civilian orgs move at a different rhythm
+              </li>
+              <li className="flex gap-2">
+                <span className="text-red-400 flex-shrink-0">✗</span>
+                Expecting direct orders to land the way they did in uniform
+              </li>
+            </ul>
+          </div>
+          <p>
+            This is not about being passive. It&rsquo;s about earning influence
+            before you exercise it. The military gave you authority first and
+            expected you to grow into it. The civilian world expects you to
+            demonstrate capability first. The ones who figure this out in month
+            one move fast. The ones who don&rsquo;t are still fighting for
+            credibility in month six.
+          </p>
+          <div className="bg-blue-600/5 border border-blue-500/20 rounded-xl p-6">
+            <h3 className="text-sm font-semibold text-slate-200 mb-3">
+              What to do instead
+            </h3>
+            <ul className="space-y-2 text-sm text-slate-400">
+              <li className="flex gap-2">
+                <span className="text-emerald-400 flex-shrink-0">✓</span>
+                Ask before you act. &ldquo;Help me understand how decisions get made here.&rdquo;
+              </li>
+              <li className="flex gap-2">
+                <span className="text-emerald-400 flex-shrink-0">✓</span>
+                Deliver one thing really well. Let the work speak first.
+              </li>
+              <li className="flex gap-2">
+                <span className="text-emerald-400 flex-shrink-0">✓</span>
+                Find one person who has survived the politics and learn from them.
+              </li>
+              <li className="flex gap-2">
+                <span className="text-emerald-400 flex-shrink-0">✓</span>
+                Lead with curiosity, not conclusions. You don&rsquo;t have enough
+                data yet.
+              </li>
+              <li className="flex gap-2">
+                <span className="text-emerald-400 flex-shrink-0">✓</span>
+                Trust builds slowly in civilian orgs. Operate at their rhythm,
+                not yours.
+              </li>
+            </ul>
+          </div>
+          <p className="text-sm text-slate-500">
+            The pilots who transition best are the ones who can set the flight
+            lead identity down long enough to learn the new terrain — and then
+            pick it back up once they&rsquo;ve earned the right to lead in a
+            different context.
+          </p>
+        </div>
+      </section>
+
+      {/* Navigation */}
+      <div className="mt-16 pt-8 border-t border-slate-800 flex flex-col sm:flex-row gap-3 justify-between">
+        <a
+          href="/negotiation"
+          className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-slate-200 transition-colors"
+        >
+          ← Stage 09: Negotiation
+        </a>
+        <a
+          href="/the-long-game"
+          className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-colors"
+        >
+          Stage 11: The Long Game →
+        </a>
+      </div>
+
+      <p className="mt-12 text-sm text-slate-600 italic">Blue Skies — 487</p>
     </div>
   );
 }

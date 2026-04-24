@@ -12,6 +12,60 @@ export default function PlaybookPage() {
         Five stages. Each earns the next.
       </p>
 
+      {/* Pilot Translation Table */}
+      <section className="mt-12 bg-slate-900/70 border border-slate-800 rounded-xl p-6">
+        <h2 className="text-base font-semibold text-slate-200 mb-1">
+          Pilot-to-civilian translation table
+        </h2>
+        <p className="text-xs text-slate-500 mb-4">
+          What your military title actually maps to in civilian language. None
+          of these are exact — but this is the starting point.
+        </p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-slate-800">
+                <th className="text-left py-2 pr-4 text-slate-400 font-medium text-xs uppercase tracking-wide">
+                  Military role / experience
+                </th>
+                <th className="text-left py-2 pr-4 text-slate-400 font-medium text-xs uppercase tracking-wide">
+                  Civilian equivalent
+                </th>
+                <th className="text-left py-2 text-slate-400 font-medium text-xs uppercase tracking-wide">
+                  Notes
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-800/50">
+              {[
+                ["Flight Lead", "Team Lead / Project Manager / Senior IC", "Decision authority, leading under ambiguity, managing real consequences"],
+                ["Instructor Pilot", "L&D Manager / Corporate Trainer / Coach", "Instructional design, performance standards, individual coaching"],
+                ["Stan/Eval (IP/EP)", "Quality Assurance / Compliance / Standards", "Auditing, maintaining institutional standards under pressure"],
+                ["Operations Officer", "Director of Operations / Chief of Staff", "Coordination across functions, managing execution vs. planning"],
+                ["Flight Commander", "Manager / Team Lead", "First-line supervisory role; people + mission"],
+                ["Squadron Commander", "Director / VP / GM", "P&L-adjacent; org health + mission delivery"],
+                ["ADOC / Squadron DO", "COO / Ops Director", "Running the machine, not just flying it"],
+                ["CAOC / AOC experience", "Program Manager / Intel Analyst / Government Affairs", "Joint/multi-domain coordination, intelligence synthesis"],
+                ["Weapons Officer / WIC", "Technical Lead / Principal Engineer / Subject Matter Expert", "Deep technical mastery, institutional authority on complex systems"],
+                ["FAO / Foreign liaison", "International Business / Diplomacy / Policy", "Cross-cultural fluency, relationship-based influence"],
+              ].map(([mil, civ, note]) => (
+                <tr key={mil}>
+                  <td className="py-2.5 pr-4 text-blue-400 font-medium">{mil}</td>
+                  <td className="py-2.5 pr-4 text-slate-300">{civ}</td>
+                  <td className="py-2.5 text-slate-500 text-xs">{note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-slate-600 mt-4">
+          For deeper context on what each maps to by field, see{" "}
+          <a href="/know-your-gifts" className="text-blue-400 hover:text-blue-300">
+            Stage 02: Know Your Gifts
+          </a>.
+        </p>
+      </section>
+
       {/* Stage 0 */}
       <section className="mt-16">
         <div className="flex items-center gap-3 mb-6">
