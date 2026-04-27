@@ -30,9 +30,9 @@ export default function ApplicationPackagePage() {
         <div className="bg-slate-900/70 border border-slate-800 rounded-xl p-6 space-y-3">
           {[
             "I have researched this org beyond their website — news, recent projects, strategic direction.",
-            "I&rsquo;ve tailored my resume to this specific role. Not sent a generic version.",
+            "I've tailored my resume to this specific role. Not sent a generic version.",
             "My cover letter connects a specific experience of mine to a specific need of theirs.",
-            "I know the visa/work authorization requirements and I&rsquo;m eligible.",
+            "I know the visa/work authorization requirements and I'm eligible.",
             "I know (or have tried to learn) who the hiring manager or team lead is.",
             "I have had at least one informational conversation with someone at this org or in this domain.",
             "Someone I trust has read my application package for clarity and substance.",
@@ -62,7 +62,7 @@ export default function ApplicationPackagePage() {
             </p>
             <ul className="space-y-2 text-sm text-slate-400">
               {[
-                "Quantified achievements: &ldquo;Led 18-aircraft operation, zero incidents, $4M budget&rdquo;",
+                "Quantified achievements: \"Led 18-aircraft operation, zero incidents, $4M budget\"",
                 "Keywords from the job description (ATS screening is real — check before submitting)",
                 "Civilian-translated language (see Know Your Gifts for the translation)",
                 "Clear structure with consistent formatting",
@@ -83,10 +83,10 @@ export default function ApplicationPackagePage() {
             <ul className="space-y-2 text-sm text-slate-500">
               {[
                 "Military jargon without translation (ADOC, IP, CAOC, AFSOC — none of these mean anything)",
-                "Objective statements (&ldquo;Seeking a challenging role...&rdquo;)",
+                "Objective statements (\"Seeking a challenging role...\")",
                 "Listing every course, certification, and training ever attended",
                 "Duty descriptions instead of impact statements",
-                "O-3, O-4, GS-12 — these grade systems don&rsquo;t translate",
+                "O-3, O-4, GS-12 — these grade systems don't translate",
                 "Creative formatting, graphics, unusual fonts — reads as compensation",
               ].map((item, i) => (
                 <li key={i} className="flex gap-2">
@@ -139,15 +139,15 @@ export default function ApplicationPackagePage() {
           {[
             {
               para: "Opening — 2 sentences",
-              what: "Why this role, this org, this mission. Be specific. Reference something real — a recent project, a publication, their stated direction. If you can&rsquo;t do this, you haven&rsquo;t done enough research.",
+              what: "Why this role, this org, this mission. Be specific. Reference something real — a recent project, a publication, their stated direction. If you can't do this, you haven't done enough research.",
             },
             {
               para: "Bridge — 1 paragraph",
-              what: "The connection between your background and what they need. Not &ldquo;I have skills X, Y, Z&rdquo; — but &ldquo;My experience doing [specific thing] prepared me to contribute to [their specific challenge].&rdquo; One story. Specific. Translated.",
+              what: "The connection between your background and what they need. Not \"I have skills X, Y, Z\" — but \"My experience doing [specific thing] prepared me to contribute to [their specific challenge].\" One story. Specific. Translated.",
             },
             {
               para: "Close — 2 sentences",
-              what: "Forward-looking. What you want to explore or build. End with energy, not formality. &ldquo;I look forward to the conversation&rdquo; is a dead close. &ldquo;I am especially interested in [specific aspect of role] and would enjoy discussing [specific question]&rdquo; is not.",
+              what: "Forward-looking. What you want to explore or build. End with energy, not formality. \"I look forward to the conversation\" is a dead close. \"I am especially interested in [specific aspect of role] and would enjoy discussing [specific question]\" is not.",
             },
           ].map((p) => (
             <div key={p.para} className="border-b border-slate-800/50 pb-4 last:border-0 last:pb-0">
@@ -178,8 +178,8 @@ export default function ApplicationPackagePage() {
             {
               field: "About section",
               bad: "A timeline of your assignments and PCS moves.",
-              good: "3–4 sentences: what you do (translated), what you&rsquo;re building toward, what kind of problems excite you.",
-              note: "This is the one place to show personality. Don&rsquo;t default to LinkedIn corporate-speak.",
+              good: "3–4 sentences: what you do (translated), what you're building toward, what kind of problems excite you.",
+              note: "This is the one place to show personality. Don't default to LinkedIn corporate-speak.",
             },
             {
               field: "Experience bullets",

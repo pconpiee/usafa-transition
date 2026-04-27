@@ -141,12 +141,12 @@ export default function TheReckoning() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-slate-800">
-                  <th className="text-left py-2 pr-4 text-slate-500 font-medium">Fixed mindset</th>
-                  <th className="text-left py-2 text-slate-500 font-medium">Growth mindset</th>
+                <tr className="border-b border-slate-700">
+                  <th className="text-left py-2 pr-4 text-slate-400 font-medium">Fixed mindset</th>
+                  <th className="text-left py-2 text-slate-300 font-medium">Growth mindset</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-900">
+              <tbody className="divide-y divide-slate-800">
                 {[
                   ["I should already know how civilian hiring works.", "I am actively learning how civilian hiring works."],
                   ["Networking feels like performing.", "Networking feels like learning."],
@@ -155,8 +155,8 @@ export default function TheReckoning() {
                   ["I need to have this figured out.", "I'm running experiments to figure it out."],
                 ].map(([fixed, growth]) => (
                   <tr key={fixed}>
-                    <td className="py-3 pr-4 text-slate-500 italic align-top">&ldquo;{fixed}&rdquo;</td>
-                    <td className="py-3 text-slate-400 align-top">&ldquo;{growth}&rdquo;</td>
+                    <td className="py-3 pr-4 text-slate-400 italic align-top">&ldquo;{fixed}&rdquo;</td>
+                    <td className="py-3 text-slate-200 align-top">&ldquo;{growth}&rdquo;</td>
                   </tr>
                 ))}
               </tbody>

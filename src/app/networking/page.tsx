@@ -12,9 +12,10 @@ export default function NetworkingPage() {
         Networking
       </h1>
       <p className="mt-4 text-lg text-slate-400 max-w-2xl">
-        I didn&rsquo;t network when I separated. I sent mass LinkedIn messages
-        for three months and wondered why nothing was working. This page is what
-        I wish I&rsquo;d had.
+        When I separated I went to conferences, asked everyone who else I
+        should meet, told people where I wanted to go and why &mdash; and
+        gave them a story they could pass along. Jobs came to me. This page
+        is the system behind why that worked.
       </p>
       <p className="mt-3 text-sm text-slate-500">
         The research on this is fifty years deep and remarkably consistent. The
@@ -185,7 +186,7 @@ export default function NetworkingPage() {
             {
               type: "Strategic",
               purpose: "Positioning for future opportunities",
-              who: "Senior people in fields you&rsquo;re targeting, cross-industry contacts, people at companies you want",
+              who: "Senior people in fields you're targeting, cross-industry contacts, people at companies you want",
               status: "Most pilots: thin",
               color: "amber",
             },

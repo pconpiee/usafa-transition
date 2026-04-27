@@ -88,21 +88,21 @@ export default function InterviewPrepPage() {
                 l: "T",
                 label: "Task",
                 time: "~10% of the answer",
-                what: "Your specific responsibility. Not the team&rsquo;s. Yours. What were you accountable for?",
+                what: "Your specific responsibility. Not the team's. Yours. What were you accountable for?",
                 trap: null,
               },
               {
                 l: "A",
                 label: "Action",
                 time: "~55% of the answer",
-                what: "What you actually did. The specific decisions you made and why. Your reasoning. Your adjustments. Use &ldquo;I,&rdquo; not &ldquo;we.&rdquo; This is the longest part by far.",
-                trap: "Pilots default to &ldquo;we&rdquo; because that&rsquo;s how combat aviation works. In an interview they&rsquo;re evaluating YOU. Say &ldquo;I.&rdquo;",
+                what: "What you actually did. The specific decisions you made and why. Your reasoning. Your adjustments. Use \"I,\" not \"we.\" This is the longest part by far.",
+                trap: "Many candidates default to \"we\" because that's how collaborative work happens. In an interview they're evaluating YOU. Say \"I.\"",
               },
               {
                 l: "R",
                 label: "Result",
                 time: "~15% of the answer",
-                what: "What happened? Quantify where possible. Don&rsquo;t fabricate numbers, but don&rsquo;t be vague if you have them.",
+                what: "What happened? Quantify where possible. Don't fabricate numbers, but don't be vague if you have them.",
                 trap: null,
               },
               {
@@ -125,7 +125,7 @@ export default function InterviewPrepPage() {
                   <p className="text-sm text-slate-400 mb-2">{row.what}</p>
                   {row.trap && (
                     <p className="text-xs text-amber-400 bg-amber-400/5 border border-amber-400/20 rounded px-3 py-2">
-                      ⚠ Pilot trap: {row.trap}
+                      ⚠ Common trap: {row.trap}
                     </p>
                   )}
                 </div>
@@ -149,7 +149,7 @@ export default function InterviewPrepPage() {
             {
               n: "1",
               type: "Technical challenge",
-              prompt: "A time you solved a complex technical problem. Not &ldquo;I flew the mission.&rdquo; A specific problem you diagnosed and solved.",
+              prompt: "A time you solved a complex technical problem. Not \"I flew the mission.\" A specific problem you diagnosed and solved.",
             },
             {
               n: "2",
@@ -159,7 +159,7 @@ export default function InterviewPrepPage() {
             {
               n: "3",
               type: "Failure and what you learned",
-              prompt: "A real failure. Not &ldquo;I work too hard.&rdquo; A genuine mistake, what happened as a result, and what you changed afterward.",
+              prompt: "A real failure. Not \"I work too hard.\" A genuine mistake, what happened as a result, and what you changed afterward.",
             },
             {
               n: "4",
@@ -169,7 +169,7 @@ export default function InterviewPrepPage() {
             {
               n: "5",
               type: "Something you built from nothing",
-              prompt: "A program, process, team, or initiative you started that didn&rsquo;t exist before you. Especially valuable for management roles.",
+              prompt: "A program, process, team, or initiative you started that didn't exist before you. Especially valuable for management roles.",
             },
           ].map((item) => (
             <div key={item.n} className="flex gap-4 bg-slate-900/70 border border-slate-800 rounded-xl p-5 text-sm">
@@ -211,10 +211,10 @@ export default function InterviewPrepPage() {
           <div className="space-y-2">
             <p className="text-xs text-slate-500 font-semibold uppercase tracking-wide">What to do with what you find</p>
             {[
-              "If they came from a technical background: lean into specifics. They&rsquo;ll push on depth.",
+              "If they came from a technical background: lean into specifics. They'll push on depth.",
               "If they came from a business background: lead with outcomes and impact, not process.",
-              "If they&rsquo;re newer to the role: they&rsquo;re evaluating culture fit and working-style alignment.",
-              "If they&rsquo;re senior: they&rsquo;re asking &ldquo;can I trust this person?&rdquo; Be direct and honest.",
+              "If they're newer to the role: they're evaluating culture fit and working-style alignment.",
+              "If they're senior: they're asking \"can I trust this person?\" Be direct and honest.",
               "If you find common ground: use it — briefly, genuinely, not performatively.",
             ].map((item, i) => (
               <div key={i} className="flex gap-2 text-sm text-slate-400">
@@ -240,11 +240,11 @@ export default function InterviewPrepPage() {
             <p className="text-xs font-semibold text-emerald-400 mb-3 uppercase tracking-wide">Strong questions</p>
             <ul className="space-y-2 text-sm text-slate-400">
               {[
-                "&ldquo;What does success look like in this role in the first six months?&rdquo;",
-                "&ldquo;What&rsquo;s the biggest challenge the team is facing right now?&rdquo;",
-                "&ldquo;What made the last person in this role effective — or what would you change?&rdquo;",
-                "&ldquo;How does this role interact with [specific other team]?&rdquo;",
-                "&ldquo;What do people who thrive here have in common?&rdquo;",
+                "What does success look like in this role in the first six months?",
+                "What's the biggest challenge the team is facing right now?",
+                "What made the last person in this role effective \u2014 or what would you change?",
+                "How does this role interact with [specific other team]?",
+                "What do people who thrive here have in common?",
               ].map((q, i) => (
                 <li key={i} className="flex gap-2">
                   <span className="text-emerald-400 flex-shrink-0">✓</span>
@@ -257,10 +257,10 @@ export default function InterviewPrepPage() {
             <p className="text-xs font-semibold text-red-400 mb-3 uppercase tracking-wide">Weak questions</p>
             <ul className="space-y-2 text-sm text-slate-500">
               {[
-                "&ldquo;What&rsquo;s the work-life balance like?&rdquo; (Save for after the offer.)",
-                "&ldquo;How quickly could I be promoted?&rdquo; (Signals you&rsquo;re already looking past the role.)",
+                "\"What's the work-life balance like?\" (Save for after the offer.)",
+                "\"How quickly could I be promoted?\" (Signals you're already looking past the role.)",
                 "Anything you could have found on their website.",
-                "&ldquo;What does [company] do?&rdquo; (Shows you didn&rsquo;t research.)",
+                "\"What does [company] do?\" (Shows you didn't research.)",
                 "No questions at all. (Signals low interest.)",
               ].map((q, i) => (
                 <li key={i} className="flex gap-2">
@@ -285,8 +285,8 @@ export default function InterviewPrepPage() {
         <div className="space-y-3">
           {[
             {
-              method: "Reframe, don&rsquo;t suppress",
-              detail: "Tell yourself &ldquo;I am excited&rdquo; rather than trying to calm down. Anxiety and excitement have the same physiological signature. Reframing to excitement improves performance. Trying to suppress arousal makes it worse. (Jamieson et al., 2010)",
+              method: "Reframe, don't suppress",
+              detail: "Tell yourself \"I am excited\" rather than trying to calm down. Anxiety and excitement have the same physiological signature. Reframing to excitement improves performance. Trying to suppress arousal makes it worse. (Jamieson et al., 2010)",
             },
             {
               method: "Pre-interview routine",
@@ -294,7 +294,7 @@ export default function InterviewPrepPage() {
             },
             {
               method: "Preparation is the strongest anxiety reducer",
-              detail: "Anxiety is highest when uncertainty is highest. Know your stories. Know the org. Know your questions. Preparation doesn&rsquo;t guarantee a good interview, but lack of preparation guarantees a bad one.",
+              detail: "Anxiety is highest when uncertainty is highest. Know your stories. Know the org. Know your questions. Preparation doesn't guarantee a good interview, but lack of preparation guarantees a bad one.",
             },
           ].map((item) => (
             <div key={item.method} className="bg-slate-900/70 border border-slate-800 rounded-xl p-5 text-sm">

@@ -344,7 +344,7 @@ export default function BoldFacePage() {
             <div className="space-y-3 text-sm">
               {[
                 { label: "S — Situation", desc: "One sentence. Just enough context. Not the full briefing." },
-                { label: "T — Task", desc: "Your specific responsibility. Not the team&rsquo;s. Yours." },
+                { label: "T — Task", desc: "Your specific responsibility. Not the team's. Yours." },
                 { label: "A — Action", desc: "What you actually did. Specific choices, specific reasoning. This is the longest part." },
                 { label: "R — Result", desc: "What happened. Quantify if possible. Then: what you learned." },
               ].map((row) => (

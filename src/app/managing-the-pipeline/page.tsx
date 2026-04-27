@@ -60,11 +60,11 @@ export default function ManagingThePipelinePage() {
               2001) found that focused, high-quality search activity produces
               better outcomes than high-volume, low-quality search activity.
               Sending 50 applications into the void is not a more aggressive
-              search — it&rsquo;s a less effective one.
+              search — it's a less effective one.
             </p>
             <div className="grid sm:grid-cols-3 gap-4 mt-4">
               {[
-                { stage: "Active / deep work", n: "3–5", desc: "Roles where you&rsquo;re doing serious research, networking, and tailored applications. These deserve real time." },
+                { stage: "Active / deep work", n: "3\u20135", desc: "Roles where you're doing serious research, networking, and tailored applications. These deserve real time." },
                 { stage: "Watching / light touch", n: "5–8", desc: "Roles you&rsquo;re tracking but not yet committed to. Discovery and qualification stages." },
                 { stage: "Total pipeline", n: "10–15", desc: "Total roles you&rsquo;re tracking at any time. Too few means no optionality. Too many means nothing gets done well." },
               ].map((item) => (
@@ -92,7 +92,7 @@ export default function ManagingThePipelinePage() {
           {[
             {
               trigger: "After submitting an application",
-              action: "If no acknowledgment in 1 week: one professional follow-up to confirm receipt. &ldquo;I wanted to confirm my application arrived and express continued interest.&rdquo;",
+              action: "If no acknowledgment in 1 week: one professional follow-up to confirm receipt. \"I wanted to confirm my application arrived and express continued interest.\"",
             },
             {
               trigger: "After an informational conversation",
@@ -103,12 +103,12 @@ export default function ManagingThePipelinePage() {
               action: "Within 24 hours: thank-you to each interviewer individually. Mention one thing specific to their interview. Run your PEDL debrief.",
             },
             {
-              trigger: "When you haven&rsquo;t heard back (post-interview)",
-              action: "1 week after stated decision timeline: one professional check-in. &ldquo;I&rsquo;m following up on our conversation from [date]. Still very interested — happy to provide any additional information.&rdquo;",
+              trigger: "When you haven't heard back (post-interview)",
+              action: "1 week after stated decision timeline: one professional check-in. \"I'm following up on our conversation from [date]. Still very interested \u2014 happy to provide any additional information.\"",
             },
             {
               trigger: "When a role closes (rejection or pass)",
-              action: "Close it in your JPOS tracker. Run a brief PEDL. Keep the relationship open. &ldquo;I appreciate the consideration. If there are future opportunities that might be a fit, I&rsquo;d welcome the chance to reconnect.&rdquo;",
+              action: "Close it in your JPOS tracker. Run a brief PEDL. Keep the relationship open. \"I appreciate the consideration. If there are future opportunities that might be a fit, I'd welcome the chance to reconnect.\"",
             },
           ].map((item, i) => (
             <div key={i} className="bg-slate-900/70 border border-slate-800 rounded-xl p-5 text-sm">

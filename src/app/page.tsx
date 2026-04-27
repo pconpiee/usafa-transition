@@ -119,15 +119,24 @@ export default function Home() {
           </h1>
           <div className="mt-6 space-y-4 text-lg text-slate-400 max-w-2xl leading-relaxed">
             <p>
-              I got out in 2021. PTWOB 487. Flew space &mdash; GNobs and I left around the same time,
-              figuring it out as we went. In the five years since I&rsquo;ve worked in family business,
-              a startup, a nonprofit, government and defense sales, and academia.
-              Three countries. Been broke. Lived with my parents. Lived pretty well in Europe.
+              You&rsquo;re leaving the cockpit. For some of you it was the plan.
+              For others it crept up. Either way &mdash; those footless halls of
+              air are about to look very different from the ground.
             </p>
             <p>
-              This is what I wish someone had given us.
+              As taught in AM-490: you are your own canopy commander.
+              No one else steers you to the 50-yard line. This site
+              throws some WDIs so you can read the wind before you jump.
+            </p>
+            <p className="text-base text-slate-500">
+              Here&rsquo;s to good ships &mdash; and soft landings.
             </p>
           </div>
+          <p className="mt-4 text-sm text-slate-600">
+            Built by PTWOB 487. Separated 2021. Five years, five industries,
+            three countries. This is what I wish someone had handed us at
+            jump altitude.
+          </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/the-reckoning"

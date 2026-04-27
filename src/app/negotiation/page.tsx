@@ -31,19 +31,19 @@ export default function NegotiationPage() {
         <div className="space-y-3">
           {[
             {
-              fear: "&ldquo;They might rescind the offer.&rdquo;",
+              fear: "\"They might rescind the offer.\"",
               reality: "This is exceedingly rare. Employers expect negotiation at the offer stage. Rescinding for a professional counter-offer is almost unheard of in professional roles.",
             },
             {
-              fear: "&ldquo;I don&rsquo;t want to seem greedy.&rdquo;",
-              reality: "Negotiation is not greed — it&rsquo;s stewardship. You are responsible for getting compensation that reflects your value. That&rsquo;s a professional responsibility, not a character flaw.",
+              fear: "\"I don't want to seem greedy.\"",
+              reality: "Negotiation is not greed \u2014 it's stewardship. You are responsible for getting compensation that reflects your value. That's a professional responsibility, not a character flaw.",
             },
             {
-              fear: "&ldquo;I don&rsquo;t know what to say.&rdquo;",
-              reality: "You&rsquo;re about to learn a specific script. There are three or four sentences that handle 80% of negotiation conversations. This is learnable.",
+              fear: "\"I don't know what to say.\"",
+              reality: "You're about to learn a specific script. There are three or four sentences that handle 80% of negotiation conversations. This is learnable.",
             },
             {
-              fear: "&ldquo;I should be grateful they hired me.&rdquo;",
+              fear: "\"I should be grateful they hired me.\"",
               reality: "Gratitude and negotiation are not in conflict. You can be genuinely glad about the offer and professionally ask for more in the same conversation.",
             },
           ].map((item, i) => (
@@ -69,7 +69,7 @@ export default function NegotiationPage() {
           {[
             {
               principle: "Focus on interests, not positions",
-              what: "Your position: &ldquo;I want $130K.&rdquo; Your interest: compensation that lets you cover your family&rsquo;s needs, reflects your experience, and doesn&rsquo;t feel like a step backward. Those are different things — and interests are more negotiable.",
+              what: "Your position: \"I want $130K.\" Your interest: compensation that lets you cover your family's needs, reflects your experience, and doesn't feel like a step backward. Those are different things \u2014 and interests are more negotiable.",
             },
             {
               principle: "Look for mutual gains",
@@ -81,7 +81,7 @@ export default function NegotiationPage() {
             },
             {
               principle: "Separate people from the problem",
-              what: "The recruiter is not your adversary. They generally want you to take the job. You&rsquo;re both trying to solve a compensation problem together. Treat them that way.",
+              what: "The recruiter is not your adversary. They generally want you to take the job. You're both trying to solve a compensation problem together. Treat them that way.",
             },
           ].map((item) => (
             <div key={item.principle} className="bg-slate-900/70 border border-slate-800 rounded-xl p-5 text-sm">
@@ -106,10 +106,10 @@ export default function NegotiationPage() {
         <div className="bg-slate-900/70 border border-slate-800 rounded-xl p-6 space-y-4">
           <div className="space-y-3 text-sm">
             {[
-              { q: "&ldquo;How can we make the numbers work given what I&rsquo;ve outlined?&rdquo;", why: "Invites collaboration instead of confrontation." },
-              { q: "&ldquo;How does your team typically handle situations where there&rsquo;s a gap between the offer and the candidate&rsquo;s expectations?&rdquo;", why: "Opens the process without pressure." },
-              { q: "&ldquo;What flexibility exists in the total package?&rdquo;", why: "Expands the frame beyond base salary." },
-              { q: "&ldquo;What would need to be true for the base to reach $X?&rdquo;", why: "Gets them describing the path rather than defending a wall." },
+              { q: "\"How can we make the numbers work given what I've outlined?\"", why: "Invites collaboration instead of confrontation." },
+              { q: "\"How does your team typically handle situations where there's a gap between the offer and the candidate's expectations?\"", why: "Opens the process without pressure." },
+              { q: "\"What flexibility exists in the total package?\"", why: "Expands the frame beyond base salary." },
+              { q: "\"What would need to be true for the base to reach $X?\"", why: "Gets them describing the path rather than defending a wall." },
             ].map((item, i) => (
               <div key={i} className="border-b border-slate-800/50 pb-3 last:border-0 last:pb-0">
                 <p className="text-slate-200 font-medium mb-1">{item.q}</p>
@@ -132,11 +132,11 @@ export default function NegotiationPage() {
         <div className="bg-slate-900/70 border border-slate-800 rounded-xl p-6">
           <div className="space-y-4">
             {[
-              { step: "Target", pct: "Target = your honest ideal number", desc: "The number you&rsquo;d genuinely be happy with. Not inflated fantasy — your actual target." },
+              { step: "Target", pct: "Target = your honest ideal number", desc: "The number you'd genuinely be happy with. Not inflated fantasy \u2014 your actual target." },
               { step: "Opening ask", pct: "Start at 115–120% of target", desc: "Open higher than your target so you have room to come down. End at or above target." },
               { step: "Counter 1", pct: "Come down to ~108%", desc: "Second offer. Show movement. Each concession should be smaller than the last." },
-              { step: "Counter 2", pct: "Come down to ~103%", desc: "Smaller movement again. The psychological pattern signals you&rsquo;re approaching your floor." },
-              { step: "Final offer", pct: "Land at or above target", desc: "Make your final number oddly precise ($127,350 not $128,000). Precision signals you&rsquo;ve done the math — not that you&rsquo;re guessing." },
+              { step: "Counter 2", pct: "Come down to ~103%", desc: "Smaller movement again. The psychological pattern signals you're approaching your floor." },
+              { step: "Final offer", pct: "Land at or above target", desc: "Make your final number oddly precise ($127,350 not $128,000). Precision signals you've done the math \u2014 not that you're guessing." },
             ].map((item, i) => (
               <div key={i} className="flex gap-4 border-b border-slate-800/50 pb-4 last:border-0 last:pb-0">
                 <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-400/10 border border-blue-400/20 flex items-center justify-center text-blue-400 font-bold text-xs">
@@ -174,7 +174,7 @@ export default function NegotiationPage() {
         <div className="grid sm:grid-cols-2 gap-4">
           {[
             { item: "Base salary", note: "The anchor. Negotiate this first." },
-            { item: "Annual bonus / target bonus", note: "What&rsquo;s the target %? What&rsquo;s the actual average payout? Is it discretionary or formulaic?" },
+            { item: "Annual bonus / target bonus", note: "What's the target %? What's the actual average payout? Is it discretionary or formulaic?" },
             { item: "Equity / RSUs", note: "Vesting schedule matters. $50K in RSUs on a 4-year cliff vesting is very different from quarterly vesting." },
             { item: "Sign-on bonus", note: "Often one-time money they can give without resetting the base. Easiest place to find movement if base is capped." },
             { item: "Start date", note: "Later start = more salary before you start; earlier start = more goodwill and ramp time." },
@@ -213,22 +213,22 @@ export default function NegotiationPage() {
           {[
             {
               scenario: "When they ask your salary expectation (before the offer)",
-              text: "&ldquo;Based on my research and the scope of the role, I&rsquo;m targeting the [$X–$Y] range. But I&rsquo;m flexible and want to understand the full package before anchoring to a number. What does the compensation structure look like?&rdquo;",
-              note: "Deflect before the offer. Don&rsquo;t anchor yourself early. If they push: &ldquo;I&rsquo;m targeting [X] based on my research.&rdquo;",
+              text: "\"Based on my research and the scope of the role, I'm targeting the [$X\u2013$Y] range. But I'm flexible and want to understand the full package before anchoring to a number. What does the compensation structure look like?\"",
+              note: "Deflect before the offer. Don't anchor yourself early. If they push: \"I'm targeting [X] based on my research.\"",
             },
             {
               scenario: "When you receive a written offer",
-              text: "&ldquo;Thank you — I&rsquo;m genuinely excited about this opportunity, and I appreciate the offer. Before I sign I want to discuss the compensation. Based on my research for this type of role in this market, I was expecting something closer to [X]. Is there flexibility there?&rdquo;",
-              note: "Express genuine enthusiasm. Then ask. Don&rsquo;t apologize for asking.",
+              text: "\"Thank you \u2014 I'm genuinely excited about this opportunity, and I appreciate the offer. Before I sign I want to discuss the compensation. Based on my research for this type of role in this market, I was expecting something closer to [X]. Is there flexibility there?\"",
+              note: "Express genuine enthusiasm. Then ask. Don't apologize for asking.",
             },
             {
-              scenario: "When they say &ldquo;this is our best offer&rdquo;",
-              text: "&ldquo;I understand. I want to make this work — I&rsquo;m very interested in the role. If there&rsquo;s no movement on base, is there flexibility on [sign-on / review cycle / PTO / start date]? I want to find a way to land this.&rdquo;",
-              note: "Shift to the other variables. &ldquo;Best offer on base&rdquo; rarely means &ldquo;best offer on everything.&rdquo;",
+              scenario: "When they say \"this is our best offer\"",
+              text: "\"I understand. I want to make this work \u2014 I'm very interested in the role. If there's no movement on base, is there flexibility on [sign-on / review cycle / PTO / start date]? I want to find a way to land this.\"",
+              note: "Shift to the other variables. \"Best offer on base\" rarely means \"best offer on everything.\"",
             },
             {
-              scenario: "When you&rsquo;re ready to accept",
-              text: "&ldquo;I&rsquo;ve thought about it and I&rsquo;m ready to accept. I&rsquo;m looking forward to getting started. Can you send the updated offer letter?&rdquo;",
+              scenario: "When you're ready to accept",
+              text: "\"I've thought about it and I'm ready to accept. I'm looking forward to getting started. Can you send the updated offer letter?\"",
               note: "Clean, professional, done. No lingering or re-opening.",
             },
           ].map((item) => (

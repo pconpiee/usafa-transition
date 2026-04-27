@@ -88,7 +88,7 @@ export default function KnowYourGiftsPage() {
               translation:
                 "You operate high-stakes technology in degraded conditions, execute memorized emergency responses without looking them up, and coordinate multi-crew operations in real time. This is exactly what operations, incident response, and systems management roles need.",
               questions: [
-                "What&rsquo;s the most technically complex thing you&rsquo;ve managed under real pressure?",
+                "What's the most technically complex thing you've managed under real pressure?",
                 "What emergency or abnormal procedure have you actually executed? What happened?",
                 "Where have you had to diagnose a system failure in real time?",
               ],
@@ -101,28 +101,28 @@ export default function KnowYourGiftsPage() {
               questions: [
                 "Describe a decision you made in under 60 seconds that had real consequences.",
                 "When have you had to make a call when your gut said one thing and the data said another?",
-                "What&rsquo;s the highest-stakes decision you&rsquo;ve made alone?",
+                "What's the highest-stakes decision you've made alone?",
               ],
             },
             {
               category: "Team building and leadership",
               military: "Flight lead, IP, ADOC, squadron officer roles, new pilot integration",
               translation:
-                "You have built team competence from scratch. You have taken someone who couldn&rsquo;t do the job and made them capable. You have led in life-and-death environments. Most civilian managers have never done anything close to this.",
+                "You have built team competence from scratch. You have taken someone who couldn't do the job and made them capable. You have led in life-and-death environments. Most civilian managers have never done anything close to this.",
               questions: [
                 "Who is the weakest person you ever turned into a capable operator? What did that take?",
-                "Describe a time you had to lead people who didn&rsquo;t want to be led.",
-                "What&rsquo;s the most dysfunctional team you inherited? What changed?",
+                "Describe a time you had to lead people who didn't want to be led.",
+                "What's the most dysfunctional team you inherited? What changed?",
               ],
             },
             {
               category: "Teaching and knowledge transfer",
               military: "IP, check ride prep, flight lead upgrade, stan/eval, academic instruction",
               translation:
-                "Teaching is one of the most underrated executive skills. You&rsquo;ve built curriculum, assessed performance against standards, and coached people through high-stakes evaluations. L&D, program management, and consulting roles pay for exactly this.",
+                "Teaching is one of the most underrated executive skills. You've built curriculum, assessed performance against standards, and coached people through high-stakes evaluations. L&D, program management, and consulting roles pay for exactly this.",
               questions: [
-                "What&rsquo;s the hardest thing you&rsquo;ve ever taught someone? How did you break it down?",
-                "How have you adapted your teaching when the standard approach wasn&rsquo;t working?",
+                "What's the hardest thing you've ever taught someone? How did you break it down?",
+                "How have you adapted your teaching when the standard approach wasn't working?",
                 "Describe a curriculum or training program you built from scratch.",
               ],
             },
@@ -134,7 +134,7 @@ export default function KnowYourGiftsPage() {
               questions: [
                 "Where have you been responsible for a process that could not fail?",
                 "Describe a time you caught a process gap before it became an incident.",
-                "What&rsquo;s the most complex logistics or planning problem you&rsquo;ve coordinated?",
+                "What's the most complex logistics or planning problem you've coordinated?",
               ],
             },
             {

@@ -27,23 +27,35 @@ export default function TheChainPage() {
         </h2>
         <div className="space-y-4 text-slate-400 text-sm leading-relaxed">
           <p>
-            In the WOB formation, the pilot at position one is flying into the
-            unknown. The ones behind them are flying off the one in front. It
-            only works because people show up and hold position — not because
-            anyone mandated it, but because they understand what the person
-            behind them needs.
+            In AM-490 &mdash; the USAFA Airmanship course where cadets learned
+            to jump &mdash; the priority was never the jump itself. Teaching
+            was the mission. Jumping was second. The WOB coaches and instructors
+            who ran the program understood that their job was to produce the
+            next generation of canopy commanders, not to log their own exits.
           </p>
           <p>
-            The transition community works the same way. Every PTWOB who shares
-            what they know, takes a call they didn&rsquo;t have to take, or
-            points someone to the right person — they&rsquo;re holding position
-            in the formation.
+            The same principle applies to the transition community. The mission
+            isn&rsquo;t your career milestone. It&rsquo;s producing the next
+            wave of people who can land well.
+          </p>
+          <p>
+            And right now &mdash; in the months right after separation, when
+            identity is in flux, financial pressure is real, and the professional
+            network is still forming &mdash; what people need most isn&rsquo;t
+            always a LinkedIn introduction. It&rsquo;s a check-in from someone
+            who has been in that exact place and can say honestly: this is what
+            it was like, this is what helped, you&rsquo;re not behind.
+          </p>
+          <p>
+            That kind of presence &mdash; low-ask, high-trust, just showing up
+            &mdash; is the thing no org, no resource, and no website can
+            replicate. Only people who&rsquo;ve been through it can provide it.
           </p>
           <p>
             The problem is that most people who transition successfully
             disappear into their civilian lives and never turn around. Not out of
-            malice — out of busyness, distance, and the assumption that someone
-            else is handling it.
+            malice &mdash; out of busyness, distance, and the assumption that
+            someone else is handling it.
           </p>
           <p>
             No one else is handling it.
