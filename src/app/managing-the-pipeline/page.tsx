@@ -65,8 +65,8 @@ export default function ManagingThePipelinePage() {
             <div className="grid sm:grid-cols-3 gap-4 mt-4">
               {[
                 { stage: "Active / deep work", n: "3\u20135", desc: "Roles where you're doing serious research, networking, and tailored applications. These deserve real time." },
-                { stage: "Watching / light touch", n: "5–8", desc: "Roles you&rsquo;re tracking but not yet committed to. Discovery and qualification stages." },
-                { stage: "Total pipeline", n: "10–15", desc: "Total roles you&rsquo;re tracking at any time. Too few means no optionality. Too many means nothing gets done well." },
+                { stage: "Watching / light touch", n: "5–8", desc: "Roles you're tracking but not yet committed to. Discovery and qualification stages." },
+                { stage: "Total pipeline", n: "10–15", desc: "Total roles you're tracking at any time. Too few means no optionality. Too many means nothing gets done well." },
               ].map((item) => (
                 <div key={item.stage} className="bg-slate-800/50 rounded-lg p-4 border border-slate-700 text-center">
                   <div className="text-2xl font-bold text-blue-400 mb-1">{item.n}</div>
@@ -133,7 +133,7 @@ export default function ManagingThePipelinePage() {
             {[
               "How many roles am I actively pursuing? Is it the right number?",
               "What stage is each role in? What needs to move?",
-              "What gate is each role stuck at? What&rsquo;s the specific next action?",
+              "What gate is each role stuck at? What's the specific next action?",
               "How many quality interactions did I have this week? (Target: 2–3 minimum)",
               "What follow-ups are overdue?",
               "What did I learn this week that changes my strategy?",
@@ -178,7 +178,7 @@ export default function ManagingThePipelinePage() {
               { b: "Momentum matters more than intensity.", d: "Sustained moderate effort over months outperforms intense bursts followed by demoralization. Plan for a 12–18 month runway." },
               { b: "Meaning protects against rejection.", d: "Know why the search matters beyond the job itself — financial stability, mission alignment, family, growth. When meaning is clear, rejection stings less." },
               { b: "The search needs a life around it.", d: "Physical activity, sleep, and one non-career relationship are not luxuries. They are requirements for sustained high performance." },
-              { b: "Celebrate the process metrics, not just outcomes.", d: "Track conversations had, applications submitted, connections made. These are the leading indicators. Offer acceptances are lagging indicators you can&rsquo;t control directly." },
+              { b: "Celebrate the process metrics, not just outcomes.", d: "Track conversations had, applications submitted, connections made. These are the leading indicators. Offer acceptances are lagging indicators you can't control directly." },
             ].map((item) => (
               <div key={item.b} className="text-sm">
                 <span className="text-slate-200 font-medium">{item.b} </span>

@@ -238,7 +238,7 @@ export default function NetworkingPage() {
             {[
               {
                 q: "Aviation / military",
-                note: "You have this. It won&rsquo;t get you a civilian job by itself.",
+                note: "You have this. It won't get you a civilian job by itself.",
               },
               {
                 q: "Defense & aerospace (civilian side)",
@@ -254,10 +254,10 @@ export default function NetworkingPage() {
               },
               {
                 q: "Someone at a company you actually want to work for",
-                note: "If you don&rsquo;t know anyone there, that&rsquo;s the problem.",
+                note: "If you don't know anyone there, that's the problem.",
               },
               {
-                q: "Someone who recently made the transition you&rsquo;re trying to make",
+                q: "Someone who recently made the transition you're trying to make",
                 note: "Their experience is the most directly applicable intel you can get.",
               },
             ].map((item, i) => (
@@ -385,15 +385,15 @@ export default function NetworkingPage() {
               },
               {
                 time: "10 min",
-                what: "Their story. How did they get to where they are? What surprised them? What do they wish they&rsquo;d known?",
+                what: "Their story. How did they get to where they are? What surprised them? What do they wish they'd known?",
               },
               {
                 time: "10 min",
-                what: "Your 2–3 specific, researched questions. Not &ldquo;What&rsquo;s it like?&rdquo; but something you could only ask someone who actually does this.",
+                what: "Your 2–3 specific, researched questions. Not \"What's it like?\" but something you could only ask someone who actually does this.",
               },
               {
                 time: "3 min",
-                what: "&ldquo;Who else would you suggest I speak with?&rdquo; This is the most important question in the conversation.",
+                what: "\"Who else would you suggest I speak with?\" This is the most important question in the conversation.",
               },
               {
                 time: "24 hr",
@@ -445,7 +445,7 @@ export default function NetworkingPage() {
               actions: [
                 "Write down every professional contact. Every single one.",
                 "Categorize by domain: aviation/military, defense/aerospace, tech, finance, other.",
-                "Note for each: what world do they operate in, what do they know you don&rsquo;t, who do they know you don&rsquo;t.",
+                "Note for each: what world do they operate in, what do they know you don't, who do they know you don't.",
                 "Identify your existing structural holes — where are you not connected at all?",
               ],
             },
@@ -473,10 +473,10 @@ export default function NetworkingPage() {
               weeks: "Ongoing",
               title: "Give before you ask",
               actions: [
-                "Every conversation includes: &ldquo;Is there anything I can help you with?&rdquo;",
-                "Share relevant articles, introductions, or information — not to curry favor, but because it&rsquo;s the right way to operate.",
+                "Every conversation includes: \"Is there anything I can help you with?\"",
+                "Share relevant articles, introductions, or information — not to curry favor, but because it's the right way to operate.",
                 "The research (Grant, 2013): in every profession studied, the top performers were the ones whose default orientation was to contribute value to others first.",
-                "This is not naive. It&rsquo;s the strategy that compounds over 30 years when every other strategy burns out.",
+                "This is not naive. It's the strategy that compounds over 30 years when every other strategy burns out.",
               ],
             },
           ].map((phase) => (
@@ -531,7 +531,7 @@ export default function NetworkingPage() {
             {
               n: "3",
               who: "Someone in a domain adjacent to yours",
-              why: "If you&rsquo;re aviation-centric, talk to someone in tech. If you&rsquo;re defense, talk to someone in finance. Cross-domain fluency is built through conversation.",
+              why: "If you're aviation-centric, talk to someone in tech. If you're defense, talk to someone in finance. Cross-domain fluency is built through conversation.",
             },
             {
               n: "4",

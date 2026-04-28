@@ -30,21 +30,21 @@ export default function TheLongGamePage() {
               year: "Year 1",
               title: "Prove yourself, learn the language",
               focus: "Competence and humility. You are new. You do not know how things work here. Learn the org, earn trust through performance on the small things, and resist every instinct to tell them how the Air Force did it.",
-              watch: "Don&rsquo;t mistake your rank for your standing. You have none yet. It will come back — through different mechanisms.",
-              metric: "Can your manager describe your value without using the word &ldquo;military&rdquo;?",
+              watch: "Don't mistake your rank for your standing. You have none yet. It will come back — through different mechanisms.",
+              metric: "Can your manager describe your value without using the word \"military\"?",
             },
             {
               year: "Year 2",
               title: "Start building optionality",
               focus: "You now have enough organizational knowledge to move. Start developing the network outside your immediate team. Reconnect with the people you met during the search. Keep conversations alive.",
-              watch: "The danger: you get comfortable. Comfortable is fine. Locked-in is not. Build options even when you don&rsquo;t need them.",
+              watch: "The danger: you get comfortable. Comfortable is fine. Locked-in is not. Build options even when you don't need them.",
               metric: "Do you have at least one relationship at each of three different companies in your target space?",
             },
             {
               year: "Year 3",
               title: "Expand your scope, assess your trajectory",
               focus: "You now have enough domain knowledge and org credibility to start taking on more complex problems. Ask for harder assignments. Be visible on cross-functional work. Start developing your people if you have them.",
-              watch: "Compensation tends to compress at employers who hired you. Know the market rate for your role. It&rsquo;s OK to be paid fairly.",
+              watch: "Compensation tends to compress at employers who hired you. Know the market rate for your role. It's OK to be paid fairly.",
               metric: "Does your title and comp reflect your actual scope and contribution?",
             },
             {
@@ -102,10 +102,10 @@ export default function TheLongGamePage() {
             </h3>
             {[
               "You stop translating your military experience into civilian language and start just describing your civilian experience.",
-              "Your professional identity is no longer primarily about what you were — it&rsquo;s about what you&rsquo;re doing now.",
+              "Your professional identity is no longer primarily about what you were — it's about what you're doing now.",
               "You introduce yourself without mentioning the Air Force as the lead credential.",
               "When asked what you do, the answer is easy and accurate.",
-              "You&rsquo;re mentoring people who are going through what you went through — and you&rsquo;re useful to them.",
+              "You're mentoring people who are going through what you went through — and you're useful to them.",
             ].map((item, i) => (
               <div key={i} className="flex gap-2 text-sm text-slate-400">
                 <span className="text-emerald-400 flex-shrink-0 mt-0.5">✓</span>
@@ -149,9 +149,9 @@ export default function TheLongGamePage() {
           <ul className="space-y-2">
             {[
               "Check in with two or three people per month. Not to ask for anything. To stay connected.",
-              "Send a note when you see something relevant to someone you know (&ldquo;saw this and thought of you&rdquo;).",
+              "Send a note when you see something relevant to someone you know (\"saw this and thought of you\").",
               "Make introductions when you can. Givers gain (Grant, 2013).",
-              "When someone reaches out to you for help — respond. You know what it&rsquo;s like to need that response.",
+              "When someone reaches out to you for help — respond. You know what it's like to need that response.",
             ].map((item, i) => (
               <li key={i} className="flex gap-2">
                 <span className="text-blue-400 flex-shrink-0 mt-0.5">→</span>

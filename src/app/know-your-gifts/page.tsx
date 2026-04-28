@@ -261,9 +261,9 @@ export default function KnowYourGiftsPage() {
         <div className="space-y-3">
           {[
             "Write 3–5 specific, evidence-based stories for each category that applies to you. Specific means named, dated, and quantified where possible.",
-            "Translate military language before you use it in any application or interview. If a civilian hiring manager couldn&rsquo;t parse it cold, rewrite it.",
+            "Translate military language before you use it in any application or interview. If a civilian hiring manager couldn't parse it cold, rewrite it.",
             "Identify the 2–3 categories where your evidence is strongest. Those are your anchors.",
-            "Know the 1–2 categories where your evidence is thin. Be honest about the gap and ready to say how you&rsquo;re closing it.",
+            "Know the 1–2 categories where your evidence is thin. Be honest about the gap and ready to say how you're closing it.",
             "Take these stories to informational conversations before you go to interviews. Rehearse the translation in low-stakes conversations first.",
           ].map((a, i) => (
             <div key={i} className="flex gap-3 text-sm text-slate-400">

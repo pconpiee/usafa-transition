@@ -171,8 +171,8 @@ export default function ApplicationPackagePage() {
           {[
             {
               field: "Headline",
-              bad: "&ldquo;USAF Officer | F-16 Pilot | MBA Student&rdquo;",
-              good: "&ldquo;Operations Leader | High-Stakes Decision-Making | Transitioning to [Target Field]&rdquo;",
+              bad: "\"USAF Officer | F-16 Pilot | MBA Student\"",
+              good: "\"Operations Leader | High-Stakes Decision-Making | Transitioning to [Target Field]\"",
               note: "Military titles mean nothing to civilians. Describe what you do, not what you were.",
             },
             {

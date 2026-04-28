@@ -77,7 +77,7 @@ export default function NegotiationPage() {
             },
             {
               principle: "Use objective criteria",
-              what: "Market data removes ego from the conversation. &ldquo;Based on my research using [Glassdoor / Levels.fyi / LinkedIn Salary], similar roles in this market pay $X–$Y.&rdquo; Objective criteria gives both sides a face-saving path.",
+              what: "Market data removes ego from the conversation. \"Based on my research using [Glassdoor / Levels.fyi / LinkedIn Salary], similar roles in this market pay $X–$Y.\" Objective criteria gives both sides a face-saving path.",
             },
             {
               principle: "Separate people from the problem",

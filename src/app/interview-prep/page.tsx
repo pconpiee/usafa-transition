@@ -329,12 +329,12 @@ export default function InterviewPrepPage() {
             {
               l: "D",
               w: "Debrief",
-              d: "Two things you did well. Two things you&rsquo;d do differently. Your assessment first — don&rsquo;t wait for external feedback.",
+              d: "Two things you did well. Two things you'd do differently. Your assessment first — don't wait for external feedback.",
             },
             {
               l: "L",
               w: "Learn",
-              d: "What is the one thing you&rsquo;re taking forward to every interview after this one?",
+              d: "What is the one thing you're taking forward to every interview after this one?",
             },
           ].map((item) => (
             <div key={item.l} className="bg-slate-900/70 border border-slate-800 rounded-xl p-5">

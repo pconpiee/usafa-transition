@@ -95,7 +95,7 @@ export default function TheChainPage() {
               "A 20-minute phone call with someone who just decided to separate",
               "One honest email about what the first job was actually like",
               "A LinkedIn introduction to someone who can open a door",
-              "Reviewing someone&rsquo;s resume and saying what isn&rsquo;t working",
+              "Reviewing someone's resume and saying what isn't working",
               "Telling them the truth about a company before they take an offer",
               "Forwarding this site to one person who needs it",
             ].map((item, i) => (
@@ -121,19 +121,19 @@ export default function TheChainPage() {
           {[
             {
               cap: "Time: 1–2 hours/month",
-              what: "That&rsquo;s all. One to two calls, conversations, or emails. Consistent is better than occasional bursts of intensity followed by nothing.",
+              what: "That's all. One to two calls, conversations, or emails. Consistent is better than occasional bursts of intensity followed by nothing.",
             },
             {
               cap: "Scope: Your specific experience",
-              what: "You can only speak with authority about the path you actually took. That&rsquo;s still enormously valuable to someone who is about to take a similar one.",
+              what: "You can only speak with authority about the path you actually took. That's still enormously valuable to someone who is about to take a similar one.",
             },
             {
               cap: "Format: What works for you",
               what: "Phone calls, LinkedIn messages, a coffee, a review. Pick the format that has the lowest friction for you so you actually do it.",
             },
             {
-              cap: "Boundary: It&rsquo;s OK to say no",
-              what: "Not every request is one you can or should take. &ldquo;I&rsquo;m not the right person for this&rdquo; is a complete sentence. Refer on where you can.",
+              cap: "Boundary: It's OK to say no",
+              what: "Not every request is one you can or should take. \"I'm not the right person for this\" is a complete sentence. Refer on where you can.",
             },
           ].map((item) => (
             <div key={item.cap} className="bg-slate-900/70 border border-slate-800 rounded-xl p-5 text-sm">
