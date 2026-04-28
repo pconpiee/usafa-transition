@@ -9,7 +9,7 @@ export default function FeedbackWidget() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+    await fetch(process.env.NEXT_PUBLIC_FORMSPREE_URL ?? "", {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify({ message }),

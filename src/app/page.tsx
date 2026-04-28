@@ -115,18 +115,19 @@ export default function Home() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-100 leading-tight tracking-tight">
             You know how to fly.
             <br />
-            <span className="text-slate-400">Nobody taught you the rest.</span>
+            <span className="text-slate-400">Here&rsquo;s how to land well.</span>
           </h1>
           <div className="mt-6 space-y-4 text-lg text-slate-400 max-w-2xl leading-relaxed">
             <p>
-              You&rsquo;re leaving the cockpit. For some of you it was the plan.
-              For others it crept up. Either way &mdash; those footless halls of
-              air are about to look very different from the ground.
+              Separation is a leap into the unknown: the civilian world. For
+              some, it&rsquo;s the plan. For others, a surprise. Either way,
+              the landing is smoother when you&rsquo;ve got a plan and a{" "}
+              <span className="text-blue-400">canopy</span>.
             </p>
             <p>
-              As taught in AM-490: you are your own canopy commander.
-              No one else steers you to the 50-yard line. This site
-              throws some WDIs so you can read the wind before you jump.
+              You are your own canopy commander. The tools here are only as
+              useful as you apply them. This site helps you slow down, orient
+              yourself, and set up good patterns as you take on a new life.
             </p>
             <p className="text-base text-slate-500">
               Here&rsquo;s to good ships &mdash; and soft landings.
