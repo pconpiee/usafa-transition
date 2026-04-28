@@ -117,27 +117,6 @@ export default function Home() {
             <br />
             <span className="text-slate-400">Here&rsquo;s how to land well.</span>
           </h1>
-          <div className="mt-6 space-y-4 text-lg text-slate-400 max-w-2xl leading-relaxed">
-            <p>
-              Separation is a leap into the unknown: the civilian world. For
-              some, it&rsquo;s the plan. For others, a surprise. Either way,
-              the landing is smoother when you&rsquo;ve got a plan and a{" "}
-              <span className="text-blue-400">canopy</span>.
-            </p>
-            <p>
-              You are your own canopy commander. The tools here are only as
-              useful as you apply them. This site helps you slow down, orient
-              yourself, and set up good patterns as you take on a new life.
-            </p>
-            <p className="text-base text-slate-500">
-              Here&rsquo;s to good ships &mdash; and soft landings.
-            </p>
-          </div>
-          <p className="mt-4 text-sm text-slate-600">
-            Built by PTWOB 487. Separated 2021. Five years, five industries,
-            three countries. This is what I wish someone had handed us at
-            jump altitude.
-          </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/the-reckoning"
@@ -152,6 +131,21 @@ export default function Home() {
               See the Map
             </Link>
           </div>
+          <div className="mt-8 space-y-3 text-base text-slate-400 max-w-2xl leading-relaxed">
+            <p>
+              Separation is a leap into the unknown: the civilian world. For
+              some, it&rsquo;s the plan. For others, a surprise. Either way,
+              the landing is smoother when you&rsquo;ve got a plan and a{" "}
+              <span className="text-blue-400">canopy</span>.
+            </p>
+            <p className="text-slate-500">
+              Here&rsquo;s to good ships &mdash; and soft landings.
+            </p>
+          </div>
+          <p className="mt-4 text-sm text-slate-600">
+            Built by PTWOB 487. Separated 2021. Now have five years, four
+            industries, and three countries of civilian career experience.
+          </p>
         </div>
       </section>
 
