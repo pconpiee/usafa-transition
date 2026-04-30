@@ -325,22 +325,17 @@ export default function AirlinesPath() {
             years in actually say about year 1?&rdquo;
           </p>
           <ul className="space-y-2 text-sm text-slate-300">
-            <li className="flex gap-2">
+            <li className="flex gap-2 flex-wrap">
               <span className="text-blue-300 flex-shrink-0">&middot;</span>
-              <a href="https://beyondtheuniform.org/" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-blue-200 underline">Beyond the Uniform</a>
-              <span className="text-slate-400">&mdash; Justin Nassiri&rsquo;s podcast, 500+ interviews with vets across every path including airline transitions.</span>
+              <a href="https://podcasts.apple.com/us/podcast/beyond-the-uniform/id1148739411" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-blue-200 underline">Beyond the Uniform podcast</a>
+              <span className="text-slate-400">&mdash; 500+ interviews with vets across every path, including airline transitions. Apple Podcasts.</span>
             </li>
-            <li className="flex gap-2">
+            <li className="flex gap-2 flex-wrap">
               <span className="text-blue-300 flex-shrink-0">&middot;</span>
-              <a href="https://www.bogidope.com/blog" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-blue-200 underline">BogiDope blog</a>
-              <span className="text-slate-400">&mdash; first-person transition writeups from current and recent military-to-airline pilots.</span>
+              <a href="https://www.airlinepilotforums.com/" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-blue-200 underline">Airline Pilot Central forums</a>
+              <span className="text-slate-400">&mdash; per-airline threads with current pilots talking pay, schedule, base, and upgrade.</span>
             </li>
-            <li className="flex gap-2">
-              <span className="text-blue-300 flex-shrink-0">&middot;</span>
-              <a href="https://www.rtag.org/articles/" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-blue-200 underline">RTAG articles</a>
-              <span className="text-slate-400">&mdash; named transition stories from rotor and fixed-wing pilots, attributed by author.</span>
-            </li>
-            <li className="flex gap-2">
+            <li className="flex gap-2 flex-wrap">
               <span className="text-blue-300 flex-shrink-0">&middot;</span>
               <a href="https://www.reddit.com/r/flying/" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-blue-200 underline">r/flying</a>
               <span className="text-slate-400">&mdash; the unfiltered version. Search &ldquo;military transition&rdquo; for years of threads.</span>

@@ -245,18 +245,18 @@ export default function DefensePath() {
           <ul className="space-y-2 text-sm text-slate-300">
             <li className="flex gap-2 flex-wrap">
               <span className="text-blue-300 flex-shrink-0">&middot;</span>
-              <a href="https://beyondtheuniform.org/career-interviews" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-blue-200 underline">Beyond the Uniform &mdash; defense industry interviews</a>
-              <span className="text-slate-400">Justin Nassiri&rsquo;s 500+ interviews include vets at primes, defense tech, and capture roles.</span>
+              <a href="https://podcasts.apple.com/us/podcast/beyond-the-uniform/id1148739411" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-blue-200 underline">Beyond the Uniform podcast</a>
+              <span className="text-slate-400">500+ interviews with vets at primes, defense tech, and capture roles.</span>
             </li>
             <li className="flex gap-2 flex-wrap">
               <span className="text-blue-300 flex-shrink-0">&middot;</span>
-              <a href="https://www.mckinsey.com/careers/meet-our-people/veterans-at-mckinsey" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-blue-200 underline">Veterans at McKinsey</a>
-              <span className="text-slate-400">Named profiles of mil-to-consulting transitioners with attribution.</span>
+              <a href="https://breakingdefense.com/" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-blue-200 underline">Breaking Defense</a>
+              <span className="text-slate-400">Defense industry trade journalism. Read it weekly to learn the customer landscape from the press side.</span>
             </li>
             <li className="flex gap-2 flex-wrap">
               <span className="text-blue-300 flex-shrink-0">&middot;</span>
-              <a href="https://www.anduril.com/article/" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-blue-200 underline">Anduril articles</a>
-              <span className="text-slate-400">Vet-authored writeups about defense tech work and culture.</span>
+              <a href="https://www.reddit.com/r/AirForce/" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-blue-200 underline">r/AirForce + r/securityclearance</a>
+              <span className="text-slate-400">Active threads on prime vs. defense-tech offers, clearance economics, and what year-2 looks like.</span>
             </li>
           </ul>
         </section>

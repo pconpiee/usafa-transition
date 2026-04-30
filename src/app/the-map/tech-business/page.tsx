@@ -316,8 +316,8 @@ export default function TechBusinessPath() {
             </li>
             <li className="flex gap-2 flex-wrap">
               <span className="text-blue-300 flex-shrink-0">&middot;</span>
-              <a href="https://beyondtheuniform.org/career-interviews" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-blue-200 underline">Beyond the Uniform</a>
-              <span className="text-slate-400">Justin Nassiri&rsquo;s 500+ podcast interviews include vet-MBAs at top schools and at MBB.</span>
+              <a href="https://podcasts.apple.com/us/podcast/beyond-the-uniform/id1148739411" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-blue-200 underline">Beyond the Uniform podcast</a>
+              <span className="text-slate-400">500+ interviews with vet-MBAs at top schools and at MBB. Apple Podcasts.</span>
             </li>
             <li className="flex gap-2 flex-wrap">
               <span className="text-blue-300 flex-shrink-0">&middot;</span>
