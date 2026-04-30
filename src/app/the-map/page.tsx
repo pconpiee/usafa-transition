@@ -237,50 +237,69 @@ export default function TheMap() {
             not guarantees. Geography matters enormously &mdash; DC, SF, NY skew higher; most other
             markets are lower.
           </p>
+          <p className="text-xs text-slate-500 italic mb-4">
+            Each path has its own deep-dive page &mdash; tap the title to drill
+            into the sub-decisions, the timeline, real comp data, and the
+            resources that actually exist.
+          </p>
           <div className="space-y-6">
-            {paths.map((path) => (
-              <div key={path.id} className="border border-slate-800 rounded-xl overflow-hidden">
-                <div className="p-5 bg-slate-900/40">
-                  <div className="flex items-start justify-between gap-4 mb-1">
-                    <h3 className="font-bold text-slate-100">{path.label}</h3>
-                    <span className={`text-xs font-medium flex-shrink-0 ${path.tagColor}`}>
-                      {path.tag}
-                    </span>
-                  </div>
-                  <p className="text-xs text-slate-500 mb-4">
-                    <span className="text-slate-400 font-medium">Comp range:</span> {path.comp}
-                  </p>
+            {paths.map((path) => {
+              const slug = path.id === "tech-business" ? "tech-business" : path.id;
+              return (
+                <div key={path.id} className="border border-slate-800 rounded-xl overflow-hidden">
+                  <div className="p-5 bg-slate-900/40">
+                    <div className="flex items-start justify-between gap-4 mb-1">
+                      <Link
+                        href={`/the-map/${slug}`}
+                        className="font-bold text-slate-100 hover:text-blue-400 transition-colors"
+                      >
+                        {path.label} &rarr;
+                      </Link>
+                      <span className={`text-xs font-medium flex-shrink-0 ${path.tagColor}`}>
+                        {path.tag}
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-500 mb-4">
+                      <span className="text-slate-400 font-medium">Comp range:</span> {path.comp}
+                    </p>
 
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <p className="text-xs font-medium text-slate-500 uppercase tracking-wide mb-2">What works</p>
-                      <ul className="space-y-1.5">
-                        {path.pros.map((p) => (
-                          <li key={p} className="flex gap-2 text-xs text-slate-400 leading-snug">
-                            <span className="text-green-600 flex-shrink-0 mt-0.5">+</span>
-                            {p}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <p className="text-xs font-medium text-slate-500 uppercase tracking-wide mb-2">The real tradeoffs</p>
-                      <ul className="space-y-1.5">
-                        {path.cons.map((c) => (
-                          <li key={c} className="flex gap-2 text-xs text-slate-400 leading-snug">
-                            <span className="text-slate-600 flex-shrink-0 mt-0.5">&ndash;</span>
-                            {c}
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div>
+                        <p className="text-xs font-medium text-slate-500 uppercase tracking-wide mb-2">What works</p>
+                        <ul className="space-y-1.5">
+                          {path.pros.map((p) => (
+                            <li key={p} className="flex gap-2 text-xs text-slate-400 leading-snug">
+                              <span className="text-green-600 flex-shrink-0 mt-0.5">+</span>
+                              {p}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <p className="text-xs font-medium text-slate-500 uppercase tracking-wide mb-2">The real tradeoffs</p>
+                        <ul className="space-y-1.5">
+                          {path.cons.map((c) => (
+                            <li key={c} className="flex gap-2 text-xs text-slate-400 leading-snug">
+                              <span className="text-slate-600 flex-shrink-0 mt-0.5">&ndash;</span>
+                              {c}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
+                  <div className="px-5 py-3 border-t border-slate-800 bg-slate-950/40 flex items-center justify-between gap-4">
+                    <p className="text-xs text-slate-500 leading-relaxed italic">{path.honest}</p>
+                    <Link
+                      href={`/the-map/${slug}`}
+                      className="flex-shrink-0 text-xs font-medium text-blue-400 hover:text-blue-300 whitespace-nowrap"
+                    >
+                      Deep dive &rarr;
+                    </Link>
+                  </div>
                 </div>
-                <div className="px-5 py-3 border-t border-slate-800 bg-slate-950/40">
-                  <p className="text-xs text-slate-500 leading-relaxed italic">{path.honest}</p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
