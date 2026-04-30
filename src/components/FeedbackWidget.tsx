@@ -22,12 +22,13 @@ export default function FeedbackWidget() {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-blue-600 hover:bg-blue-500 text-white shadow-lg flex items-center justify-center transition-colors"
-        aria-label="Send feedback"
+        className="fixed bottom-6 right-6 z-50 inline-flex items-center gap-2 pl-3 pr-4 py-2.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white shadow-lg transition-colors"
+        aria-label="What's missing? Send feedback"
       >
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M21 16c0 1.1-.9 2-2 2H7l-4 4V6c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v10z" />
         </svg>
+        <span className="text-sm font-medium">What&apos;s missing?</span>
       </button>
 
       {open && (
@@ -55,8 +56,7 @@ export default function FeedbackWidget() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <p className="text-slate-200 font-medium mb-1">What&apos;s missing? What&apos;s wrong?</p>
-                  <p className="text-xs text-slate-500 mb-3">Anonymous. Not monitored for replies. Just collected so it can make the next version better.</p>
+                  <p className="text-slate-200 font-medium mb-3">What&apos;s missing from this site that will help future USAFA grads find jobs?</p>
                   <textarea
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}

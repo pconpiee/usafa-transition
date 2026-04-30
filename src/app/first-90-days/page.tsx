@@ -11,6 +11,21 @@ export default function First90DaysPage() {
         You got the job. The negotiation is complete. Now the real work begins.
         Research says the first 90 days are disproportionately important.
       </p>
+      <div className="mt-6 max-w-2xl bg-slate-900/60 border border-slate-800 rounded-lg p-4">
+        <p className="text-xs text-blue-400 font-semibold uppercase tracking-wide mb-2">
+          The frame: you are a WOG again
+        </p>
+        <p className="text-sm text-slate-400 leading-relaxed">
+          You know the posture. You wake up early, memorize the procedures,
+          take out the trash, hold your breath restocking the snacks, and
+          don&rsquo;t get to jump on most loads. You are extremely capable
+          and required to be extremely humble &mdash; at the same time.
+          You earn standing the way you earned it the first time: by being
+          good at the small things, on time, every time. Promotion comes
+          from inside the system, not from announcing what you used to do.
+          The civilian first 90 days is a WOG year, compressed.
+        </p>
+      </div>
 
       {/* The 90-Day Framework */}
       <section className="mt-12">

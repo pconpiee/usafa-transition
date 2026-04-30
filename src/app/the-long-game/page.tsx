@@ -188,6 +188,13 @@ export default function TheLongGamePage() {
             Some find that they need to turn left. Both are good outcomes if the
             question was being asked.
           </p>
+          <p className="text-slate-300 pt-2 border-t border-slate-800">
+            One operating principle worth carrying forward, from a PTWOB
+            firstie reflecting on what stuck: <em>great legacies don&rsquo;t
+            come naturally, they come intentionally. Invest in those below,
+            behind, and beside you.</em> Year five is when you&rsquo;re
+            finally in a position to do that. Don&rsquo;t wait for year ten.
+          </p>
         </div>
       </section>
 

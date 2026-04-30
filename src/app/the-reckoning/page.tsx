@@ -126,6 +126,13 @@ export default function TheReckoning() {
               It&rsquo;s what gets the reaction. People perk up. It explains you instantly. The trap is staying
               there past the point where it serves you &mdash; because eventually it becomes a ceiling, not a credential.
             </p>
+            <p className="text-slate-500 italic border-l-2 border-slate-800 pl-4">
+              If you&rsquo;re reading this without ever having stood in a 490
+              door: the principle still lands. Every life has a door of its
+              own &mdash; a moment where preparation runs out and only
+              commitment remains. Yours is in here too, just with a different
+              name on the threshold.
+            </p>
           </div>
         </section>
 

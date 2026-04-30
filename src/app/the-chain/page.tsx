@@ -165,6 +165,9 @@ export default function TheChainPage() {
             That&rsquo;s the whole thing. Not a grand gesture. Not a nonprofit.
             Just a willingness to be in the formation.
           </p>
+          <p className="text-slate-300 font-medium pt-2">
+            The chain doesn&rsquo;t break because of you.
+          </p>
         </div>
       </section>
 

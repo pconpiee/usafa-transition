@@ -149,6 +149,31 @@ export default function Home() {
         </div>
       </section>
 
+      {/* A note before you read */}
+      <section className="border-t border-slate-800 bg-slate-950/60">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
+          <p className="text-xs text-slate-600 uppercase tracking-wide mb-3">A note before you read</p>
+          <div className="text-sm text-slate-400 leading-relaxed space-y-3 max-w-3xl">
+            <p>
+              This was built by a PTWOB for PTWOBs &mdash; in our own language,
+              with bold face and elements and the paddle. If you wore the
+              bluesuit, you&rsquo;ll feel that in the first paragraph.
+            </p>
+            <p>
+              If you didn&rsquo;t &mdash; if you&rsquo;re a USAFA grad who never
+              tried out, an Air Force pilot from another community, an aviator
+              from another service, or a civilian who somehow ended up here
+              &mdash; you&rsquo;re not eavesdropping. You&rsquo;re a guest at
+              the team table. The deepest things in this site &mdash;{" "}
+              <em>jump your own pack, stand in the door, the chain doesn&rsquo;t
+              break because of you, hard work is great but love is better</em>{" "}
+              &mdash; weren&rsquo;t invented at the 98th. They&rsquo;re universal.
+              The 98th just learned to live them at altitude. Read accordingly.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* How to use this */}
       <section className="border-y border-slate-800 bg-slate-900/40">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">

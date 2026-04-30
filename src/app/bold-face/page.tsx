@@ -16,6 +16,13 @@ export default function BoldFacePage() {
         Memorize first. Make natural through repetition. Not &ldquo;scripted
         naturally&rdquo;&mdash;memorized, then made natural.
       </p>
+      <p className="mt-4 text-xs text-slate-600 italic max-w-2xl border-l-2 border-slate-800 pl-3">
+        Not a pilot? Bold face is whatever you must know cold the moment
+        it&rsquo;s needed &mdash; the first thing you say when the call comes,
+        the first move you make when a deal is breaking, the first question
+        you ask when a teammate is in crisis. If you have to look it up, it
+        isn&rsquo;t bold face yet.
+      </p>
 
       {/* Drill 1: The 60-Second Story */}
       <section className="mt-12">
@@ -469,10 +476,17 @@ export default function BoldFacePage() {
         <h2 className="text-2xl font-bold text-slate-100 mb-4">
           The PEDL Debrief Protocol
         </h2>
-        <p className="text-sm text-slate-400 mb-6">
+        <p className="text-sm text-slate-400 mb-2">
           After every bold face drill, every informational conversation, every
           field assignment. The debrief is the product. (Kolb, 1984: the
           experience without the debrief is entertainment.)
+        </p>
+        <p className="text-xs text-slate-600 mb-6 italic">
+          PEDL is the same protocol Wings of Blue use after every jump &mdash;
+          watch the video twice in silence, then each person names two goods
+          and two betters about themselves before anyone else weighs in. The
+          structure makes self-assessment cheaper than peer correction. It
+          works on the ground too.
         </p>
         <div className="grid sm:grid-cols-2 gap-4">
           {[
