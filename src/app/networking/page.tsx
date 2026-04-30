@@ -573,7 +573,6 @@ export default function NetworkingPage() {
         </Link>
       </div>
 
-      <p className="mt-12 text-sm text-slate-600 italic">Blue Skies — 487</p>
     </div>
   );
 }

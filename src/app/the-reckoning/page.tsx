@@ -104,34 +104,30 @@ export default function TheReckoning() {
         {/* Pilot-specific */}
         <section>
           <h2 className="text-xl font-bold text-slate-100 mb-4">
-            The PTWOB version specifically
+            If you flew, specifically
           </h2>
           <div className="space-y-4 text-slate-400 leading-relaxed">
             <p>
-              Non-rated officers have identity complexity when they leave. Pilots have more. Your identity
-              was tied to a physical skill that is genuinely rare, that took years to acquire, and that
-              most civilians literally cannot picture. "I flew" doesn&rsquo;t land the way "I managed a $50M
-              program" does, even though the cognitive and leadership demands of the cockpit arguably exceed both.
+              Non-rated officers have identity complexity when they leave. Rated officers have more. Your
+              identity was tied to a physical skill that is genuinely rare, that took years to acquire, and
+              that most civilians literally cannot picture. &ldquo;I flew&rdquo; doesn&rsquo;t land the way
+              &ldquo;I managed a $50M program&rdquo; does, even though the cognitive and leadership demands
+              of the cockpit arguably exceed both.
             </p>
             <p>
-              There&rsquo;s also the PTWOB dimension. You didn&rsquo;t just fly &mdash; you were part of a specific
-              lineage. The Green → Blue pipeline. The culture of the team. The jump numbers. The toast.
-              That community is real and permanent. But it doesn&rsquo;t pay you. And you are going to meet
-              civilians who have never heard of it and won&rsquo;t fully understand why it matters to you.
-              That&rsquo;s okay. Not everything translates. Not everything needs to.
+              There&rsquo;s also the team dimension if you wore a specific patch &mdash; Wings of Blue, a
+              fighter squadron, weapons school cadre, a special tactics unit. You didn&rsquo;t just fly &mdash;
+              you were part of a specific lineage. That community is real and permanent. But it doesn&rsquo;t
+              pay you. And you are going to meet civilians who have never heard of it and won&rsquo;t fully
+              understand why it matters to you. That&rsquo;s okay. Not everything translates. Not everything
+              needs to.
             </p>
             <p>
-              The pilot identity trap is this: you may find yourself performing &ldquo;former military pilot&rdquo;
+              The identity trap is this: you may find yourself performing &ldquo;former military pilot&rdquo;
               as a personality in civilian settings because it&rsquo;s the most legible thing you have.
               It&rsquo;s what gets the reaction. People perk up. It explains you instantly. The trap is staying
-              there past the point where it serves you &mdash; because eventually it becomes a ceiling, not a credential.
-            </p>
-            <p className="text-slate-500 italic border-l-2 border-slate-800 pl-4">
-              If you&rsquo;re reading this without ever having stood in a 490
-              door: the principle still lands. Every life has a door of its
-              own &mdash; a moment where preparation runs out and only
-              commitment remains. Yours is in here too, just with a different
-              name on the threshold.
+              there past the point where it serves you &mdash; because eventually it becomes a ceiling, not
+              a credential.
             </p>
           </div>
         </section>
@@ -228,7 +224,7 @@ export default function TheReckoning() {
               The pay is good and getting better. The lifestyle is known. The community is familiar.
             </p>
             <p>
-              Some PTWOBs should go to the airlines. Not because it&rsquo;s the default, but because
+              Some people should go to the airlines. Not because it&rsquo;s the default, but because
               it genuinely fits their actual life. If you want to fly, want schedule predictability,
               want the community, want to build retirement around a pension and seniority number &mdash;
               there is no shame in that. It&rsquo;s a legitimate life.
@@ -284,7 +280,6 @@ export default function TheReckoning() {
               Stage 03: The Map
             </Link>
           </div>
-          <p className="mt-8 text-xs text-slate-700 italic">Blue Skies &mdash; 487</p>
         </section>
 
       </div>

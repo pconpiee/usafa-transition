@@ -28,7 +28,7 @@ const paths = [
       "Furlough risk is real (see 2020) — the seniority floor drops hard",
     ],
     honest:
-      "If you genuinely want to fly commercially, do it. The PTWOB trap isn't going to the airlines — it's going because you don't know what else to do. One is a career. The other is deferred decision-making.",
+      "If you genuinely want to fly commercially, do it. The biggest trap isn't going to the airlines — it's going because you don't know what else to do. One is a career. The other is deferred decision-making.",
   },
   {
     id: "defense",
@@ -51,7 +51,7 @@ const paths = [
       "The DoD acquisition machine is grinding and bureaucratic — know what you're signing up for",
     ],
     honest:
-      "This is the natural first move for a lot of PTWOBs, and for good reason — the translation is real. The risk is staying here longer than serves you because it's comfortable. Defense is a great foundation, not necessarily a ceiling.",
+      "This is the natural first move for a lot of vets, and for good reason — the translation is real. The risk is staying here longer than serves you because it's comfortable. Defense is a great foundation, not necessarily a ceiling.",
   },
   {
     id: "tech-business",
@@ -97,7 +97,7 @@ const paths = [
       "Harder to leave the longer you stay — golden handcuffs via pension vesting",
     ],
     honest:
-      "For some PTWOBs — especially those with deep national security backgrounds or who genuinely want to serve in a different form — this is the right answer. Know that it trades compensation ceiling for stability and mission alignment.",
+      "For some — especially those with deep national security backgrounds or who genuinely want to serve in a different form — this is the right answer. Know that it trades compensation ceiling for stability and mission alignment.",
   },
   {
     id: "entrepreneurship",
@@ -142,7 +142,7 @@ const paths = [
       "Requires financial planning to work — not a decision to make without running the numbers",
     ],
     honest:
-      "Some of the PTWOBs who are most at peace in civilian life are the ones who did something completely different. If you feel pulled toward something that doesn't look like a typical post-military career — pay attention to that.",
+      "Those who are most at peace in civilian life are the ones who did something completely different. If you feel pulled toward something that doesn't look like a typical post-military career — pay attention to that.",
   },
 ];
 
@@ -224,7 +224,7 @@ export default function TheMap() {
           <p className="text-slate-400 text-sm leading-relaxed">
             If yes: go. It&rsquo;s a legitimate life. The path is well-documented and the community is strong.{" "}
             The rest of this page is still useful for framing, but airline-track prep is its own world &mdash;
-            check out the PTWOB network and the specific guidance on ATP, type ratings, and seniority timing.
+            check out the rated-pilot transition forums and the specific guidance on ATP, type ratings, and seniority timing.
             If no, or if you&rsquo;re not sure: read on.
           </p>
         </section>
@@ -340,7 +340,7 @@ export default function TheMap() {
               {
                 step: "Find three people who did each one.",
                 detail:
-                  "Via LinkedIn, USAFA network, PTWOB network. Not to ask for a job — to understand the actual lived experience from someone 3 years in.",
+                  "Via LinkedIn, USAFA network, AOG. Not to ask for a job — to understand the actual lived experience from someone 3 years in.",
               },
               {
                 step: "Do the comp math.",
@@ -386,7 +386,6 @@ export default function TheMap() {
               Comp Translator
             </Link>
           </div>
-          <p className="mt-8 text-xs text-slate-700 italic">Blue Skies &mdash; 487</p>
         </section>
 
       </div>

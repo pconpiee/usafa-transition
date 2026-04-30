@@ -16,7 +16,7 @@ const resources = [
     url: "https://www.hiringourheroes.org/career-development/fellowships/",
     verdict: "SkillBridge done right. Chamber of Commerce connects you to a real company.",
     detail:
-      "A 12-week fellowship through the U.S. Chamber of Commerce Foundation. You do your SkillBridge through HOH and they place you at a corporate partner — no need to cold-pitch companies yourself or navigate the paperwork alone. Partners include major Fortune 500 employers. Billy Vine (PTWOB) did it. Corporate Fellowship Track is the most competitive and most rewarding.",
+      "A 12-week fellowship through the U.S. Chamber of Commerce Foundation. You do your SkillBridge through HOH and they place you at a corporate partner — no need to cold-pitch companies yourself or navigate the paperwork alone. Partners include major Fortune 500 employers. Corporate Fellowship Track is the most competitive and most rewarding.",
     tip: "If you're eligible for SkillBridge and want corporate exposure, this handles the hardest part: getting in the door. Apply early — cohort spots are limited.",
   },
   {

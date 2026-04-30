@@ -7,7 +7,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Blue Canopy | USAFA Pilot Transition Guide",
   description:
-    "A transition guide for USAFA pilots leaving active duty. Built by a PTWOB who's been on the other side — free, no login, no paywall.",
+    "A transition guide for USAFA grads leaving active duty. Built by someone who's been on the other side — free, no login, no paywall.",
 };
 
 export default function RootLayout({

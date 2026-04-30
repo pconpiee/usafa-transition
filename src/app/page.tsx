@@ -109,13 +109,13 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-blue-600/5 via-transparent to-transparent" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-24 pb-16 sm:pt-32 sm:pb-24 relative">
-          <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
-            For USAFA PTWOBs leaving active duty
+          <p className="text-blue-300 text-sm font-medium tracking-wide uppercase mb-4">
+            For USAFA grads leaving active duty
           </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-100 leading-tight tracking-tight">
             You know how to fly.
             <br />
-            <span className="text-slate-400">Here&rsquo;s how to land well.</span>
+            <span className="text-slate-400">The civilian landing is harder.</span>
           </h1>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
@@ -142,35 +142,10 @@ export default function Home() {
               Here&rsquo;s to good ships &mdash; and soft landings.
             </p>
           </div>
-          <p className="mt-4 text-sm text-slate-600">
-            Built by PTWOB 487. Separated 2021. Now have five years, four
+          <p className="mt-4 text-sm text-slate-400">
+            Built by Patrick Connolly. Separated 2021. Now five years, four
             industries, and three countries of civilian career experience.
           </p>
-        </div>
-      </section>
-
-      {/* A note before you read */}
-      <section className="border-t border-slate-800 bg-slate-950/60">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
-          <p className="text-xs text-slate-600 uppercase tracking-wide mb-3">A note before you read</p>
-          <div className="text-sm text-slate-400 leading-relaxed space-y-3 max-w-3xl">
-            <p>
-              This was built by a PTWOB for PTWOBs &mdash; in our own language,
-              with bold face and elements and the paddle. If you wore the
-              bluesuit, you&rsquo;ll feel that in the first paragraph.
-            </p>
-            <p>
-              If you didn&rsquo;t &mdash; if you&rsquo;re a USAFA grad who never
-              tried out, an Air Force pilot from another community, an aviator
-              from another service, or a civilian who somehow ended up here
-              &mdash; you&rsquo;re not eavesdropping. You&rsquo;re a guest at
-              the team table. The deepest things in this site &mdash;{" "}
-              <em>jump your own pack, stand in the door, the chain doesn&rsquo;t
-              break because of you, hard work is great but love is better</em>{" "}
-              &mdash; weren&rsquo;t invented at the 98th. They&rsquo;re universal.
-              The 98th just learned to live them at altitude. Read accordingly.
-            </p>
-          </div>
         </div>
       </section>
 
