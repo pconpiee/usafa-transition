@@ -160,8 +160,9 @@ export default function TheMap() {
             The Map
           </h1>
           <p className="mt-4 text-slate-400 leading-relaxed">
-            The civilian career ecosystem, explained honestly. Six paths with real comp ranges
-            and actual tradeoffs. The airline fork. How hiring actually works. No cheerleading.
+            The civilian career ecosystem, mapped honestly by someone
+            who walked it. Six paths with real comp ranges, the airline
+            fork, and how hiring actually works. No cheerleading.
           </p>
         </div>
       </section>
