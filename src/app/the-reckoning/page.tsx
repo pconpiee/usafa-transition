@@ -52,6 +52,30 @@ export default function TheReckoning() {
           </div>
         </section>
 
+        {/* Two ways through */}
+        <section>
+          <h2 className="text-xl font-bold text-slate-100 mb-4">Two ways through</h2>
+          <div className="space-y-4 text-slate-400 leading-relaxed">
+            <p>
+              There are two ways to handle the gap. Most of the transition industry teaches the first:
+              look inside, figure out what you want, build a new identity on top of your preferences and
+              history. This works for some people.
+            </p>
+            <p>
+              For others &mdash; and this may include you, if you have ever felt that your preferences
+              themselves are not stable enough to build on &mdash; there is a second way. It is to ask
+              not what you want, but what you are <em>for</em>. What you have been made to do. What is
+              being asked of you that you did not author. That question goes by different names in
+              different traditions &mdash; vocation, calling, discernment &mdash; and it is older than
+              the career-coaching industry by a few thousand years.
+            </p>
+            <p>
+              This site will not tell you which way to take. It will name that there are two, and that
+              the choice between them is upstream of every other choice you make in this transition.
+            </p>
+          </div>
+        </section>
+
         {/* Bridges Model */}
         <section>
           <h2 className="text-xl font-bold text-slate-100 mb-4">The terrain</h2>
@@ -170,8 +194,18 @@ export default function TheReckoning() {
         {/* Transition Inventory */}
         <section className="bg-slate-900/40 border border-slate-800 rounded-xl p-6">
           <h2 className="text-xl font-bold text-slate-100 mb-2">The transition inventory</h2>
-          <p className="text-sm text-slate-500 mb-6">
+          <p className="text-sm text-slate-500 mb-4">
             Do this before you write a resume or send a networking message. Write honestly. No one else needs to see it.
+          </p>
+          <p className="text-sm text-slate-500 leading-relaxed mb-6 border-l-2 border-slate-700 pl-4 italic">
+            A word of caution about this kind of inventory. Self-knowledge is real and useful, but it
+            is also limited. The version of yourself you can see clearly today is shaped by fifteen
+            years of an institution telling you who you were. Your &ldquo;true preferences,&rdquo;
+            examined alone in a journal, will be partly the institution&rsquo;s voice still echoing,
+            partly genuine, and partly unformed. The best identity work in this stage is not done alone.
+            Talk to people who knew you before the uniform. Talk to your spouse. Talk to a counselor
+            or pastor or wise older friend if you have one. The mirror is more reliable when more than
+            one person is holding it.
           </p>
           <div className="space-y-5">
             {[
@@ -193,7 +227,7 @@ export default function TheReckoning() {
               {
                 q: "What do I not yet know that I need to learn?",
                 prompt:
-                  "Salary negotiation. How civilian hiring works. How performance reviews work. What a good civilian boss looks like. What I actually want.",
+                  "Salary negotiation. How civilian hiring works. How performance reviews work. What a good civilian boss looks like. What I actually want — and whether what I want is the same as what I'm being called to. Not always the same question. Both are worth sitting with.",
               },
               {
                 q: "Who sees me most clearly right now?",
@@ -280,6 +314,20 @@ export default function TheReckoning() {
               Stage 03: The Map
             </Link>
           </div>
+          <p className="mt-8 text-sm text-slate-500 leading-relaxed">
+            If this stage is the part of the work you most need to keep going on
+            &mdash; the question of who you are when the markers move &mdash;
+            there is a longer treatment of it here:{" "}
+            <a
+              href="https://hidden-nine-beta.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 underline underline-offset-2"
+            >
+              Hidden
+            </a>
+            .
+          </p>
         </section>
 
       </div>
