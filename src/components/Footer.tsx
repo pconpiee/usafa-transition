@@ -10,6 +10,19 @@ export default function Footer() {
           <p className="text-slate-400 text-sm font-medium tracking-wide">
             Blue Skies &mdash; 487
           </p>
+          <p className="text-slate-500 text-xs">
+            If the question of identity-when-the-marker-moves is the one you
+            are actually living with, there is a longer paper on it here:{" "}
+            <a
+              href="https://hidden-nine-beta.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 underline underline-offset-2"
+            >
+              Hidden
+            </a>
+            .
+          </p>
           <div className="pt-2 border-t border-slate-900 space-y-2">
             <p className="text-slate-600 text-xs">
               Free. No login. No paywall. Every tool on this site is yours.
