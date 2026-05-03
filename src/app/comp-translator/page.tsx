@@ -77,13 +77,24 @@ export default function CompTranslatorPage() {
         Tool
       </p>
       <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
-        Know Your Worth
+        Comp Translator
       </h1>
       <p className="mt-4 text-lg text-slate-400 max-w-2xl">
-        Your military compensation is worth more than your base pay suggests.
+        Your military total compensation is higher than your base pay suggests.
         Tax-free allowances, TRICARE, and retirement matching add up. See what
         a civilian employer would need to pay you to match it.
       </p>
+      <div className="mt-6 max-w-2xl border-l-2 border-slate-700 pl-4">
+        <p className="text-sm text-slate-400 leading-relaxed">
+          One note before you use this. The number this tool produces is your{" "}
+          <em>market value</em> &mdash; what a civilian employer would pay to
+          acquire your equivalent labor. It is not your <em>worth</em>. The
+          two are not the same word, and the gap between them matters. You
+          will negotiate better, transition better, and live better if you
+          keep them separate. Use this number in salary conversations. Do not
+          use it to answer the question of who you are.
+        </p>
+      </div>
 
       {/* Inputs */}
       <div className="mt-10 grid sm:grid-cols-2 gap-4">
@@ -262,7 +273,7 @@ export default function CompTranslatorPage() {
           <p>
             The research on anchoring (Tversky & Kahneman, 1974) shows that the
             first number in a negotiation shapes the outcome. If you don&rsquo;t
-            know your true worth, someone else sets the anchor.
+            know your real market value, someone else sets the anchor.
           </p>
         </div>
       </section>

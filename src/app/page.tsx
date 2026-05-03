@@ -78,8 +78,8 @@ const stages = [
 const tools = [
   {
     href: "/comp-translator",
-    title: "Know Your Worth",
-    desc: "Your military total comp is probably worth more than you think. Translate it to a civilian number before any salary conversation.",
+    title: "Comp Translator",
+    desc: "Your military total comp is probably higher than you think. Translate it to a civilian market number before any salary conversation.",
     tag: "Tool",
   },
   {

@@ -222,8 +222,8 @@ export default function ResourcesPage() {
           </li>
           <li>
             <strong className="text-slate-300">Compensation benchmarking.</strong>{" "}
-            &ldquo;What am I worth?&rdquo; is the #1 anxiety and no good tool
-            exists for total comp translation.
+            &ldquo;What does the market actually pay?&rdquo; is the #1 anxiety and
+            no good tool exists for total comp translation.
           </li>
           <li>
             <strong className="text-slate-300">Mid-career officer support.</strong>{" "}

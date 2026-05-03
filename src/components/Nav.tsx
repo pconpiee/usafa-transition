@@ -20,7 +20,7 @@ const stages = [
 ];
 
 const tools = [
-  { href: "/comp-translator", label: "Know Your Worth" },
+  { href: "/comp-translator", label: "Comp Translator" },
   { href: "/timeline", label: "Timeline" },
   { href: "/bold-face", label: "Bold Face" },
   { href: "/resources", label: "Resources" },
