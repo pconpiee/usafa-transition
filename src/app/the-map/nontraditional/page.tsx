@@ -30,6 +30,16 @@ export default function NonTraditionalPath() {
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 space-y-16">
 
+        <section className="border-l-2 border-blue-400/40 pl-4">
+          <p className="text-sm text-slate-300 leading-relaxed italic">
+            A note on framing. The &ldquo;tradeoffs&rdquo; described on this
+            page are tradeoffs against the conventional success metrics of
+            the other five paths. If your foundation is somewhere other than
+            compensation and external prestige, several of these tradeoffs
+            are not tradeoffs at all &mdash; they are features. Read accordingly.
+          </p>
+        </section>
+
         <section>
           <h2 className="text-xl font-bold text-slate-50 mb-4">The 2026 landscape</h2>
           <div className="space-y-4 text-slate-300 leading-relaxed">

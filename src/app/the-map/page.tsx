@@ -12,6 +12,7 @@ const paths = [
     label: "Commercial Airlines",
     tag: "Known quantity",
     tagColor: "text-green-400",
+    shape: "A life organized around flying, with a transparent seniority system and a familiar community.",
     comp: "$80K–$100K (regional FO) → $200K–$400K+ (major captain, 10–15 yr)",
     pros: [
       "Seniority system is transparent — you know exactly where you stand",
@@ -35,6 +36,7 @@ const paths = [
     label: "Defense & Aerospace Industry",
     tag: "Easiest translation",
     tagColor: "text-blue-400",
+    shape: "A life adjacent to the mission you came from, with credentials that translate immediately and a culture that doesn't require translation.",
     comp: "$90K–$130K (entry/mid) → $150K–$250K+ (program director, senior exec)",
     pros: [
       "Your clearance is immediately valuable — many companies will pay a premium for it",
@@ -58,6 +60,7 @@ const paths = [
     label: "Tech & Business",
     tag: "Highest upside, hardest translation",
     tagColor: "text-purple-400",
+    shape: "A life of high translation cost upfront, with the steepest learning curve and the broadest range of possible outcomes.",
     comp: "$100K–$160K (entry PM/ops) → $200K–$500K+ (senior leadership, equity events)",
     pros: [
       "Compensation ceiling is the highest of any path",
@@ -81,6 +84,7 @@ const paths = [
     label: "Government & Civil Service",
     tag: "Stability, slower comp",
     tagColor: "text-slate-400",
+    shape: "A life of mission continuity and stability, traded against compensation ceiling and pace.",
     comp: "$80K–$120K (GS-12/13 entry) → $130K–$180K (GS-15/SES), capped",
     pros: [
       "Continuity with the mission you already care about",
@@ -104,6 +108,7 @@ const paths = [
     label: "Entrepreneurship & Startups",
     tag: "High risk, high learning",
     tagColor: "text-orange-400",
+    shape: "A life of high autonomy and high risk, where the ceiling is unlimited and the floor is real.",
     comp: "$0–$80K (early stage, your own startup) → uncapped (if it works) | $80K–$150K (early startup employee) + equity",
     pros: [
       "Highest autonomy of any path — you set the direction",
@@ -127,6 +132,7 @@ const paths = [
     label: "Non-Traditional Paths",
     tag: "Worth naming",
     tagColor: "text-teal-400",
+    shape: "A life often most aligned with calling and meaning, traded against the prestige and compensation of the more visible paths.",
     comp: "Varies widely — education ($50K–$90K), nonprofit ($60K–$110K), ministry/chaplaincy ($40K–$80K + housing)",
     pros: [
       "Often align most directly with calling and meaning",
@@ -169,9 +175,21 @@ export default function TheMap() {
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 space-y-16">
 
+        {/* Choosing vs. discerning */}
+        <section>
+          <h2 className="text-xl font-bold text-slate-100 mb-4">Before any of this: choosing vs. discerning</h2>
+          <p className="text-slate-400 leading-relaxed">
+            Before any of this matters, a question worth sitting with: are you choosing a path or are
+            you discerning a calling? Both are legitimate, but they are not the same activity, and they
+            reward different kinds of work. Choosing optimizes among preferences. Discerning listens for
+            what is being asked of you. The networks and tactics described below help with both &mdash;
+            but knowing which you are doing changes how you read everything that follows.
+          </p>
+        </section>
+
         {/* How civilian hiring works */}
         <section>
-          <h2 className="text-xl font-bold text-slate-100 mb-4">First: how civilian hiring actually works</h2>
+          <h2 className="text-xl font-bold text-slate-100 mb-4">How civilian hiring actually works</h2>
           <div className="space-y-4 text-slate-400 leading-relaxed">
             <p>
               Here is the thing that took me the longest to understand: civilian hiring does not work like
@@ -219,8 +237,11 @@ export default function TheMap() {
           </p>
           <p className="text-slate-400 text-sm leading-relaxed mb-3">
             Not &ldquo;should I go to the airlines?&rdquo; Not &ldquo;what would my family think?&rdquo;
-            Do <em>you</em> want to fly commercially as a career? The lifestyle, the seniority grind,
-            the community, the identity of it?
+            Do <em>you</em> want to fly commercially as a career?{" "}
+            <strong className="text-slate-200">And &mdash; if you are someone who prays about this kind
+            of decision &mdash; is this what you are being called to, or what you are reaching for
+            because it is familiar?</strong>{" "}
+            The lifestyle, the seniority grind, the community, the identity of it.
           </p>
           <p className="text-slate-400 text-sm leading-relaxed">
             If yes: go. It&rsquo;s a legitimate life. The path is well-documented and the community is strong.{" "}
@@ -249,7 +270,7 @@ export default function TheMap() {
               return (
                 <div key={path.id} className="border border-slate-800 rounded-xl overflow-hidden">
                   <div className="p-5 bg-slate-900/40">
-                    <div className="flex items-start justify-between gap-4 mb-1">
+                    <div className="flex items-start justify-between gap-4 mb-2">
                       <Link
                         href={`/the-map/${slug}`}
                         className="font-bold text-slate-100 hover:text-blue-400 transition-colors"
@@ -260,8 +281,8 @@ export default function TheMap() {
                         {path.tag}
                       </span>
                     </div>
-                    <p className="text-xs text-slate-500 mb-4">
-                      <span className="text-slate-400 font-medium">Comp range:</span> {path.comp}
+                    <p className="text-sm text-slate-300 leading-relaxed mb-4">
+                      {path.shape}
                     </p>
 
                     <div className="grid sm:grid-cols-2 gap-4">
@@ -288,6 +309,10 @@ export default function TheMap() {
                         </ul>
                       </div>
                     </div>
+
+                    <p className="mt-4 pt-4 border-t border-slate-800 text-xs text-slate-500">
+                      <span className="text-slate-400 font-medium">Comp range:</span> {path.comp}
+                    </p>
                   </div>
                   <div className="px-5 py-3 border-t border-slate-800 bg-slate-950/40 flex items-center justify-between gap-4">
                     <p className="text-xs text-slate-500 leading-relaxed italic">{path.honest}</p>
@@ -334,29 +359,39 @@ export default function TheMap() {
           <div className="space-y-3">
             {[
               {
-                step: "Pick two paths that pull at you.",
+                num: "0",
+                step: "Before you pick.",
                 detail:
-                  "Not the one you think you should pick. The ones that actually interest you. Write them down.",
+                  "If you are open to it, this is a decision worth praying about, fasting on, or talking through with a pastor or wise older friend before it becomes a list of preferences. The transition industry will treat it as a market problem. It is not only a market problem. Do not let urgency rush you past the deeper question.",
               },
               {
+                num: "1",
+                step: "Pick two paths that pull at you — and one that scares you.",
+                detail:
+                  "The two that pull are obvious. The third — the path that scares you because it would cost something visible — is the one worth examining. Sometimes the scary one is wrong. Sometimes it is the call.",
+              },
+              {
+                num: "2",
                 step: "Find three people who did each one.",
                 detail:
                   "Via LinkedIn, USAFA network, AOG. Not to ask for a job — to understand the actual lived experience from someone 3 years in.",
               },
               {
+                num: "3",
                 step: "Do the comp math.",
                 detail:
                   "Use the Comp Translator to figure out what your current total comp is. Then compare it to the ranges above. The gap is real but may be smaller than you think.",
               },
               {
+                num: "4",
                 step: "Decide on geography before you decide on role.",
                 detail:
                   "Where do you want to live? That filters a lot. Then figure out what opportunities exist in that market.",
               },
-            ].map((item, i) => (
+            ].map((item) => (
               <div key={item.step} className="flex gap-4">
                 <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-600/20 text-blue-400 text-xs font-mono flex items-center justify-center mt-0.5">
-                  {i + 1}
+                  {item.num}
                 </span>
                 <div>
                   <p className="font-medium text-slate-200 text-sm">{item.step}</p>
