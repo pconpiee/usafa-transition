@@ -314,20 +314,6 @@ export default function TheReckoning() {
               Stage 03: The Map
             </Link>
           </div>
-          <p className="mt-8 text-sm text-slate-500 leading-relaxed">
-            If this stage is the part of the work you most need to keep going on
-            &mdash; the question of who you are when the markers move &mdash;
-            there is a longer treatment of it here:{" "}
-            <a
-              href="https://hidden-nine-beta.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400 hover:text-blue-300 underline underline-offset-2"
-            >
-              Hidden
-            </a>
-            .
-          </p>
         </section>
 
       </div>
