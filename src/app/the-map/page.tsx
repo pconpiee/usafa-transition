@@ -221,25 +221,23 @@ export default function TheMap() {
 
         {/* On this page: jump links */}
         <div className="max-w-3xl mx-auto px-4 sm:px-6 pb-5">
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="text-xs text-slate-600 font-medium">On this page:</span>
-            {[
-              { id: "awareness", label: "What most pilots don't know" },
-              { id: "decision-map", label: "Decision map" },
-              { id: "the-paths", label: "All 7 paths" },
-              { id: "how-hiring-works", label: "How hiring works" },
-              { id: "geography", label: "Geography" },
-              { id: "what-to-do", label: "Action steps" },
-            ].map((l) => (
-              <a
-                key={l.id}
-                href={`#${l.id}`}
-                className="text-xs text-slate-500 hover:text-blue-400 transition-colors px-2 py-0.5 rounded bg-slate-900/60 border border-slate-800 hover:border-blue-800"
-              >
-                {l.label}
-              </a>
-            ))}
-          </div>
+          <nav className="p-4 rounded-lg border border-slate-800 bg-slate-900/40">
+            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">On this page</p>
+            <div className="flex flex-wrap gap-x-4 gap-y-1">
+              {[
+                ["#awareness", "What most pilots don't know"],
+                ["#decision-map", "Decision map"],
+                ["#the-paths", "All 7 paths"],
+                ["#how-hiring-works", "How hiring works"],
+                ["#geography", "Geography"],
+                ["#what-to-do", "Action steps"],
+              ].map(([href, label]) => (
+                <a key={href} href={href} className="text-sm text-blue-400 hover:text-blue-300 transition-colors">
+                  {label}
+                </a>
+              ))}
+            </div>
+          </nav>
         </div>
       </section>
 

@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Comp Reference | Blue Canopy",
+  title: "Pay Reference | Blue Canopy",
   description:
     "Side-by-side compensation data for all seven post-military career paths. Year 1, Year 5, Year 10+, ceilings, equity, and the thing to watch for each one.",
 };
@@ -124,7 +124,7 @@ export default function CompReference() {
             Reference Tool
           </p>
           <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
-            Comp Reference
+            Pay Reference
           </h1>
           <p className="mt-4 text-slate-400 leading-relaxed max-w-2xl">
             Side-by-side compensation data for all seven paths. Year 1, Year 5, Year 10+. Ceilings,

@@ -20,7 +20,8 @@ export default function AboutPage() {
             Who built this and why
           </h1>
           <p className="mt-4 text-slate-400 leading-relaxed">
-            The short version: a USAFA grad who flew, got out, figured it out the hard way, and built the resource he wished had existed.
+            J. Patrick Connolly. USAFA &lsquo;16. Space Ops. Separated 2021.
+            The path since then has been anything but straight &mdash; which is exactly the point.
           </p>
         </div>
       </section>
@@ -29,47 +30,79 @@ export default function AboutPage() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 space-y-14">
 
         <section>
-          <h2 className="text-xl font-bold text-slate-100 mb-4">The transition, briefly</h2>
+          <h2 className="text-xl font-bold text-slate-100 mb-4">The actual story</h2>
           <div className="space-y-4 text-slate-400 leading-relaxed">
             <p>
-              I graduated from USAFA. I flew. I separated in 2021 &mdash; the transition was harder than
-              expected, and not in the ways the briefings warned about.
+              I didn&rsquo;t fly. I was a Space Operations Officer &mdash; five years operating the
+              $17.5B US Space Surveillance Network at the Combined Space Operations Center, tracking
+              threats to on-orbit assets, and helping write the Space Force&rsquo;s Space Domain
+              Awareness Concept of Operations during the Air Force-to-Space Force transition.
             </p>
             <p>
-              What followed was three years coaching grad students and civilians navigating similar crossroads
-              in the tech space. Somewhere in there the question became: what if I took all of it &mdash;
-              the frameworks, the network, the hard-won gouge &mdash; and brought it back to the long blue line?
+              I separated in 2021. The plan was nonprofit work &mdash; I went to Ethiopia with my wife
+              to help run a mission there. A civil war had other ideas, and we were evacuated.
+              Back in the US, I started a business with my brother-in-law. Then a French satellite
+              software startup called Leanspace took a chance on me &mdash; partly because USAFA
+              taught me Raptor, and they needed someone who could actually code.
             </p>
             <p>
-              This site is the answer. Not advice from someone watching from the sidelines. From someone who
-              has been on the other side of the jump and spent years helping others find their footing on a
-              different kind of terrain.
+              I spent three years at Leanspace: Product Manager, Solutions Architect, then US Business
+              Development. I opened the American office, ran the capture that got us into the final
+              three of a Space Force contract (the only non-US vendor shortlisted), and helped
+              co-author ~&euro;14.5M in grants to CNES, ESA, and France 2030. The Series A closed.
+              I was based in Strasbourg the whole time.
             </p>
             <p>
-              It&rsquo;s what I would hand my past self the week I decided to separate.
+              Now I&rsquo;m Director of New Space Initiatives at the International Space University &mdash;
+              strategy and partnerships across space agencies, governments, and the commercial sector.
+              I&rsquo;m also in the inaugural cohort of the Coller Deep-Tech MBA at Tel Aviv University.
             </p>
           </div>
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-slate-100 mb-4">Why free, no login, no paywall</h2>
+          <h2 className="text-xl font-bold text-slate-100 mb-4">Why this site exists</h2>
           <div className="space-y-4 text-slate-400 leading-relaxed">
             <p>
-              There are good people building transition coaching businesses. That&rsquo;s not this.
-              A coaching business requires converting skeptics, managing relationships at scale,
-              and structuring content to create demand for more content. Those incentives are not
-              always aligned with getting you to the right answer as fast as possible.
+              Along the way I kept finding the same thing: the most boring-sounding skills were
+              the most transferable. Writing performance bullets for Airmen turned out to be the
+              same skill that helps junior salespeople win awards and senior developers get promoted.
+              The ability to brief a threat environment is the same as the ability to run a board
+              update. Identity, translated.
             </p>
             <p>
-              This site has one goal: give every USAFA grad who finds it a genuinely better map than
-              they had before. That&rsquo;s it. If it helps you, tell someone else. If something&rsquo;s
-              wrong or missing, use the feedback button at the bottom of the screen.
+              I also noticed that most people &mdash; not just veterans &mdash; don&rsquo;t know
+              what they want to be when they grow up. They follow the path of the people around them,
+              or chase something they decided at 16 and never actually investigated. I went into
+              the Air Force wanting to become a missionary. What I was actually chasing was
+              adventure, and a deep need to invest in people wherever they are and whatever they believe.
+              The missionary part was a form, not the function.
             </p>
             <p>
-              The USAFA community is small enough that I&rsquo;d hear about it if this were useful,
-              and small enough that I&rsquo;d hear about it louder if it weren&rsquo;t.
+              Blue Canopy exists because the USAFA community deserves a guide built specifically for
+              them &mdash; not a repurposed Army TAP deck, not generic career advice. Something that
+              knows what it means to leave a world where your identity, your peer group, your
+              vocabulary, and your sense of a good day were all defined by the same institution.
+            </p>
+            <p>
+              This is the map I wish someone had handed me at the gate.
             </p>
           </div>
+        </section>
+
+        {/* The hill */}
+        <section className="border-l-4 border-blue-500 pl-5">
+          <p className="text-slate-300 leading-relaxed italic">
+            &ldquo;There are lots of wars to fight. Lots of hills to die on. Choose wisely.&rdquo;
+          </p>
+          <p className="mt-3 text-slate-400 leading-relaxed italic">
+            A mentor told me once: &ldquo;Let love be the hill you die on.&rdquo;
+          </p>
+          <p className="mt-4 text-slate-400 leading-relaxed">
+            That filter has shaped every yes since. It took me to Ethiopia during a civil war,
+            to France to help a satellite startup, and now to this site.
+            It will keep shaping what I say yes to.
+          </p>
         </section>
 
         <section>
@@ -77,20 +110,20 @@ export default function AboutPage() {
           <div className="space-y-3">
             {[
               {
-                label: "Practitioner-built, not aggregated.",
-                desc: "Every framework here has been tested personally or tested in close proximity. The Bridges model, the negotiation frameworks, the networking research — all of it has been run through the filter of actual pilot-to-civilian transitions, not just read about.",
+                label: "Built from inside the problem.",
+                desc: "Not a consulting product built from research. Every framework here has been tested personally — the identity work, the networking grind, the negotiation, the first-90-days navigation. I have made most of the mistakes this site warns about.",
               },
               {
                 label: "USAFA-specific, not veteran-generic.",
-                desc: "The TAP program is built for E-5s separating from the Army. It is not built for USAFA pilots going into corporate America. The identity dynamics, the compensation gaps, the network structure, and the cultural translation challenges are different. This site addresses those specifically.",
+                desc: "The TAP program is built for E-5s separating from the Army. It is not built for Academy grads going into corporate America, defense-tech, or European startups. The identity dynamics, the compensation gaps, the network structure, and the cultural translation challenges are specific. This site addresses those specifically.",
               },
               {
-                label: "Honest about the hard parts.",
-                desc: "The airline trap section exists because most transition resources won't tell you that choosing the airlines because you don't know what else to do is deferred decision-making, not a career plan. Every stage has a 'where people stall here' note because the stall points are usually more useful than the roadmap.",
+                label: "Honest about what I don't know.",
+                desc: "I'm a space ops officer, not a pilot. I don't know the airlines path from the inside — the content there comes from the people who do. Where I have direct experience I say so. Where I'm synthesizing from other people's paths I say that too.",
               },
               {
                 label: "No conversion goal.",
-                desc: "There's nothing to buy. The Comp Translator, the 12 stages, the Bold Face drills — all of it is free and ungated. The one thing the site asks for is a conversation, and only if you want it.",
+                desc: "There's nothing to buy. The Comp Translator, the 12 stages, the Bold Face drills — all of it is free and ungated. The only thing the site asks for is a conversation, and only if you want it.",
               },
             ].map((item) => (
               <div key={item.label} className="p-4 rounded-lg border border-slate-800 bg-slate-900/30">
@@ -105,7 +138,7 @@ export default function AboutPage() {
           <h2 className="text-xl font-bold text-slate-100 mb-2">The conversation you can have</h2>
           <p className="text-slate-400 leading-relaxed mb-4">
             At the bottom of Stage 01, there&rsquo;s a one-line form: name, email, and your rough
-            separation date. If you fill it out, you&rsquo;ll get a personal reply — not an autoresponder.
+            separation date. If you fill it out, you&rsquo;ll get a personal reply &mdash; not an autoresponder.
             An offer to schedule 30 minutes. No script. No agenda. Just a conversation with someone
             who&rsquo;s been on the other side.
           </p>
@@ -124,10 +157,6 @@ export default function AboutPage() {
         </section>
 
         <section className="border-t border-slate-800 pt-10 text-center">
-          <p className="text-slate-500 text-sm italic mb-2">
-            &ldquo;There are good ships and wood ships, and ships that sail the seas.<br />
-            But the best ships are friendships, and may they always be.&rdquo;
-          </p>
           <p className="text-slate-400 text-sm font-medium tracking-wide">Blue Skies &mdash; 487</p>
         </section>
 

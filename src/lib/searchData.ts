@@ -29,7 +29,7 @@ export const searchData: SearchItem[] = [
   { type: 'path', title: 'Entrepreneurship', description: 'Startups, acquisition entrepreneurship, franchise.', href: '/the-map/entrepreneurship', keywords: 'entrepreneurship startup founder franchise acquisition SBA' },
   { type: 'path', title: 'Non-Traditional Paths', description: 'Education, nonprofit, coaching, ministry.', href: '/the-map/nontraditional', keywords: 'education nonprofit coaching ministry nontraditional alternative' },
   // Tools
-  { type: 'tool', title: 'Comp Reference', description: 'Side-by-side compensation across all 7 paths.', href: '/comp', keywords: 'compensation salary comp reference table paths compare' },
+  { type: 'tool', title: 'Pay Reference', description: 'Side-by-side compensation across all 7 paths.', href: '/comp', keywords: 'compensation salary pay reference table paths compare' },
   { type: 'tool', title: 'Comp Translator', description: 'Convert military pay to civilian total comp equivalent.', href: '/comp-translator', keywords: 'compensation translator military pay BAH BAS civilian equivalent' },
   { type: 'tool', title: 'Timeline Tool', description: 'Month-by-month transition calendar.', href: '/timeline', keywords: 'timeline calendar months separation plan schedule' },
   { type: 'tool', title: 'Bold Face Drills', description: 'Practice your answer to "tell me about yourself" and other must-answer questions.', href: '/bold-face', keywords: 'bold face drills practice interview tell me about yourself elevator pitch' },

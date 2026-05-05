@@ -21,7 +21,7 @@ const stages = [
 ];
 
 const tools = [
-  { href: "/comp", label: "Comp", sigil: "$" },
+  { href: "/comp", label: "Pay Reference", sigil: "$" },
   { href: "/comp-translator", label: "Comp Translator", sigil: "⇄" },
   { href: "/timeline", label: "Timeline", sigil: "◷" },
   { href: "/bold-face", label: "Bold Face", sigil: "✓" },
