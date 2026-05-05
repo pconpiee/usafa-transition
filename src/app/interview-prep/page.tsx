@@ -361,7 +361,7 @@ export default function InterviewPrepPage() {
         <p className="text-xs text-amber-600 uppercase tracking-wide mb-1">Where people stall here</p>
         <p className="text-sm text-slate-400 leading-relaxed">
           Over-preparing for predicted questions, under-preparing the story bank. You can&rsquo;t control what they ask.
-          You can control how cold you know your own material.
+          You can control how well you know your own material.
         </p>
       </div>
 
