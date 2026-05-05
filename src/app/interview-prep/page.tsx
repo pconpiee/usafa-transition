@@ -360,8 +360,8 @@ export default function InterviewPrepPage() {
       <div className="mt-8 border-l-2 border-amber-700/50 pl-5 py-1">
         <p className="text-xs text-amber-600 uppercase tracking-wide mb-1">Where people stall here</p>
         <p className="text-sm text-slate-400 leading-relaxed">
-          Over-preparing the story, under-preparing the question. You can&rsquo;t predict what
-          they&rsquo;ll ask. You can control how well you know your own material.
+          Over-preparing for predicted questions, under-preparing the story bank. You can&rsquo;t control what they ask.
+          You can control how cold you know your own material.
         </p>
       </div>
 

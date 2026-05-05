@@ -32,24 +32,21 @@ export default function AboutPage() {
           <h2 className="text-xl font-bold text-slate-100 mb-4">The transition, briefly</h2>
           <div className="space-y-4 text-slate-400 leading-relaxed">
             <p>
-              I graduated from USAFA. I flew. I got out — partly by choice, partly not entirely on my own
-              timeline. The transition was harder than I expected and not in the ways the official resources
-              warned me about.
+              I graduated from USAFA. I flew. I separated in 2021 &mdash; the transition was harder than
+              expected, and not in the ways the briefings warned about.
             </p>
             <p>
-              The hard part wasn&rsquo;t the resume. It wasn&rsquo;t the interviews. It was the six-month
-              stretch where I didn&rsquo;t know who I was when I wasn&rsquo;t a pilot, and I didn&rsquo;t
-              know anyone who&rsquo;d been where I was going. The people who had already made the jump were
-              busy. The official programs were designed for a different kind of transition. The online
-              resources were either obvious or wrong.
+              What followed was three years coaching grad students and civilians navigating similar crossroads
+              in the tech space. Somewhere in there the question became: what if I took all of it &mdash;
+              the frameworks, the network, the hard-won gouge &mdash; and brought it back to the long blue line?
             </p>
             <p>
-              The civilian career that followed has spanned four industries and three countries. I&rsquo;ve
-              hired people, been hired, been turned down, negotiated well, negotiated badly, built things,
-              and watched smart people fail transitions that should have gone fine.
+              This site is the answer. Not advice from someone watching from the sidelines. From someone who
+              has been on the other side of the jump and spent years helping others find their footing on a
+              different kind of terrain.
             </p>
             <p>
-              What I know now is the raw material for this site.
+              It&rsquo;s what I would hand my past self the week I decided to separate.
             </p>
           </div>
         </section>

@@ -27,35 +27,31 @@ export default function TheChainPage() {
         </h2>
         <div className="space-y-4 text-slate-400 text-sm leading-relaxed">
           <p>
-            In AM-490 &mdash; the USAFA Airmanship course where cadets learned
-            to jump &mdash; the priority was never the jump itself. Teaching
-            was the mission. Jumping was second. The WOB coaches and instructors
-            who ran the program understood that their job was to produce the
-            next generation of canopy commanders, not to log their own exits.
+            At USAFA, the upperclassmen who made the biggest difference weren&rsquo;t the ones
+            with the most impressive records. They were the ones who turned around. Who remembered
+            what it felt like not to know, and showed up for the people who came after them.
+            The institution ran on that chain. It still does.
           </p>
           <p>
-            The same principle applies to the transition community. The mission
-            isn&rsquo;t your career milestone. It&rsquo;s producing the next
-            wave of people who can land well.
+            The same principle applies here. The mission isn&rsquo;t your career milestone.
+            It&rsquo;s producing the next wave of people who can land well.
           </p>
           <p>
-            And right now &mdash; in the months right after separation, when
-            identity is in flux, financial pressure is real, and the professional
-            network is still forming &mdash; what people need most isn&rsquo;t
-            always a LinkedIn introduction. It&rsquo;s a check-in from someone
-            who has been in that exact place and can say honestly: this is what
-            it was like, this is what helped, you&rsquo;re not behind.
+            And right now &mdash; in the months right after separation, when identity is in flux,
+            financial pressure is real, and the professional network is still forming &mdash; what
+            people need most isn&rsquo;t always a LinkedIn introduction. It&rsquo;s a check-in
+            from someone who has been in that exact place and can say honestly: this is what it
+            was like, this is what helped, you&rsquo;re not behind.
           </p>
           <p>
-            That kind of presence &mdash; low-ask, high-trust, just showing up
-            &mdash; is the thing no org, no resource, and no website can
-            replicate. Only people who&rsquo;ve been through it can provide it.
+            That kind of presence &mdash; low-ask, high-trust, just showing up &mdash; is the
+            thing no org, no resource, and no website can replicate. Only people who&rsquo;ve
+            been through it can provide it.
           </p>
           <p>
-            The problem is that most people who transition successfully
-            disappear into their civilian lives and never turn around. Not out of
-            malice &mdash; out of busyness, distance, and the assumption that
-            someone else is handling it.
+            The problem is that most people who transition successfully disappear into their
+            civilian lives and never turn around. Not out of malice &mdash; out of busyness,
+            distance, and the assumption that someone else is handling it.
           </p>
           <p>
             No one else is handling it.

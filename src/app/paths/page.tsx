@@ -141,6 +141,12 @@ export default function PathsPage() {
             fits your actual life — not the most prestigious, not the most familiar, not the one
             your squadron mates took.
           </p>
+          <p className="mt-3 text-sm text-slate-500 border-l-2 border-slate-700 pl-4">
+            <span className="text-slate-400">Once you have a direction:</span> Stage 03 &mdash;{" "}
+            <a href="/the-map" className="text-blue-400 hover:text-blue-300">The Map</a> &mdash; goes
+            deeper on six civilian paths with real comp ranges, pros/cons, and honest trade-offs.
+            This page helps you pick a direction. That page helps you understand what it actually looks like.
+          </p>
         </div>
       </section>
 

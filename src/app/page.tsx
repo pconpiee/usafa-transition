@@ -143,8 +143,8 @@ export default function Home() {
             </p>
           </div>
           <p className="mt-4 text-sm text-slate-400">
-            Built by a USAFA grad whose civilian career has spanned four
-            industries and three countries.
+            Separated 2021. Built after three years coaching grad students and tech professionals.
+            This is the good gouge I wish someone had handed me at the gate.
           </p>
         </div>
       </section>
@@ -213,8 +213,8 @@ export default function Home() {
               <p>The Comp Translator, Timeline, and Bold Face drills aren&rsquo;t stages &mdash; they&rsquo;re tools you&rsquo;ll reach for at specific moments. They&rsquo;re in the nav.</p>
             </div>
             <div>
-              <p className="font-medium text-slate-300 mb-1">Built from 15 years on the other side.</p>
-              <p>Basic resume tips you can zero-prompt. This is the nuanced stuff &mdash; the connected dots, the pilot-specific translations, the things you only understand after you&rsquo;ve done it in four industries and three countries.</p>
+              <p className="font-medium text-slate-300 mb-1">Built for the person I was in 2021.</p>
+              <p>Separated that year. Spent three years coaching grad students and tech professionals through transitions I&rsquo;d already made. Now bringing it back to the long blue line &mdash; the gouge, the honest map, the things I wish someone had handed me at the gate.</p>
             </div>
           </div>
         </div>

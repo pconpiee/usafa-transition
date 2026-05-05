@@ -170,6 +170,12 @@ export default function TheMap() {
             who walked it. Six paths with real comp ranges, the airline
             fork, and how hiring actually works. No cheerleading.
           </p>
+          <p className="mt-3 text-sm text-slate-500 border-l-2 border-slate-700 pl-4">
+            Not sure which direction you&rsquo;re pointed?{" "}
+            <a href="/paths" className="text-blue-400 hover:text-blue-300">The Paths page</a>{" "}
+            is the decision tool &mdash; five broad directions with a comparison matrix and honest
+            trade-offs. Start there, then come back here for the deep dive.
+          </p>
         </div>
       </section>
 

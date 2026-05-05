@@ -44,7 +44,7 @@ export default function TheLongGamePage() {
               year: "Year 3",
               title: "Expand your scope, assess your trajectory",
               focus: "You now have enough domain knowledge and org credibility to start taking on more complex problems. Ask for harder assignments. Be visible on cross-functional work. Start developing your people if you have them.",
-              watch: "Compensation compresses at the employer who hired you. Know the market rate for your role. Asking for it isn't greed — it's hygiene.",
+              watch: "Salary growth compresses over time when you stay at the same employer — the market moves faster than internal raise cycles. Know your number. Asking for it isn't greed — it's hygiene.",
               metric: "Does your title and comp reflect your actual scope and contribution?",
             },
             {
