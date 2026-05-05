@@ -180,6 +180,12 @@ export default function Home() {
                 href: "/paths",
                 tag: "Paths",
               },
+              {
+                label: "I'm already out and working — but reassessing",
+                sub: "Skip to The Long Game. The question now isn't placement — it's trajectory.",
+                href: "/the-long-game",
+                tag: "Stage 11",
+              },
             ].map((item) => (
               <Link
                 key={item.label}

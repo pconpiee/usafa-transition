@@ -257,6 +257,125 @@ export default function TheMap() {
           </p>
         </section>
 
+        {/* Path fork diagram */}
+        <section>
+          <h2 className="text-xl font-bold text-slate-100 mb-4">The decision map</h2>
+          <div className="border border-slate-800 rounded-xl bg-slate-900/30 p-6">
+            {/* Root */}
+            <div className="flex justify-center mb-3">
+              <span className="px-3 py-1.5 rounded-md border border-slate-600 bg-slate-900 text-xs font-mono text-slate-300 tracking-widest uppercase">
+                Separation
+              </span>
+            </div>
+            {/* Stem */}
+            <div className="flex justify-center mb-3">
+              <div className="w-px h-5 bg-slate-700" />
+            </div>
+            {/* Fork question */}
+            <div className="flex justify-center mb-3">
+              <span className="px-3 py-1.5 rounded-md border border-amber-800/40 bg-amber-950/20 text-xs text-amber-400 text-center">
+                Do you want to fly commercially?
+              </span>
+            </div>
+            {/* H-bar */}
+            <div className="flex justify-center mb-0">
+              <div className="flex w-3/4">
+                <div className="flex-1 h-5 border-t border-r border-slate-700" />
+                <div className="flex-1 h-5 border-t border-l border-slate-700" />
+              </div>
+            </div>
+            {/* Two branches */}
+            <div className="grid grid-cols-2 gap-4 mt-0">
+              {/* Left: Yes */}
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-xs text-slate-600 font-mono">YES</span>
+                <div className="w-full p-3 rounded-lg border border-green-800/50 bg-green-950/20 text-center">
+                  <p className="text-green-400 font-semibold text-xs uppercase tracking-wide">
+                    Commercial Airlines
+                  </p>
+                  <p className="text-slate-600 text-xs mt-1">Known quantity · transparent seniority</p>
+                  <p className="text-slate-700 text-xs mt-0.5 font-mono">$80K → $400K+ (15yr)</p>
+                </div>
+                <Link
+                  href="/the-map/airlines"
+                  className="text-xs text-slate-600 hover:text-green-400 transition-colors"
+                >
+                  Airlines deep dive →
+                </Link>
+              </div>
+              {/* Right: No / Unsure */}
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-xs text-slate-600 font-mono">NO / NOT SURE</span>
+                <div className="w-full space-y-1.5">
+                  {[
+                    {
+                      label: "Defense & Aerospace",
+                      sub: "Easiest translation",
+                      border: "border-blue-800/40",
+                      bg: "bg-blue-950/10",
+                      text: "text-blue-400",
+                      href: "/the-map/defense",
+                    },
+                    {
+                      label: "Tech & Business",
+                      sub: "Highest upside",
+                      border: "border-purple-800/40",
+                      bg: "bg-purple-950/10",
+                      text: "text-purple-400",
+                      href: "/the-map/tech-business",
+                    },
+                    {
+                      label: "Government",
+                      sub: "Stability, capped comp",
+                      border: "border-slate-700",
+                      bg: "bg-slate-900/40",
+                      text: "text-slate-400",
+                      href: "/the-map/government",
+                    },
+                    {
+                      label: "Entrepreneurship",
+                      sub: "High risk, uncapped",
+                      border: "border-orange-800/40",
+                      bg: "bg-orange-950/10",
+                      text: "text-orange-400",
+                      href: "/the-map/entrepreneurship",
+                    },
+                    {
+                      label: "Non-Traditional",
+                      sub: "Worth naming",
+                      border: "border-teal-800/40",
+                      bg: "bg-teal-950/10",
+                      text: "text-teal-400",
+                      href: "/the-map/nontraditional",
+                    },
+                  ].map((p) => (
+                    <Link
+                      key={p.label}
+                      href={p.href}
+                      className={`flex items-center justify-between px-3 py-2 rounded-lg border ${p.border} ${p.bg} hover:opacity-80 transition-opacity`}
+                    >
+                      <div>
+                        <p className={`text-xs font-medium ${p.text}`}>{p.label}</p>
+                        <p className="text-slate-600 text-xs">{p.sub}</p>
+                      </div>
+                      <span className="text-slate-700 text-xs">→</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+            {/* Comp reference link */}
+            <div className="mt-5 pt-4 border-t border-slate-800 text-center">
+              <Link
+                href="/comp"
+                className="text-xs text-slate-500 hover:text-blue-400 transition-colors"
+              >
+                Compare all six paths by comp, equity &amp; trajectory →
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* The 6 paths */}
         <section>
           <h2 className="text-xl font-bold text-slate-100 mb-2">The six paths</h2>

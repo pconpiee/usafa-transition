@@ -2,18 +2,30 @@
 
 import { useState } from "react";
 
+const pathOptions = [
+  "Not sure yet",
+  "Commercial Airlines",
+  "Defense & Aerospace",
+  "Tech & Business",
+  "Government & Civil Service",
+  "Entrepreneurship / Startup",
+  "Non-Traditional (education, nonprofit, ministry)",
+  "MBA / grad school first",
+];
+
 export default function ImInForm() {
   const [submitted, setSubmitted] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [sepDate, setSepDate] = useState("");
+  const [path, setPath] = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     await fetch(process.env.NEXT_PUBLIC_FORMSPREE_IIM_URL ?? "", {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ name, email, separationDate: sepDate }),
+      body: JSON.stringify({ name, email, separationDate: sepDate, path }),
     });
     setSubmitted(true);
   }
@@ -62,6 +74,16 @@ export default function ImInForm() {
               onChange={(e) => setSepDate(e.target.value)}
               className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-300 placeholder-slate-600 focus:outline-none focus:border-blue-500"
             />
+            <select
+              value={path}
+              onChange={(e) => setPath(e.target.value)}
+              className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-300 focus:outline-none focus:border-blue-500"
+            >
+              <option value="" disabled>Which path are you most drawn to?</option>
+              {pathOptions.map((o) => (
+                <option key={o} value={o}>{o}</option>
+              ))}
+            </select>
             <button
               type="submit"
               className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-colors"
