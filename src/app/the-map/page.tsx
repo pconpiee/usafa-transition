@@ -1,39 +1,40 @@
 import Link from "next/link";
+import PathTabs from "@/components/PathTabs";
 
 export const metadata = {
   title: "Stage 03: The Map | Blue Canopy",
   description:
-    "The civilian career ecosystem explained honestly. Six paths, real comp ranges, the airline fork, and how hiring actually works.",
+    "The civilian career ecosystem mapped honestly. Seven paths, real comp ranges, the aviation fork, and how hiring actually works.",
 };
 
 const paths = [
   {
     id: "airlines",
-    label: "Commercial Airlines",
-    tag: "Known quantity",
+    label: "Aviation Paths",
+    tag: "Multiple flavors",
     tagColor: "text-green-400",
-    shape: "A life organized around flying, with a transparent seniority system and a familiar community.",
-    comp: "$80K–$100K (regional FO) → $200K–$400K+ (major captain, 10–15 yr)",
+    shape: "Commercial airlines, cargo, fractional/charter, and corporate flight depts. If you want to keep flying in some form — know all four options before you commit to one.",
+    comp: "$80K–$130K (regional/cargo entry) → $200K–$500K+ (major captain / senior NetJets)",
     pros: [
-      "Seniority system is transparent — you know exactly where you stand",
-      "If you want to fly, you're doing it",
-      "Community is familiar — the culture translates",
-      "Pension + retirement trajectory at majors is genuinely excellent",
-      "Schedule predictability improves with seniority",
+      "Transparent seniority at majors — you know exactly where you stand",
+      "Cargo (FedEx/UPS) pays comparably to majors with better schedule",
+      "Fractional (NetJets/Flexjet) can match major pay without a seniority system",
+      "Corporate flight depts offer near 9-to-5 schedules and real stability",
+      "The community is familiar — culture, language, and mission overlap",
     ],
     cons: [
+      "Major airline seniority is non-transferable — the first airline is the only airline",
       "First 2–5 years at regionals are financially tough — plan for it",
-      "Seniority is everything, which means geographic inflexibility for years",
-      "Identity still wrapped around the jet — you're still 'the pilot'",
-      "Limited transferability if you decide you want something different at 45",
-      "Furlough risk is real (see 2020) — the seniority floor drops hard",
+      "Identity still wrapped around the jet — useful to examine before you commit",
+      "Fractional and corporate roles are relationship-hiring — harder to access",
+      "Furlough risk at majors is real (see 2020) — don't assume uninterrupted timelines",
     ],
     honest:
-      "If you genuinely want to fly commercially, do it. The biggest trap isn't going to the airlines — it's going because you don't know what else to do. One is a career. The other is deferred decision-making.",
+      "If you want to keep flying, the decision is which flavor — not just airlines vs. everything else. Cargo and fractional are legitimate competing paths that most pilots never seriously consider.",
   },
   {
     id: "defense",
-    label: "Defense & Aerospace Industry",
+    label: "Defense & Aerospace",
     tag: "Easiest translation",
     tagColor: "text-blue-400",
     shape: "A life adjacent to the mission you came from, with credentials that translate immediately and a culture that doesn't require translation.",
@@ -182,7 +183,7 @@ export default function TheMap() {
       {/* Header */}
       <section className="relative overflow-hidden border-b border-slate-800">
         <div className="absolute inset-0 bg-gradient-to-b from-blue-600/5 via-transparent to-transparent" />
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 pt-16 pb-12 relative">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 pt-16 pb-10 relative">
           <p className="text-blue-400 text-xs font-medium tracking-widest uppercase mb-3">
             Stage 03 of 12 &mdash; The Pipeline
           </p>
@@ -190,23 +191,45 @@ export default function TheMap() {
             The Map
           </h1>
           <p className="mt-4 text-slate-400 leading-relaxed">
-            The civilian career ecosystem, mapped honestly by someone
-            who walked it. Six paths with real comp ranges, the airline
-            fork, and how hiring actually works. No cheerleading.
+            The civilian career ecosystem, mapped honestly. Seven paths, real comp ranges, the
+            full aviation fork, and how hiring actually works. No cheerleading.
           </p>
           <p className="mt-3 text-sm text-slate-500 border-l-2 border-slate-700 pl-4">
             Not sure which direction you&rsquo;re pointed?{" "}
-            <a href="/paths" className="text-blue-400 hover:text-blue-300">The Paths page</a>{" "}
-            is the decision tool &mdash; five broad directions with a comparison matrix and honest
-            trade-offs. Start there, then come back here for the deep dive.
+            <Link href="/paths" className="text-blue-400 hover:text-blue-300">The Paths page</Link>{" "}
+            is the decision tool &mdash; five broad directions with a comparison matrix. Start there,
+            then come back here for the deep dive.
           </p>
+        </div>
+
+        {/* On this page: jump links */}
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 pb-5">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-xs text-slate-600 font-medium">On this page:</span>
+            {[
+              { id: "awareness", label: "What most pilots don't know" },
+              { id: "decision-map", label: "Decision map" },
+              { id: "the-paths", label: "All 7 paths" },
+              { id: "how-hiring-works", label: "How hiring works" },
+              { id: "geography", label: "Geography" },
+              { id: "what-to-do", label: "Action steps" },
+            ].map((l) => (
+              <a
+                key={l.id}
+                href={`#${l.id}`}
+                className="text-xs text-slate-500 hover:text-blue-400 transition-colors px-2 py-0.5 rounded bg-slate-900/60 border border-slate-800 hover:border-blue-800"
+              >
+                {l.label}
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 space-y-16">
 
         {/* Choosing vs. discerning */}
-        <section>
+        <section id="discerning">
           <h2 className="text-xl font-bold text-slate-100 mb-4">Before any of this: choosing vs. discerning</h2>
           <p className="text-slate-400 leading-relaxed">
             Before any of this matters, a question worth sitting with: are you choosing a path or are
@@ -217,15 +240,235 @@ export default function TheMap() {
           </p>
         </section>
 
+        {/* AWARENESS LAYER */}
+        <section id="awareness">
+          <div className="rounded-xl border border-amber-800/30 bg-amber-950/10 p-6 sm:p-8">
+            <p className="text-xs uppercase tracking-widest text-amber-400 font-semibold mb-1">
+              Before you answer any preference questions
+            </p>
+            <h2 className="text-xl font-bold text-slate-100 mb-2">
+              What most pilots never hear about
+            </h2>
+            <p className="text-sm text-slate-400 leading-relaxed mb-6">
+              Most rated pilots hear &ldquo;airlines&rdquo; and that&rsquo;s it &mdash; the default, the thing everyone talks
+              about. But you can&rsquo;t make an informed preference until you know what exists.
+              These five options are real, competitive, and consistently unknown to pilots first entering
+              the transition process.
+            </p>
+
+            <div className="grid sm:grid-cols-2 gap-3">
+              {[
+                {
+                  name: "Cargo Flying",
+                  where: "FedEx · UPS · Amazon Air · Atlas · Kalitta",
+                  comp: "≈Major airline pay",
+                  insight: "No passengers. Historically better QoL. FedEx and UPS pilots retire extremely well. Most pilots assume it's a fallback — it's a competing path.",
+                  color: "border-yellow-800/40 bg-yellow-950/10",
+                  nameColor: "text-yellow-400",
+                  href: "/the-map/airlines#cargo",
+                },
+                {
+                  name: "Fractional / Charter",
+                  where: "NetJets · Flexjet · Wheels Up · Clay Lacy",
+                  comp: "$120K–$350K+ (captain)",
+                  insight: "No seniority system. Relationship-based hiring. Can match or beat major airline pay. You're not waiting a decade to hold a line.",
+                  color: "border-sky-800/40 bg-sky-950/10",
+                  nameColor: "text-sky-400",
+                  href: "/the-map/airlines#fractional",
+                },
+                {
+                  name: "Corporate Flight Dept",
+                  where: "Company aircraft · Private jet ops · Fortune 500s",
+                  comp: "$100K–$300K",
+                  insight: "Near 9-to-5 schedule. Maximum stability. The most relationship-dependent hiring in aviation — but once you're in, it's excellent.",
+                  color: "border-emerald-800/40 bg-emerald-950/10",
+                  nameColor: "text-emerald-400",
+                  href: "/the-map/airlines#corporate",
+                },
+                {
+                  name: "Defense-Tech PM",
+                  where: "Primes · GovCon · Defense startups",
+                  comp: "$120K–$200K+",
+                  insight: "Your rated background is a credential civilians literally cannot fake. Defense primes actively recruit pilots for acquisition, test, and PM roles. No flying required.",
+                  color: "border-blue-800/40 bg-blue-950/10",
+                  nameColor: "text-blue-400",
+                  href: "/the-map/defense",
+                },
+                {
+                  name: "The USAFA Network",
+                  where: "Long Blue Line · AOG · Your class",
+                  comp: "Multiplier on every path",
+                  insight: "Not a path — an asset. Most pilots underuse it completely. Your class alone has people 3–10 years ahead of you in every one of these paths. Map the network before you decide the direction.",
+                  color: "border-purple-800/40 bg-purple-950/10",
+                  nameColor: "text-purple-400",
+                  href: "/networking",
+                },
+              ].map((card) => (
+                <Link
+                  key={card.name}
+                  href={card.href}
+                  className={`flex flex-col gap-1.5 p-4 rounded-lg border ${card.color} hover:opacity-80 transition-opacity`}
+                >
+                  <div className="flex items-baseline justify-between gap-2">
+                    <p className={`font-semibold text-sm ${card.nameColor}`}>{card.name}</p>
+                    <p className={`text-xs font-mono flex-shrink-0 ${card.nameColor} opacity-80`}>{card.comp}</p>
+                  </div>
+                  <p className="text-xs text-slate-500 leading-snug">{card.where}</p>
+                  <p className="text-xs text-slate-400 leading-relaxed mt-1">{card.insight}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* DECISION MAP — fork diagram, reframed */}
+        <section id="decision-map">
+          <h2 className="text-xl font-bold text-slate-100 mb-4">The decision map</h2>
+          <div className="border border-slate-800 rounded-xl bg-slate-900/30 p-6">
+
+            {/* Root */}
+            <div className="flex justify-center mb-3">
+              <span className="px-3 py-1.5 rounded-md border border-slate-600 bg-slate-900 text-xs font-mono text-slate-300 tracking-widest uppercase">
+                Separation
+              </span>
+            </div>
+            {/* Stem */}
+            <div className="flex justify-center mb-3">
+              <div className="w-px h-5 bg-slate-700" />
+            </div>
+            {/* Fork question — REFRAMED */}
+            <div className="flex justify-center mb-3">
+              <span className="px-4 py-2 rounded-md border border-amber-700/50 bg-amber-950/20 text-xs text-amber-300 text-center font-medium">
+                Do you want to stay in aviation?
+              </span>
+            </div>
+            {/* H-bar */}
+            <div className="flex justify-center mb-0">
+              <div className="flex w-3/4">
+                <div className="flex-1 h-5 border-t border-r border-slate-700" />
+                <div className="flex-1 h-5 border-t border-l border-slate-700" />
+              </div>
+            </div>
+
+            {/* Two branches */}
+            <div className="grid grid-cols-2 gap-4 mt-0">
+
+              {/* Left: YES — aviation sub-fork */}
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-xs text-slate-600 font-mono">YES</span>
+                {/* Aviation sub-fork */}
+                <div className="w-full space-y-1.5">
+                  {[
+                    {
+                      label: "Commercial Airlines",
+                      sub: "Regionals → Majors",
+                      border: "border-green-800/50",
+                      bg: "bg-green-950/20",
+                      text: "text-green-400",
+                      comp: "$80K → $450K+",
+                      href: "/the-map/airlines#commercial",
+                    },
+                    {
+                      label: "Cargo",
+                      sub: "FedEx · UPS · Amazon Air",
+                      border: "border-yellow-800/40",
+                      bg: "bg-yellow-950/10",
+                      text: "text-yellow-400",
+                      comp: "≈Major pay, better WLB",
+                      href: "/the-map/airlines#cargo",
+                    },
+                    {
+                      label: "Fractional / Charter",
+                      sub: "NetJets · Flexjet",
+                      border: "border-sky-800/40",
+                      bg: "bg-sky-950/10",
+                      text: "text-sky-400",
+                      comp: "$120K–$350K+, no seniority",
+                      href: "/the-map/airlines#fractional",
+                    },
+                    {
+                      label: "Corporate Flight Dept",
+                      sub: "Company jet · 9-to-5ish",
+                      border: "border-emerald-800/40",
+                      bg: "bg-emerald-950/10",
+                      text: "text-emerald-400",
+                      comp: "$100K–$300K",
+                      href: "/the-map/airlines#corporate",
+                    },
+                  ].map((p) => (
+                    <Link
+                      key={p.label}
+                      href={p.href}
+                      className={`flex items-center justify-between px-3 py-2 rounded-lg border ${p.border} ${p.bg} hover:opacity-80 transition-opacity`}
+                    >
+                      <div>
+                        <p className={`text-xs font-medium ${p.text}`}>{p.label}</p>
+                        <p className="text-slate-600 text-xs">{p.sub}</p>
+                      </div>
+                      <p className={`text-xs font-mono ${p.text} opacity-70 text-right ml-2 flex-shrink-0`}>{p.comp}</p>
+                    </Link>
+                  ))}
+                </div>
+                <Link href="/the-map/airlines" className="text-xs text-slate-600 hover:text-green-400 transition-colors mt-1">
+                  Aviation deep dive →
+                </Link>
+              </div>
+
+              {/* Right: NO / Unsure */}
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-xs text-slate-600 font-mono">NO / NOT SURE</span>
+                <div className="w-full space-y-1.5">
+                  {[
+                    { label: "Defense & Aerospace", sub: "Easiest translation", border: "border-blue-800/40", bg: "bg-blue-950/10", text: "text-blue-400", href: "/the-map/defense" },
+                    { label: "Tech & Ops", sub: "Highest comp ceiling", border: "border-purple-800/40", bg: "bg-purple-950/10", text: "text-purple-400", href: "/the-map/tech-ops" },
+                    { label: "Finance & Consulting", sub: "MBA bridge, MBB path", border: "border-indigo-800/40", bg: "bg-indigo-950/10", text: "text-indigo-400", href: "/the-map/finance-consulting" },
+                    { label: "Government", sub: "Stability, capped comp", border: "border-slate-700", bg: "bg-slate-900/40", text: "text-slate-400", href: "/the-map/government" },
+                    { label: "Entrepreneurship", sub: "High risk, uncapped", border: "border-orange-800/40", bg: "bg-orange-950/10", text: "text-orange-400", href: "/the-map/entrepreneurship" },
+                    { label: "Non-Traditional", sub: "Worth naming", border: "border-teal-800/40", bg: "bg-teal-950/10", text: "text-teal-400", href: "/the-map/nontraditional" },
+                  ].map((p) => (
+                    <Link
+                      key={p.label}
+                      href={p.href}
+                      className={`flex items-center justify-between px-3 py-2 rounded-lg border ${p.border} ${p.bg} hover:opacity-80 transition-opacity`}
+                    >
+                      <div>
+                        <p className={`text-xs font-medium ${p.text}`}>{p.label}</p>
+                        <p className="text-slate-600 text-xs">{p.sub}</p>
+                      </div>
+                      <span className="text-slate-700 text-xs">→</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Footer */}
+            <div className="mt-5 pt-4 border-t border-slate-800 text-center">
+              <Link href="/comp" className="text-xs text-slate-500 hover:text-blue-400 transition-colors">
+                Compare all seven paths by comp, equity &amp; trajectory →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ALL PATHS — tabbed */}
+        <section id="the-paths">
+          <h2 className="text-xl font-bold text-slate-100 mb-2">The seven paths</h2>
+          <p className="text-slate-500 text-sm mb-6">
+            Pick a path tab to see the full breakdown — tradeoffs, comp, and a link to the deep dive.
+            Comp ranges are 2025–2026 US civilian market. Geography matters &mdash; DC, SF, NY skew 20–40% higher.
+          </p>
+          <PathTabs paths={paths} />
+        </section>
+
         {/* How civilian hiring works */}
-        <section>
+        <section id="how-hiring-works">
           <h2 className="text-xl font-bold text-slate-100 mb-4">How civilian hiring actually works</h2>
           <div className="space-y-4 text-slate-400 leading-relaxed">
             <p>
-              Here is the thing that took me the longest to understand: civilian hiring does not work like
-              the Air Force talent management system. There is no central assignment process. There is no
-              transparency about what roles exist, what they pay, or who is being considered. There is no
-              institutional advocacy for your development.
+              Civilian hiring does not work like the Air Force talent management system. There is no central
+              assignment process. There is no transparency about what roles exist, what they pay, or who is
+              being considered. There is no institutional advocacy for your development.
             </p>
             <p>
               What there is: 56% of professional jobs are filled through personal networks before they are
@@ -234,13 +477,12 @@ export default function TheMap() {
               This is not a conspiracy. It is how human beings hire.
             </p>
             <p>
-              This means that most of the transition advice about &ldquo;how to write a better resume&rdquo;
-              is optimizing for a minority of available opportunities. The leverage is in building the network
-              that surfaces the 56% that never got posted. Stage 04 &mdash;{" "}
+              This means most transition advice about &ldquo;how to write a better resume&rdquo; is
+              optimizing for the minority. The leverage is in building the network that surfaces the 56%.{" "}
               <Link href="/networking" className="text-blue-400 hover:text-blue-300 underline underline-offset-2">
-                Networking
+                Stage 04: Networking
               </Link>{" "}
-              &mdash; is where that work lives.
+              is where that work lives.
             </p>
           </div>
 
@@ -258,291 +500,62 @@ export default function TheMap() {
           </div>
         </section>
 
-        {/* Airline fork callout */}
-        <section className="p-6 rounded-xl border border-blue-900/50 bg-blue-950/20">
-          <h2 className="text-lg font-bold text-slate-100 mb-3">The airline fork</h2>
-          <p className="text-slate-400 text-sm leading-relaxed mb-3">
-            If you have a rated background, you need to answer this question before you read the rest of this page:
-            <em className="text-slate-300"> do you actually want to fly commercially?</em>
-          </p>
-          <p className="text-slate-400 text-sm leading-relaxed mb-3">
-            Not &ldquo;should I go to the airlines?&rdquo; Not &ldquo;what would my family think?&rdquo;
-            Do <em>you</em> want to fly commercially as a career?{" "}
-            <strong className="text-slate-200">And &mdash; if you are someone who prays about this kind
-            of decision &mdash; is this what you are being called to, or what you are reaching for
-            because it is familiar?</strong>{" "}
-            The lifestyle, the seniority grind, the community, the identity of it.
-          </p>
-          <p className="text-slate-400 text-sm leading-relaxed">
-            If yes: go. It&rsquo;s a legitimate life. The path is well-documented and the community is strong.{" "}
-            The rest of this page is still useful for framing, but airline-track prep is its own world &mdash;
-            check out the rated-pilot transition forums and the specific guidance on ATP, type ratings, and seniority timing.
-            If no, or if you&rsquo;re not sure: read on.
-          </p>
-        </section>
-
-        {/* Path fork diagram */}
-        <section>
-          <h2 className="text-xl font-bold text-slate-100 mb-4">The decision map</h2>
-          <div className="border border-slate-800 rounded-xl bg-slate-900/30 p-6">
-            {/* Root */}
-            <div className="flex justify-center mb-3">
-              <span className="px-3 py-1.5 rounded-md border border-slate-600 bg-slate-900 text-xs font-mono text-slate-300 tracking-widest uppercase">
-                Separation
-              </span>
-            </div>
-            {/* Stem */}
-            <div className="flex justify-center mb-3">
-              <div className="w-px h-5 bg-slate-700" />
-            </div>
-            {/* Fork question */}
-            <div className="flex justify-center mb-3">
-              <span className="px-3 py-1.5 rounded-md border border-amber-800/40 bg-amber-950/20 text-xs text-amber-400 text-center">
-                Do you want to fly commercially?
-              </span>
-            </div>
-            {/* H-bar */}
-            <div className="flex justify-center mb-0">
-              <div className="flex w-3/4">
-                <div className="flex-1 h-5 border-t border-r border-slate-700" />
-                <div className="flex-1 h-5 border-t border-l border-slate-700" />
-              </div>
-            </div>
-            {/* Two branches */}
-            <div className="grid grid-cols-2 gap-4 mt-0">
-              {/* Left: Yes */}
-              <div className="flex flex-col items-center gap-2">
-                <span className="text-xs text-slate-600 font-mono">YES</span>
-                <div className="w-full p-3 rounded-lg border border-green-800/50 bg-green-950/20 text-center">
-                  <p className="text-green-400 font-semibold text-xs uppercase tracking-wide">
-                    Commercial Airlines
-                  </p>
-                  <p className="text-slate-600 text-xs mt-1">Known quantity · transparent seniority</p>
-                  <p className="text-slate-700 text-xs mt-0.5 font-mono">$80K → $400K+ (15yr)</p>
-                </div>
-                <Link
-                  href="/the-map/airlines"
-                  className="text-xs text-slate-600 hover:text-green-400 transition-colors"
-                >
-                  Airlines deep dive →
-                </Link>
-              </div>
-              {/* Right: No / Unsure */}
-              <div className="flex flex-col items-center gap-2">
-                <span className="text-xs text-slate-600 font-mono">NO / NOT SURE</span>
-                <div className="w-full space-y-1.5">
-                  {[
-                    {
-                      label: "Defense & Aerospace",
-                      sub: "Easiest translation",
-                      border: "border-blue-800/40",
-                      bg: "bg-blue-950/10",
-                      text: "text-blue-400",
-                      href: "/the-map/defense",
-                    },
-                    {
-                      label: "Tech & Ops",
-                      sub: "Highest comp ceiling",
-                      border: "border-purple-800/40",
-                      bg: "bg-purple-950/10",
-                      text: "text-purple-400",
-                      href: "/the-map/tech-ops",
-                    },
-                    {
-                      label: "Finance & Consulting",
-                      sub: "MBA bridge, MBB path",
-                      border: "border-indigo-800/40",
-                      bg: "bg-indigo-950/10",
-                      text: "text-indigo-400",
-                      href: "/the-map/finance-consulting",
-                    },
-                    {
-                      label: "Government",
-                      sub: "Stability, capped comp",
-                      border: "border-slate-700",
-                      bg: "bg-slate-900/40",
-                      text: "text-slate-400",
-                      href: "/the-map/government",
-                    },
-                    {
-                      label: "Entrepreneurship",
-                      sub: "High risk, uncapped",
-                      border: "border-orange-800/40",
-                      bg: "bg-orange-950/10",
-                      text: "text-orange-400",
-                      href: "/the-map/entrepreneurship",
-                    },
-                    {
-                      label: "Non-Traditional",
-                      sub: "Worth naming",
-                      border: "border-teal-800/40",
-                      bg: "bg-teal-950/10",
-                      text: "text-teal-400",
-                      href: "/the-map/nontraditional",
-                    },
-                  ].map((p) => (
-                    <Link
-                      key={p.label}
-                      href={p.href}
-                      className={`flex items-center justify-between px-3 py-2 rounded-lg border ${p.border} ${p.bg} hover:opacity-80 transition-opacity`}
-                    >
-                      <div>
-                        <p className={`text-xs font-medium ${p.text}`}>{p.label}</p>
-                        <p className="text-slate-600 text-xs">{p.sub}</p>
-                      </div>
-                      <span className="text-slate-700 text-xs">→</span>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-            {/* Comp reference link */}
-            <div className="mt-5 pt-4 border-t border-slate-800 text-center">
-              <Link
-                href="/comp"
-                className="text-xs text-slate-500 hover:text-blue-400 transition-colors"
-              >
-                Compare all six paths by comp, equity &amp; trajectory →
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* The 7 paths */}
-        <section>
-          <h2 className="text-xl font-bold text-slate-100 mb-2">The seven paths</h2>
-          <p className="text-slate-500 text-sm mb-8">
-            Comp ranges are 2025–2026 US civilian market. They are starting points for research,
-            not guarantees. Geography matters enormously &mdash; DC, SF, NY skew higher; most other
-            markets are lower.
-          </p>
-          <p className="text-xs text-slate-500 italic mb-4">
-            Each path has its own deep-dive page &mdash; tap the title to drill
-            into the sub-decisions, the timeline, real comp data, and the
-            resources that actually exist.
-          </p>
-          <div className="space-y-6">
-            {paths.map((path) => {
-              return (
-                <div key={path.id} className="border border-slate-800 rounded-xl overflow-hidden">
-                  <div className="p-5 bg-slate-900/40">
-                    <div className="flex items-start justify-between gap-4 mb-2">
-                      <Link
-                        href={`/the-map/${path.id}`}
-                        className="font-bold text-slate-100 hover:text-blue-400 transition-colors"
-                      >
-                        {path.label} &rarr;
-                      </Link>
-                      <span className={`text-xs font-medium flex-shrink-0 ${path.tagColor}`}>
-                        {path.tag}
-                      </span>
-                    </div>
-                    <p className="text-sm text-slate-300 leading-relaxed mb-4">
-                      {path.shape}
-                    </p>
-
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      <div>
-                        <p className="text-xs font-medium text-slate-500 uppercase tracking-wide mb-2">What works</p>
-                        <ul className="space-y-1.5">
-                          {path.pros.map((p) => (
-                            <li key={p} className="flex gap-2 text-xs text-slate-400 leading-snug">
-                              <span className="text-green-600 flex-shrink-0 mt-0.5">+</span>
-                              {p}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div>
-                        <p className="text-xs font-medium text-slate-500 uppercase tracking-wide mb-2">The real tradeoffs</p>
-                        <ul className="space-y-1.5">
-                          {path.cons.map((c) => (
-                            <li key={c} className="flex gap-2 text-xs text-slate-400 leading-snug">
-                              <span className="text-slate-600 flex-shrink-0 mt-0.5">&ndash;</span>
-                              {c}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-
-                    <p className="mt-4 pt-4 border-t border-slate-800 text-xs text-slate-500">
-                      <span className="text-slate-400 font-medium">Comp range:</span> {path.comp}
-                    </p>
-                  </div>
-                  <div className="px-5 py-3 border-t border-slate-800 bg-slate-950/40 flex items-center justify-between gap-4">
-                    <p className="text-xs text-slate-500 leading-relaxed italic">{path.honest}</p>
-                    <Link
-                      href={`/the-map/${path.id}`}
-                      className="flex-shrink-0 text-xs font-medium text-blue-400 hover:text-blue-300 whitespace-nowrap"
-                    >
-                      Deep dive &rarr;
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* Geography note */}
-        <section>
+        {/* Geography */}
+        <section id="geography">
           <h2 className="text-xl font-bold text-slate-100 mb-4">Geography is a decision, not a default</h2>
           <div className="space-y-4 text-slate-400 leading-relaxed">
             <p>
               One of the biggest levers in your transition is geography, and most people don&rsquo;t treat it
-              as a decision. They end up where they ended up &mdash; where their terminal base was, where family is,
+              as a decision. They end up where they ended up — where their terminal base was, where family is,
               where it felt familiar. Nothing wrong with that, but it&rsquo;s worth understanding the implications.
             </p>
             <p>
-              Defense and government work is concentrated in specific corridors: Northern Virginia,
-              Huntsville AL, Colorado Springs, San Diego, Dayton OH, Tampa, and a few others.
-              Tech and finance require being in or near major metro markets (or being willing to be
-              fully remote, which increasingly requires prior experience in the sector to access).
-              Airlines are domicile-based, which is its own calculation.
+              Defense and government work is concentrated: Northern Virginia, Huntsville AL, Colorado Springs,
+              San Diego, Dayton OH, Tampa. Tech and finance require major metro markets (or full remote, which
+              requires prior sector experience to access). Airlines are domicile-based &mdash; its own calculation.
             </p>
             <p>
-              If you want to maximize your options, especially in the first 18 months, being near
-              a major market gives you more surface area. Remote work has expanded what&rsquo;s possible,
-              but early-career relationship-building still rewards proximity.
+              If you want to maximize options, especially in the first 18 months, proximity to a major market
+              gives you more surface area. Remote work has expanded what&rsquo;s possible, but early-career
+              relationship-building still rewards proximity.
             </p>
           </div>
         </section>
 
-        {/* What to do with this */}
-        <section className="bg-slate-900/40 border border-slate-800 rounded-xl p-6">
+        {/* Action steps */}
+        <section id="what-to-do" className="bg-slate-900/40 border border-slate-800 rounded-xl p-6">
           <h2 className="text-lg font-bold text-slate-100 mb-4">What to do with this</h2>
           <div className="space-y-3">
             {[
               {
                 num: "0",
                 step: "Before you pick.",
-                detail:
-                  "If you are open to it, this is a decision worth praying about, fasting on, or talking through with a pastor or wise older friend before it becomes a list of preferences. The transition industry will treat it as a market problem. It is not only a market problem. Do not let urgency rush you past the deeper question.",
+                detail: "If you are open to it, this is a decision worth praying about, fasting on, or talking through with a pastor or wise older friend before it becomes a list of preferences. The transition industry will treat it as a market problem. It is not only a market problem. Do not let urgency rush you past the deeper question.",
               },
               {
                 num: "1",
-                step: "Pick two paths that pull at you — and one that scares you.",
-                detail:
-                  "The two that pull are obvious. The third — the path that scares you because it would cost something visible — is the one worth examining. Sometimes the scary one is wrong. Sometimes it is the call.",
+                step: "See what exists before you rank preferences.",
+                detail: "Read the awareness cards above. Then actually look up a FedEx pilot's retirement, a NetJets captain's schedule, a corporate flight dept job posting. You can't rank options you haven't seen.",
               },
               {
                 num: "2",
-                step: "Find three people who did each one.",
-                detail:
-                  "Via LinkedIn, USAFA network, AOG. Not to ask for a job — to understand the actual lived experience from someone 3 years in.",
+                step: "Pick two paths that pull at you — and one that scares you.",
+                detail: "The two that pull are obvious. The third — the path that scares you because it would cost something visible — is the one worth examining. Sometimes the scary one is wrong. Sometimes it is the call.",
               },
               {
                 num: "3",
-                step: "Do the comp math.",
-                detail:
-                  "Use the Comp Translator to figure out what your current total comp is. Then compare it to the ranges above. The gap is real but may be smaller than you think.",
+                step: "Find three people who did each one.",
+                detail: "Via LinkedIn, USAFA network, AOG. Not to ask for a job — to understand the actual lived experience from someone 3 years in.",
               },
               {
                 num: "4",
+                step: "Do the comp math.",
+                detail: "Use the Comp Translator to figure out what your current total comp is. Then compare it to the ranges above. The gap is real but may be smaller than you think.",
+              },
+              {
+                num: "5",
                 step: "Decide on geography before you decide on role.",
-                detail:
-                  "Where do you want to live? That filters a lot. Then figure out what opportunities exist in that market.",
+                detail: "Where do you want to live? That filters a lot. Then figure out what opportunities exist in that market.",
               },
             ].map((item) => (
               <div key={item.step} className="flex gap-4">
@@ -574,16 +587,10 @@ export default function TheMap() {
             Networking is how you access the 56% that never gets posted.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Link
-              href="/networking"
-              className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-colors"
-            >
+            <Link href="/networking" className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-colors">
               Stage 04: Networking &rarr;
             </Link>
-            <Link
-              href="/comp-translator"
-              className="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-medium rounded-lg border border-slate-700 transition-colors"
-            >
+            <Link href="/comp-translator" className="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-medium rounded-lg border border-slate-700 transition-colors">
               Comp Translator
             </Link>
           </div>

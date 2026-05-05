@@ -23,8 +23,26 @@ export default function NetworkingPage() {
         They&rsquo;re the people you barely know.
       </p>
 
+      {/* On this page */}
+      <nav className="mt-8 p-4 rounded-lg border border-slate-800 bg-slate-900/40">
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">On this page</p>
+        <div className="flex flex-wrap gap-x-4 gap-y-1">
+          {[
+            ["#science", "Why weak ties win"],
+            ["#audit", "Network audit"],
+            ["#informational", "Informational conversation"],
+            ["#protocol", "8-week protocol"],
+            ["#first-five", "Your first 5 conversations"],
+          ].map(([href, label]) => (
+            <a key={href} href={href} className="text-sm text-blue-400 hover:text-blue-300 transition-colors">
+              {label}
+            </a>
+          ))}
+        </div>
+      </nav>
+
       {/* Section 1: The Science */}
-      <section className="mt-16">
+      <section id="science" className="mt-16">
         <h2 className="text-2xl font-bold text-slate-100 mb-2">
           The science: why weak ties win
         </h2>
@@ -150,7 +168,7 @@ export default function NetworkingPage() {
       </section>
 
       {/* Section 2: Network Audit */}
-      <section className="mt-16">
+      <section id="audit" className="mt-16">
         <h2 className="text-2xl font-bold text-slate-100 mb-2">
           Network audit: what you actually have
         </h2>
@@ -279,7 +297,7 @@ export default function NetworkingPage() {
       </section>
 
       {/* Section 3: The Informational Conversation */}
-      <section className="mt-16">
+      <section id="informational" className="mt-16">
         <h2 className="text-2xl font-bold text-slate-100 mb-2">
           The informational conversation
         </h2>
@@ -428,7 +446,7 @@ export default function NetworkingPage() {
       </section>
 
       {/* Section 4: 8-Week Protocol */}
-      <section className="mt-16">
+      <section id="protocol" className="mt-16">
         <h2 className="text-2xl font-bold text-slate-100 mb-2">
           The 8-week protocol
         </h2>
@@ -508,7 +526,7 @@ export default function NetworkingPage() {
       </section>
 
       {/* Your first five conversations */}
-      <section className="mt-12 bg-blue-600/5 border border-blue-500/20 rounded-xl p-6 sm:p-8">
+      <section id="first-five" className="mt-12 bg-blue-600/5 border border-blue-500/20 rounded-xl p-6 sm:p-8">
         <h3 className="text-base font-semibold text-slate-200 mb-4">
           Your first five conversations
         </h3>

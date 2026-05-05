@@ -21,8 +21,28 @@ export default function InterviewPrepPage() {
         regardless of what they bring to theirs.
       </p>
 
+      {/* On this page */}
+      <nav className="mt-8 p-4 rounded-lg border border-slate-800 bg-slate-900/40">
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">On this page</p>
+        <div className="flex flex-wrap gap-x-4 gap-y-1">
+          {[
+            ["#evaluating", "What they're evaluating"],
+            ["#star-l", "STAR-L framework"],
+            ["#story-bank", "Story bank"],
+            ["#research", "Interviewer research"],
+            ["#questions", "Questions to ask"],
+            ["#anxiety", "Managing anxiety"],
+            ["#debrief", "Post-interview debrief"],
+          ].map(([href, label]) => (
+            <a key={href} href={href} className="text-sm text-blue-400 hover:text-blue-300 transition-colors">
+              {label}
+            </a>
+          ))}
+        </div>
+      </nav>
+
       {/* What interviewers are evaluating */}
-      <section className="mt-12">
+      <section id="evaluating" className="mt-12">
         <h2 className="text-2xl font-bold text-slate-100 mb-2">
           What they&rsquo;re actually evaluating
         </h2>
@@ -65,7 +85,7 @@ export default function InterviewPrepPage() {
       </section>
 
       {/* The STAR-L framework */}
-      <section className="mt-16">
+      <section id="star-l" className="mt-16">
         <h2 className="text-2xl font-bold text-slate-100 mb-2">
           The STAR-L framework
         </h2>
@@ -136,7 +156,7 @@ export default function InterviewPrepPage() {
       </section>
 
       {/* Your story bank */}
-      <section className="mt-16">
+      <section id="story-bank" className="mt-16">
         <h2 className="text-2xl font-bold text-slate-100 mb-2">
           Build your story bank before every interview
         </h2>
@@ -186,7 +206,7 @@ export default function InterviewPrepPage() {
       </section>
 
       {/* Interviewer intel */}
-      <section className="mt-16">
+      <section id="research" className="mt-16">
         <h2 className="text-2xl font-bold text-slate-100 mb-2">
           Treat your interviewer as an asset
         </h2>
@@ -227,7 +247,7 @@ export default function InterviewPrepPage() {
       </section>
 
       {/* Questions to ask */}
-      <section className="mt-16">
+      <section id="questions" className="mt-16">
         <h2 className="text-2xl font-bold text-slate-100 mb-2">
           Questions to ask them
         </h2>
@@ -274,7 +294,7 @@ export default function InterviewPrepPage() {
       </section>
 
       {/* Managing interview anxiety */}
-      <section className="mt-16">
+      <section id="anxiety" className="mt-16">
         <h2 className="text-2xl font-bold text-slate-100 mb-2">
           Managing anxiety
         </h2>
@@ -306,7 +326,7 @@ export default function InterviewPrepPage() {
       </section>
 
       {/* PEDL post-interview debrief */}
-      <section className="mt-16 border-t border-slate-800 pt-16">
+      <section id="debrief" className="mt-16 border-t border-slate-800 pt-16">
         <h2 className="text-2xl font-bold text-slate-100 mb-2">
           The post-interview PEDL
         </h2>

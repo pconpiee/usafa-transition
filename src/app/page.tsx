@@ -226,34 +226,82 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The 12 Stages */}
+      {/* The 12 Stages — Visual Pipeline */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-        <div className="mb-10">
+        <div className="mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-100">The pipeline</h2>
           <p className="mt-2 text-slate-500 text-sm">
-            Twelve stages from &ldquo;I&rsquo;m leaving soon&rdquo; to &ldquo;I&rsquo;m thriving and helping the next group.&rdquo;
+            Twelve stages from &ldquo;I&rsquo;m leaving soon&rdquo; to &ldquo;I&rsquo;m thriving and pulling others through.&rdquo;
+            Click any stage to jump in.
           </p>
         </div>
 
-        <div className="space-y-2">
-          {stages.map((s) => (
-            <Link
-              key={s.href}
-              href={s.href}
-              className="group flex items-start gap-4 p-4 rounded-lg border border-slate-800 bg-slate-900/30 hover:bg-slate-800/50 hover:border-slate-700 transition-all"
-            >
-              <span className="font-mono text-sm text-slate-600 group-hover:text-blue-400 transition-colors pt-0.5 flex-shrink-0 w-6">
-                {s.num}
+        {/* Phase groupings with connected flow */}
+        {[
+          {
+            phase: "Foundation",
+            color: "text-blue-400",
+            barColor: "bg-blue-600/30",
+            stages: stages.slice(0, 3),
+          },
+          {
+            phase: "The Work",
+            color: "text-purple-400",
+            barColor: "bg-purple-600/30",
+            stages: stages.slice(3, 9),
+          },
+          {
+            phase: "The Landing",
+            color: "text-green-400",
+            barColor: "bg-green-600/30",
+            stages: stages.slice(9, 12),
+          },
+        ].map((group, gi) => (
+          <div key={group.phase} className={gi > 0 ? "mt-8" : ""}>
+            {/* Phase label */}
+            <div className="flex items-center gap-3 mb-3">
+              <div className={`h-px flex-1 ${group.barColor}`} />
+              <span className={`text-xs font-semibold uppercase tracking-widest ${group.color}`}>
+                {group.phase}
               </span>
-              <div>
-                <h3 className="font-semibold text-slate-200 group-hover:text-blue-400 transition-colors">
-                  {s.title}
-                </h3>
-                <p className="mt-0.5 text-sm text-slate-500 leading-relaxed">{s.desc}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
+              <div className={`h-px flex-1 ${group.barColor}`} />
+            </div>
+
+            {/* Stage cards in grid */}
+            <div className={`grid gap-2 ${group.stages.length === 6 ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-6" : "grid-cols-3"}`}>
+              {group.stages.map((s, i) => (
+                <Link
+                  key={s.href}
+                  href={s.href}
+                  className="group relative flex flex-col p-3 rounded-lg border border-slate-800 bg-slate-900/40 hover:bg-slate-800/60 hover:border-slate-600 transition-all"
+                >
+                  <span className={`font-mono text-xs font-bold mb-1.5 ${group.color} opacity-70`}>
+                    {s.num}
+                  </span>
+                  <p className="font-semibold text-slate-200 group-hover:text-white text-xs leading-snug">
+                    {s.title}
+                  </p>
+                  <p className="mt-1 text-xs text-slate-600 leading-snug line-clamp-2 hidden sm:block">
+                    {s.desc.split(".")[0]}.
+                  </p>
+                  {/* Arrow connector — not on last in group */}
+                  {i < group.stages.length - 1 && (
+                    <span className="absolute -right-1.5 top-1/2 -translate-y-1/2 text-slate-700 text-xs hidden lg:block">
+                      →
+                    </span>
+                  )}
+                </Link>
+              ))}
+            </div>
+          </div>
+        ))}
+
+        <p className="mt-6 text-xs text-slate-600 text-center">
+          Not sure where to start?{" "}
+          <Link href="#where-are-you" className="text-blue-400 hover:text-blue-300">
+            Pick your situation above &uarr;
+          </Link>
+        </p>
       </section>
 
       {/* Tools */}
