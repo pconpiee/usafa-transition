@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ImInForm from "@/components/ImInForm";
 
 export const metadata = {
   title: "Stage 01: Who Are You Now | Blue Canopy",
@@ -14,7 +15,7 @@ export default function TheReckoning() {
         <div className="absolute inset-0 bg-gradient-to-b from-blue-600/5 via-transparent to-transparent" />
         <div className="max-w-3xl mx-auto px-4 sm:px-6 pt-16 pb-12 relative">
           <p className="text-blue-400 text-xs font-medium tracking-widest uppercase mb-3">
-            Stage 01 &mdash; The Pipeline
+            Stage 01 of 12 &mdash; The Pipeline
           </p>
           <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
             Who are you now?
@@ -276,6 +277,15 @@ export default function TheReckoning() {
           </div>
         </section>
 
+        {/* Where people stall */}
+        <section className="border-l-2 border-amber-700/50 pl-5 py-1">
+          <p className="text-xs text-amber-600 uppercase tracking-wide mb-1">Where people stall here</p>
+          <p className="text-sm text-slate-400 leading-relaxed">
+            Most pilots complete the inventory but don&rsquo;t show it to anyone. The exercise only works
+            if someone who knows you reads it and pushes back. Don&rsquo;t do this stage alone.
+          </p>
+        </section>
+
         {/* What not to do */}
         <section>
           <h2 className="text-xl font-bold text-slate-100 mb-4">What not to do right now</h2>
@@ -307,14 +317,11 @@ export default function TheReckoning() {
             >
               Stage 02: Know Your Gifts &rarr;
             </Link>
-            <Link
-              href="/the-map"
-              className="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-medium rounded-lg border border-slate-700 transition-colors"
-            >
-              Stage 03: The Map
-            </Link>
           </div>
         </section>
+
+        {/* I'm In form */}
+        <ImInForm />
 
       </div>
     </div>

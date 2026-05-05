@@ -127,7 +127,7 @@ export default function TheSearchPage() {
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
       <div className="max-w-4xl">
         <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
-          Stage 05 — The Search
+          Stage 05 of 12 — The Search
         </p>
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
           The Search
@@ -411,6 +411,15 @@ export default function TheSearchPage() {
         Your pipeline data is stored locally in your browser. Nothing leaves
         your device.
       </p>
+
+      {/* Where people stall */}
+      <div className="mt-8 border-l-2 border-amber-700/50 pl-5 py-1">
+        <p className="text-xs text-amber-600 uppercase tracking-wide mb-1">Where people stall here</p>
+        <p className="text-sm text-slate-400 leading-relaxed">
+          Building a perfect tracking system instead of applying. The pipeline is a tool,
+          not a goal. Applications create information. Nothing else does.
+        </p>
+      </div>
 
       {/* Navigation */}
       <div className="mt-16 max-w-4xl pt-8 border-t border-slate-800 flex flex-col sm:flex-row gap-3 justify-between">

@@ -4,7 +4,7 @@ export default function TheLongGamePage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
       <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
-        Stage 11 — The Long Game
+        Stage 11 of 12 — The Long Game
       </p>
       <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
         The Long Game
@@ -197,6 +197,15 @@ export default function TheLongGamePage() {
           </p>
         </div>
       </section>
+
+      {/* Where people stall */}
+      <div className="mt-8 border-l-2 border-amber-700/50 pl-5 py-1">
+        <p className="text-xs text-amber-600 uppercase tracking-wide mb-1">Where people stall here</p>
+        <p className="text-sm text-slate-400 leading-relaxed">
+          Judging the first year as if it&rsquo;s the whole career. The discomfort of early
+          civilian work is not a signal the path is wrong &mdash; it&rsquo;s a signal you&rsquo;re growing.
+        </p>
+      </div>
 
       {/* Navigation */}
       <div className="mt-16 pt-8 border-t border-slate-800 flex flex-col sm:flex-row gap-3 justify-between">

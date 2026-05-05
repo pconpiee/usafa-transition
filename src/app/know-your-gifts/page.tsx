@@ -2,7 +2,7 @@ export default function KnowYourGiftsPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
       <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
-        Stage 02 — Know Your Gifts
+        Stage 02 of 12 &mdash; Know Your Gifts
       </p>
       <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
         Know Your Gifts
@@ -275,6 +275,16 @@ export default function KnowYourGiftsPage() {
           ))}
         </div>
       </section>
+
+      {/* Where people stall */}
+      <div className="mt-8 border-l-2 border-amber-700/50 pl-5 py-1">
+        <p className="text-xs text-amber-600 uppercase tracking-wide mb-1">Where people stall here</p>
+        <p className="text-sm text-slate-400 leading-relaxed">
+          Pilots default to listing credentials — hours, aircraft, qualifications. What you actually
+          bring is more interesting than your logbook. Ask a civilian who knows you well what they&rsquo;d
+          hire you to do. The answer will surprise you.
+        </p>
+      </div>
 
       {/* Navigation */}
       <div className="mt-16 pt-8 border-t border-slate-800 flex flex-col sm:flex-row gap-3 justify-between">

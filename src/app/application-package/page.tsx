@@ -4,7 +4,7 @@ export default function ApplicationPackagePage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
       <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
-        Stage 06 — Application Package
+        Stage 06 of 12 — Application Package
       </p>
       <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
         Applications
@@ -237,6 +237,15 @@ export default function ApplicationPackagePage() {
           </p>
         </div>
       </section>
+
+      {/* Where people stall */}
+      <div className="mt-8 border-l-2 border-amber-700/50 pl-5 py-1">
+        <p className="text-xs text-amber-600 uppercase tracking-wide mb-1">Where people stall here</p>
+        <p className="text-sm text-slate-400 leading-relaxed">
+          Writing the resume for the job they had, not the job they&rsquo;re applying for.
+          Every bullet should answer &ldquo;so what?&rdquo; &mdash; most don&rsquo;t.
+        </p>
+      </div>
 
       {/* Navigation */}
       <div className="mt-16 pt-8 border-t border-slate-800 flex flex-col sm:flex-row gap-3 justify-between">

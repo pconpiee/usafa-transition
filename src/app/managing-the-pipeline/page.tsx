@@ -4,7 +4,7 @@ export default function ManagingThePipelinePage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
       <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
-        Stage 08 — Managing the Pipeline
+        Stage 08 of 12 — Managing the Pipeline
       </p>
       <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
         Managing the Pipeline
@@ -219,6 +219,15 @@ export default function ManagingThePipelinePage() {
           to maintain this dashboard. Review every Friday.
         </p>
       </section>
+
+      {/* Where people stall */}
+      <div className="mt-8 border-l-2 border-amber-700/50 pl-5 py-1">
+        <p className="text-xs text-amber-600 uppercase tracking-wide mb-1">Where people stall here</p>
+        <p className="text-sm text-slate-400 leading-relaxed">
+          Treating each opportunity as if it&rsquo;s the last one. Apply broadly enough
+          that no single rejection derails the whole process.
+        </p>
+      </div>
 
       {/* Navigation */}
       <div className="mt-16 pt-8 border-t border-slate-800 flex flex-col sm:flex-row gap-3 justify-between">

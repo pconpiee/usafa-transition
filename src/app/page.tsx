@@ -119,16 +119,16 @@ export default function Home() {
           </h1>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
-              href="/the-reckoning"
+              href="#where-are-you"
               className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-lg transition-colors"
             >
-              Start at Stage 01
+              Find your starting point
             </Link>
             <Link
-              href="/the-map"
+              href="/paths"
               className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium rounded-lg border border-slate-700 transition-colors"
             >
-              See the Map
+              See the paths
             </Link>
           </div>
           <div className="mt-8 space-y-3 text-base text-slate-400 max-w-2xl leading-relaxed">
@@ -149,6 +149,56 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Where are you right now? */}
+      <section id="where-are-you" className="border-t border-slate-800 bg-slate-900/60">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+          <h2 className="text-lg font-semibold text-slate-200 mb-1">Where are you right now?</h2>
+          <p className="text-sm text-slate-500 mb-6">Pick your situation. You&rsquo;ll land somewhere useful in under 10 seconds.</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {[
+              {
+                label: "I have 18+ months until separation",
+                sub: "Start at the beginning. You have the runway — use it.",
+                href: "/the-reckoning",
+                tag: "Stage 01",
+              },
+              {
+                label: "I have 6–12 months left",
+                sub: "Skip the theory for now. Get to the network and the search.",
+                href: "/networking",
+                tag: "Stage 04",
+              },
+              {
+                label: "I've already separated",
+                sub: "Start at Stage 04. Do Stages 01–03 in parallel, not in sequence.",
+                href: "/networking",
+                tag: "Stage 04",
+              },
+              {
+                label: "I'm Guard/Reserve, weighing full civilian",
+                sub: "Start with the paths. The picture looks different from your position.",
+                href: "/paths",
+                tag: "Paths",
+              },
+            ].map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="group p-4 rounded-lg border border-slate-800 bg-slate-900/30 hover:bg-slate-800/50 hover:border-slate-700 transition-all"
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <p className="font-medium text-slate-200 group-hover:text-blue-400 transition-colors text-sm leading-snug">
+                    {item.label}
+                  </p>
+                  <span className="text-xs font-mono text-slate-600 flex-shrink-0 pt-0.5">{item.tag}</span>
+                </div>
+                <p className="mt-1 text-xs text-slate-500 leading-relaxed">{item.sub}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* How to use this */}
       <section className="border-y border-slate-800 bg-slate-900/40">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
@@ -163,8 +213,8 @@ export default function Home() {
               <p>The Comp Translator, Timeline, and Bold Face drills aren&rsquo;t stages &mdash; they&rsquo;re tools you&rsquo;ll reach for at specific moments. They&rsquo;re in the nav.</p>
             </div>
             <div>
-              <p className="font-medium text-slate-300 mb-1">This isn&rsquo;t what ChatGPT gives you.</p>
-              <p>Basic resume tips you can zero-prompt. This is for the nuanced stuff &mdash; the connected dots, the pilot-specific translations, the things you only know after you&rsquo;ve done it.</p>
+              <p className="font-medium text-slate-300 mb-1">Built from 15 years on the other side.</p>
+              <p>Basic resume tips you can zero-prompt. This is the nuanced stuff &mdash; the connected dots, the pilot-specific translations, the things you only understand after you&rsquo;ve done it in four industries and three countries.</p>
             </div>
           </div>
         </div>
@@ -234,13 +284,60 @@ export default function Home() {
               { num: "62%", label: "veterans underemployed at 6.5 years out" },
               { num: "18mo", label: "head start the people who did it well actually took" },
               { num: "4/10", label: "average veteran rating of TAP" },
-              { num: "56%", label: "of professionals find jobs through personal contacts" },
+              { num: "4 in 10", label: "veterans have a job offer in hand on their separation day" },
             ].map((s) => (
               <div key={s.label}>
                 <p className="text-2xl sm:text-3xl font-bold text-slate-100">{s.num}</p>
                 <p className="mt-1 text-xs text-slate-600 leading-snug">{s.label}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* The quick view — where to focus by timeline */}
+      <section className="border-t border-slate-800 bg-slate-900/30">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+          <h2 className="text-lg font-semibold text-slate-200 mb-1">The quick view</h2>
+          <p className="text-sm text-slate-500 mb-6">Where you are determines where to start. The stages are a calendar, not a curriculum.</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-slate-800">
+                  <th className="text-left py-2 pr-6 text-slate-500 font-medium w-36">Where you are</th>
+                  <th className="text-left py-2 text-slate-400 font-medium">What to focus on</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-800/60">
+                {[
+                  {
+                    when: "18+ months out",
+                    focus: "Stages 01–03. Identity, inventory, vision. No urgency yet — use it.",
+                  },
+                  {
+                    when: "12 months out",
+                    focus: "Stages 04–06. Network, market research, comp baseline. Start building relationships before you need them.",
+                  },
+                  {
+                    when: "6 months out",
+                    focus: "Stages 05–08. Active search, positioning, managing the pipeline. This is the sprint.",
+                  },
+                  {
+                    when: "3 months out",
+                    focus: "Stages 08–10. Offers, negotiation, the landing. Don't rush past the negotiation stage.",
+                  },
+                  {
+                    when: "Already separated",
+                    focus: "Start at Stage 04. Stages 01–03 still matter — do them in parallel, not in sequence.",
+                  },
+                ].map((row) => (
+                  <tr key={row.when}>
+                    <td className="py-3 pr-6 text-blue-400 font-mono text-xs align-top whitespace-nowrap">{row.when}</td>
+                    <td className="py-3 text-slate-400 text-sm leading-relaxed">{row.focus}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>

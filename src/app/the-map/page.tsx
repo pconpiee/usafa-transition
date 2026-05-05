@@ -160,7 +160,7 @@ export default function TheMap() {
         <div className="absolute inset-0 bg-gradient-to-b from-blue-600/5 via-transparent to-transparent" />
         <div className="max-w-3xl mx-auto px-4 sm:px-6 pt-16 pb-12 relative">
           <p className="text-blue-400 text-xs font-medium tracking-widest uppercase mb-3">
-            Stage 03 &mdash; The Pipeline
+            Stage 03 of 12 &mdash; The Pipeline
           </p>
           <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
             The Map
@@ -400,6 +400,15 @@ export default function TheMap() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* Where people stall */}
+        <section className="border-l-2 border-amber-700/50 pl-5 py-1">
+          <p className="text-xs text-amber-600 uppercase tracking-wide mb-1">Where people stall here</p>
+          <p className="text-sm text-slate-400 leading-relaxed">
+            Most pilots read this and still default to airlines or defense. Both are legitimate paths.
+            But make the choice deliberately &mdash; not because you ran out of imagination.
+          </p>
         </section>
 
         {/* Nav forward */}

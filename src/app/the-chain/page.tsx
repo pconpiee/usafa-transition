@@ -4,7 +4,7 @@ export default function TheChainPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
       <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
-        Stage 12 — The Chain
+        Stage 12 of 12 — The Chain
       </p>
       <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
         The Chain
@@ -215,6 +215,15 @@ export default function TheChainPage() {
           ))}
         </div>
       </section>
+
+      {/* Where people stall */}
+      <div className="mt-8 border-l-2 border-amber-700/50 pl-5 py-1">
+        <p className="text-xs text-amber-600 uppercase tracking-wide mb-1">Where people stall here</p>
+        <p className="text-sm text-slate-400 leading-relaxed">
+          Waiting until they feel &ldquo;qualified enough&rdquo; to reach back. You don&rsquo;t need to
+          have it figured out. You need to be one year ahead of the person asking.
+        </p>
+      </div>
 
       {/* Navigation */}
       <div className="mt-12 pt-8 border-t border-slate-800">

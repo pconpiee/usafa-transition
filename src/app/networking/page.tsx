@@ -6,7 +6,7 @@ export default function NetworkingPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
       <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
-        Stage 04 — Networking
+        Stage 04 of 12 — Networking
       </p>
       <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
         Networking
@@ -556,6 +556,16 @@ export default function NetworkingPage() {
           ))}
         </div>
       </section>
+
+      {/* Where people stall */}
+      <div className="mt-8 border-l-2 border-amber-700/50 pl-5 py-1">
+        <p className="text-xs text-amber-600 uppercase tracking-wide mb-1">Where people stall here</p>
+        <p className="text-sm text-slate-400 leading-relaxed">
+          Treating it like a mission brief &mdash; researching everything before making contact.
+          That&rsquo;s the wrong instinct. The first coffee chat doesn&rsquo;t need to be perfect.
+          Send the email before you feel ready.
+        </p>
+      </div>
 
       {/* Navigation */}
       <div className="mt-16 pt-8 border-t border-slate-800 flex flex-col sm:flex-row gap-3 justify-between">

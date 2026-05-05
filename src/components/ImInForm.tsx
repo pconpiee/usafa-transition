@@ -1,0 +1,79 @@
+"use client";
+
+import { useState } from "react";
+
+export default function ImInForm() {
+  const [submitted, setSubmitted] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [sepDate, setSepDate] = useState("");
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    await fetch(process.env.NEXT_PUBLIC_FORMSPREE_IIM_URL ?? "", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({ name, email, separationDate: sepDate }),
+    });
+    setSubmitted(true);
+  }
+
+  return (
+    <section id="im-in" className="border border-blue-800/40 bg-blue-950/20 rounded-xl p-6">
+      {submitted ? (
+        <div className="text-center py-4">
+          <p className="text-slate-200 font-semibold mb-2">Got it.</p>
+          <p className="text-sm text-slate-400 leading-relaxed max-w-md mx-auto">
+            You&rsquo;ll hear back personally — not an autoresponder. An offer to schedule 30 minutes.
+            No script. No agenda.
+          </p>
+        </div>
+      ) : (
+        <>
+          <h2 className="text-lg font-bold text-slate-100 mb-1">I&rsquo;m doing this.</h2>
+          <p className="text-sm text-slate-400 leading-relaxed mb-5">
+            Name, email, and a rough separation date. That&rsquo;s it. You&rsquo;ll get a personal
+            reply &mdash; an offer to schedule 30 minutes, ask anything, hear where you are. No script.
+            No agenda.
+          </p>
+          <form onSubmit={handleSubmit} className="space-y-3">
+            <div className="grid sm:grid-cols-2 gap-3">
+              <input
+                type="text"
+                placeholder="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-300 placeholder-slate-600 focus:outline-none focus:border-blue-500"
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-300 placeholder-slate-600 focus:outline-none focus:border-blue-500"
+              />
+            </div>
+            <input
+              type="text"
+              placeholder="Rough separation date (e.g. Spring 2026, Oct 2025)"
+              value={sepDate}
+              onChange={(e) => setSepDate(e.target.value)}
+              className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-300 placeholder-slate-600 focus:outline-none focus:border-blue-500"
+            />
+            <button
+              type="submit"
+              className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-colors"
+            >
+              I&rsquo;m in &rarr;
+            </button>
+          </form>
+          <p className="mt-4 text-xs text-slate-600">
+            No spam. No autoresponder. One human on the other end.
+          </p>
+        </>
+      )}
+    </section>
+  );
+}

@@ -26,6 +26,11 @@ const tools = [
   { href: "/resources", label: "Resources" },
 ];
 
+const topLinks = [
+  { href: "/paths", label: "Paths" },
+  { href: "/about", label: "About" },
+];
+
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const [stagesOpen, setStagesOpen] = useState(false);
@@ -103,6 +108,20 @@ export default function Nav() {
 
             <div className="w-px h-4 bg-slate-700 mx-1" />
 
+            {topLinks.map((t) => (
+              <Link
+                key={t.href}
+                href={t.href}
+                className={`px-3 py-2 text-sm transition-colors rounded-md hover:bg-slate-800/50 ${
+                  pathname === t.href ? "text-blue-400" : "text-slate-400 hover:text-slate-100"
+                }`}
+              >
+                {t.label}
+              </Link>
+            ))}
+
+            <div className="w-px h-4 bg-slate-700 mx-1" />
+
             {tools.map((t) => (
               <Link
                 key={t.href}
@@ -151,6 +170,23 @@ export default function Nav() {
                 {s.label}
               </Link>
             ))}
+            <div className="pt-2 border-t border-slate-800 mt-2">
+              <p className="px-3 py-1 text-xs text-slate-500 uppercase tracking-wide">Explore</p>
+              {topLinks.map((t) => (
+                <Link
+                  key={t.href}
+                  href={t.href}
+                  onClick={() => setOpen(false)}
+                  className={`block px-3 py-2 text-sm rounded-md transition-colors ${
+                    pathname === t.href
+                      ? "text-blue-400 bg-slate-800/60"
+                      : "text-slate-400 hover:text-slate-100 hover:bg-slate-800/50"
+                  }`}
+                >
+                  {t.label}
+                </Link>
+              ))}
+            </div>
             <div className="pt-2 border-t border-slate-800 mt-2">
               <p className="px-3 py-1 text-xs text-slate-500 uppercase tracking-wide">Tools</p>
               {tools.map((t) => (
