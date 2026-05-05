@@ -399,6 +399,34 @@ export default function InterviewPrepPage() {
         </p>
       </section>
 
+      {/* Interview Workbook download */}
+      <section className="mt-16 bg-slate-900/40 border border-slate-700 rounded-xl p-6">
+        <p className="text-xs font-semibold text-blue-400 uppercase tracking-wide mb-1">Interview Workbook</p>
+        <h2 className="text-xl font-bold text-slate-100 mb-2">
+          The full prep workbook — worked example
+        </h2>
+        <p className="text-slate-400 leading-relaxed mb-4">
+          A complete interview prep workbook built for a USAFA pilot applying to Anduril as a Product Manager.
+          Five phases: map the company, understand the role, practice answers out loud, analyze tradeoffs, run scenarios.
+          Includes Weapons School &rarr; PM translations, company intel, story bank prompts, and a post-interview debrief template.
+        </p>
+        <p className="text-sm text-slate-500 mb-6">
+          The structure is reusable for any role. Replace the company-specific sections with your own research.
+          The frameworks &mdash; STAR-L, PRD structure, prioritization logic, debrief cadence &mdash; transfer anywhere.
+        </p>
+        <a
+          href="/interview-workbook-pm.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-colors"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+          </svg>
+          Open the workbook
+        </a>
+      </section>
+
       {/* Where people stall */}
       <div className="mt-8 border-l-2 border-amber-700/50 pl-5 py-1">
         <p className="text-xs text-amber-600 uppercase tracking-wide mb-1">Where people stall here</p>

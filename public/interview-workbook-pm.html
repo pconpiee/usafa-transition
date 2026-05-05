@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Anduril PM Interview — Workbook</title>
+<style>
+  :root {
+    --ink: #14181f;
+    --ink-2: #2c3340;
+    --paper: #faf8f3;
+    --paper-2: #f2ede1;
+    --rule: #d9d2bf;
+    --accent: #1a3d7c;
+    --accent-soft: #dce8f7;
+    --good: #1f6f3f;
+    --good-soft: #dff1e3;
+    --bad: #9a2222;
+    --bad-soft: #f6dede;
+    --muted: #6b6356;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 36px 28px 80px; }
+  header.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 28px; }
+  header.masthead .eyebrow {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase; letter-spacing: 0.15em; font-size: 11px;
+    color: var(--accent); font-weight: 700;
+  }
+  h1 { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 34px; line-height: 1.15; margin: 6px 0 10px; letter-spacing: -0.01em; }
+  h2 { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 22px; margin: 48px 0 14px; padding-bottom: 6px; border-bottom: 1px solid var(--rule); letter-spacing: -0.005em; }
+  h3 { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 17px; margin: 26px 0 8px; letter-spacing: 0.01em; }
+  h4 { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 14px; margin: 18px 0 6px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+  p { margin: 10px 0; }
+  a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  ul, ol { padding-left: 22px; } li { margin: 4px 0; }
+  code, kbd { font-family: "SF Mono", Menlo, monospace; font-size: 14px; background: var(--paper-2); padding: 1px 5px; border-radius: 3px; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15px; }
+  th, td { border-bottom: 1px solid var(--rule); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { font-family: "Helvetica Neue", Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; color: var(--muted); border-bottom: 2px solid var(--ink); }
+  .meta { background: var(--paper-2); border-left: 3px solid var(--accent); padding: 14px 18px; margin: 14px 0 24px; font-size: 15px; }
+  .meta dl { margin: 0; display: grid; grid-template-columns: 160px 1fr; row-gap: 4px; }
+  .meta dt { font-family: "Helvetica Neue", Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; color: var(--muted); padding-top: 2px; }
+  .meta dd { margin: 0; }
+  .callout { background: var(--accent-soft); border: 1px solid #b3cce8; border-radius: 6px; padding: 14px 18px; margin: 16px 0; }
+  .callout .label { font-family: "Helvetica Neue", Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px; color: var(--accent); font-weight: 700; display: block; margin-bottom: 4px; }
+  .note { background: #f3efe4; border-left: 3px solid var(--muted); padding: 10px 14px; font-size: 14px; color: var(--ink-2); margin: 14px 0; font-style: italic; }
+  .phasebar { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; margin: 24px 0 8px; }
+  .phasebar a { background: var(--paper-2); color: var(--ink-2); text-decoration: none; padding: 8px 6px; text-align: center; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 3px solid var(--rule); }
+  .phasebar a:hover { background: var(--accent-soft); border-bottom-color: var(--accent); color: var(--ink); }
+  .phasebar span.num { display: block; font-size: 18px; font-family: Georgia, serif; color: var(--accent); font-weight: 700; }
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
+  .card { background: white; border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; }
+  .card h4 { margin: 0 0 6px; color: var(--ink); border-bottom: 1px solid var(--rule); padding-bottom: 6px; }
+  .card ul { margin: 4px 0; padding-left: 18px; font-size: 15px; }
+  details.reveal { background: white; border: 1px solid var(--rule); border-radius: 6px; padding: 10px 16px; margin: 10px 0; }
+  details.reveal > summary { cursor: pointer; font-family: "Helvetica Neue", Arial, sans-serif; font-weight: 600; font-size: 15px; padding: 4px 0; list-style: none; color: var(--ink); }
+  details.reveal > summary::before { content: "▸ "; color: var(--accent); font-weight: 700; }
+  details.reveal[open] > summary::before { content: "▾ "; }
+  details.reveal[open] > summary { border-bottom: 1px solid var(--rule); margin-bottom: 10px; padding-bottom: 8px; }
+  details.reveal .prompt { font-family: Georgia, serif; font-style: italic; color: var(--ink-2); padding: 4px 0; }
+  details.reveal .answer { border-top: 1px dashed var(--rule); margin-top: 10px; padding-top: 10px; font-size: 16px; }
+  .essay-block { margin: 14px 0 24px; }
+  .essay-block .stem { font-weight: 600; margin-bottom: 6px; }
+  .essay-block .hint { font-size: 14px; color: var(--muted); font-style: italic; margin-bottom: 6px; }
+  textarea.essay { width: 100%; min-height: 110px; border: 1px solid var(--rule); border-radius: 4px; padding: 10px 12px; font-family: Georgia, serif; font-size: 15px; line-height: 1.45; background: #fffdf6; resize: vertical; }
+  .tldr { background: var(--ink); color: var(--paper); padding: 18px 22px; border-radius: 6px; margin: 14px 0 24px; font-size: 17px; line-height: 1.5; }
+  .tldr strong { color: #a8c4f0; }
+  .checklist { background: white; border: 1px solid var(--rule); border-radius: 6px; padding: 18px 20px; margin: 14px 0; }
+  .checklist label { display: block; padding: 6px 0; cursor: pointer; font-size: 15px; }
+  .checklist input { margin-right: 8px; transform: translateY(1px); }
+  footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--muted); }
+  @media (max-width: 680px) {
+    .cards { grid-template-columns: 1fr; }
+    .phasebar { grid-template-columns: repeat(2, 1fr); }
+    .meta dl { grid-template-columns: 1fr; }
+    h1 { font-size: 26px; }
+  }
+  @media print {
+    body { background: white; }
+    .wrap { max-width: none; padding: 10px; }
+    .phasebar, textarea.essay { display: none !important; }
+    details.reveal { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="eyebrow">Interview Workbook · Product Manager · Defense Tech</div>
+  <h1>Anduril — Product Manager Interview</h1>
+  <p style="margin:0; color: var(--muted); font-size: 15px;">Built for a USAFA A-10 pilot applying as a PM. Work through it — retrieval beats re-reading every time.</p>
+</header>
+
+<!-- ORIENTATION -->
+<section id="orient">
+  <div class="meta">
+    <dl>
+      <dt>Role</dt><dd><strong>Product Manager</strong> — Anduril Industries (likely Lattice OS, autonomous systems, or sensor fusion product lines)</dd>
+      <dt>Your profile</dt><dd>USAFA '__ · B.Sc. Computer Science · A-10 Pilot · Weapons School graduate · Track &amp; Field athlete · Separated [year]</dd>
+      <dt>The read</dt><dd>Anduril hires operators who can think in systems. You have the rarest combination they want: technical depth (CS degree + Raptor/coding background), real operational experience in contested airspace, and Weapons School credibility that signals you are among the top 1% of tactical thinkers in the Air Force.</dd>
+      <dt>What they'll probe</dt><dd>Can you translate operator pain into product requirements? Can you ship? Can you work cross-functionally with engineers who may never have seen a real threat environment?</dd>
+    </dl>
+  </div>
+
+  <div class="tldr">
+    <strong>Your 15-second bottom line.</strong><br/>
+    Anduril builds <strong>autonomous defense systems</strong> — Lattice (the AI/sensor fusion OS), Ghost (UAS), Roadrunner (interceptor), Sentry Tower, Dive-LD (UUV), and ALTIUS. Their PM thesis is: <strong>operator-turned-PM who can write a requirements doc and also brief a combatant commander</strong>. You are that person. Every answer should tie your A-10 and Weapons School experience to a specific product or user pain that Anduril is solving.
+  </div>
+
+  <h3>How this workbook is built</h3>
+  <p>Five phases. Each has a <em>learn</em> step and a <em>test-yourself</em> step. <strong>Do the test steps out loud.</strong> Active recall under mild stress is the only thing that translates to interview performance.</p>
+
+  <div class="phasebar">
+    <a href="#p1"><span class="num">1</span>Map</a>
+    <a href="#p2"><span class="num">2</span>Understand</a>
+    <a href="#p3"><span class="num">3</span>Communicate</a>
+    <a href="#p4"><span class="num">4</span>Analyze</a>
+    <a href="#p5"><span class="num">5</span>Cases</a>
+  </div>
+  <p style="text-align:center; color: var(--muted); font-size: 13px;">Also: <a href="#qforthem">Questions to ask</a> · <a href="#debrief">Post-interview debrief</a> · <a href="#morning">Morning-of checklist</a> · <a href="#cheat">Cheat sheet</a></p>
+
+  <div class="note">
+    Pace: two hours? Do Phase 1–3 fully, skim 4–5. Four hours? Do everything. Sleep matters more than Phase 5.
+  </div>
+</section>
+
+<!-- COMPANY INTEL -->
+<section id="p1">
+<h2>Phase 1 · MAP — the facts you must own</h2>
+
+<h3>Anduril: the 90-second picture</h3>
+<div class="cards">
+  <div class="card" style="border-color: var(--accent);">
+    <h4>What they build</h4>
+    <ul>
+      <li><strong>Lattice OS</strong> — AI/ML sensor fusion platform; the OS layer for autonomous defense. Every other product feeds into or runs on Lattice.</li>
+      <li><strong>Ghost / Ghost-X</strong> — Group 5 UAS; ISR and strike; modular payload</li>
+      <li><strong>Roadrunner / Roadrunner-M</strong> — reusable autonomous interceptor; counter-UAS</li>
+      <li><strong>ALTIUS-600</strong> — attritable, tube-launched UAS; SOCOM contract</li>
+      <li><strong>Sentry Tower</strong> — autonomous border / perimeter sensor system (CBP)</li>
+      <li><strong>Dive-LD / Dive-XL</strong> — large UUV; undersea ISR and strike</li>
+      <li><strong>Pulsar</strong> — electronic warfare; counter-UAS</li>
+    </ul>
+  </div>
+  <div class="card" style="border-color: var(--accent);">
+    <h4>Business &amp; culture</h4>
+    <ul>
+      <li>Founded 2017 by Palmer Luckey (Oculus/Facebook) and a Silicon Valley team; Trae Stephens (Founders Fund, ex-Palantir) as Chairman</li>
+      <li>~$1.5B revenue (2024 estimate); $13.8B valuation after 2024 funding; ~3,500 employees; Costa Mesa HQ</li>
+      <li>Major programs: OBSS (Autonomous Underwater Systems, $1B+ Navy), border security (CBP), IVAS competitor, CDAO Lattice integrations</li>
+      <li>Culture signals: <em>"We move fast, ship real things to real operators."</em> Bureaucracy is explicitly anti-valued. Internal phrase: <em>"It is not enough to fight."</em></li>
+      <li>PM org: tight, no dedicated PM school — expected to write PRDs, brief leadership, and fly with operators. PM = mini-CEO of a product line.</li>
+    </ul>
+  </div>
+</div>
+
+<h3>The A-10 as your product context</h3>
+<div class="callout">
+  <span class="label">Why your background is rare here</span>
+  <p>The A-10 is the closest USAF analog to the problem Anduril is solving: a slow, survivable, sensor-rich platform optimized for close air support in high-threat, comms-degraded environments. You have operated in exactly the scenario Lattice is built for. You know what it's like when the data link drops, when the ROE packet is incomplete, when the JTAC is talking fast and the clock is moving.</p>
+  <p><strong>Frame it this way:</strong> "I've been the end user of the system Anduril is trying to build. I've also been the Weapons School instructor who evaluated whether a solution actually worked under stress. My job here is to make sure what ships to the operator is what actually helps — not what looks good in the demo."</p>
+</div>
+
+<h3>Weapons School — translate it</h3>
+<table>
+  <thead><tr><th>What you did</th><th>PM translation</th></tr></thead>
+  <tbody>
+    <tr><td>Wrote and defended tactical employment publications (TTPs)</td><td>Technical writing, requirements documentation, spec authorship</td></tr>
+    <tr><td>Evaluated student tactics under simulated combat pressure</td><td>User research, usability testing in high-stakes conditions</td></tr>
+    <tr><td>Coordinated multi-domain, multi-platform strike packages</td><td>Cross-functional program management across engineering, ops, and leadership</td></tr>
+    <tr><td>Ran post-mission debriefs to drive learning and process improvement</td><td>Sprint retrospectives, A/B testing, product iteration loops</td></tr>
+    <tr><td>Identified and codified failures before they became patterns</td><td>Risk identification, incident post-mortem, failure mode analysis</td></tr>
+  </tbody>
+</table>
+
+<h3>Track &amp; Field — translate it</h3>
+<p>This is not a throwaway line. Elite athletes in an individual/team hybrid sport (track is both) demonstrate: autonomous performance under pressure, coachability without ego, and physical commitment as a proxy for mental commitment. In interviews, it signals you are not afraid of being measured and you know how to train, not just perform.</p>
+<p><em>Use it when asked about resilience, setbacks, or how you develop:</em> "I competed in track at the Academy — that experience of training alone for months toward a single measured moment taught me how to build self-directed practice loops. I run my professional development the same way."</p>
+
+<h3>CS degree — use it specifically</h3>
+<p>Most veterans who apply for PM roles can't engage with engineers technically. You can. Lead with it:</p>
+<ul>
+  <li>Name specific coursework or projects relevant to Anduril's stack (embedded systems, algorithms, ML if applicable, networking/comms)</li>
+  <li>Be able to discuss APIs, data pipelines, and the difference between a firmware update and a software update — you'll be shipping both</li>
+  <li>If Anduril asks you to read a technical spec or evaluate build vs. buy, you can actually do it</li>
+</ul>
+</section>
+
+<!-- UNDERSTAND -->
+<section id="p2">
+<h2>Phase 2 · UNDERSTAND — the concepts behind the PM role</h2>
+
+<details class="reveal" open>
+  <summary>What does a PM actually do at a defense tech company?</summary>
+  <div class="answer">
+    <p>At Anduril specifically: you own a product from concept to operator hands. That means writing the requirements, working with engineering on feasibility, representing user needs in every sprint, briefing leadership on tradeoffs, and being accountable for what ships. You are <em>not</em> a project manager (that's scheduling). You are the person who decides <em>what</em> gets built and defends <em>why</em>.</p>
+    <p>The defense-specific addition: you must also understand the procurement environment (ACAT levels, FAR/DFARS, OTA contracts), the classification environment (CUI, SAP, ITAR), and the operator environment. The last one is your advantage — most PMs here come from commercial tech and have never been the user.</p>
+  </div>
+</details>
+
+<details class="reveal">
+  <summary>What is Lattice OS and why does it matter?</summary>
+  <div class="answer">
+    <p>Lattice is Anduril's platform play. Rather than selling individual hardware, Anduril wants Lattice to be the operating system for autonomous defense — the layer that ingests sensor data from drones, towers, radar, satellites, and human observers, fuses it into a common operational picture, and enables autonomous or human-authorized actions.</p>
+    <p>Think of it as: if AFDATC, GCCS-J, and a modern ML inference engine had a child designed for contested, comms-degraded environments. For an A-10 pilot, this is the system that should have been giving you better SA over the target area. For Anduril's PM: you need to understand the data flow (sensor → fuse → display → authorize → act) and where the gaps are in current operator experience.</p>
+  </div>
+</details>
+
+<details class="reveal">
+  <summary>How do you write a good Product Requirements Document (PRD)?</summary>
+  <div class="answer">
+    <p>A PRD answers four questions: <strong>Who</strong> is the user? <strong>What</strong> problem are they having? <strong>Why</strong> does it matter (quantified if possible)? <strong>What</strong> does success look like (acceptance criteria)?</p>
+    <p>Structure: problem statement → user stories ("As a [user], I need [capability] so that [outcome]") → functional requirements → non-functional requirements (latency, reliability, security) → out-of-scope → success metrics.</p>
+    <p><strong>Your edge:</strong> you can write the user story from memory. "As a CAS controller, I need the system to distinguish between a moving vehicle and a static one within 3 seconds so that I don't call in a strike on a broken-down civilian truck." That sentence — written by an actual A-10 pilot — is worth ten pages of user research from someone who's never been there.</p>
+  </div>
+</details>
+
+<details class="reveal">
+  <summary>What is an OTA contract and why does Anduril use them?</summary>
+  <div class="answer">
+    <p>Other Transaction Authority — a contracting mechanism that allows the DoD to bypass FAR/DFARS (the normal federal acquisition rules) for research, prototyping, and production of innovative defense capabilities. Anduril has used OTAs to move faster than traditional prime contractors.</p>
+    <p>Why it matters for PM: OTA contracts are often milestone-based ("deliver working prototype by X date, demonstrate capability, then negotiate production"). As a PM you'll be scoping those milestones and making sure engineering can hit them. Know the phrase; be able to discuss it at a high level.</p>
+  </div>
+</details>
+
+<details class="reveal">
+  <summary>How does Anduril think about autonomous systems and human-in-the-loop?</summary>
+  <div class="answer">
+    <p>Anduril's public position: humans authorize lethal action; the system enables faster and more accurate decisions. DoD Directive 3000.09 governs this — "appropriate levels of human judgment over the use of force." Anduril's products are designed for human-on-the-loop (system acts, human can override) or human-in-the-loop (system recommends, human authorizes).</p>
+    <p>As an A-10 pilot you have direct experience with ROE, positive ID, and the consequences of getting it wrong. This is your most important qualitative edge over a commercial tech PM: you understand the moral weight of the product you're building.</p>
+  </div>
+</details>
+
+</section>
+
+<!-- COMMUNICATE -->
+<section id="p3">
+<h2>Phase 3 · COMMUNICATE — saying it out loud</h2>
+<p>These are the questions Anduril is most likely to ask. Work through each one out loud, alone, before the interview. Don't memorize a script — build a clear structure and let the words come naturally.</p>
+
+<details class="reveal">
+  <summary>"Tell me about yourself."</summary>
+  <div class="prompt">The most important 90 seconds of the interview.</div>
+  <div class="answer">
+    <p><strong>Structure:</strong> who you are → what you did that's relevant → why you want this specifically.</p>
+    <p><strong>Draft:</strong> "I'm a USAFA grad — computer science — and I flew A-10s for [X] years. I went through Weapons School, which is the Air Force's advanced tactics and instructor pipeline — essentially a graduate program in how to design and evaluate complex airborne operations. I've spent the last [X] years [brief post-separation path]. I want to be at Anduril because I've been the end user of the problem you're solving. I know what it looks like when a system fails the operator at the worst possible moment, and I want to be on the side that makes sure it doesn't."</p>
+    <p><strong>Note:</strong> don't explain Weapons School defensively. Name it, let it land, move on. Anyone doing their homework will know what it is.</p>
+  </div>
+</details>
+
+<details class="reveal">
+  <summary>"Why do you want to be a PM and not stay in an operator or analyst role?"</summary>
+  <div class="answer">
+    <p>"The Weapons School taught me that the most leveraged thing a tactician can do is not fly better — it's write better TTPs, so that everyone who comes after you flies better. PM is the same idea applied to product: the highest-leverage position for someone with my background isn't being the operator who uses the tool, it's being the person who determines what tool gets built, so that thousands of operators are better off."</p>
+  </div>
+</details>
+
+<details class="reveal">
+  <summary>"Give me an example of a time you identified a user need and turned it into a solution."</summary>
+  <div class="answer">
+    <p>STAR-L format: Situation → Task → Action → Result → Learning.</p>
+    <p><strong>Frame:</strong> Think of any moment in the A-10, Weapons School, or your unit where you saw a procedural gap, a training deficiency, or a capability hole — and did something about it. Did you rewrite a TTP? Build a training scenario? Identify a mission planning tool limitation and propose a workaround? That is PM work.</p>
+    <p><strong>Example structure:</strong> "During [deployment/exercise], I noticed that [specific user pain — e.g., pilots were spending 40 minutes pre-mission doing X manually when the system should have automated it]. I [action: wrote up the problem, built a workaround, coordinated with [relevant party]]. The result was [measured outcome]. What I learned was [insight about user needs / product design / cross-functional work]."</p>
+  </div>
+</details>
+
+<details class="reveal">
+  <summary>"How do you prioritize features when you have more requests than capacity?"</summary>
+  <div class="answer">
+    <p>"I use a combination of impact and confidence. For Anduril's context: I'd start with operator lethality impact — does this feature increase the probability of mission success in a contested environment, or does it reduce operator cognitive load at a critical moment? Then I'd layer in technical confidence — can we ship this in a deployable state, or does it open a dependency chain that delays everything else? In the A-10 world we called this threat prioritization: not all threats are equal, not all threats are immediate. The discipline is the same."</p>
+    <p>Know the common frameworks: RICE (Reach, Impact, Confidence, Effort), MoSCoW (Must/Should/Could/Won't), and the simpler "what breaks if we don't do this?" test for defense contexts where the user consequence of failure is not a bad NPS score.</p>
+  </div>
+</details>
+
+<details class="reveal">
+  <summary>"How do you work with engineers who push back on your requirements?"</summary>
+  <div class="answer">
+    <p>"I've spent my career in environments where the people I needed to execute for me could kill me with information I didn't have. You learn fast to listen before you decide. When an engineer pushes back, my first question is 'what do you know that I don't?' — sometimes they're right and the requirement needs to change. Sometimes the requirement is correct but the framing was wrong and I need to explain the operator context better. The debrief culture in aviation helps: we assume everyone in the room saw something useful, and the goal is to synthesize it, not to be right."</p>
+  </div>
+</details>
+
+<details class="reveal">
+  <summary>"What's a product at Anduril you'd want to work on, and why?"</summary>
+  <div class="answer">
+    <p>Pick one and be specific. Don't say "I'm open to whatever." Suggested answer for an A-10 background:</p>
+    <p>"Lattice's CAS integration layer — specifically the capability that connects JTACs on the ground to autonomous sensors in the air. That interface has been broken for decades: the data is there, the connectivity has gotten better, but the operator experience hasn't kept up. I've been on both sides of that radio call — I know what the JTAC needs and I know what the pilot needs. That's the problem I'd want to close."</p>
+    <p>Alternative: Roadrunner / counter-UAS if you have experience with the drone threat. Ghost-X if you want to focus on ISR product management.</p>
+  </div>
+</details>
+
+<details class="reveal">
+  <summary>"Tell me about a time you failed."</summary>
+  <div class="answer">
+    <p>Be specific. Be honest. Show learning. The debrief culture gives you a natural structure — pilots talk about failures every day, that's what the debrief is for. Use that frame:</p>
+    <p>"In [context], I made a decision to [action]. The result was [specific negative outcome]. In the debrief I identified that I had [root cause: anchoring bias / incomplete information / mis-prioritized / failed to delegate]. What I changed was [specific behavioral change]. The next time [similar situation] came up, I [applied the learning]."</p>
+    <p>Don't pick a story where the failure was small or where you're actually secretly the hero. Pick a real one. Anduril is a culture that values honesty over polish.</p>
+  </div>
+</details>
+
+<details class="reveal">
+  <summary>"How do you communicate technical tradeoffs to non-technical stakeholders?"</summary>
+  <div class="answer">
+    <p>"I use the cost-capability-schedule triangle and I anchor it in the operator consequence. 'If we add this capability, we delay by three weeks and the system ships after the exercise window. If we cut it, the operator loses [specific thing]. Here's what I recommend and why.' The non-technical stakeholder doesn't need to understand the code — they need to understand the tradeoff in terms they can defend to their chain. I brief it that way."</p>
+  </div>
+</details>
+
+<details class="reveal">
+  <summary>"Where do you see yourself in five years?"</summary>
+  <div class="answer">
+    <p>Don't be vague. "I want to own a major product line — something that's in the hands of real operators in real operations. I'm interested in the intersection of autonomy and human judgment, and I think that problem is going to get harder before it gets easier as the threat environment evolves. In five years I want to be the person who's shaped how Anduril has approached that — with a track record of products that actually work in the field."</p>
+  </div>
+</details>
+
+</section>
+
+<!-- ANALYZE -->
+<section id="p4">
+<h2>Phase 4 · ANALYZE — compare, contrast, reason</h2>
+
+<h3>Anduril vs. traditional defense prime (your likely interview frame)</h3>
+<table>
+  <thead><tr><th>Dimension</th><th>Anduril</th><th>Lockheed / Raytheon / L3</th></tr></thead>
+  <tbody>
+    <tr><td>Development speed</td><td>Weeks to prototype, OTA contracts, spiral development</td><td>Years to milestone, FAR/DFARS overhead, ACAT II/I programs</td></tr>
+    <tr><td>Culture</td><td>Silicon Valley talent + veteran operator mentality; flatly structured</td><td>Matrixed, process-driven, risk-averse, institutionally slow</td></tr>
+    <tr><td>Operator relationship</td><td>Direct: PMs and engineers embedded with units</td><td>Mediated: program office → contractor → LRIP → fielding</td></tr>
+    <tr><td>PM role</td><td>Own the product end-to-end, write requirements, brief leadership</td><td>Program manager (schedule/budget focus) + systems engineer (requirements)</td></tr>
+    <tr><td>Risk tolerance</td><td>Ship early, learn from operators, iterate</td><td>Qualification before fielding, low tolerance for early failure</td></tr>
+  </tbody>
+</table>
+
+<h3>Essay questions — write or speak your answer</h3>
+
+<div class="essay-block">
+  <p class="stem">1. Anduril is building a new capability to help A-10 pilots (before retirement) and their eventual replacements coordinate CAS with ground forces in a GPS-degraded environment. You are the PM. What's your first move?</p>
+  <p class="hint">Think: user research → problem definition → MVP scope → success metric. Reference your own experience as the user.</p>
+  <textarea class="essay" placeholder="Write your answer here…"></textarea>
+</div>
+
+<div class="essay-block">
+  <p class="stem">2. Engineering tells you that the feature the JTACs most want (real-time blue force tracking on Lattice, visible on the pilot's display) will delay the release by 6 weeks. The PM director wants to ship on time. What do you do?</p>
+  <p class="hint">Think about: what information you'd gather, what the operator consequence of each option is, how you'd frame the recommendation, and what you'd do if overruled.</p>
+  <textarea class="essay" placeholder="Write your answer here…"></textarea>
+</div>
+
+<div class="essay-block">
+  <p class="stem">3. You've been given a new product area: Roadrunner's human-machine interface for the launch operator. You have no existing requirements, one engineer, and a demo in 90 days. Walk me through how you approach this.</p>
+  <p class="hint">Think: what you'd do in week 1 (user interviews, existing pain points), what an MVP HMI looks like, what success at 90 days means vs. what a production-ready system looks like.</p>
+  <textarea class="essay" placeholder="Write your answer here…"></textarea>
+</div>
+
+</section>
+
+<!-- CASES -->
+<section id="p5">
+<h2>Phase 5 · ASSESS — quick scenarios</h2>
+
+<details class="reveal">
+  <summary>Scenario A: You're in a user interview with a JTAC who says "I hate the current interface." How do you respond?</summary>
+  <div class="answer">
+    <p>Don't jump to solutions. Ask: "What specifically are you doing when it breaks down?" → "How often does this happen?" → "What do you do instead right now?" → "What would a good day look like?" You are mining for the <em>specific behavior</em>, not the vague sentiment. "I hate the interface" is data; it's not requirements. Your job is to convert it.</p>
+  </div>
+</details>
+
+<details class="reveal">
+  <summary>Scenario B: An engineer on your team says a requirement you've written is technically impossible. What do you do?</summary>
+  <div class="answer">
+    <p>First: believe them and get specific. "What exactly makes it impossible — is it compute, latency, data availability, or time?" Then: understand if it's impossible given current architecture or impossible ever. Then: go back to the operator need. Can a different implementation satisfy the same underlying need? Write the requirement to the capability ("the system shall enable the operator to positively identify a moving target within 5 seconds"), not the implementation ("the system shall use ML fusion layer X"). If it's genuinely impossible, escalate honestly with a proposed alternative.</p>
+  </div>
+</details>
+
+<details class="reveal">
+  <summary>Scenario C: Your product ships to a unit and they're not using it. What's your first hypothesis and what do you do?</summary>
+  <div class="answer">
+    <p>Three most common failure modes: (1) training gap — they don't know how to use it, (2) fit gap — it solves a problem they don't actually have, (3) trust gap — they tried it once, it failed, now they default to old behavior. Go visit the unit. Watch them work. Don't send a survey. Observe the specific moment they switch away from your product to the old tool — that moment is your requirements document.</p>
+  </div>
+</details>
+
+<details class="reveal">
+  <summary>Scenario D: Palmer Luckey asks you in a hallway "what should we build next?" You have 60 seconds.</summary>
+  <div class="answer">
+    <p>Have a real answer. Something specific, grounded in your operator experience. Example: "The biggest gap I saw in the A-10 is the interface between the kill chain decision and the comms-degraded environment. Everyone assumes the pilot has situational awareness — but the moment the link drops, you're flying on last-known positions. I'd build a Lattice capability that predicts threat movement in the 30-second comms window — not to replace judgment, but to sharpen the estimate the pilot already has to make." Confident, specific, operator-grounded, connected to Lattice.</p>
+  </div>
+</details>
+
+</section>
+
+<!-- QUESTIONS FOR THEM -->
+<section id="qforthem">
+<h2>Your questions for the interviewer — ask at least three</h2>
+<p>Good questions signal you've done the work. These are calibrated for an Anduril PM interview.</p>
+<ol>
+  <li>"How much time does a PM on your team spend embedded with operators versus in the office? What does that rhythm look like?"</li>
+  <li>"What's the hardest part of the operator-to-product translation problem that you haven't solved yet?"</li>
+  <li>"When a PM and an engineer disagree on a requirement, how does Anduril resolve it? Who has final say?"</li>
+  <li>"What does a strong first 90 days look like for a new PM here?"</li>
+  <li>"How does the Weapons School training — the TTP-writing, the debrief culture — translate to what you actually need in this role?"</li>
+  <li>"What's the one thing you wish every PM candidate understood about Anduril before they showed up?"</li>
+</ol>
+</section>
+
+<!-- DEBRIEF -->
+<section id="debrief">
+<h2>Post-interview debrief — do this within 30 minutes of hanging up</h2>
+<p>Treat it like a mission debrief. Write your answers while they're fresh.</p>
+
+<div class="essay-block">
+  <p class="stem">1. What question did they ask that you weren't ready for? What's the better answer?</p>
+  <textarea class="essay" placeholder="Write here…"></textarea>
+</div>
+<div class="essay-block">
+  <p class="stem">2. What answer landed well? What made it work?</p>
+  <textarea class="essay" placeholder="Write here…"></textarea>
+</div>
+<div class="essay-block">
+  <p class="stem">3. What did you learn about the role or the team that you didn't know before?</p>
+  <textarea class="essay" placeholder="Write here…"></textarea>
+</div>
+<div class="essay-block">
+  <p class="stem">4. What's your honest read on fit — theirs for you, yours for them?</p>
+  <textarea class="essay" placeholder="Write here…"></textarea>
+</div>
+<div class="essay-block">
+  <p class="stem">5. What do you do in the next 24 hours?</p>
+  <textarea class="essay" placeholder="Send thank-you? Follow up on open questions? Reflect on something they said?"></textarea>
+</div>
+
+<h3>Thank-you note (send within 24 hours)</h3>
+<div class="callout">
+  <span class="label">Template — personalize every line</span>
+  <p>[Interviewer name] —</p>
+  <p>Thank you for the time today. [One specific thing from the conversation that was interesting or that you're still thinking about.] It reinforced why I'm excited about this role specifically.</p>
+  <p>[One sentence that connects your background to something they said — not generic, not a summary of your resume. Prove you were listening.]</p>
+  <p>Looking forward to next steps.</p>
+  <p>[Your name]</p>
+</div>
+</section>
+
+<!-- MORNING OF -->
+<section id="morning">
+<h2>Morning-of checklist</h2>
+
+<h3>The night before</h3>
+<div class="checklist">
+  <label><input type="checkbox"> Run through Phase 3 prompts out loud — not in your head — at least once.</label>
+  <label><input type="checkbox"> Read Anduril's most recent press releases and LinkedIn posts. Know any news from the last 48 hours.</label>
+  <label><input type="checkbox"> Know your three strongest stories cold: one leadership, one technical, one failure.</label>
+  <label><input type="checkbox"> Prepare your "what product would you want to work on" answer specifically.</label>
+  <label><input type="checkbox"> Get 7+ hours of sleep. This is not optional.</label>
+</div>
+
+<h3>90 minutes before</h3>
+<div class="checklist">
+  <label><input type="checkbox"> Re-read Phase 1 (the map). Close the workbook and recall it without looking.</label>
+  <label><input type="checkbox"> Say your "tell me about yourself" answer out loud one more time.</label>
+  <label><input type="checkbox"> Have your questions ready (at least 3 from the list above).</label>
+  <label><input type="checkbox"> Technical setup: test audio, video, background. Have water.</label>
+</div>
+
+<h3>5 minutes before</h3>
+<div class="checklist">
+  <label><input type="checkbox"> Close this workbook. You know what you know.</label>
+  <label><input type="checkbox"> Two minutes of slow breathing (physiological sigh: double inhale through nose, long exhale through mouth). This works.</label>
+  <label><input type="checkbox"> Remind yourself: you've briefed combatant commanders, run weapons school debriefs, and flown into threat envelopes that would end careers. This is a conversation.</label>
+</div>
+</section>
+
+<!-- CHEAT SHEET -->
+<section id="cheat">
+<h2>One-page cheat sheet</h2>
+<div class="cards">
+  <div class="card">
+    <h4>Anduril products</h4>
+    <ul>
+      <li><strong>Lattice OS</strong> — AI sensor fusion platform</li>
+      <li><strong>Ghost / Ghost-X</strong> — Group 5 UAS</li>
+      <li><strong>Roadrunner-M</strong> — autonomous interceptor</li>
+      <li><strong>ALTIUS-600</strong> — attritable tube-launch UAS</li>
+      <li><strong>Sentry Tower</strong> — autonomous perimeter</li>
+      <li><strong>Dive-LD</strong> — large UUV</li>
+      <li><strong>Pulsar</strong> — EW / counter-UAS</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>Your 3 strongest stories</h4>
+    <ul>
+      <li><strong>Leadership:</strong> [fill in — Weapons School instruction, flight lead decision, unit initiative]</li>
+      <li><strong>Technical:</strong> [fill in — CS project, coding solution, JTAC coordination problem you solved]</li>
+      <li><strong>Failure:</strong> [fill in — honest, specific, with clear learning]</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>PM vocabulary to drop naturally</h4>
+    <ul>
+      <li>PRD, user story, acceptance criteria</li>
+      <li>RICE prioritization</li>
+      <li>Sprint, retrospective, velocity</li>
+      <li>OTA contract, ACAT, FAR/DFARS</li>
+      <li>Human-in-the-loop / human-on-the-loop</li>
+      <li>DoDD 3000.09 (autonomous weapons)</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>Weapons School → PM translations</h4>
+    <ul>
+      <li>TTP authorship → PRD / requirements writing</li>
+      <li>Debrief culture → sprint retrospective</li>
+      <li>Multi-domain package coordination → cross-functional PM</li>
+      <li>Threat prioritization → feature prioritization</li>
+      <li>Student evaluation under stress → usability testing</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Blue Canopy · Stage 07 — Interview Prep · <a href="/interview-prep">Back to Interview Prep</a> · <a href="/">Home</a></p>
+  <p>This workbook is a template — personalize every section with your specific stories before you use it. The frames and translations are the reusable parts; the content is yours.</p>
+</footer>
+
+</div>
+</body>
+</html>
