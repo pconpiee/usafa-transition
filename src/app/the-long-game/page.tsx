@@ -19,8 +19,42 @@ export default function TheLongGamePage() {
         that compounds over 20 years — not a job you hold for 18 months.
       </p>
 
+      {/* TL;DR */}
+      <div className="mt-6 p-4 rounded-lg border border-slate-700 bg-slate-900/60">
+        <p className="text-xs font-semibold text-blue-400 uppercase tracking-wide mb-2">TL;DR</p>
+        <ul className="space-y-1">
+          {[
+            "The career arc that matters — trajectory over title",
+            "How to build toward optionality: the portfolio of credibility that opens big doors",
+            "Skim if: you're thriving in your current role and have a clear 3-year plan",
+          ].map((item) => (
+            <li key={item} className="text-sm text-slate-400 flex gap-2">
+              <span className="text-slate-600 flex-shrink-0">—</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* On this page */}
+      <nav className="mt-8 p-4 rounded-lg border border-slate-800 bg-slate-900/40">
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">On this page</p>
+        <div className="flex flex-wrap gap-x-4 gap-y-1">
+          {[
+            ["#five-year", "Five-year architecture"],
+            ["#identity", "The identity shift"],
+            ["#network", "The compounding network"],
+            ["#year-five", "Year five question"],
+          ].map(([href, label]) => (
+            <a key={href} href={href} className="text-sm text-blue-400 hover:text-blue-300 transition-colors">
+              {label}
+            </a>
+          ))}
+        </div>
+      </nav>
+
       {/* The 5-year frame */}
-      <section className="mt-12">
+      <section id="five-year" className="mt-12">
         <h2 className="text-2xl font-bold text-slate-100 mb-6">
           The five-year architecture
         </h2>
@@ -76,7 +110,7 @@ export default function TheLongGamePage() {
       </section>
 
       {/* Identity */}
-      <section className="mt-16">
+      <section id="identity" className="mt-16">
         <h2 className="text-2xl font-bold text-slate-100 mb-2">
           The identity shift
         </h2>
@@ -128,7 +162,7 @@ export default function TheLongGamePage() {
       </section>
 
       {/* The compounding network */}
-      <section className="mt-16">
+      <section id="network" className="mt-16">
         <h2 className="text-2xl font-bold text-slate-100 mb-2">
           The compounding network
         </h2>
@@ -163,7 +197,7 @@ export default function TheLongGamePage() {
       </section>
 
       {/* The question */}
-      <section className="mt-16 border-t border-slate-800 pt-16">
+      <section id="year-five" className="mt-16 border-t border-slate-800 pt-16">
         <h2 className="text-2xl font-bold text-slate-100 mb-4">
           The question worth asking from year five
         </h2>

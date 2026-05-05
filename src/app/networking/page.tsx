@@ -23,6 +23,23 @@ export default function NetworkingPage() {
         They&rsquo;re the people you barely know.
       </p>
 
+      {/* TL;DR */}
+      <div className="mt-6 p-4 rounded-lg border border-slate-700 bg-slate-900/60">
+        <p className="text-xs font-semibold text-blue-400 uppercase tracking-wide mb-2">TL;DR</p>
+        <ul className="space-y-1">
+          {[
+            "Why the people you barely know matter more than close friends for job hunting",
+            "The informational conversation script — the most underused tool in the search",
+            "Skim if: you already have 10+ warm relationships in your target industry",
+          ].map((item) => (
+            <li key={item} className="text-sm text-slate-400 flex gap-2">
+              <span className="text-slate-600 flex-shrink-0">—</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
       {/* On this page */}
       <nav className="mt-8 p-4 rounded-lg border border-slate-800 bg-slate-900/40">
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">On this page</p>
@@ -166,6 +183,12 @@ export default function NetworkingPage() {
           </div>
         </div>
       </section>
+
+      {/* Key insight */}
+      <div className="my-6 p-4 rounded-lg border-l-4 border-blue-500 bg-blue-500/5">
+        <p className="text-sm font-semibold text-blue-300 mb-1">Key insight</p>
+        <p className="text-sm text-slate-300 leading-relaxed">Most pilots have a strong operational network and almost no cross-industry network. The goal isn&rsquo;t to work the room — it&rsquo;s to systematically build a few dozen relationships with people who see the world differently than you do.</p>
+      </div>
 
       {/* Section 2: Network Audit */}
       <section id="audit" className="mt-16">

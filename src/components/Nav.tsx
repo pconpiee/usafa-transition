@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import SearchModal from "@/components/SearchModal";
 
 const stages = [
   { num: "01", href: "/the-reckoning", label: "Who Are You Now" },
@@ -20,11 +21,11 @@ const stages = [
 ];
 
 const tools = [
-  { href: "/comp", label: "Comp" },
-  { href: "/comp-translator", label: "Comp Translator" },
-  { href: "/timeline", label: "Timeline" },
-  { href: "/bold-face", label: "Bold Face" },
-  { href: "/resources", label: "Resources" },
+  { href: "/comp", label: "Comp", sigil: "$" },
+  { href: "/comp-translator", label: "Comp Translator", sigil: "⇄" },
+  { href: "/timeline", label: "Timeline", sigil: "◷" },
+  { href: "/bold-face", label: "Bold Face", sigil: "✓" },
+  { href: "/resources", label: "Resources", sigil: "◈" },
 ];
 
 const topLinks = [
@@ -53,6 +54,21 @@ export default function Nav() {
 
           {/* Desktop: stage indicator + tools */}
           <div className="hidden lg:flex items-center gap-1">
+          {/* Search button */}
+            <button
+              onClick={() => {
+                const event = new KeyboardEvent('keydown', { key: 'k', metaKey: true, bubbles: true });
+                window.dispatchEvent(event);
+              }}
+              className="flex items-center gap-2 px-3 py-1.5 text-sm text-slate-500 hover:text-slate-300 border border-slate-800 hover:border-slate-600 rounded-lg transition-colors"
+            >
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+              <span className="hidden xl:inline">Search</span>
+              <kbd className="hidden xl:inline text-xs border border-slate-700 rounded px-1 py-0.5">⌘K</kbd>
+            </button>
+
             {/* Stages dropdown trigger */}
             <div className="relative">
               <button
@@ -93,12 +109,9 @@ export default function Nav() {
                   <div className="border-t border-slate-800 px-3 py-2">
                     <p className="text-xs text-slate-500 uppercase tracking-wide mb-1">Tools</p>
                     {tools.map((t) => (
-                      <Link
-                        key={t.href}
-                        href={t.href}
-                        onClick={() => setStagesOpen(false)}
-                        className="block px-0 py-1.5 text-sm text-slate-400 hover:text-slate-100 transition-colors"
-                      >
+                      <Link key={t.href} href={t.href} onClick={() => setStagesOpen(false)}
+                        className="flex items-center gap-2 px-0 py-1.5 text-sm text-slate-400 hover:text-slate-100 transition-colors">
+                        <span className="text-slate-600 text-xs font-mono w-4">{t.sigil}</span>
                         {t.label}
                       </Link>
                     ))}
@@ -204,6 +217,7 @@ export default function Nav() {
           </div>
         )}
       </div>
+      <SearchModal />
     </nav>
   );
 }

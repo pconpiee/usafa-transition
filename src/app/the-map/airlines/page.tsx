@@ -16,6 +16,14 @@ export default function AviationPaths() {
           <p className="text-green-300 text-xs font-semibold tracking-widest uppercase mb-3">
             Stage 03 &mdash; The Map &mdash; Aviation Paths
           </p>
+          {/* Breadcrumb */}
+          <nav className="flex items-center gap-1.5 text-xs text-slate-600 mb-3">
+            <a href="/" className="hover:text-slate-400 transition-colors">Home</a>
+            <span>/</span>
+            <a href="/the-map" className="hover:text-slate-400 transition-colors">The Map</a>
+            <span>/</span>
+            <span className="text-slate-400">Aviation Paths</span>
+          </nav>
           <h1 className="text-3xl sm:text-4xl font-bold text-slate-50 leading-tight">
             Aviation Paths
           </h1>
@@ -54,6 +62,27 @@ export default function AviationPaths() {
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 space-y-16">
 
+        {/* On this page */}
+        <nav className="mt-8 p-4 rounded-lg border border-slate-800 bg-slate-900/40">
+          <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">On this page</p>
+          <div className="flex flex-wrap gap-x-4 gap-y-1">
+            {[
+              ["#aviation-fork", "Choose your flavor"],
+              ["#commercial", "Commercial Airlines"],
+              ["#cargo", "Cargo Flying"],
+              ["#fractional", "Fractional & Charter"],
+              ["#corporate", "Corporate Flight Dept"],
+              ["#guard-reserve", "Guard / Reserve overlay"],
+              ["#timeline", "Timeline"],
+              ["#resources", "Resources"],
+            ].map(([href, label]) => (
+              <a key={href} href={href} className="text-sm text-blue-400 hover:text-blue-300 transition-colors">
+                {label}
+              </a>
+            ))}
+          </div>
+        </nav>
+
         {/* AVIATION FORK DIAGRAM */}
         <section id="aviation-fork">
           <h2 className="text-xl font-bold text-slate-50 mb-4">The aviation fork</h2>
@@ -74,75 +103,69 @@ export default function AviationPaths() {
               </span>
             </div>
 
-            {/* H-bar to 4 branches */}
-            <div className="flex justify-center mb-0">
-              <div className="relative w-full max-w-xl h-5">
-                <div className="absolute left-[12.5%] right-[12.5%] top-0 border-t border-slate-700" />
-                {[12.5, 37.5, 62.5, 87.5].map((pct) => (
-                  <div
-                    key={pct}
-                    className="absolute top-0 w-px h-5 bg-slate-700"
-                    style={{ left: `${pct}%` }}
-                  />
+            {/* Aviation fork — responsive */}
+            <div className="relative mt-0">
+              {/* Horizontal connector bar — hidden on mobile */}
+              <div className="hidden sm:block absolute top-0 left-[12.5%] right-[12.5%] h-px bg-slate-700" />
+
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-0 sm:pt-5">
+                {[
+                  {
+                    label: "Commercial Airlines",
+                    sub: "Regionals → Majors · LCC",
+                    comp: "$80K → $450K+",
+                    note: "Transparent seniority. Long game. Known quantity.",
+                    border: "border-green-800/50",
+                    bg: "bg-green-950/20",
+                    text: "text-green-400",
+                    href: "#commercial",
+                  },
+                  {
+                    label: "Cargo",
+                    sub: "FedEx · UPS · Amazon Air",
+                    comp: "≈Major pay",
+                    note: "No pax. Better WLB. Retire well. Underrated.",
+                    border: "border-yellow-800/40",
+                    bg: "bg-yellow-950/10",
+                    text: "text-yellow-400",
+                    href: "#cargo",
+                  },
+                  {
+                    label: "Fractional / Charter",
+                    sub: "NetJets · Flexjet · Wheels Up",
+                    comp: "$120K–$350K+",
+                    note: "No seniority system. Relationship hiring. Strong pay.",
+                    border: "border-sky-800/40",
+                    bg: "bg-sky-950/10",
+                    text: "text-sky-400",
+                    href: "#fractional",
+                  },
+                  {
+                    label: "Corporate Flight Dept",
+                    sub: "Company jet · Fortune 500s",
+                    comp: "$100K–$300K",
+                    note: "9-to-5ish. Max stability. Hardest to access.",
+                    border: "border-emerald-800/40",
+                    bg: "bg-emerald-950/10",
+                    text: "text-emerald-400",
+                    href: "#corporate",
+                  },
+                ].map((p) => (
+                  <div key={p.label} className="relative flex flex-col">
+                    {/* Vertical stem — hidden on mobile */}
+                    <div className="hidden sm:block absolute -top-5 left-1/2 w-px h-5 bg-slate-700" />
+                    <a
+                      href={p.href}
+                      className={`flex flex-col gap-1 p-3 rounded-lg border ${p.border} ${p.bg} hover:opacity-80 transition-opacity h-full`}
+                    >
+                      <p className={`text-xs font-semibold ${p.text}`}>{p.label}</p>
+                      <p className="text-slate-600 text-xs leading-snug">{p.sub}</p>
+                      <p className={`text-xs font-mono ${p.text} opacity-80 mt-1`}>{p.comp}</p>
+                      <p className="text-slate-500 text-xs leading-snug mt-1">{p.note}</p>
+                    </a>
+                  </div>
                 ))}
               </div>
-            </div>
-
-            {/* 4 path columns */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-0">
-              {[
-                {
-                  label: "Commercial Airlines",
-                  sub: "Regionals → Majors · LCC",
-                  comp: "$80K → $450K+",
-                  note: "Transparent seniority. Long game. Known quantity.",
-                  border: "border-green-800/50",
-                  bg: "bg-green-950/20",
-                  text: "text-green-400",
-                  href: "#commercial",
-                },
-                {
-                  label: "Cargo",
-                  sub: "FedEx · UPS · Amazon Air",
-                  comp: "≈Major pay",
-                  note: "No pax. Better WLB. Retire well. Underrated.",
-                  border: "border-yellow-800/40",
-                  bg: "bg-yellow-950/10",
-                  text: "text-yellow-400",
-                  href: "#cargo",
-                },
-                {
-                  label: "Fractional / Charter",
-                  sub: "NetJets · Flexjet · Wheels Up",
-                  comp: "$120K–$350K+",
-                  note: "No seniority system. Relationship hiring. Strong pay.",
-                  border: "border-sky-800/40",
-                  bg: "bg-sky-950/10",
-                  text: "text-sky-400",
-                  href: "#fractional",
-                },
-                {
-                  label: "Corporate Flight Dept",
-                  sub: "Company jet · Fortune 500s",
-                  comp: "$100K–$300K",
-                  note: "9-to-5ish. Max stability. Hardest to access.",
-                  border: "border-emerald-800/40",
-                  bg: "bg-emerald-950/10",
-                  text: "text-emerald-400",
-                  href: "#corporate",
-                },
-              ].map((p) => (
-                <a
-                  key={p.label}
-                  href={p.href}
-                  className={`flex flex-col gap-1 p-3 rounded-lg border ${p.border} ${p.bg} hover:opacity-80 transition-opacity`}
-                >
-                  <p className={`text-xs font-semibold ${p.text}`}>{p.label}</p>
-                  <p className="text-slate-600 text-xs leading-snug">{p.sub}</p>
-                  <p className={`text-xs font-mono ${p.text} opacity-80 mt-1`}>{p.comp}</p>
-                  <p className="text-slate-500 text-xs leading-snug mt-1">{p.note}</p>
-                </a>
-              ))}
             </div>
 
             <div className="mt-4 pt-4 border-t border-slate-800 text-center">

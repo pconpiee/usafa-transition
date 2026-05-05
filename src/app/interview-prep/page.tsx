@@ -21,6 +21,23 @@ export default function InterviewPrepPage() {
         regardless of what they bring to theirs.
       </p>
 
+      {/* TL;DR */}
+      <div className="mt-6 p-4 rounded-lg border border-slate-700 bg-slate-900/60">
+        <p className="text-xs font-semibold text-blue-400 uppercase tracking-wide mb-2">TL;DR</p>
+        <ul className="space-y-1">
+          {[
+            "What interviewers actually evaluate — and how to give them what they want",
+            "The STAR-L framework and how to build a story bank before every interview",
+            "Skim if: you're consistently getting to final rounds and getting offers",
+          ].map((item) => (
+            <li key={item} className="text-sm text-slate-400 flex gap-2">
+              <span className="text-slate-600 flex-shrink-0">—</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
       {/* On this page */}
       <nav className="mt-8 p-4 rounded-lg border border-slate-800 bg-slate-900/40">
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">On this page</p>
@@ -154,6 +171,12 @@ export default function InterviewPrepPage() {
           </div>
         </div>
       </section>
+
+      {/* Key insight */}
+      <div className="my-6 p-4 rounded-lg border-l-4 border-blue-500 bg-blue-500/5">
+        <p className="text-sm font-semibold text-blue-300 mb-1">Key insight</p>
+        <p className="text-sm text-slate-300 leading-relaxed">The difference between a good answer and a great one is the L — what you Learned. It&rsquo;s the signal that you reflect, adapt, and won&rsquo;t repeat mistakes. Interviewers remember it because almost no one does it.</p>
+      </div>
 
       {/* Your story bank */}
       <section id="story-bank" className="mt-16">

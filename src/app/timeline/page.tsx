@@ -64,18 +64,36 @@ export default function TimelinePage() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
-      <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
-        Tool
-      </p>
-      <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
-        Timeline Builder
-      </h1>
-      <p className="mt-4 text-lg text-slate-400 max-w-2xl">
-        Enter your separation date. Get a personalized checklist built from the
-        18-month outlier standard.
-      </p>
+      <style>{`
+        @media print {
+          nav, .no-print { display: none !important; }
+          body { background: white !important; color: black !important; }
+          .print-area { color: black !important; }
+        }
+      `}</style>
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
+            Tool
+          </p>
+          <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
+            Timeline Builder
+          </h1>
+          <p className="mt-4 text-lg text-slate-400 max-w-2xl">
+            Enter your separation date. Get a personalized checklist built from the
+            18-month outlier standard.
+          </p>
+        </div>
+        <button
+          onClick={() => window.print()}
+          className="no-print flex-shrink-0 flex items-center gap-2 px-4 py-2 text-sm border border-slate-700 text-slate-400 hover:text-slate-100 hover:border-slate-500 rounded-lg transition-colors"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+          Print / Save as PDF
+        </button>
+      </div>
 
-      <div className="mt-8">
+      <div className="no-print mt-8">
         <label className="block text-sm font-medium text-slate-300 mb-1">
           Target separation date
         </label>
@@ -88,7 +106,7 @@ export default function TimelinePage() {
       </div>
 
       {/* Legend */}
-      <div className="mt-6 flex flex-wrap gap-2">
+      <div className="no-print mt-6 flex flex-wrap gap-2">
         {Object.entries(categoryColors).map(([cat, cls]) => (
           <span
             key={cat}
@@ -100,7 +118,7 @@ export default function TimelinePage() {
       </div>
 
       {/* Timeline */}
-      <div className="mt-10 relative">
+      <div className="print-area mt-10 relative">
         <div className="absolute left-4 top-0 bottom-0 w-px bg-slate-800" />
         <div className="space-y-6">
           {milestones.map((m, i) => {

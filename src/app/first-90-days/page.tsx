@@ -27,8 +27,48 @@ export default function First90DaysPage() {
         </p>
       </div>
 
+      {/* TL;DR */}
+      <div className="mt-6 p-4 rounded-lg border border-slate-700 bg-slate-900/60">
+        <p className="text-xs font-semibold text-blue-400 uppercase tracking-wide mb-2">TL;DR</p>
+        <ul className="space-y-1">
+          {[
+            "How to land well — learn fast, build trust, avoid the overconfident new hire trap",
+            "The 30/60/90 framework: observe first, then build, then execute",
+            "Skim if: you've already started and have good feedback from your manager at 30 days",
+          ].map((item) => (
+            <li key={item} className="text-sm text-slate-400 flex gap-2">
+              <span className="text-slate-600 flex-shrink-0">—</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* On this page */}
+      <nav className="mt-8 p-4 rounded-lg border border-slate-800 bg-slate-900/40">
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">On this page</p>
+        <div className="flex flex-wrap gap-x-4 gap-y-1">
+          {[
+            ["#action-plan", "90-Day Action Plan"],
+            ["#identity", "The identity transition"],
+            ["#five-year", "Five-Year Architecture"],
+            ["#not-flight-lead", "You are not the flight lead"],
+          ].map(([href, label]) => (
+            <a key={href} href={href} className="text-sm text-blue-400 hover:text-blue-300 transition-colors">
+              {label}
+            </a>
+          ))}
+        </div>
+      </nav>
+
+      {/* Key insight */}
+      <div className="my-6 p-4 rounded-lg border-l-4 border-blue-500 bg-blue-500/5">
+        <p className="text-sm font-semibold text-blue-300 mb-1">Key insight</p>
+        <p className="text-sm text-slate-300 leading-relaxed">The biggest failure mode in a first job is performing too early. You look confident and capable — but you haven&rsquo;t learned why things are the way they are, and you start breaking things that were working. Observe first. Build credibility, then act.</p>
+      </div>
+
       {/* The 90-Day Framework */}
-      <section className="mt-12">
+      <section id="action-plan" className="mt-12">
         <h2 className="text-2xl font-bold text-slate-100 mb-6">
           The 90-Day Action Plan
         </h2>
@@ -108,7 +148,7 @@ export default function First90DaysPage() {
       </section>
 
       {/* The Identity Transition */}
-      <section className="mt-16">
+      <section id="identity" className="mt-16">
         <h2 className="text-2xl font-bold text-slate-100 mb-6">
           The identity transition nobody warns you about
         </h2>
@@ -168,7 +208,7 @@ export default function First90DaysPage() {
       </section>
 
       {/* Five-Year Architecture */}
-      <section className="mt-16 border-t border-slate-800 pt-16">
+      <section id="five-year" className="mt-16 border-t border-slate-800 pt-16">
         <h2 className="text-2xl font-bold text-slate-100 mb-4">
           The Five-Year Architecture
         </h2>
@@ -267,7 +307,7 @@ export default function First90DaysPage() {
       </section>
 
       {/* You are not the flight lead */}
-      <section className="mt-16 border-t border-slate-800 pt-16">
+      <section id="not-flight-lead" className="mt-16 border-t border-slate-800 pt-16">
         <h2 className="text-2xl font-bold text-slate-100 mb-4">
           You are not the flight lead
         </h2>

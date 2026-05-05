@@ -20,8 +20,42 @@ export default function KnowYourGiftsPage() {
         under real consequences.
       </p>
 
+      {/* TL;DR */}
+      <div className="mt-6 p-4 rounded-lg border border-slate-700 bg-slate-900/60">
+        <p className="text-xs font-semibold text-blue-400 uppercase tracking-wide mb-2">TL;DR</p>
+        <ul className="space-y-1">
+          {[
+            "How to translate military roles into civilian capability language",
+            "Mapping your actual demonstrated skills — not personality types",
+            "Skim if: you have a clear target role and already know how to pitch yourself",
+          ].map((item) => (
+            <li key={item} className="text-sm text-slate-400 flex gap-2">
+              <span className="text-slate-600 flex-shrink-0">—</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* On this page */}
+      <nav className="mt-8 p-4 rounded-lg border border-slate-800 bg-slate-900/40">
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">On this page</p>
+        <div className="flex flex-wrap gap-x-4 gap-y-1">
+          {[
+            ["#translation", "The translation problem"],
+            ["#gift-inventory", "The gift inventory"],
+            ["#airframe-callouts", "Airframe callouts"],
+            ["#action", "What to do with this"],
+          ].map(([href, label]) => (
+            <a key={href} href={href} className="text-sm text-blue-400 hover:text-blue-300 transition-colors">
+              {label}
+            </a>
+          ))}
+        </div>
+      </nav>
+
       {/* Why this matters */}
-      <section className="mt-12">
+      <section id="translation" className="mt-12">
         <div className="bg-slate-900/70 border border-slate-800 rounded-xl p-6">
           <h3 className="text-base font-semibold text-slate-200 mb-3">
             The translation problem
@@ -71,7 +105,7 @@ export default function KnowYourGiftsPage() {
       </section>
 
       {/* The Gift Inventory */}
-      <section className="mt-16">
+      <section id="gift-inventory" className="mt-16">
         <h2 className="text-2xl font-bold text-slate-100 mb-2">
           The gift inventory
         </h2>
@@ -179,7 +213,7 @@ export default function KnowYourGiftsPage() {
       </section>
 
       {/* Airframe-specific callouts */}
-      <section className="mt-16">
+      <section id="airframe-callouts" className="mt-16">
         <h2 className="text-2xl font-bold text-slate-100 mb-2">
           Airframe callouts
         </h2>
@@ -254,7 +288,7 @@ export default function KnowYourGiftsPage() {
       </section>
 
       {/* What to do with this */}
-      <section className="mt-12 bg-blue-600/5 border border-blue-500/20 rounded-xl p-6 sm:p-8">
+      <section id="action" className="mt-12 bg-blue-600/5 border border-blue-500/20 rounded-xl p-6 sm:p-8">
         <h3 className="text-base font-semibold text-slate-200 mb-4">
           What to do with this
         </h3>

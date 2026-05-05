@@ -108,6 +108,7 @@ export default function Home() {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-blue-600/5 via-transparent to-transparent" />
+        <div className="absolute inset-0 opacity-[0.03]" style={{backgroundImage: 'radial-gradient(circle, #94a3b8 1px, transparent 1px)', backgroundSize: '24px 24px'}} />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-24 pb-16 sm:pt-32 sm:pb-24 relative">
           <p className="text-blue-300 text-sm font-medium tracking-wide uppercase mb-4">
             For USAFA grads leaving active duty &mdash; especially those who flew
@@ -130,6 +131,13 @@ export default function Home() {
             >
               See the paths
             </Link>
+          </div>
+          <div className="mt-6 flex items-center gap-6 text-sm text-slate-500">
+            <span><span className="text-slate-300 font-semibold">12</span> stages</span>
+            <span className="text-slate-700">·</span>
+            <span><span className="text-slate-300 font-semibold">7</span> paths</span>
+            <span className="text-slate-700">·</span>
+            <span className="text-slate-300 font-semibold">100% free</span>
           </div>
           <div className="mt-8 space-y-3 text-base text-slate-400 max-w-2xl leading-relaxed">
             <p>
@@ -243,25 +251,43 @@ export default function Home() {
             color: "text-blue-400",
             barColor: "bg-blue-600/30",
             stages: stages.slice(0, 3),
+            icon: (
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" strokeWidth="2"/><circle cx="12" cy="12" r="3" strokeWidth="2"/>
+                <line x1="12" y1="2" x2="12" y2="6" strokeWidth="2"/><line x1="12" y1="18" x2="12" y2="22" strokeWidth="2"/>
+                <line x1="2" y1="12" x2="6" y2="12" strokeWidth="2"/><line x1="18" y1="12" x2="22" y2="12" strokeWidth="2"/>
+              </svg>
+            ),
           },
           {
             phase: "The Work",
             color: "text-purple-400",
             barColor: "bg-purple-600/30",
             stages: stages.slice(3, 9),
+            icon: (
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            ),
           },
           {
             phase: "The Landing",
             color: "text-green-400",
             barColor: "bg-green-600/30",
             stages: stages.slice(9, 12),
+            icon: (
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+              </svg>
+            ),
           },
         ].map((group, gi) => (
           <div key={group.phase} className={gi > 0 ? "mt-8" : ""}>
             {/* Phase label */}
             <div className="flex items-center gap-3 mb-3">
               <div className={`h-px flex-1 ${group.barColor}`} />
-              <span className={`text-xs font-semibold uppercase tracking-widest ${group.color}`}>
+              <span className={`flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest ${group.color}`}>
+                {group.icon}
                 {group.phase}
               </span>
               <div className={`h-px flex-1 ${group.barColor}`} />

@@ -139,8 +139,43 @@ export default function TheSearchPage() {
         </p>
       </div>
 
+      {/* TL;DR */}
+      <div className="mt-6 p-4 rounded-lg border border-slate-700 bg-slate-900/60 max-w-4xl">
+        <p className="text-xs font-semibold text-blue-400 uppercase tracking-wide mb-2">TL;DR</p>
+        <ul className="space-y-1">
+          {[
+            "How to run a structured job search — not spray-and-pray applications",
+            "The difference between a target list and a pipeline, and why you need both",
+            "Skim if: you already have multiple active conversations with target employers",
+          ].map((item) => (
+            <li key={item} className="text-sm text-slate-400 flex gap-2">
+              <span className="text-slate-600 flex-shrink-0">—</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* On this page */}
+      <nav className="mt-8 p-4 rounded-lg border border-slate-800 bg-slate-900/40 max-w-4xl">
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">On this page</p>
+        <div className="flex flex-wrap gap-x-4 gap-y-1">
+          {[
+            ["#jpos-principles", "JPOS principles"],
+            ["#stage-gates", "Stage gates"],
+            ["#pipeline", "Your pipeline"],
+            ["#weekly-cadence", "Weekly cadence"],
+            ["#pedl", "PEDL debrief"],
+          ].map(([href, label]) => (
+            <a key={href} href={href} className="text-sm text-blue-400 hover:text-blue-300 transition-colors">
+              {label}
+            </a>
+          ))}
+        </div>
+      </nav>
+
       {/* JPOS principles */}
-      <div className="mt-8 grid sm:grid-cols-3 gap-3 max-w-4xl">
+      <div id="jpos-principles" className="mt-8 grid sm:grid-cols-3 gap-3 max-w-4xl">
         {[
           { p: "Gate before effort", d: "No deep work until hard constraints (visa, comp floor, location) are confirmed to pass." },
           { p: "Evidence over claims", d: "Every application assertion maps to a specific story with proof." },
@@ -154,7 +189,7 @@ export default function TheSearchPage() {
       </div>
 
       {/* Stage gates quick reference */}
-      <div className="mt-8 max-w-4xl">
+      <div id="stage-gates" className="mt-8 max-w-4xl">
         <details className="group">
           <summary className="cursor-pointer text-sm text-slate-500 hover:text-slate-300 transition-colors flex items-center gap-2">
             <span className="group-open:hidden">▶</span>
@@ -180,7 +215,7 @@ export default function TheSearchPage() {
       </div>
 
       {/* Add job button */}
-      <div className="mt-10 max-w-4xl">
+      <div id="pipeline" className="mt-10 max-w-4xl">
         {!showAdd ? (
           <button
             onClick={() => setShowAdd(true)}
@@ -362,7 +397,7 @@ export default function TheSearchPage() {
       </div>
 
       {/* Weekly cadence */}
-      <section className="mt-16 max-w-4xl">
+      <section id="weekly-cadence" className="mt-16 max-w-4xl">
         <h2 className="text-xl font-bold text-slate-100 mb-4">
           Weekly cadence
         </h2>
@@ -383,7 +418,7 @@ export default function TheSearchPage() {
       </section>
 
       {/* PEDL section */}
-      <section className="mt-12 max-w-4xl bg-slate-900/70 border border-slate-800 rounded-xl p-6">
+      <section id="pedl" className="mt-12 max-w-4xl bg-slate-900/70 border border-slate-800 rounded-xl p-6">
         <h3 className="text-base font-semibold text-slate-200 mb-2">
           PEDL after every stage close
         </h3>

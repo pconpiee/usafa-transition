@@ -15,6 +15,14 @@ export default function NonTraditionalPath() {
           <p className="text-blue-300 text-xs font-semibold tracking-widest uppercase mb-3">
             Stage 03 &mdash; The Map &mdash; Path 6 of 6
           </p>
+          {/* Breadcrumb */}
+          <nav className="flex items-center gap-1.5 text-xs text-slate-600 mb-3">
+            <a href="/" className="hover:text-slate-400 transition-colors">Home</a>
+            <span>/</span>
+            <a href="/the-map" className="hover:text-slate-400 transition-colors">The Map</a>
+            <span>/</span>
+            <span className="text-slate-400">Non-Traditional Paths</span>
+          </nav>
           <h1 className="text-3xl sm:text-4xl font-bold text-slate-50 leading-tight">
             Non-Traditional Paths
           </h1>
@@ -30,6 +38,30 @@ export default function NonTraditionalPath() {
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 space-y-16">
 
+        {/* TL;DR */}
+        <section className="border border-blue-400/30 bg-blue-950/30 rounded-xl p-5">
+          <p className="text-xs uppercase tracking-widest text-blue-300 mb-3 font-semibold">TL;DR</p>
+          <ul className="space-y-2 text-sm text-slate-300 leading-relaxed">
+            <li className="flex gap-2"><span className="text-blue-300 flex-shrink-0">&middot;</span><span>Non-traditional paths trade comp ceiling for mission alignment and flexibility</span></li>
+            <li className="flex gap-2"><span className="text-blue-300 flex-shrink-0">&middot;</span><span>Education admin, coaching, and consulting are viable at $80&ndash;120K+ with the right timing</span></li>
+            <li className="flex gap-2"><span className="text-blue-300 flex-shrink-0">&middot;</span><span className="text-slate-400 italic">Read fully if: you know private-sector optimization isn&rsquo;t the goal &mdash; you want meaning over maximization</span></li>
+          </ul>
+        </section>
+
+        {/* On this page */}
+        <nav className="flex flex-wrap gap-2 text-xs" aria-label="On this page">
+          {[
+            { label: "Overview", href: "#overview" },
+            { label: "Education", href: "#education" },
+            { label: "Nonprofit", href: "#nonprofit" },
+            { label: "Coaching & Consulting", href: "#coaching" },
+            { label: "Ministry", href: "#ministry" },
+            { label: "Resources", href: "#resources" },
+          ].map((l) => (
+            <a key={l.href} href={l.href} className="px-3 py-1 rounded-full border border-slate-700 text-slate-400 hover:text-slate-200 hover:border-slate-500 transition-colors">{l.label}</a>
+          ))}
+        </nav>
+
         <section className="border-l-2 border-blue-400/40 pl-4">
           <p className="text-sm text-slate-300 leading-relaxed italic">
             A note on framing. The &ldquo;tradeoffs&rdquo; described on this
@@ -40,7 +72,7 @@ export default function NonTraditionalPath() {
           </p>
         </section>
 
-        <section>
+        <section id="overview">
           <h2 className="text-xl font-bold text-slate-50 mb-4">The 2026 landscape</h2>
           <div className="space-y-4 text-slate-300 leading-relaxed">
             <p>
@@ -141,8 +173,148 @@ export default function NonTraditionalPath() {
           </p>
         </section>
 
+        {/* Education & Academia */}
+        <section id="education">
+          <h2 className="text-xl font-bold text-slate-50 mb-2">Education &amp; Academia</h2>
+          <p className="text-xs text-slate-400 italic mb-5">Honest take: teaching alone pays poorly ($40&ndash;65K); administration is where comp becomes viable.</p>
+          <div className="space-y-4">
+            {[
+              {
+                role: "K-12 School Leadership / Administration",
+                comp: "$75–110K",
+                detail: "Principal pipeline programs like New Leaders provide a structured path to school leadership. Strong mission fit for veterans. Troops to Teachers (state-run successors to the federal program) offer stipends and certification support. Most states have their own veteran-to-teacher pipelines — uneven but real.",
+              },
+              {
+                role: "Higher Ed Administration",
+                comp: "$65–100K",
+                detail: "Dean of students, VP of student affairs, and ROTC instructor roles. ROTC instructors can draw partial military pay and salary simultaneously — a particularly natural fit. Administration is where compensation in higher ed becomes viable; faculty-track positions rarely are.",
+              },
+              {
+                role: "USAFA or Service Academy Instructor",
+                comp: "$85–120K",
+                detail: "Rare openings, competitive, and uniquely suited to USAFA graduates. Strong for those who want to stay connected to the academy without returning to active duty. Department heads sometimes recruit directly through the AOG network before positions hit USAJobs.",
+              },
+            ].map((item) => (
+              <div key={item.role} className="border border-slate-700 rounded-lg p-5 bg-slate-900/40">
+                <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
+                  <p className="font-medium text-slate-100">{item.role}</p>
+                  <span className="text-xs font-mono text-blue-300 bg-blue-900/30 px-2 py-0.5 rounded whitespace-nowrap">{item.comp}</span>
+                </div>
+                <p className="text-sm text-slate-300 leading-relaxed">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Nonprofit & Mission-Driven */}
+        <section id="nonprofit">
+          <h2 className="text-xl font-bold text-slate-50 mb-2">Nonprofit &amp; Mission-Driven</h2>
+          <p className="text-xs text-slate-400 italic mb-5">Honest take: entry-level nonprofit roles pay $45&ndash;65K; wait until you have leverage (network, credentials, track record) before making this move.</p>
+          <div className="mb-5">
+            <p className="text-sm text-slate-300 leading-relaxed">
+              The most compelling nonprofit roles for veterans are senior leadership positions &mdash; but those are 5&ndash;10 years post-separation for most. The path there is to come in post-MBA or post-corporate stint with management credibility, not straight from active duty.
+            </p>
+          </div>
+          <div className="space-y-4">
+            {[
+              {
+                role: "Executive Director — Veteran-Serving Nonprofit",
+                comp: "$70–120K",
+                detail: "ED compensation depends heavily on org budget. Orgs with < $1M annual budget typically pay $70–90K; orgs at $1–5M pay $90–130K. Use Candid (candid.org) to pull 990 data before any interview — revenue, top salaries, and program ratios are public and tell you whether the org is sustainable.",
+              },
+              {
+                role: "Program Director — Established Veteran Orgs",
+                comp: "$60–90K",
+                detail: "Team Red White & Blue, Mission 22, Travis Manion Foundation, and Student Veterans of America all hire veterans into leadership and program director roles. These organizations have strong cultures, genuine missions, and provide a realistic entry point into senior nonprofit leadership.",
+              },
+            ].map((item) => (
+              <div key={item.role} className="border border-slate-700 rounded-lg p-5 bg-slate-900/40">
+                <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
+                  <p className="font-medium text-slate-100">{item.role}</p>
+                  <span className="text-xs font-mono text-blue-300 bg-blue-900/30 px-2 py-0.5 rounded whitespace-nowrap">{item.comp}</span>
+                </div>
+                <p className="text-sm text-slate-300 leading-relaxed">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Coaching & Consulting */}
+        <section id="coaching">
+          <h2 className="text-xl font-bold text-slate-50 mb-2">Coaching &amp; Consulting Solo Practice</h2>
+          <p className="text-xs text-slate-400 italic mb-5">Honest take: most people who say they want to &ldquo;do coaching&rdquo; don&rsquo;t build a business &mdash; they build a hobby. Treat it like a startup.</p>
+          <div className="space-y-4">
+            {[
+              {
+                role: "Executive / Leadership Coaching",
+                comp: "$150–500/hr established",
+                tag: "First-year realistic: $30–60K solo",
+                detail: "ICF certification runs $3–8K and 60–125 hours depending on program level. Expect 12–18 months to build a real client base. Rate reality: $75–150/hr in year one; $150–500/hr once established with a referral pipeline and a positioning niche.",
+              },
+              {
+                role: "Career Transition Coaching for Veterans",
+                comp: "$80–150/hr",
+                tag: "Part-time viable while employed",
+                detail: "Strong demand from the same community you came from. Can run part-time while employed elsewhere — which is the right approach for the first 12 months. The credibility of having navigated your own transition is a genuine differentiator that commercial coaches can't buy.",
+              },
+              {
+                role: "Independent Consulting",
+                comp: "$80–120K+ once established",
+                tag: "Strong niches: defense, aviation, leadership dev",
+                detail: "Requires 3–5 years of verifiable domain expertise first. Defense, aviation, leadership development, and acquisition management are all strong niches. The most common mistake: consulting too soon, before the expertise is deep enough to command premium rates and generate referrals.",
+              },
+            ].map((item) => (
+              <div key={item.role} className="border border-slate-700 rounded-lg p-5 bg-slate-900/40">
+                <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
+                  <p className="font-medium text-slate-100">{item.role}</p>
+                  <span className="text-xs font-mono text-blue-300 bg-blue-900/30 px-2 py-0.5 rounded whitespace-nowrap">{item.comp}</span>
+                </div>
+                <p className="text-xs text-amber-300 mb-2">{item.tag}</p>
+                <p className="text-sm text-slate-300 leading-relaxed">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Ministry */}
+        <section id="ministry">
+          <h2 className="text-xl font-bold text-slate-50 mb-2">Ministry</h2>
+          <p className="text-xs text-slate-400 italic mb-5">Honest take: this path is a calling, not a career strategy &mdash; but the transferable leadership skills from USAFA and the military are genuinely rare in most ministry contexts.</p>
+          <div className="space-y-4">
+            {[
+              {
+                role: "Military Chaplain (Active / Reserve)",
+                comp: "Full military benefits",
+                tag: "Requires MDiv + ecclesiastical endorsement",
+                detail: "If still in service or able to re-access via reserve. Requires an M.Div or equivalent plus an ecclesiastical endorsement from a recognized denomination. Full military benefits, pay, and retirement accrual. The cleanest transition for those already on a ministry formation track.",
+              },
+              {
+                role: "Civilian Ministry — Pastoral / Church Plant",
+                comp: "$40–80K + housing",
+                tag: "Housing allowance adds 15–25% to effective comp",
+                detail: "Compensation varies wildly by church size, denomination, and location. Housing or parsonage allowance is common and adds 15–25% to effective compensation. Solo pastor at a small church: $40–70K + housing. Teaching pastor at a multi-site church: $80K+.",
+              },
+              {
+                role: "Seminary (M.Div Path)",
+                comp: "3-year M.Div",
+                tag: "Many seminaries offer strong vet scholarships",
+                detail: "Most strong seminaries offer veterans scholarships — but Yellow Ribbon caps vary widely, so verify school by school before committing. Many seminarians work full-time alongside a 3-year M.Div. Reformed and Anglican seminaries have historically strong veteran support programs.",
+              },
+            ].map((item) => (
+              <div key={item.role} className="border border-slate-700 rounded-lg p-5 bg-slate-900/40">
+                <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
+                  <p className="font-medium text-slate-100">{item.role}</p>
+                  <span className="text-xs font-mono text-blue-300 bg-blue-900/30 px-2 py-0.5 rounded whitespace-nowrap">{item.comp}</span>
+                </div>
+                <p className="text-xs text-blue-300 mb-2">{item.tag}</p>
+                <p className="text-sm text-slate-300 leading-relaxed">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Resources */}
-        <section>
+        <section id="resources">
           <h2 className="text-xl font-bold text-slate-50 mb-4">Resources worth your time</h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {[

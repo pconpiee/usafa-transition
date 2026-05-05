@@ -30,8 +30,43 @@ export default function TheReckoning() {
       {/* Main content */}
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 space-y-16">
 
+        {/* TL;DR */}
+        <div className="mt-6 p-4 rounded-lg border border-slate-700 bg-slate-900/60">
+          <p className="text-xs font-semibold text-blue-400 uppercase tracking-wide mb-2">TL;DR</p>
+          <ul className="space-y-1">
+            {[
+              "Why leaving the jet is an identity event, not just a job change",
+              "The transition inventory: your values, skills, and non-negotiables in writing",
+              "Skim if: you've already done serious identity work and know what you're building toward",
+            ].map((item) => (
+              <li key={item} className="text-sm text-slate-400 flex gap-2">
+                <span className="text-slate-600 flex-shrink-0">—</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* On this page */}
+        <nav className="mt-8 p-4 rounded-lg border border-slate-800 bg-slate-900/40">
+          <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">On this page</p>
+          <div className="flex flex-wrap gap-x-4 gap-y-1">
+            {[
+              ["#no-one-says", "The thing no one says out loud"],
+              ["#two-ways", "Two ways through"],
+              ["#terrain", "The terrain"],
+              ["#inventory", "Transition inventory"],
+              ["#mindset-fork", "The mindset fork"],
+            ].map(([href, label]) => (
+              <a key={href} href={href} className="text-sm text-blue-400 hover:text-blue-300 transition-colors">
+                {label}
+              </a>
+            ))}
+          </div>
+        </nav>
+
         {/* The actual problem */}
-        <section>
+        <section id="no-one-says">
           <h2 className="text-xl font-bold text-slate-100 mb-4">The thing no one says out loud</h2>
           <div className="space-y-4 text-slate-400 leading-relaxed">
             <p>
@@ -54,7 +89,7 @@ export default function TheReckoning() {
         </section>
 
         {/* Two ways through */}
-        <section>
+        <section id="two-ways">
           <h2 className="text-xl font-bold text-slate-100 mb-4">Two ways through</h2>
           <div className="space-y-4 text-slate-400 leading-relaxed">
             <p>
@@ -78,7 +113,7 @@ export default function TheReckoning() {
         </section>
 
         {/* Bridges Model */}
-        <section>
+        <section id="terrain">
           <h2 className="text-xl font-bold text-slate-100 mb-4">The terrain</h2>
           <p className="text-slate-400 leading-relaxed mb-6">
             William Bridges spent decades studying why people struggle with transitions even when the
@@ -158,7 +193,7 @@ export default function TheReckoning() {
         </section>
 
         {/* Fixed vs Growth mindset table */}
-        <section>
+        <section id="mindset-fork">
           <h2 className="text-xl font-bold text-slate-100 mb-4">The mindset fork</h2>
           <p className="text-slate-400 leading-relaxed mb-5">
             Carol Dweck&rsquo;s research on mindset has a specific application in career transitions that most
@@ -193,7 +228,7 @@ export default function TheReckoning() {
         </section>
 
         {/* Transition Inventory */}
-        <section className="bg-slate-900/40 border border-slate-800 rounded-xl p-6">
+        <section id="inventory" className="bg-slate-900/40 border border-slate-800 rounded-xl p-6">
           <h2 className="text-xl font-bold text-slate-100 mb-2">The transition inventory</h2>
           <p className="text-sm text-slate-500 mb-4">
             Do this before you write a resume or send a networking message. Write honestly. No one else needs to see it.

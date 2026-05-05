@@ -19,8 +19,43 @@ export default function ApplicationPackagePage() {
         obvious in the first ten seconds.
       </p>
 
+      {/* TL;DR */}
+      <div className="mt-6 p-4 rounded-lg border border-slate-700 bg-slate-900/60">
+        <p className="text-xs font-semibold text-blue-400 uppercase tracking-wide mb-2">TL;DR</p>
+        <ul className="space-y-1">
+          {[
+            "Resume, LinkedIn, and cover letter for the military-to-civilian translation",
+            "The single most common mistake: describing jobs instead of demonstrated results",
+            "Skim if: you've already had a professional resume review and gotten interviews",
+          ].map((item) => (
+            <li key={item} className="text-sm text-slate-400 flex gap-2">
+              <span className="text-slate-600 flex-shrink-0">—</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* On this page */}
+      <nav className="mt-8 p-4 rounded-lg border border-slate-800 bg-slate-900/40">
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">On this page</p>
+        <div className="flex flex-wrap gap-x-4 gap-y-1">
+          {[
+            ["#pre-gate", "Pre-application gate"],
+            ["#resume", "The resume"],
+            ["#cover-letter", "The cover letter"],
+            ["#linkedin", "LinkedIn profile"],
+            ["#resources", "Resources"],
+          ].map(([href, label]) => (
+            <a key={href} href={href} className="text-sm text-blue-400 hover:text-blue-300 transition-colors">
+              {label}
+            </a>
+          ))}
+        </div>
+      </nav>
+
       {/* Pre-application gate */}
-      <section className="mt-12">
+      <section id="pre-gate" className="mt-12">
         <h2 className="text-2xl font-bold text-slate-100 mb-2">
           Pre-application gate
         </h2>
@@ -46,7 +81,7 @@ export default function ApplicationPackagePage() {
       </section>
 
       {/* The Resume */}
-      <section className="mt-16">
+      <section id="resume" className="mt-16">
         <h2 className="text-2xl font-bold text-slate-100 mb-2">
           The resume
         </h2>
@@ -126,7 +161,7 @@ export default function ApplicationPackagePage() {
       </section>
 
       {/* The Cover Letter */}
-      <section className="mt-16">
+      <section id="cover-letter" className="mt-16">
         <h2 className="text-2xl font-bold text-slate-100 mb-2">
           The cover letter
         </h2>
@@ -159,7 +194,7 @@ export default function ApplicationPackagePage() {
       </section>
 
       {/* The LinkedIn profile */}
-      <section className="mt-16">
+      <section id="linkedin" className="mt-16">
         <h2 className="text-2xl font-bold text-slate-100 mb-2">
           The LinkedIn profile
         </h2>
@@ -207,7 +242,7 @@ export default function ApplicationPackagePage() {
       </section>
 
       {/* Resources */}
-      <section className="mt-12 bg-blue-600/5 border border-blue-500/20 rounded-xl p-6">
+      <section id="resources" className="mt-12 bg-blue-600/5 border border-blue-500/20 rounded-xl p-6">
         <h3 className="text-base font-semibold text-slate-200 mb-3">
           Free resources for this
         </h3>

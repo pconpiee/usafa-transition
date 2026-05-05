@@ -20,6 +20,23 @@ export default function TheChainPage() {
         matter.
       </p>
 
+      {/* TL;DR */}
+      <div className="mt-6 p-4 rounded-lg border border-slate-700 bg-slate-900/60">
+        <p className="text-xs font-semibold text-blue-400 uppercase tracking-wide mb-2">TL;DR</p>
+        <ul className="space-y-1">
+          {[
+            "How to turn around and pull the next person through",
+            "Low-ask, high-trust ways to stay in the game without burning out",
+            "Read fully — this is the one most people skip and the one the community needs most",
+          ].map((item) => (
+            <li key={item} className="text-sm text-slate-400 flex gap-2">
+              <span className="text-slate-600 flex-shrink-0">—</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
       {/* What the chain is */}
       <section className="mt-12">
         <h2 className="text-2xl font-bold text-slate-100 mb-4">

@@ -73,6 +73,13 @@ export default function CompTranslatorPage() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
+      <style>{`
+        @media print {
+          nav, .no-print { display: none !important; }
+          body { background: white !important; color: black !important; }
+          .print-area { color: black !important; }
+        }
+      `}</style>
       <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
         Tool
       </p>
@@ -97,7 +104,7 @@ export default function CompTranslatorPage() {
       </div>
 
       {/* Inputs */}
-      <div className="mt-10 grid sm:grid-cols-2 gap-4">
+      <div className="no-print mt-10 grid sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-slate-300 mb-1">
             Rank
@@ -180,7 +187,17 @@ export default function CompTranslatorPage() {
       </div>
 
       {/* Results */}
-      <div className="mt-10 grid sm:grid-cols-2 gap-6">
+      <div className="print-area">
+      <div className="mt-6 flex justify-end no-print">
+        <button
+          onClick={() => window.print()}
+          className="flex items-center gap-2 px-4 py-2 text-sm border border-slate-700 text-slate-400 hover:text-slate-100 hover:border-slate-500 rounded-lg transition-colors"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+          Print / Save as PDF
+        </button>
+      </div>
+      <div className="mt-4 grid sm:grid-cols-2 gap-6">
         {/* Military Breakdown */}
         <div className="bg-slate-900/70 border border-slate-800 rounded-xl p-6">
           <h2 className="text-lg font-semibold text-slate-200 mb-4">
@@ -310,6 +327,7 @@ export default function CompTranslatorPage() {
           </p>
         </div>
       </section>
+      </div>
     </div>
   );
 }

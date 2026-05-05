@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import FeedbackWidget from "@/components/FeedbackWidget";
+import SearchModal from "@/components/SearchModal";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -34,6 +35,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="min-h-screen flex flex-col font-sans antialiased">
         <Nav />
+        <SearchModal />
         <main className="flex-1 pt-16">{children}</main>
         <Footer />
         <FeedbackWidget />

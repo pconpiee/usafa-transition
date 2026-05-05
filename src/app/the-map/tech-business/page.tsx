@@ -13,6 +13,14 @@ export default function TechBusinessLanding() {
         <p className="text-purple-400 text-xs font-semibold tracking-widest uppercase mb-3">
           Stage 03 &mdash; The Map
         </p>
+        {/* Breadcrumb */}
+        <nav className="flex items-center gap-1.5 text-xs text-slate-600 mb-3">
+          <a href="/" className="hover:text-slate-400 transition-colors">Home</a>
+          <span>/</span>
+          <a href="/the-map" className="hover:text-slate-400 transition-colors">The Map</a>
+          <span>/</span>
+          <span className="text-slate-400">Path Split</span>
+        </nav>
         <h1 className="text-3xl font-bold text-slate-50 mb-4">Tech &amp; Business</h1>
         <p className="text-slate-300 leading-relaxed mb-8">
           This path has been split into two distinct deep-dives because the decision trees, credentials,

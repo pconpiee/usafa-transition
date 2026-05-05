@@ -20,8 +20,50 @@ export default function NegotiationPage() {
         negotiating is not zero.
       </p>
 
+      {/* TL;DR */}
+      <div className="mt-6 p-4 rounded-lg border border-slate-700 bg-slate-900/60">
+        <p className="text-xs font-semibold text-blue-400 uppercase tracking-wide mb-2">TL;DR</p>
+        <ul className="space-y-1">
+          {[
+            "The single most skipped step — and the one that compounds over a career",
+            "How to anchor high, handle pushback, and negotiate the full package (not just base)",
+            "Skim if: you already have an offer above your walk-away number",
+          ].map((item) => (
+            <li key={item} className="text-sm text-slate-400 flex gap-2">
+              <span className="text-slate-600 flex-shrink-0">—</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* On this page */}
+      <nav className="mt-8 p-4 rounded-lg border border-slate-800 bg-slate-900/40">
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">On this page</p>
+        <div className="flex flex-wrap gap-x-4 gap-y-1">
+          {[
+            ["#why-not", "Why pilots don't negotiate"],
+            ["#principled", "Principled negotiation"],
+            ["#calibrated", "Calibrated questions"],
+            ["#ackerman", "The Ackerman model"],
+            ["#total-comp", "Total compensation"],
+            ["#scripts", "What to say"],
+          ].map(([href, label]) => (
+            <a key={href} href={href} className="text-sm text-blue-400 hover:text-blue-300 transition-colors">
+              {label}
+            </a>
+          ))}
+        </div>
+      </nav>
+
+      {/* Key insight */}
+      <div className="my-6 p-4 rounded-lg border-l-4 border-blue-500 bg-blue-500/5">
+        <p className="text-sm font-semibold text-blue-300 mb-1">Key insight</p>
+        <p className="text-sm text-slate-300 leading-relaxed">The average veteran leaves $10,000–$40,000 on the table at first offer by accepting immediately. Every dollar you negotiate at offer compounds — it&rsquo;s the base for every raise, every future offer that matches your current comp. This is the highest-ROI hour in the entire job search.</p>
+      </div>
+
       {/* Why people don't negotiate */}
-      <section className="mt-12">
+      <section id="why-not" className="mt-12">
         <h2 className="text-2xl font-bold text-slate-100 mb-2">
           Why pilots don&rsquo;t negotiate
         </h2>
@@ -56,7 +98,7 @@ export default function NegotiationPage() {
       </section>
 
       {/* The principled approach */}
-      <section className="mt-16">
+      <section id="principled" className="mt-16">
         <h2 className="text-2xl font-bold text-slate-100 mb-2">
           Principled negotiation
         </h2>
@@ -93,7 +135,7 @@ export default function NegotiationPage() {
       </section>
 
       {/* Calibrated questions — Voss */}
-      <section className="mt-16">
+      <section id="calibrated" className="mt-16">
         <h2 className="text-2xl font-bold text-slate-100 mb-2">
           Calibrated questions
         </h2>
@@ -121,7 +163,7 @@ export default function NegotiationPage() {
       </section>
 
       {/* The Ackerman model */}
-      <section className="mt-16">
+      <section id="ackerman" className="mt-16">
         <h2 className="text-2xl font-bold text-slate-100 mb-2">
           The Ackerman model
         </h2>
@@ -159,7 +201,7 @@ export default function NegotiationPage() {
       </section>
 
       {/* Total comp */}
-      <section className="mt-16">
+      <section id="total-comp" className="mt-16">
         <h2 className="text-2xl font-bold text-slate-100 mb-2">
           Total compensation is not just base salary
         </h2>
@@ -202,7 +244,7 @@ export default function NegotiationPage() {
       </section>
 
       {/* Scripts */}
-      <section className="mt-16 border-t border-slate-800 pt-16">
+      <section id="scripts" className="mt-16 border-t border-slate-800 pt-16">
         <h2 className="text-2xl font-bold text-slate-100 mb-2">
           What to say
         </h2>

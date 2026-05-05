@@ -200,6 +200,23 @@ export default function TheMap() {
             is the decision tool &mdash; five broad directions with a comparison matrix. Start there,
             then come back here for the deep dive.
           </p>
+
+          {/* TL;DR */}
+          <div className="mt-6 p-4 rounded-lg border border-slate-700 bg-slate-900/60">
+            <p className="text-xs font-semibold text-blue-400 uppercase tracking-wide mb-2">TL;DR</p>
+            <ul className="space-y-1">
+              {[
+                "The 7 paths available to USAFA pilots — aviation, defense, tech, finance, govt, entrepreneurship, nontraditional",
+                "Awareness layer: paths most pilots don't know exist before they self-select",
+                "Read fully if: you haven't picked a direction yet — this is the most important page",
+              ].map((item) => (
+                <li key={item} className="text-sm text-slate-400 flex gap-2">
+                  <span className="text-slate-600 flex-shrink-0">—</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         {/* On this page: jump links */}

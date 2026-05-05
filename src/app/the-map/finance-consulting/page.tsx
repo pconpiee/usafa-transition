@@ -15,6 +15,14 @@ export default function FinanceConsultingPath() {
           <p className="text-indigo-400 text-xs font-semibold tracking-widest uppercase mb-3">
             Stage 03 &mdash; The Map &mdash; Path: Finance &amp; Consulting
           </p>
+          {/* Breadcrumb */}
+          <nav className="flex items-center gap-1.5 text-xs text-slate-600 mb-3">
+            <a href="/" className="hover:text-slate-400 transition-colors">Home</a>
+            <span>/</span>
+            <a href="/the-map" className="hover:text-slate-400 transition-colors">The Map</a>
+            <span>/</span>
+            <span className="text-slate-400">Finance &amp; Consulting</span>
+          </nav>
           <h1 className="text-3xl sm:text-4xl font-bold text-slate-50 leading-tight">
             Finance &amp; Consulting
           </h1>
