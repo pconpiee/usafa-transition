@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Comp Reference | Blue Canopy",
   description:
-    "Side-by-side compensation data for all six post-military career paths. Year 1, Year 5, Year 10+, ceilings, equity, and the thing to watch for each one.",
+    "Side-by-side compensation data for all seven post-military career paths. Year 1, Year 5, Year 10+, ceilings, equity, and the thing to watch for each one.",
 };
 
 const paths = [
@@ -36,18 +36,32 @@ const paths = [
     flag: "Clearance premium erodes if it's your only differentiator.",
   },
   {
-    id: "tech-business",
-    label: "Tech & Business",
-    tag: "Highest upside",
+    id: "tech-ops",
+    label: "Tech & Ops",
+    tag: "Highest comp ceiling",
     tagColor: "text-purple-400",
-    href: "/the-map/tech-business",
+    href: "/the-map/tech-ops",
     year1: { range: "$100K–$160K", note: "PM, ops, strategy, BizOps" },
-    year5: { range: "$160K–$250K", note: "Senior IC or early management" },
-    year10: { range: "$250K–$500K+", note: "Director/VP + equity" },
+    year5: { range: "$180K–$280K", note: "Senior PM / Senior Manager" },
+    year10: { range: "$300K–$500K+", note: "Director/VP + equity" },
     ceiling: "Highest of any path — equity events can compress decades",
     equity: "RSUs or options standard; can be material at growth-stage companies",
     pension: "401k only — but total comp ceiling is the highest",
     flag: "Translation cost is highest. Network is the path in, not applications.",
+  },
+  {
+    id: "finance-consulting",
+    label: "Finance & Consulting",
+    tag: "Credential-heavy ceiling",
+    tagColor: "text-indigo-400",
+    href: "/the-map/finance-consulting",
+    year1: { range: "$130–250K", note: "Big 4 direct / post-MBA MBB" },
+    year5: { range: "$300–450K", note: "Senior associate / Manager" },
+    year10: { range: "$400K+", note: "Principal / Partner trajectory" },
+    ceiling: "Strong — post-MBA MBB exits to industry or PE at $400K+ Year 7",
+    equity: "Variable: low at consulting, higher at PE / corp dev exits",
+    pension: "401k standard; no defined benefit",
+    flag: "PE at megafunds almost always requires pre-MBA banking. Know the door before you aim at it.",
   },
   {
     id: "government",
@@ -113,7 +127,7 @@ export default function CompReference() {
             Comp Reference
           </h1>
           <p className="mt-4 text-slate-400 leading-relaxed max-w-2xl">
-            Side-by-side compensation data for all six paths. Year 1, Year 5, Year 10+. Ceilings,
+            Side-by-side compensation data for all seven paths. Year 1, Year 5, Year 10+. Ceilings,
             equity notes, and the flag for each one. Use this to compare trajectories, not just
             starting salaries.
           </p>

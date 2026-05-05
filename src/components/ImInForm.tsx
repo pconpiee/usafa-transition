@@ -6,11 +6,11 @@ const pathOptions = [
   "Not sure yet",
   "Commercial Airlines",
   "Defense & Aerospace",
-  "Tech & Business",
+  "Tech & Ops (PM, BizOps, corporate strategy)",
+  "Finance & Consulting (MBB, MBA, IB-adjacent)",
   "Government & Civil Service",
   "Entrepreneurship / Startup",
   "Non-Traditional (education, nonprofit, ministry)",
-  "MBA / grad school first",
 ];
 
 export default function ImInForm() {

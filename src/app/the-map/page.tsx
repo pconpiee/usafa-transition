@@ -56,28 +56,52 @@ const paths = [
       "This is the natural first move for a lot of vets, and for good reason — the translation is real. The risk is staying here longer than serves you because it's comfortable. Defense is a great foundation, not necessarily a ceiling.",
   },
   {
-    id: "tech-business",
-    label: "Tech & Business",
-    tag: "Highest upside, hardest translation",
+    id: "tech-ops",
+    label: "Tech & Ops",
+    tag: "Highest comp ceiling",
     tagColor: "text-purple-400",
-    shape: "A life of high translation cost upfront, with the steepest learning curve and the broadest range of possible outcomes.",
-    comp: "$100K–$160K (entry PM/ops) → $200K–$500K+ (senior leadership, equity events)",
+    shape: "PM, BizOps, corporate strategy, operations at tech companies. High translation cost upfront, broadest range of outcomes.",
+    comp: "$100K–$160K (entry PM/ops) → $250K–$350K+ (senior leadership) → $500K+ (VP + equity)",
     pros: [
       "Compensation ceiling is the highest of any path",
-      "Equity and career velocity can compress decades if you land in the right place",
-      "Problems are hard and complex in different ways — intellectually engaging",
+      "Equity events can compress decades if you land in the right place",
+      "Problems are complex and intellectually engaging in different ways",
       "Your leadership background is genuinely rare and valued in good orgs",
-      "Geography is increasingly flexible — remote-first culture at many tech companies",
+      "Geography increasingly flexible — remote-first at many tech companies",
     ],
     cons: [
-      "The translation burden is highest — nobody knows what your job title means",
-      "Credentialing matters: MBA, PMP, or domain expertise helps",
-      "Imposter syndrome is real — you'll be surrounded by people with very different backgrounds",
-      "Culture shock is real — move fast, fail fast, flat hierarchy, no formality",
-      "Layoffs in tech can be sudden and deep; the stability you're used to doesn't exist",
+      "Translation burden is highest — nobody knows what your job title means",
+      "Credentialing matters: PMP, AWS, Salesforce, or domain expertise helps",
+      "Imposter syndrome is real and predictable — show up anyway",
+      "Culture shock: move fast, fail fast, flat hierarchy, no formality",
+      "Layoffs in tech can be sudden and deep; no stability equivalent",
     ],
     honest:
-      "This is the path where doing the networking and credentialing work pays off most. You can absolutely get here — but not by just submitting applications. Your path to tech is through people, not portals.",
+      "The path where networking and credentialing pays off most. Your path to tech is through people, not portals. Cold applications at tech companies are a last resort.",
+  },
+  {
+    id: "finance-consulting",
+    label: "Finance & Consulting",
+    tag: "Credential-heavy, strong ceiling",
+    tagColor: "text-indigo-400",
+    shape: "MBB consulting, IB-adjacent, PE, and corporate finance. The MBA is often the bridge — and for USAFA grads it's frequently free.",
+    comp: "$130–180K (Big 4/boutique direct) → $220–250K (post-MBA MBB Year 1) → $400K+ (Year 7)",
+    pros: [
+      "Military leadership story translates extremely well to MBB if positioned correctly",
+      "GI Bill + Yellow Ribbon at top MBA programs often covers tuition entirely",
+      "Post-MBA MBB exit options are broad: industry, PE, corp dev, principal",
+      "SkillBridge at McKinsey/BCG/Bain is a direct shot without an MBA",
+      "Structured thinking and comfort with ambiguity are the core consulting skills",
+    ],
+    cons: [
+      "Consulting MBA recruiting starts Week 1 of orientation — prep starts months before",
+      "PE at megafunds is mostly closed without pre-MBA banking — know the difference",
+      "The credential cycle is long: MBA applications are 12–18 months of work",
+      "Work-life intensity at MBB is real — 60-hour weeks are not unusual",
+      "IB is a different door — know if that's actually what you want before targeting it",
+    ],
+    honest:
+      "The MBA is one of the highest-ROI moves available for USAFA grads targeting consulting or finance. The clock on that decision starts now — applications take longer than anyone expects.",
   },
   {
     id: "government",
@@ -317,12 +341,20 @@ export default function TheMap() {
                       href: "/the-map/defense",
                     },
                     {
-                      label: "Tech & Business",
-                      sub: "Highest upside",
+                      label: "Tech & Ops",
+                      sub: "Highest comp ceiling",
                       border: "border-purple-800/40",
                       bg: "bg-purple-950/10",
                       text: "text-purple-400",
-                      href: "/the-map/tech-business",
+                      href: "/the-map/tech-ops",
+                    },
+                    {
+                      label: "Finance & Consulting",
+                      sub: "MBA bridge, MBB path",
+                      border: "border-indigo-800/40",
+                      bg: "bg-indigo-950/10",
+                      text: "text-indigo-400",
+                      href: "/the-map/finance-consulting",
                     },
                     {
                       label: "Government",
@@ -376,9 +408,9 @@ export default function TheMap() {
           </div>
         </section>
 
-        {/* The 6 paths */}
+        {/* The 7 paths */}
         <section>
-          <h2 className="text-xl font-bold text-slate-100 mb-2">The six paths</h2>
+          <h2 className="text-xl font-bold text-slate-100 mb-2">The seven paths</h2>
           <p className="text-slate-500 text-sm mb-8">
             Comp ranges are 2025–2026 US civilian market. They are starting points for research,
             not guarantees. Geography matters enormously &mdash; DC, SF, NY skew higher; most other
@@ -391,13 +423,12 @@ export default function TheMap() {
           </p>
           <div className="space-y-6">
             {paths.map((path) => {
-              const slug = path.id === "tech-business" ? "tech-business" : path.id;
               return (
                 <div key={path.id} className="border border-slate-800 rounded-xl overflow-hidden">
                   <div className="p-5 bg-slate-900/40">
                     <div className="flex items-start justify-between gap-4 mb-2">
                       <Link
-                        href={`/the-map/${slug}`}
+                        href={`/the-map/${path.id}`}
                         className="font-bold text-slate-100 hover:text-blue-400 transition-colors"
                       >
                         {path.label} &rarr;
@@ -442,7 +473,7 @@ export default function TheMap() {
                   <div className="px-5 py-3 border-t border-slate-800 bg-slate-950/40 flex items-center justify-between gap-4">
                     <p className="text-xs text-slate-500 leading-relaxed italic">{path.honest}</p>
                     <Link
-                      href={`/the-map/${slug}`}
+                      href={`/the-map/${path.id}`}
                       className="flex-shrink-0 text-xs font-medium text-blue-400 hover:text-blue-300 whitespace-nowrap"
                     >
                       Deep dive &rarr;
