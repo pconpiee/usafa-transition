@@ -16,14 +16,14 @@ export default function FinanceConsultingPath() {
             Stage 03 &mdash; The Map &mdash; Path: Finance &amp; Consulting
           </p>
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-1.5 text-xs text-slate-600 mb-3">
+          <nav className="flex items-center gap-1.5 text-xs text-slate-500 mb-3">
             <a href="/" className="hover:text-slate-400 transition-colors">Home</a>
             <span>/</span>
             <a href="/the-map" className="hover:text-slate-400 transition-colors">The Map</a>
             <span>/</span>
             <span className="text-slate-400">Finance &amp; Consulting</span>
           </nav>
-          <h1 className="text-3xl sm:text-4xl font-bold text-slate-50 leading-tight">
+          <h1 className="text-3xl sm:text-4xl font-bold text-slate-50 leading-tight text-balance">
             Finance &amp; Consulting
           </h1>
           <p className="mt-4 text-slate-300 leading-relaxed">
@@ -40,6 +40,13 @@ export default function FinanceConsultingPath() {
             </Link>
           </div>
         </div>
+          <p className="mt-4 inline-flex items-center gap-1.5 text-xs text-slate-500">
+            <svg aria-hidden="true" className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+              <circle cx="12" cy="12" r="9" />
+              <path strokeLinecap="round" d="M12 7v5l3 2" />
+            </svg>
+            ~4 min read
+          </p>
       </section>
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 space-y-16">

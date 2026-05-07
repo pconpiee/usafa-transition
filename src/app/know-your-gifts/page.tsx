@@ -1,10 +1,12 @@
+import StageNav from "@/components/StageNav";
+
 export default function KnowYourGiftsPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
       <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
         Stage 02 of 12 &mdash; Know Your Gifts
       </p>
-      <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
+      <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight text-balance">
         Know Your Gifts
       </h1>
       <p className="mt-4 text-lg text-slate-400 max-w-2xl">
@@ -30,7 +32,7 @@ export default function KnowYourGiftsPage() {
             "Skim if: you have a clear target role and already know how to pitch yourself",
           ].map((item) => (
             <li key={item} className="text-sm text-slate-400 flex gap-2">
-              <span className="text-slate-600 flex-shrink-0">—</span>
+              <span className="text-slate-500 flex-shrink-0">—</span>
               <span>{item}</span>
             </li>
           ))}
@@ -201,7 +203,7 @@ export default function KnowYourGiftsPage() {
                 <ul className="space-y-1">
                   {item.questions.map((q, i) => (
                     <li key={i} className="text-sm text-slate-400 flex gap-2">
-                      <span className="text-slate-600 flex-shrink-0">→</span>
+                      <span className="text-slate-500 flex-shrink-0">→</span>
                       <span>{q}</span>
                     </li>
                   ))}
@@ -312,7 +314,7 @@ export default function KnowYourGiftsPage() {
 
       {/* Where people stall */}
       <div className="mt-8 border-l-2 border-amber-700/50 pl-5 py-1">
-        <p className="text-xs text-amber-600 uppercase tracking-wide mb-1">Where people stall here</p>
+        <p className="text-xs text-amber-500 uppercase tracking-wide mb-1">Where people stall here</p>
         <p className="text-sm text-slate-400 leading-relaxed">
           Pilots default to listing credentials — hours, aircraft, qualifications. What you actually
           bring is more interesting than your logbook. Ask a civilian who knows you well what they&rsquo;d
@@ -334,6 +336,7 @@ export default function KnowYourGiftsPage() {
         >
           Stage 03: The Map →
         </a>
+        <StageNav current="/know-your-gifts" />
       </div>
 
     </div>

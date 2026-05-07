@@ -1,12 +1,13 @@
 import Link from "next/link";
+import StageNav from "@/components/StageNav";
 
 export default function TheLongGamePage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
-      <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
+      <p className="text-emerald-400 text-sm font-medium tracking-wide uppercase mb-4">
         Stage 11 of 12 — The Long Game
       </p>
-      <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
+      <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight text-balance">
         The Long Game
       </h1>
       <p className="mt-4 text-lg text-slate-400 max-w-2xl">
@@ -29,7 +30,7 @@ export default function TheLongGamePage() {
             "Skim if: you're thriving in your current role and have a clear 3-year plan",
           ].map((item) => (
             <li key={item} className="text-sm text-slate-400 flex gap-2">
-              <span className="text-slate-600 flex-shrink-0">—</span>
+              <span className="text-slate-500 flex-shrink-0">—</span>
               <span>{item}</span>
             </li>
           ))}
@@ -100,7 +101,7 @@ export default function TheLongGamePage() {
               <p className="text-xs text-amber-400 bg-amber-400/5 border border-amber-400/20 rounded px-3 py-2 mb-3">
                 ⚠ Watch: {item.watch}
               </p>
-              <p className="text-xs text-slate-600">
+              <p className="text-xs text-slate-500">
                 <span className="text-slate-500 font-medium">Track: </span>
                 {item.metric}
               </p>
@@ -234,7 +235,7 @@ export default function TheLongGamePage() {
 
       {/* Where people stall */}
       <div className="mt-8 border-l-2 border-amber-700/50 pl-5 py-1">
-        <p className="text-xs text-amber-600 uppercase tracking-wide mb-1">Where people stall here</p>
+        <p className="text-xs text-amber-500 uppercase tracking-wide mb-1">Where people stall here</p>
         <p className="text-sm text-slate-400 leading-relaxed">
           Judging the first year as if it&rsquo;s the whole career. The discomfort of early
           civilian work is not a signal the path is wrong &mdash; it&rsquo;s a signal you&rsquo;re growing.
@@ -255,6 +256,7 @@ export default function TheLongGamePage() {
         >
           Stage 12: The Chain →
         </Link>
+        <StageNav current="/the-long-game" />
       </div>
 
     </div>

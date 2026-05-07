@@ -19,15 +19,36 @@ export default function ImInForm() {
   const [email, setEmail] = useState("");
   const [sepDate, setSepDate] = useState("");
   const [path, setPath] = useState("");
+  const [error, setError] = useState(false);
+  const [pending, setPending] = useState(false);
+  const [emailTouched, setEmailTouched] = useState(false);
+  const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    await fetch(process.env.NEXT_PUBLIC_FORMSPREE_IIM_URL ?? "", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ name, email, separationDate: sepDate, path }),
-    });
-    setSubmitted(true);
+    if (pending) return;
+    setPending(true);
+    setError(false);
+    try {
+      const url = process.env.NEXT_PUBLIC_FORMSPREE_IIM_URL;
+      if (!url) throw new Error("missing endpoint");
+      const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: name.slice(0, 200),
+          email: email.slice(0, 200),
+          separationDate: sepDate.slice(0, 100),
+          path: path.slice(0, 100),
+        }),
+      });
+      if (!res.ok) throw new Error("send failed");
+      setSubmitted(true);
+    } catch {
+      setError(true);
+    } finally {
+      setPending(false);
+    }
   }
 
   return (
@@ -56,27 +77,43 @@ export default function ImInForm() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
-                className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-300 placeholder-slate-600 focus:outline-none focus:border-blue-500"
+                maxLength={200}
+                aria-label="Name"
+                className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-300 placeholder-slate-500 focus:outline-none focus:border-blue-500"
               />
-              <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-300 placeholder-slate-600 focus:outline-none focus:border-blue-500"
-              />
+              <div>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  onBlur={() => setEmailTouched(true)}
+                  required
+                  maxLength={200}
+                  aria-label="Email"
+                  aria-invalid={emailTouched && email.length > 0 && !emailValid}
+                  className={`w-full bg-slate-900 border rounded-lg px-3 py-2 text-sm text-slate-300 placeholder-slate-500 focus:outline-none focus:border-blue-500 ${
+                    emailTouched && email.length > 0 && !emailValid ? "border-red-500/60" : "border-slate-700"
+                  }`}
+                />
+                {emailTouched && email.length > 0 && !emailValid && (
+                  <p className="text-xs text-red-400 mt-1">Doesn&rsquo;t look like an email.</p>
+                )}
+              </div>
             </div>
             <input
               type="text"
               placeholder="Rough separation date (e.g. Spring 2026, Oct 2025)"
               value={sepDate}
               onChange={(e) => setSepDate(e.target.value)}
-              className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-300 placeholder-slate-600 focus:outline-none focus:border-blue-500"
+              maxLength={100}
+              aria-label="Rough separation date"
+              className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-300 placeholder-slate-500 focus:outline-none focus:border-blue-500"
             />
             <select
               value={path}
               onChange={(e) => setPath(e.target.value)}
+              aria-label="Which path are you most drawn to?"
               className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-300 focus:outline-none focus:border-blue-500"
             >
               <option value="" disabled>Which path are you most drawn to?</option>
@@ -84,14 +121,18 @@ export default function ImInForm() {
                 <option key={o} value={o}>{o}</option>
               ))}
             </select>
+            {error && (
+              <p role="alert" className="text-sm text-red-400">Something went wrong. Try again, or email pb.connollys@gmail.com.</p>
+            )}
             <button
               type="submit"
-              className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-colors"
+              disabled={pending}
+              className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 disabled:bg-blue-800 disabled:cursor-not-allowed text-white text-sm font-medium rounded-lg transition-colors"
             >
-              I&rsquo;m in &rarr;
+              {pending ? "Sending…" : "I’m in →"}
             </button>
           </form>
-          <p className="mt-4 text-xs text-slate-600">
+          <p className="mt-4 text-xs text-slate-500">
             No spam. No autoresponder. One human on the other end.
           </p>
         </>

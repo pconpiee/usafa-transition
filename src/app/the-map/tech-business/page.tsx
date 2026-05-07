@@ -14,7 +14,7 @@ export default function TechBusinessLanding() {
           Stage 03 &mdash; The Map
         </p>
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-1.5 text-xs text-slate-600 mb-3">
+        <nav className="flex items-center gap-1.5 text-xs text-slate-500 mb-3">
           <a href="/" className="hover:text-slate-400 transition-colors">Home</a>
           <span>/</span>
           <a href="/the-map" className="hover:text-slate-400 transition-colors">The Map</a>

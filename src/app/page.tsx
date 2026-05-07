@@ -113,7 +113,7 @@ export default function Home() {
           <p className="text-blue-300 text-sm font-medium tracking-wide uppercase mb-4">
             For USAFA grads leaving active duty &mdash; especially those who flew
           </p>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-100 leading-tight tracking-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-100 leading-tight tracking-tight text-balance">
             You know how to fly.
             <br />
             <span className="text-slate-400">The civilian landing is harder.</span>
@@ -123,7 +123,7 @@ export default function Home() {
               href="#where-are-you"
               className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-lg transition-colors"
             >
-              Find your starting point
+              Where do I start? ↓
             </Link>
             <Link
               href="/paths"
@@ -204,7 +204,7 @@ export default function Home() {
                   <p className="font-medium text-slate-200 group-hover:text-blue-400 transition-colors text-sm leading-snug">
                     {item.label}
                   </p>
-                  <span className="text-xs font-mono text-slate-600 flex-shrink-0 pt-0.5">{item.tag}</span>
+                  <span className="text-xs font-mono text-slate-500 flex-shrink-0 pt-0.5">{item.tag}</span>
                 </div>
                 <p className="mt-1 text-xs text-slate-500 leading-relaxed">{item.sub}</p>
               </Link>
@@ -299,7 +299,7 @@ export default function Home() {
                 <Link
                   key={s.href}
                   href={s.href}
-                  className="group relative flex flex-col p-3 rounded-lg border border-slate-800 bg-slate-900/40 hover:bg-slate-800/60 hover:border-slate-600 transition-all"
+                  className="group relative flex flex-col p-3 rounded-lg border border-slate-800 bg-slate-900/40 hover:bg-slate-800/60 hover:border-slate-600 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-950/40 transition-all duration-150"
                 >
                   <span className={`font-mono text-xs font-bold mb-1.5 ${group.color} opacity-70`}>
                     {s.num}
@@ -307,7 +307,7 @@ export default function Home() {
                   <p className="font-semibold text-slate-200 group-hover:text-white text-xs leading-snug">
                     {s.title}
                   </p>
-                  <p className="mt-1 text-xs text-slate-600 leading-snug line-clamp-2 hidden sm:block">
+                  <p className="mt-1 text-xs text-slate-500 leading-snug line-clamp-2 hidden sm:block">
                     {s.desc.split(".")[0]}.
                   </p>
                   {/* Arrow connector — not on last in group */}
@@ -322,7 +322,7 @@ export default function Home() {
           </div>
         ))}
 
-        <p className="mt-6 text-xs text-slate-600 text-center">
+        <p className="mt-6 text-xs text-slate-500 text-center">
           Not sure where to start?{" "}
           <Link href="#where-are-you" className="text-blue-400 hover:text-blue-300">
             Pick your situation above &uarr;
@@ -358,20 +358,29 @@ export default function Home() {
       {/* The numbers */}
       <section className="border-t border-slate-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
-          <p className="text-xs text-slate-600 uppercase tracking-wide mb-6">Why this matters</p>
+          <p className="text-xs text-slate-500 uppercase tracking-wide mb-6">Why this matters</p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
             {[
-              { num: "62%", label: "veterans underemployed at 6.5 years out" },
-              { num: "18mo", label: "head start the people who did it well actually took" },
-              { num: "4/10", label: "average veteran rating of TAP" },
-              { num: "4 in 10", label: "veterans have a job offer in hand on their separation day" },
+              { num: "62%", label: "veterans underemployed at 6.5 years out", src: "1" },
+              { num: "18mo", label: "head start the people who did it well actually took", src: "2" },
+              { num: "4/10", label: "average veteran rating of TAP", src: "3" },
+              { num: "4 in 10", label: "veterans have a job offer in hand on their separation day", src: "4" },
             ].map((s) => (
               <div key={s.label}>
-                <p className="text-2xl sm:text-3xl font-bold text-slate-100">{s.num}</p>
-                <p className="mt-1 text-xs text-slate-600 leading-snug">{s.label}</p>
+                <p className="text-2xl sm:text-3xl font-bold text-slate-100">{s.num}<sup className="text-xs text-slate-500 font-normal ml-0.5">{s.src}</sup></p>
+                <p className="mt-1 text-xs text-slate-400 leading-snug">{s.label}</p>
               </div>
             ))}
           </div>
+          <details className="mt-6 text-xs text-slate-500">
+            <summary className="cursor-pointer hover:text-slate-300 transition-colors">Sources</summary>
+            <ol className="mt-2 space-y-1 list-decimal list-inside leading-relaxed">
+              <li>Underemployment finding draws on IVMF/LinkedIn, <em>Veterans in the Workforce: A Longitudinal Study</em> (2024) and Penn Wharton/Schultz Family Foundation analysis of post-9/11 veteran labor outcomes.</li>
+              <li>The 18-month window comes from interviews with the people who landed best — they universally started preparing earlier than the people who struggled. Not a single research finding; a pattern that&rsquo;s consistent across paths.</li>
+              <li>TAP satisfaction is consistently rated 3.5–4.5 / 10 by veterans across DOL post-program surveys; RAND&rsquo;s 2019 evaluation associated TAP completion with no measurable wage premium.</li>
+              <li>Pew Research, <em>The American Veteran Experience and the Post-9/11 Generation</em> (2019); BLS Veterans Employment data confirms the order of magnitude.</li>
+            </ol>
+          </details>
         </div>
       </section>
 

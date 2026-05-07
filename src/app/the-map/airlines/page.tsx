@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AviationQuadrant from "@/components/diagrams/AviationQuadrant";
 
 export const metadata = {
   title: "Aviation Paths | Blue Canopy",
@@ -17,14 +18,14 @@ export default function AviationPaths() {
             Stage 03 &mdash; The Map &mdash; Aviation Paths
           </p>
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-1.5 text-xs text-slate-600 mb-3">
+          <nav className="flex items-center gap-1.5 text-xs text-slate-500 mb-3">
             <a href="/" className="hover:text-slate-400 transition-colors">Home</a>
             <span>/</span>
             <a href="/the-map" className="hover:text-slate-400 transition-colors">The Map</a>
             <span>/</span>
             <span className="text-slate-400">Aviation Paths</span>
           </nav>
-          <h1 className="text-3xl sm:text-4xl font-bold text-slate-50 leading-tight">
+          <h1 className="text-3xl sm:text-4xl font-bold text-slate-50 leading-tight text-balance">
             Aviation Paths
           </h1>
           <p className="mt-4 text-slate-300 leading-relaxed">
@@ -34,10 +35,17 @@ export default function AviationPaths() {
           </p>
         </div>
 
+          <p className="mt-4 inline-flex items-center gap-1.5 text-xs text-slate-500">
+            <svg aria-hidden="true" className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+              <circle cx="12" cy="12" r="9" />
+              <path strokeLinecap="round" d="M12 7v5l3 2" />
+            </svg>
+            ~6 min read
+          </p>
         {/* Jump links */}
         <div className="max-w-3xl mx-auto px-4 sm:px-6 pb-5">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-xs text-slate-600 font-medium">On this page:</span>
+            <span className="text-xs text-slate-500 font-medium">On this page:</span>
             {[
               { id: "aviation-fork", label: "Aviation fork" },
               { id: "commercial", label: "Commercial airlines" },
@@ -86,6 +94,7 @@ export default function AviationPaths() {
         {/* AVIATION FORK DIAGRAM */}
         <section id="aviation-fork">
           <h2 className="text-xl font-bold text-slate-50 mb-4">The aviation fork</h2>
+          <AviationQuadrant />
           <div className="border border-slate-800 rounded-xl bg-slate-900/30 p-6">
 
             {/* Root */}
@@ -159,7 +168,7 @@ export default function AviationPaths() {
                       className={`flex flex-col gap-1 p-3 rounded-lg border ${p.border} ${p.bg} hover:opacity-80 transition-opacity h-full`}
                     >
                       <p className={`text-xs font-semibold ${p.text}`}>{p.label}</p>
-                      <p className="text-slate-600 text-xs leading-snug">{p.sub}</p>
+                      <p className="text-slate-500 text-xs leading-snug">{p.sub}</p>
                       <p className={`text-xs font-mono ${p.text} opacity-80 mt-1`}>{p.comp}</p>
                       <p className="text-slate-500 text-xs leading-snug mt-1">{p.note}</p>
                     </a>

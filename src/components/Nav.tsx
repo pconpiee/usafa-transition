@@ -1,10 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
-import SearchModal from "@/components/SearchModal";
-
+import { useVisitedStages } from "@/lib/useVisitedStages";
 const stages = [
   { num: "01", href: "/the-reckoning", label: "Who Are You Now" },
   { num: "02", href: "/know-your-gifts", label: "Know Your Gifts" },
@@ -37,8 +36,25 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
   const [stagesOpen, setStagesOpen] = useState(false);
   const pathname = usePathname();
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const { visited } = useVisitedStages();
 
   const currentStage = stages.find((s) => s.href === pathname);
+  const visitedCount = stages.filter((s) => visited.has(s.href)).length;
+
+  useEffect(() => {
+    if (!stagesOpen) return;
+    const onClick = (e: MouseEvent) => {
+      if (!dropdownRef.current?.contains(e.target as Node)) setStagesOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setStagesOpen(false); };
+    document.addEventListener("mousedown", onClick);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onClick);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [stagesOpen]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-md border-b border-slate-800">
@@ -47,8 +63,24 @@ export default function Nav() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-base font-bold tracking-tight text-slate-100 hover:text-blue-400 transition-colors flex-shrink-0"
+            className="flex items-center gap-2 text-base font-bold tracking-tight text-slate-100 hover:text-blue-400 transition-colors flex-shrink-0 group"
           >
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 32 32"
+              className="w-5 h-5 text-blue-400 group-hover:text-blue-300 transition-colors"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+            >
+              <path d="M4 14 Q16 6 28 14" fill="currentColor" fillOpacity="0.18" />
+              <path d="M4 14 Q16 6 28 14" />
+              <path d="M10 14 L14 26" />
+              <path d="M22 14 L18 26" />
+              <path d="M16 14 L16 26" opacity="0.4" />
+              <circle cx="16" cy="27" r="1.4" fill="currentColor" stroke="none" />
+            </svg>
             Blue Canopy
           </Link>
 
@@ -56,13 +88,12 @@ export default function Nav() {
           <div className="hidden lg:flex items-center gap-1">
           {/* Search button */}
             <button
-              onClick={() => {
-                const event = new KeyboardEvent('keydown', { key: 'k', metaKey: true, bubbles: true });
-                window.dispatchEvent(event);
-              }}
-              className="flex items-center gap-2 px-3 py-1.5 text-sm text-slate-500 hover:text-slate-300 border border-slate-800 hover:border-slate-600 rounded-lg transition-colors"
+              onClick={() => window.dispatchEvent(new CustomEvent("blue-canopy:open-search"))}
+              aria-label="Open search"
+              aria-keyshortcuts="Meta+K Control+K"
+              className="flex items-center gap-2 px-3 py-1.5 text-sm text-slate-400 hover:text-slate-200 border border-slate-800 hover:border-slate-600 rounded-lg transition-colors"
             >
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+              <svg aria-hidden="true" className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
               </svg>
               <span className="hidden xl:inline">Search</span>
@@ -70,10 +101,13 @@ export default function Nav() {
             </button>
 
             {/* Stages dropdown trigger */}
-            <div className="relative">
+            <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setStagesOpen(!stagesOpen)}
-                className="flex items-center gap-2 px-3 py-2 text-sm text-slate-400 hover:text-slate-100 transition-colors rounded-md hover:bg-slate-800/50"
+                aria-expanded={stagesOpen}
+                aria-haspopup="menu"
+                aria-controls="nav-stages-menu"
+                className="flex items-center gap-2 px-3 py-2 text-sm text-slate-300 hover:text-slate-100 transition-colors rounded-md hover:bg-slate-800/50"
               >
                 {currentStage ? (
                   <>
@@ -83,35 +117,44 @@ export default function Nav() {
                 ) : (
                   <span>The 12 Stages</span>
                 )}
-                <svg className={`w-3 h-3 transition-transform ${stagesOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" className={`w-3 h-3 transition-transform ${stagesOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
 
               {stagesOpen && (
-                <div className="absolute top-full right-0 mt-1 w-64 bg-slate-900 border border-slate-700 rounded-lg shadow-xl overflow-hidden">
-                  <div className="px-3 py-2 border-b border-slate-800">
+                <div id="nav-stages-menu" role="menu" className="absolute top-full right-0 mt-1 w-64 bg-slate-900 border border-slate-700 rounded-lg shadow-xl overflow-hidden">
+                  <div className="px-3 py-2 border-b border-slate-800 flex items-center justify-between">
                     <p className="text-xs text-slate-500 uppercase tracking-wide">Pipeline</p>
+                    {visitedCount > 0 && (
+                      <p className="text-xs text-slate-500 font-mono">{visitedCount}/12</p>
+                    )}
                   </div>
-                  {stages.map((s) => (
-                    <Link
-                      key={s.href}
-                      href={s.href}
-                      onClick={() => setStagesOpen(false)}
-                      className={`flex items-center gap-3 px-3 py-2.5 text-sm transition-colors hover:bg-slate-800 ${
-                        pathname === s.href ? "text-blue-400 bg-slate-800/60" : "text-slate-300"
-                      }`}
-                    >
-                      <span className="font-mono text-xs text-slate-500 w-6 flex-shrink-0">{s.num}</span>
-                      <span>{s.label}</span>
-                    </Link>
-                  ))}
+                  {stages.map((s) => {
+                    const isVisited = visited.has(s.href);
+                    return (
+                      <Link
+                        key={s.href}
+                        href={s.href}
+                        onClick={() => setStagesOpen(false)}
+                        className={`flex items-center gap-3 px-3 py-2.5 text-sm transition-colors hover:bg-slate-800 ${
+                          pathname === s.href ? "text-blue-400 bg-slate-800/60" : "text-slate-300"
+                        }`}
+                      >
+                        <span className="font-mono text-xs text-slate-500 w-6 flex-shrink-0">{s.num}</span>
+                        <span className="flex-1">{s.label}</span>
+                        {isVisited && (
+                          <span aria-label="visited" className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0" />
+                        )}
+                      </Link>
+                    );
+                  })}
                   <div className="border-t border-slate-800 px-3 py-2">
                     <p className="text-xs text-slate-500 uppercase tracking-wide mb-1">Tools</p>
                     {tools.map((t) => (
                       <Link key={t.href} href={t.href} onClick={() => setStagesOpen(false)}
                         className="flex items-center gap-2 px-0 py-1.5 text-sm text-slate-400 hover:text-slate-100 transition-colors">
-                        <span className="text-slate-600 text-xs font-mono w-4">{t.sigil}</span>
+                        <span className="text-slate-500 text-xs font-mono w-4">{t.sigil}</span>
                         {t.label}
                       </Link>
                     ))}
@@ -152,10 +195,12 @@ export default function Nav() {
           {/* Mobile toggle */}
           <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden p-2 text-slate-400 hover:text-slate-100"
-            aria-label="Toggle menu"
+            className="lg:hidden p-2 text-slate-300 hover:text-slate-100"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {open ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
@@ -167,22 +212,32 @@ export default function Nav() {
 
         {/* Mobile menu */}
         {open && (
-          <div className="lg:hidden pb-4 space-y-0.5 border-t border-slate-800 pt-3">
-            <p className="px-3 py-1 text-xs text-slate-500 uppercase tracking-wide">The Pipeline</p>
-            {stages.map((s) => (
-              <Link
-                key={s.href}
-                href={s.href}
-                onClick={() => setOpen(false)}
-                className={`flex items-center gap-3 px-3 py-2 text-sm rounded-md transition-colors ${
-                  pathname === s.href
-                    ? "text-blue-400 bg-slate-800/60"
-                    : "text-slate-400 hover:text-slate-100 hover:bg-slate-800/50"
-                }`}
-              >
-                <span className="font-mono text-xs text-slate-600 w-5">{s.num}</span>
-                {s.label}
-              </Link>
+          <div id="mobile-menu" className="lg:hidden pb-4 space-y-0.5 border-t border-slate-800 pt-3 max-h-[calc(100vh-4rem)] overflow-y-auto">
+            {[
+              { phase: "Foundation", color: "text-blue-400", range: [0, 3] },
+              { phase: "The Work", color: "text-purple-400", range: [3, 9] },
+              { phase: "The Landing", color: "text-green-400", range: [9, 12] },
+            ].map((group, gi) => (
+              <div key={group.phase} className={gi > 0 ? "pt-2" : ""}>
+                <p className={`px-3 py-1 text-[10px] font-semibold uppercase tracking-widest ${group.color}`}>
+                  {group.phase}
+                </p>
+                {stages.slice(group.range[0], group.range[1]).map((s) => (
+                  <Link
+                    key={s.href}
+                    href={s.href}
+                    onClick={() => setOpen(false)}
+                    className={`flex items-center gap-3 px-3 py-2 text-sm rounded-md transition-colors ${
+                      pathname === s.href
+                        ? "text-blue-400 bg-slate-800/60"
+                        : "text-slate-400 hover:text-slate-100 hover:bg-slate-800/50"
+                    }`}
+                  >
+                    <span className="font-mono text-xs text-slate-500 w-5">{s.num}</span>
+                    {s.label}
+                  </Link>
+                ))}
+              </div>
             ))}
             <div className="pt-2 border-t border-slate-800 mt-2">
               <p className="px-3 py-1 text-xs text-slate-500 uppercase tracking-wide">Explore</p>
@@ -217,7 +272,6 @@ export default function Nav() {
           </div>
         )}
       </div>
-      <SearchModal />
     </nav>
   );
 }

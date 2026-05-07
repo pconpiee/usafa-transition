@@ -75,7 +75,7 @@ export default function PathTabs({ paths }: { paths: Path[] }) {
               <ul className="space-y-1.5">
                 {path.cons.map((con) => (
                   <li key={con} className="flex gap-2 text-xs text-slate-400 leading-snug">
-                    <span className="text-slate-600 flex-shrink-0 mt-0.5">&ndash;</span>
+                    <span className="text-slate-500 flex-shrink-0 mt-0.5">&ndash;</span>
                     {con}
                   </li>
                 ))}

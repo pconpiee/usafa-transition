@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import CompStackedBar from "@/components/diagrams/CompStackedBar";
 
 const BASE_PAY: Record<string, Record<number, number>> = {
   "O-1": { 2: 45135, 3: 48974, 4: 51483 },
@@ -41,6 +42,35 @@ export default function CompTranslatorPage() {
   const [customBahMonthly, setCustomBahMonthly] = useState("");
   const [dependents, setDependents] = useState(true);
   const [acipIdx, setAcipIdx] = useState(0);
+  const [copied, setCopied] = useState(false);
+
+  // Hydrate from URL on first load
+  useEffect(() => {
+    const p = new URLSearchParams(window.location.search);
+    if (p.get("rank")) setRank(p.get("rank")!);
+    const y = Number(p.get("yrs"));
+    if (!Number.isNaN(y) && y > 0) setYears(y);
+    const bt = Number(p.get("bah"));
+    if (!Number.isNaN(bt) && bt >= 0) setBahTierIdx(bt);
+    if (p.get("cbah")) setCustomBahMonthly(p.get("cbah")!);
+    if (p.get("dep") === "0") setDependents(false);
+    const ai = Number(p.get("acip"));
+    if (!Number.isNaN(ai) && ai >= 0) setAcipIdx(ai);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Sync state → URL (replace, no history push)
+  useEffect(() => {
+    const p = new URLSearchParams();
+    p.set("rank", rank);
+    p.set("yrs", String(years));
+    p.set("bah", String(bahTierIdx));
+    if (customBahMonthly) p.set("cbah", customBahMonthly);
+    if (!dependents) p.set("dep", "0");
+    if (acipIdx) p.set("acip", String(acipIdx));
+    const qs = p.toString();
+    history.replaceState(null, "", qs ? `?${qs}` : window.location.pathname);
+  }, [rank, years, bahTierIdx, customBahMonthly, dependents, acipIdx]);
 
   const basePay =
     BASE_PAY[rank]?.[years] ??
@@ -83,7 +113,7 @@ export default function CompTranslatorPage() {
       <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
         Tool
       </p>
-      <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
+      <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight text-balance">
         Comp Translator
       </h1>
       <p className="mt-4 text-lg text-slate-400 max-w-2xl">
@@ -153,9 +183,9 @@ export default function CompTranslatorPage() {
                 placeholder="Your monthly BAH (e.g. 1950)"
                 value={customBahMonthly}
                 onChange={(e) => setCustomBahMonthly(e.target.value)}
-                className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-slate-200 focus:outline-none focus:border-blue-500 placeholder:text-slate-600"
+                className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-slate-200 focus:outline-none focus:border-blue-500 placeholder:text-slate-500"
               />
-              <p className="text-xs text-slate-600 mt-1">Monthly BAH amount — check your LES or MyPay</p>
+              <p className="text-xs text-slate-500 mt-1">Monthly BAH amount — check your LES or MyPay</p>
             </div>
           )}
         </div>
@@ -188,12 +218,27 @@ export default function CompTranslatorPage() {
 
       {/* Results */}
       <div className="print-area">
-      <div className="mt-6 flex justify-end no-print">
+      <div className="mt-6 flex justify-end gap-2 no-print">
+        <button
+          onClick={async () => {
+            try {
+              await navigator.clipboard.writeText(window.location.href);
+              setCopied(true);
+              setTimeout(() => setCopied(false), 2000);
+            } catch {}
+          }}
+          className="flex items-center gap-2 px-4 py-2 text-sm border border-slate-700 text-slate-400 hover:text-slate-100 hover:border-slate-500 rounded-lg transition-colors"
+        >
+          <svg aria-hidden="true" className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 010 5.656l-3 3a4 4 0 11-5.656-5.656l1.5-1.5m6.828-6.828a4 4 0 015.656 5.656l-1.5 1.5"/>
+          </svg>
+          {copied ? "Link copied" : "Copy share link"}
+        </button>
         <button
           onClick={() => window.print()}
           className="flex items-center gap-2 px-4 py-2 text-sm border border-slate-700 text-slate-400 hover:text-slate-100 hover:border-slate-500 rounded-lg transition-colors"
         >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+          <svg aria-hidden="true" className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
           Print / Save as PDF
         </button>
       </div>
@@ -269,6 +314,16 @@ export default function CompTranslatorPage() {
         </div>
       </div>
 
+      <CompStackedBar
+        basePay={basePay}
+        flightPay={flightPay}
+        bah={bah}
+        bas={BAS}
+        tricare={tricareSavings}
+        retirement={retirementContrib}
+        taxAdvantage={taxAdvantage}
+      />
+
       {/* The Shock */}
       <section className="mt-12 bg-slate-900/70 border border-slate-800 rounded-xl p-6">
         <h2 className="text-lg font-semibold text-slate-200 mb-4">
@@ -308,15 +363,15 @@ export default function CompTranslatorPage() {
           </p>
           <ul className="space-y-2 mt-4">
             <li className="flex gap-2">
-              <span className="text-slate-600">&bull;</span>
+              <span className="text-slate-500">&bull;</span>
               <span>Instead of &ldquo;I need more money&rdquo; &rarr; &ldquo;How can we work together to get closer to the market rate for this role?&rdquo;</span>
             </li>
             <li className="flex gap-2">
-              <span className="text-slate-600">&bull;</span>
+              <span className="text-slate-500">&bull;</span>
               <span>Instead of &ldquo;That&rsquo;s too low&rdquo; &rarr; &ldquo;What flexibility is there in the compensation structure?&rdquo;</span>
             </li>
             <li className="flex gap-2">
-              <span className="text-slate-600">&bull;</span>
+              <span className="text-slate-500">&bull;</span>
               <span>Instead of &ldquo;Can you do better?&rdquo; &rarr; &ldquo;What would it take to move this closer to {formatCurrency(civEquivalent)}?&rdquo;</span>
             </li>
           </ul>

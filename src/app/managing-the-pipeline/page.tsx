@@ -1,12 +1,13 @@
 import Link from "next/link";
+import StageNav from "@/components/StageNav";
 
 export default function ManagingThePipelinePage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
-      <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
+      <p className="text-purple-400 text-sm font-medium tracking-wide uppercase mb-4">
         Stage 08 of 12 — Managing the Pipeline
       </p>
-      <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
+      <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight text-balance">
         Managing the Pipeline
       </h1>
       <p className="mt-4 text-lg text-slate-400 max-w-2xl">
@@ -31,7 +32,7 @@ export default function ManagingThePipelinePage() {
             "Skim if: you have fewer than 3 active processes right now",
           ].map((item) => (
             <li key={item} className="text-sm text-slate-400 flex gap-2">
-              <span className="text-slate-600 flex-shrink-0">—</span>
+              <span className="text-slate-500 flex-shrink-0">—</span>
               <span>{item}</span>
             </li>
           ))}
@@ -61,9 +62,9 @@ export default function ManagingThePipelinePage() {
         <h3 className="text-sm font-semibold text-amber-400 mb-3">What the numbers actually say</h3>
         <div className="grid sm:grid-cols-3 gap-4 text-center">
           {[
-            { stat: "18 months", label: "Average time from separation intent to offer acceptance for military transitions" },
-            { stat: "62%", label: "Feel unprepared for civilian workforce within first year" },
-            { stat: "4/10", label: "Rate their transition experience as unsatisfactory in retrospect" },
+            { stat: "12–18 mo", label: "Realistic time from separation intent to offer acceptance, done well" },
+            { stat: "60%+", label: "Of jobs filled through personal contacts, not job-board applications" },
+            { stat: "6 in 10", label: "Veterans separate without an offer in hand — the pipeline failure is structural" },
           ].map((s) => (
             <div key={s.stat}>
               <div className="text-2xl font-bold text-amber-400 mb-1">{s.stat}</div>
@@ -135,7 +136,7 @@ export default function ManagingThePipelinePage() {
             },
             {
               trigger: "After an interview",
-              action: "Within 24 hours: thank-you to each interviewer individually. Mention one thing specific to their interview. Run your PEDL debrief.",
+              action: "Within 24 hours: thank-you to each interviewer individually. Mention one thing specific to their interview. Run your PEDL debrief (Plan / Execute / Debrief / Learn).",
             },
             {
               trigger: "When you haven't heard back (post-interview)",
@@ -175,7 +176,7 @@ export default function ManagingThePipelinePage() {
               "What am I avoiding that I need to face?",
             ].map((q, i) => (
               <div key={i} className="flex gap-3 text-sm text-slate-400">
-                <span className="text-slate-600 flex-shrink-0 mt-0.5">☐</span>
+                <span className="text-slate-500 flex-shrink-0 mt-0.5">☐</span>
                 <span>{q}</span>
               </div>
             ))}
@@ -242,11 +243,11 @@ export default function ManagingThePipelinePage() {
           ].map((item) => (
             <div key={item.metric} className="flex justify-between bg-slate-800/50 rounded p-3">
               <span className="text-slate-300">{item.metric}</span>
-              <span className="text-slate-600 text-xs">{item.why}</span>
+              <span className="text-slate-500 text-xs">{item.why}</span>
             </div>
           ))}
         </div>
-        <p className="text-xs text-slate-600 mt-4">
+        <p className="text-xs text-slate-500 mt-4">
           Use your{" "}
           <Link href="/the-search" className="text-blue-400 hover:text-blue-300">
             JPOS tracker
@@ -257,7 +258,7 @@ export default function ManagingThePipelinePage() {
 
       {/* Where people stall */}
       <div className="mt-8 border-l-2 border-amber-700/50 pl-5 py-1">
-        <p className="text-xs text-amber-600 uppercase tracking-wide mb-1">Where people stall here</p>
+        <p className="text-xs text-amber-500 uppercase tracking-wide mb-1">Where people stall here</p>
         <p className="text-sm text-slate-400 leading-relaxed">
           Treating each opportunity as if it&rsquo;s the last one. Apply broadly enough
           that no single rejection derails the whole process.
@@ -278,6 +279,7 @@ export default function ManagingThePipelinePage() {
         >
           Stage 09: Negotiation →
         </Link>
+        <StageNav current="/managing-the-pipeline" />
       </div>
 
     </div>

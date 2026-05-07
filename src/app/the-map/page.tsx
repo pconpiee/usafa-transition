@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PathTabs from "@/components/PathTabs";
+import StageNav from "@/components/StageNav";
 
 export const metadata = {
   title: "Stage 03: The Map | Blue Canopy",
@@ -187,7 +188,7 @@ export default function TheMap() {
           <p className="text-blue-400 text-xs font-medium tracking-widest uppercase mb-3">
             Stage 03 of 12 &mdash; The Pipeline
           </p>
-          <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
+          <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight text-balance">
             The Map
           </h1>
           <p className="mt-4 text-slate-400 leading-relaxed">
@@ -201,6 +202,14 @@ export default function TheMap() {
             then come back here for the deep dive.
           </p>
 
+          <p className="mt-4 inline-flex items-center gap-1.5 text-xs text-slate-500">
+            <svg aria-hidden="true" className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+              <circle cx="12" cy="12" r="9" />
+              <path strokeLinecap="round" d="M12 7v5l3 2" />
+            </svg>
+            ~6 min read
+          </p>
+
           {/* TL;DR */}
           <div className="mt-6 p-4 rounded-lg border border-slate-700 bg-slate-900/60">
             <p className="text-xs font-semibold text-blue-400 uppercase tracking-wide mb-2">TL;DR</p>
@@ -211,7 +220,7 @@ export default function TheMap() {
                 "Read fully if: you haven't picked a direction yet — this is the most important page",
               ].map((item) => (
                 <li key={item} className="text-sm text-slate-400 flex gap-2">
-                  <span className="text-slate-600 flex-shrink-0">—</span>
+                  <span className="text-slate-500 flex-shrink-0">—</span>
                   <span>{item}</span>
                 </li>
               ))}
@@ -370,7 +379,7 @@ export default function TheMap() {
 
               {/* Left: YES — aviation sub-fork */}
               <div className="flex flex-col items-center gap-2">
-                <span className="text-xs text-slate-600 font-mono">YES</span>
+                <span className="text-xs text-slate-500 font-mono">YES</span>
                 {/* Aviation sub-fork */}
                 <div className="w-full space-y-1.5">
                   {[
@@ -418,20 +427,20 @@ export default function TheMap() {
                     >
                       <div>
                         <p className={`text-xs font-medium ${p.text}`}>{p.label}</p>
-                        <p className="text-slate-600 text-xs">{p.sub}</p>
+                        <p className="text-slate-500 text-xs">{p.sub}</p>
                       </div>
                       <p className={`text-xs font-mono ${p.text} opacity-70 text-right ml-2 flex-shrink-0`}>{p.comp}</p>
                     </Link>
                   ))}
                 </div>
-                <Link href="/the-map/airlines" className="text-xs text-slate-600 hover:text-green-400 transition-colors mt-1">
+                <Link href="/the-map/airlines" className="text-xs text-slate-500 hover:text-green-400 transition-colors mt-1">
                   Aviation deep dive →
                 </Link>
               </div>
 
               {/* Right: NO / Unsure */}
               <div className="flex flex-col items-center gap-2">
-                <span className="text-xs text-slate-600 font-mono">NO / NOT SURE</span>
+                <span className="text-xs text-slate-500 font-mono">NO / NOT SURE</span>
                 <div className="w-full space-y-1.5">
                   {[
                     { label: "Defense & Aerospace", sub: "Easiest translation", border: "border-blue-800/40", bg: "bg-blue-950/10", text: "text-blue-400", href: "/the-map/defense" },
@@ -448,7 +457,7 @@ export default function TheMap() {
                     >
                       <div>
                         <p className={`text-xs font-medium ${p.text}`}>{p.label}</p>
-                        <p className="text-slate-600 text-xs">{p.sub}</p>
+                        <p className="text-slate-500 text-xs">{p.sub}</p>
                       </div>
                       <span className="text-slate-700 text-xs">→</span>
                     </Link>
@@ -509,7 +518,7 @@ export default function TheMap() {
             ].map((s) => (
               <div key={s.label} className="p-4 rounded-lg border border-slate-800 bg-slate-900/30">
                 <p className="text-2xl font-bold text-slate-100">{s.num}</p>
-                <p className="mt-1 text-xs text-slate-600 leading-snug">{s.label}</p>
+                <p className="mt-1 text-xs text-slate-500 leading-snug">{s.label}</p>
               </div>
             ))}
           </div>
@@ -588,7 +597,7 @@ export default function TheMap() {
 
         {/* Where people stall */}
         <section className="border-l-2 border-amber-700/50 pl-5 py-1">
-          <p className="text-xs text-amber-600 uppercase tracking-wide mb-1">Where people stall here</p>
+          <p className="text-xs text-amber-500 uppercase tracking-wide mb-1">Where people stall here</p>
           <p className="text-sm text-slate-400 leading-relaxed">
             Most pilots read this and still default to airlines or defense. Both are legitimate paths.
             But make the choice deliberately &mdash; not because you ran out of imagination.
@@ -611,6 +620,7 @@ export default function TheMap() {
           </div>
         </section>
 
+        <StageNav current="/the-map" />
       </div>
     </div>
   );

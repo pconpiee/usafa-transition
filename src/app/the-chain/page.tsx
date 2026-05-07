@@ -1,12 +1,13 @@
 import Link from "next/link";
+import StageNav from "@/components/StageNav";
 
 export default function TheChainPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
-      <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
+      <p className="text-emerald-400 text-sm font-medium tracking-wide uppercase mb-4">
         Stage 12 of 12 — The Chain
       </p>
-      <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
+      <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight text-balance">
         The Chain
       </h1>
       <p className="mt-4 text-lg text-slate-400 max-w-2xl">
@@ -30,7 +31,7 @@ export default function TheChainPage() {
             "Read fully — this is the one most people skip and the one the community needs most",
           ].map((item) => (
             <li key={item} className="text-sm text-slate-400 flex gap-2">
-              <span className="text-slate-600 flex-shrink-0">—</span>
+              <span className="text-slate-500 flex-shrink-0">—</span>
               <span>{item}</span>
             </li>
           ))}
@@ -231,7 +232,7 @@ export default function TheChainPage() {
 
       {/* Where people stall */}
       <div className="mt-8 border-l-2 border-amber-700/50 pl-5 py-1">
-        <p className="text-xs text-amber-600 uppercase tracking-wide mb-1">Where people stall here</p>
+        <p className="text-xs text-amber-500 uppercase tracking-wide mb-1">Where people stall here</p>
         <p className="text-sm text-slate-400 leading-relaxed">
           Waiting until they feel &ldquo;qualified enough&rdquo; to reach back. You don&rsquo;t need to
           have it figured out. You need to be one year ahead of the person asking.
@@ -246,6 +247,7 @@ export default function TheChainPage() {
         >
           ← Stage 11: The Long Game
         </Link>
+        <StageNav current="/the-chain" />
       </div>
 
     </div>

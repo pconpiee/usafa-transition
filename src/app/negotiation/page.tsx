@@ -1,12 +1,15 @@
 import Link from "next/link";
+import StageNav from "@/components/StageNav";
+import SectionIcon from "@/components/SectionIcon";
 
 export default function NegotiationPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
-      <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
+      <p className="text-purple-400 text-sm font-medium tracking-wide uppercase mb-4">
         Stage 09 of 12 — Negotiation
       </p>
-      <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
+      <h1 className="flex items-center gap-3 text-3xl sm:text-4xl font-bold text-slate-100 leading-tight text-balance">
+        <SectionIcon name="dollar" className="w-7 h-7 text-purple-400" />
         Negotiation
       </h1>
       <p className="mt-4 text-lg text-slate-400 max-w-2xl">
@@ -20,6 +23,14 @@ export default function NegotiationPage() {
         negotiating is not zero.
       </p>
 
+      <p className="mt-4 inline-flex items-center gap-1.5 text-xs text-slate-500">
+        <svg aria-hidden="true" className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+          <circle cx="12" cy="12" r="9" />
+          <path strokeLinecap="round" d="M12 7v5l3 2" />
+        </svg>
+        ~3 min read
+      </p>
+
       {/* TL;DR */}
       <div className="mt-6 p-4 rounded-lg border border-slate-700 bg-slate-900/60">
         <p className="text-xs font-semibold text-blue-400 uppercase tracking-wide mb-2">TL;DR</p>
@@ -30,7 +41,7 @@ export default function NegotiationPage() {
             "Skim if: you already have an offer above your walk-away number",
           ].map((item) => (
             <li key={item} className="text-sm text-slate-400 flex gap-2">
-              <span className="text-slate-600 flex-shrink-0">—</span>
+              <span className="text-slate-500 flex-shrink-0">—</span>
               <span>{item}</span>
             </li>
           ))}
@@ -187,7 +198,7 @@ export default function NegotiationPage() {
                 <div className="flex-1">
                   <div className="flex items-baseline gap-2 mb-1">
                     <span className="text-sm font-semibold text-slate-200">{item.step}</span>
-                    <span className="text-xs text-slate-600 font-mono">{item.pct}</span>
+                    <span className="text-xs text-slate-500 font-mono">{item.pct}</span>
                   </div>
                   <p className="text-sm text-slate-500">{item.desc}</p>
                 </div>
@@ -195,7 +206,7 @@ export default function NegotiationPage() {
             ))}
           </div>
         </div>
-        <p className="text-xs text-slate-600 mt-3">
+        <p className="text-xs text-slate-500 mt-3">
           Source: Voss, C. &amp; Raz, T. (2016). <em>Never Split the Difference</em>. HarperBusiness.
         </p>
       </section>
@@ -287,7 +298,7 @@ export default function NegotiationPage() {
 
       {/* Where people stall */}
       <div className="mt-8 border-l-2 border-amber-700/50 pl-5 py-1">
-        <p className="text-xs text-amber-600 uppercase tracking-wide mb-1">Where people stall here</p>
+        <p className="text-xs text-amber-500 uppercase tracking-wide mb-1">Where people stall here</p>
         <p className="text-sm text-slate-400 leading-relaxed">
           Accepting the first number. Almost no one should accept the first number.
           The research, the ask, and the silence are all learnable &mdash; but only if you
@@ -309,6 +320,7 @@ export default function NegotiationPage() {
         >
           Stage 10: First 90 Days →
         </Link>
+        <StageNav current="/negotiation" />
       </div>
 
     </div>

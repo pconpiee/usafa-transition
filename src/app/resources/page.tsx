@@ -143,7 +143,7 @@ function StarRating({ rating }: { rating: number }) {
           ★
         </span>
       ))}
-      <span className="text-xs text-slate-600 ml-1.5">{rating}/10</span>
+      <span className="text-xs text-slate-500 ml-1.5">{rating}/10</span>
     </div>
   );
 }
@@ -154,7 +154,7 @@ export default function ResourcesPage() {
       <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
         Intel
       </p>
-      <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
+      <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight text-balance">
         Resource Ratings
       </h1>
       <p className="mt-4 text-lg text-slate-400 max-w-2xl">

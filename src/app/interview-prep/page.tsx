@@ -1,12 +1,16 @@
 import Link from "next/link";
+import StageNav from "@/components/StageNav";
+import SectionIcon from "@/components/SectionIcon";
+import StarLFlow from "@/components/diagrams/StarLFlow";
 
 export default function InterviewPrepPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
-      <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
+      <p className="text-purple-400 text-sm font-medium tracking-wide uppercase mb-4">
         Stage 07 of 12 — Interviews
       </p>
-      <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
+      <h1 className="flex items-center gap-3 text-3xl sm:text-4xl font-bold text-slate-100 leading-tight text-balance">
+        <SectionIcon name="chat" className="w-7 h-7 text-purple-400" />
         Interview Prep
       </h1>
       <p className="mt-4 text-lg text-slate-400 max-w-2xl">
@@ -21,6 +25,14 @@ export default function InterviewPrepPage() {
         regardless of what they bring to theirs.
       </p>
 
+      <p className="mt-4 inline-flex items-center gap-1.5 text-xs text-slate-500">
+        <svg aria-hidden="true" className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+          <circle cx="12" cy="12" r="9" />
+          <path strokeLinecap="round" d="M12 7v5l3 2" />
+        </svg>
+        ~4 min read
+      </p>
+
       {/* TL;DR */}
       <div className="mt-6 p-4 rounded-lg border border-slate-700 bg-slate-900/60">
         <p className="text-xs font-semibold text-blue-400 uppercase tracking-wide mb-2">TL;DR</p>
@@ -31,7 +43,7 @@ export default function InterviewPrepPage() {
             "Skim if: you're consistently getting to final rounds and getting offers",
           ].map((item) => (
             <li key={item} className="text-sm text-slate-400 flex gap-2">
-              <span className="text-slate-600 flex-shrink-0">—</span>
+              <span className="text-slate-500 flex-shrink-0">—</span>
               <span>{item}</span>
             </li>
           ))}
@@ -96,7 +108,7 @@ export default function InterviewPrepPage() {
             </div>
           ))}
         </div>
-        <p className="mt-4 text-xs text-slate-600">
+        <p className="mt-4 text-xs text-slate-500">
           Source: Huffcutt et al. (2001) meta-analysis on employment interview validity, Journal of Applied Psychology.
         </p>
       </section>
@@ -111,6 +123,7 @@ export default function InterviewPrepPage() {
           is what separates good answers from great ones — and what most pilots
           skip.
         </p>
+        <StarLFlow />
         <div className="bg-slate-900/70 border border-slate-800 rounded-xl p-6">
           <div className="space-y-5">
             {[
@@ -157,7 +170,7 @@ export default function InterviewPrepPage() {
                 <div className="flex-1">
                   <div className="flex items-baseline gap-2 mb-1">
                     <span className="text-sm font-semibold text-slate-200">{row.label}</span>
-                    <span className="text-xs text-slate-600">{row.time}</span>
+                    <span className="text-xs text-slate-500">{row.time}</span>
                   </div>
                   <p className="text-sm text-slate-400 mb-2">{row.what}</p>
                   {row.trap && (
@@ -261,7 +274,7 @@ export default function InterviewPrepPage() {
               "If you find common ground: use it — briefly, genuinely, not performatively.",
             ].map((item, i) => (
               <div key={i} className="flex gap-2 text-sm text-slate-400">
-                <span className="text-slate-600 flex-shrink-0 mt-0.5">→</span>
+                <span className="text-slate-500 flex-shrink-0 mt-0.5">→</span>
                 <span>{item}</span>
               </div>
             ))}
@@ -393,7 +406,7 @@ export default function InterviewPrepPage() {
             </div>
           ))}
         </div>
-        <p className="mt-4 text-xs text-slate-600">
+        <p className="mt-4 text-xs text-slate-500">
           The interview that doesn&rsquo;t get debriefed is an experience that
           doesn&rsquo;t become learning. (Kolb, 1984)
         </p>
@@ -429,7 +442,7 @@ export default function InterviewPrepPage() {
 
       {/* Where people stall */}
       <div className="mt-8 border-l-2 border-amber-700/50 pl-5 py-1">
-        <p className="text-xs text-amber-600 uppercase tracking-wide mb-1">Where people stall here</p>
+        <p className="text-xs text-amber-500 uppercase tracking-wide mb-1">Where people stall here</p>
         <p className="text-sm text-slate-400 leading-relaxed">
           Over-preparing for predicted questions, under-preparing the story bank. You can&rsquo;t control what they ask.
           You can control how well you know your own material.
@@ -450,6 +463,7 @@ export default function InterviewPrepPage() {
         >
           Stage 08: Pipeline →
         </Link>
+        <StageNav current="/interview-prep" />
       </div>
 
     </div>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ImInForm from "@/components/ImInForm";
+import StageNav from "@/components/StageNav";
 
 export const metadata = {
   title: "Stage 01: Who Are You Now | Blue Canopy",
@@ -17,7 +18,7 @@ export default function TheReckoning() {
           <p className="text-blue-400 text-xs font-medium tracking-widest uppercase mb-3">
             Stage 01 of 12 &mdash; The Pipeline
           </p>
-          <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
+          <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight text-balance">
             Who are you now?
           </h1>
           <p className="mt-4 text-slate-400 leading-relaxed">
@@ -30,6 +31,14 @@ export default function TheReckoning() {
       {/* Main content */}
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 space-y-16">
 
+        <p className="mt-4 inline-flex items-center gap-1.5 text-xs text-slate-500">
+          <svg aria-hidden="true" className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+            <circle cx="12" cy="12" r="9" />
+            <path strokeLinecap="round" d="M12 7v5l3 2" />
+          </svg>
+          ~4 min read
+        </p>
+
         {/* TL;DR */}
         <div className="mt-6 p-4 rounded-lg border border-slate-700 bg-slate-900/60">
           <p className="text-xs font-semibold text-blue-400 uppercase tracking-wide mb-2">TL;DR</p>
@@ -40,7 +49,7 @@ export default function TheReckoning() {
               "Skim if: you've already done serious identity work and know what you're building toward",
             ].map((item) => (
               <li key={item} className="text-sm text-slate-400 flex gap-2">
-                <span className="text-slate-600 flex-shrink-0">—</span>
+                <span className="text-slate-500 flex-shrink-0">—</span>
                 <span>{item}</span>
               </li>
             ))}
@@ -146,7 +155,7 @@ export default function TheReckoning() {
               <div key={phase.phase} className="p-5 rounded-lg border border-slate-800 bg-slate-900/40">
                 <div className="flex items-baseline gap-3 mb-2">
                   <h3 className="font-semibold text-slate-200">{phase.phase}</h3>
-                  <span className="text-xs text-slate-600">{phase.timing}</span>
+                  <span className="text-xs text-slate-500">{phase.timing}</span>
                 </div>
                 <p className="text-sm text-slate-400 leading-relaxed mb-2">{phase.what}</p>
                 <p className="text-sm text-slate-500 italic">{phase.feel}</p>
@@ -314,7 +323,7 @@ export default function TheReckoning() {
 
         {/* Where people stall */}
         <section className="border-l-2 border-amber-700/50 pl-5 py-1">
-          <p className="text-xs text-amber-600 uppercase tracking-wide mb-1">Where people stall here</p>
+          <p className="text-xs text-amber-500 uppercase tracking-wide mb-1">Where people stall here</p>
           <p className="text-sm text-slate-400 leading-relaxed">
             Most pilots complete the inventory but don&rsquo;t show it to anyone. The exercise only works
             if someone who knows you reads it and pushes back. Don&rsquo;t do this stage alone.
@@ -358,6 +367,7 @@ export default function TheReckoning() {
         {/* I'm In form */}
         <ImInForm />
 
+        <StageNav current="/the-reckoning" />
       </div>
     </div>
   );

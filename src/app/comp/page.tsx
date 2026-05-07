@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PayComparisonChart from "@/components/diagrams/PayComparisonChart";
 
 export const metadata = {
   title: "Pay Reference | Blue Canopy",
@@ -123,7 +124,7 @@ export default function CompReference() {
           <p className="text-blue-400 text-xs font-medium tracking-widest uppercase mb-3">
             Reference Tool
           </p>
-          <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
+          <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight text-balance">
             Pay Reference
           </h1>
           <p className="mt-4 text-slate-400 leading-relaxed max-w-2xl">
@@ -131,7 +132,7 @@ export default function CompReference() {
             equity notes, and the flag for each one. Use this to compare trajectories, not just
             starting salaries.
           </p>
-          <p className="mt-3 text-xs text-slate-600">
+          <p className="mt-3 text-xs text-slate-500">
             Ranges are 2025–2026 US civilian market. Geography matters significantly — DC, SF, NY
             skew higher; most other markets are lower. These are research baselines, not guarantees.
           </p>
@@ -139,6 +140,8 @@ export default function CompReference() {
       </section>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-12">
+        <PayComparisonChart />
+
         {/* Summary table */}
         <section>
           <h2 className="text-lg font-bold text-slate-100 mb-4">Year-by-year comparison</h2>
@@ -160,19 +163,19 @@ export default function CompReference() {
                   <tr key={p.id} className="hover:bg-slate-900/40 transition-colors">
                     <td className="px-4 py-3.5">
                       <p className={`font-semibold text-xs ${p.tagColor}`}>{p.label}</p>
-                      <p className="text-xs text-slate-600 mt-0.5">{p.tag}</p>
+                      <p className="text-xs text-slate-500 mt-0.5">{p.tag}</p>
                     </td>
                     <td className="px-4 py-3.5">
                       <p className="text-slate-300 font-mono text-xs">{p.year1.range}</p>
-                      <p className="text-slate-600 text-xs mt-0.5">{p.year1.note}</p>
+                      <p className="text-slate-500 text-xs mt-0.5">{p.year1.note}</p>
                     </td>
                     <td className="px-4 py-3.5">
                       <p className="text-slate-300 font-mono text-xs">{p.year5.range}</p>
-                      <p className="text-slate-600 text-xs mt-0.5">{p.year5.note}</p>
+                      <p className="text-slate-500 text-xs mt-0.5">{p.year5.note}</p>
                     </td>
                     <td className="px-4 py-3.5">
                       <p className="text-slate-300 font-mono text-xs">{p.year10.range}</p>
-                      <p className="text-slate-600 text-xs mt-0.5">{p.year10.note}</p>
+                      <p className="text-slate-500 text-xs mt-0.5">{p.year10.note}</p>
                     </td>
                     <td className="px-4 py-3.5 hidden sm:table-cell">
                       <p className="text-slate-500 text-xs leading-snug max-w-[200px]">
@@ -199,22 +202,22 @@ export default function CompReference() {
                   <p className={`font-semibold text-sm ${p.tagColor}`}>{p.label}</p>
                   <Link
                     href={p.href}
-                    className="text-xs text-slate-600 hover:text-blue-400 transition-colors"
+                    className="text-xs text-slate-500 hover:text-blue-400 transition-colors"
                   >
                     Deep dive →
                   </Link>
                 </div>
                 <div className="space-y-1.5 text-xs">
                   <div className="flex gap-2">
-                    <span className="text-slate-600 w-14 flex-shrink-0">Equity</span>
+                    <span className="text-slate-500 w-14 flex-shrink-0">Equity</span>
                     <span className="text-slate-400 leading-snug">{p.equity}</span>
                   </div>
                   <div className="flex gap-2">
-                    <span className="text-slate-600 w-14 flex-shrink-0">Pension</span>
+                    <span className="text-slate-500 w-14 flex-shrink-0">Pension</span>
                     <span className="text-slate-400 leading-snug">{p.pension}</span>
                   </div>
                   <div className="mt-2 pt-2 border-t border-slate-800 flex gap-2">
-                    <span className="text-amber-600 flex-shrink-0">▲</span>
+                    <span className="text-amber-500 flex-shrink-0">▲</span>
                     <span className="text-slate-500 italic leading-snug">{p.flag}</span>
                   </div>
                 </div>

@@ -1,12 +1,13 @@
 import Link from "next/link";
+import StageNav from "@/components/StageNav";
 
 export default function ApplicationPackagePage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
-      <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
+      <p className="text-purple-400 text-sm font-medium tracking-wide uppercase mb-4">
         Stage 06 of 12 — Application Package
       </p>
-      <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
+      <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight text-balance">
         Applications
       </h1>
       <p className="mt-4 text-lg text-slate-400 max-w-2xl">
@@ -29,7 +30,7 @@ export default function ApplicationPackagePage() {
             "Skim if: you've already had a professional resume review and gotten interviews",
           ].map((item) => (
             <li key={item} className="text-sm text-slate-400 flex gap-2">
-              <span className="text-slate-600 flex-shrink-0">—</span>
+              <span className="text-slate-500 flex-shrink-0">—</span>
               <span>{item}</span>
             </li>
           ))}
@@ -73,7 +74,7 @@ export default function ApplicationPackagePage() {
             "Someone I trust has read my application package for clarity and substance.",
           ].map((item, i) => (
             <div key={i} className="flex gap-3 text-sm text-slate-400">
-              <span className="text-slate-600 flex-shrink-0 mt-0.5">☐</span>
+              <span className="text-slate-500 flex-shrink-0 mt-0.5">☐</span>
               <span>{item}</span>
             </div>
           ))}
@@ -235,7 +236,7 @@ export default function ApplicationPackagePage() {
                   <p className="text-slate-300 italic">{item.good}</p>
                 </div>
               </div>
-              <p className="text-xs text-slate-600">{item.note}</p>
+              <p className="text-xs text-slate-500">{item.note}</p>
             </div>
           ))}
         </div>
@@ -275,7 +276,7 @@ export default function ApplicationPackagePage() {
 
       {/* Where people stall */}
       <div className="mt-8 border-l-2 border-amber-700/50 pl-5 py-1">
-        <p className="text-xs text-amber-600 uppercase tracking-wide mb-1">Where people stall here</p>
+        <p className="text-xs text-amber-500 uppercase tracking-wide mb-1">Where people stall here</p>
         <p className="text-sm text-slate-400 leading-relaxed">
           Writing the resume for the job they had, not the job they&rsquo;re applying for.
           Every bullet should answer &ldquo;so what?&rdquo; &mdash; most don&rsquo;t.
@@ -296,6 +297,7 @@ export default function ApplicationPackagePage() {
         >
           Stage 07: Interviews →
         </Link>
+        <StageNav current="/application-package" />
       </div>
 
     </div>

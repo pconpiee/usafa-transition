@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import TimelineAxis from "@/components/diagrams/TimelineAxis";
 
 interface Milestone {
   monthsOut: number;
@@ -22,7 +23,7 @@ const milestones: Milestone[] = [
   { monthsOut: 12, title: "Apply for SkillBridge", detail: "Submit formal request through your chain. Have backup companies. The approval process can take months.", category: "career" },
   { monthsOut: 10, title: "Build your one-sentence story", detail: "Not your elevator pitch. The sentence that makes everything else legible. Memorize it. (Playbook Stage 2)", category: "personal" },
   { monthsOut: 10, title: "Start resume rebuild", detail: "Use Hire Heroes USA (free, human-reviewed, gold standard). Rebuild from your one-sentence story, not from your most recent duty title.", category: "career" },
-  { monthsOut: 9, title: "Begin field assignments", detail: "Three real conversations, then a written piece, then a formal ask, then the hardest conversation. PEDL debrief each one.", category: "career" },
+  { monthsOut: 9, title: "Begin field assignments", detail: "Three real conversations, then a written piece, then a formal ask, then the hardest conversation. PEDL debrief (Plan / Execute / Debrief / Learn) each one.", category: "career" },
   { monthsOut: 9, title: "Research target geography", detail: "Where does your target industry cluster? Austin, DC, SF, NYC, Denver? Cost of living vs. opportunity density. Don't default to 'where family is.'", category: "career" },
   { monthsOut: 6, title: "Complete TAP (mandatory)", detail: "4/10 from veterans, but required. The DOL employment workshop is the best part. CSP pathway to SkillBridge is the only genuinely valuable piece.", category: "admin" },
   { monthsOut: 6, title: "File VA disability claim", detail: "File before or immediately after separation. Use a VSO. Don't wait — processing takes months. Backdate documentation helps.", category: "admin" },
@@ -76,7 +77,7 @@ export default function TimelinePage() {
           <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
             Tool
           </p>
-          <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
+          <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight text-balance">
             Timeline Builder
           </h1>
           <p className="mt-4 text-lg text-slate-400 max-w-2xl">
@@ -104,6 +105,8 @@ export default function TimelinePage() {
           className="bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-slate-200 focus:outline-none focus:border-blue-500"
         />
       </div>
+
+      <TimelineAxis milestones={milestones} />
 
       {/* Legend */}
       <div className="no-print mt-6 flex flex-wrap gap-2">
@@ -149,7 +152,7 @@ export default function TimelinePage() {
                       {m.category}
                     </span>
                     {dateStr && (
-                      <span className="text-xs text-slate-600 font-mono">
+                      <span className="text-xs text-slate-500 font-mono">
                         {dateStr}
                       </span>
                     )}

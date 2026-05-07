@@ -1,14 +1,16 @@
-"use client";
-
 import Link from "next/link";
+import StageNav from "@/components/StageNav";
+import SectionIcon from "@/components/SectionIcon";
+import WeakTiesDiagram from "@/components/diagrams/WeakTiesDiagram";
 
 export default function NetworkingPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
-      <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
+      <p className="text-purple-400 text-sm font-medium tracking-wide uppercase mb-4">
         Stage 04 of 12 — Networking
       </p>
-      <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
+      <h1 className="flex items-center gap-3 text-3xl sm:text-4xl font-bold text-slate-100 leading-tight text-balance">
+        <SectionIcon name="network" className="w-7 h-7 text-purple-400" />
         Networking
       </h1>
       <p className="mt-4 text-lg text-slate-400 max-w-2xl">
@@ -23,6 +25,14 @@ export default function NetworkingPage() {
         They&rsquo;re the people you barely know.
       </p>
 
+      <p className="mt-4 inline-flex items-center gap-1.5 text-xs text-slate-500">
+        <svg aria-hidden="true" className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+          <circle cx="12" cy="12" r="9" />
+          <path strokeLinecap="round" d="M12 7v5l3 2" />
+        </svg>
+        ~5 min read
+      </p>
+
       {/* TL;DR */}
       <div className="mt-6 p-4 rounded-lg border border-slate-700 bg-slate-900/60">
         <p className="text-xs font-semibold text-blue-400 uppercase tracking-wide mb-2">TL;DR</p>
@@ -33,7 +43,7 @@ export default function NetworkingPage() {
             "Skim if: you already have 10+ warm relationships in your target industry",
           ].map((item) => (
             <li key={item} className="text-sm text-slate-400 flex gap-2">
-              <span className="text-slate-600 flex-shrink-0">—</span>
+              <span className="text-slate-500 flex-shrink-0">—</span>
               <span>{item}</span>
             </li>
           ))}
@@ -90,6 +100,8 @@ export default function NetworkingPage() {
           </p>
         </div>
 
+        <WeakTiesDiagram />
+
         <div className="mt-8 grid sm:grid-cols-3 gap-4">
           {[
             {
@@ -117,7 +129,7 @@ export default function NetworkingPage() {
                 {s.stat}
               </div>
               <div className="text-sm text-slate-400">{s.label}</div>
-              <div className="text-xs text-slate-600 mt-2">{s.source}</div>
+              <div className="text-xs text-slate-500 mt-2">{s.source}</div>
             </div>
           ))}
         </div>
@@ -306,7 +318,7 @@ export default function NetworkingPage() {
                 key={i}
                 className="flex gap-3 text-sm border-b border-slate-800/50 pb-3 last:border-0 last:pb-0"
               >
-                <span className="text-slate-600 flex-shrink-0 mt-0.5">
+                <span className="text-slate-500 flex-shrink-0 mt-0.5">
                   ☐
                 </span>
                 <div>
@@ -536,7 +548,7 @@ export default function NetworkingPage() {
               <ul className="space-y-2">
                 {phase.actions.map((a, i) => (
                   <li key={i} className="flex gap-2 text-sm text-slate-400">
-                    <span className="text-slate-600 flex-shrink-0 mt-0.5">
+                    <span className="text-slate-500 flex-shrink-0 mt-0.5">
                       &bull;
                     </span>
                     <span>{a}</span>
@@ -600,7 +612,7 @@ export default function NetworkingPage() {
 
       {/* Where people stall */}
       <div className="mt-8 border-l-2 border-amber-700/50 pl-5 py-1">
-        <p className="text-xs text-amber-600 uppercase tracking-wide mb-1">Where people stall here</p>
+        <p className="text-xs text-amber-500 uppercase tracking-wide mb-1">Where people stall here</p>
         <p className="text-sm text-slate-400 leading-relaxed">
           Treating it like a mission brief &mdash; researching everything before making contact.
           That&rsquo;s the wrong instinct. The first coffee chat doesn&rsquo;t need to be perfect.
@@ -622,6 +634,7 @@ export default function NetworkingPage() {
         >
           Stage 05: The Search →
         </Link>
+        <StageNav current="/networking" />
       </div>
 
     </div>

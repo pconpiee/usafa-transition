@@ -4,12 +4,20 @@ export default function PlaybookPage() {
       <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
         Start here
       </p>
-      <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
+      <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight text-balance">
         The Outlier Playbook
       </h1>
       <p className="mt-4 text-lg text-slate-400 max-w-2xl">
         What the highest-performing USAFA grads did when they left active duty.
         Five stages. Each earns the next.
+      </p>
+
+      <p className="mt-4 inline-flex items-center gap-1.5 text-xs text-slate-500">
+        <svg aria-hidden="true" className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+          <circle cx="12" cy="12" r="9" />
+          <path strokeLinecap="round" d="M12 7v5l3 2" />
+        </svg>
+        ~3 min read
       </p>
 
       {/* Pilot Translation Table */}
@@ -58,7 +66,7 @@ export default function PlaybookPage() {
             </tbody>
           </table>
         </div>
-        <p className="text-xs text-slate-600 mt-4">
+        <p className="text-xs text-slate-500 mt-4">
           For deeper context on what each maps to by field, see{" "}
           <a href="/know-your-gifts" className="text-blue-400 hover:text-blue-300">
             Stage 02: Know Your Gifts

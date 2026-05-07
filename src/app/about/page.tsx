@@ -16,11 +16,11 @@ export default function AboutPage() {
           <p className="text-blue-400 text-xs font-medium tracking-widest uppercase mb-3">
             About
           </p>
-          <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
+          <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight text-balance">
             Who built this and why
           </h1>
           <p className="mt-4 text-slate-400 leading-relaxed">
-            J. Patrick Connolly. USAFA &lsquo;16. Space Ops. Separated 2021.
+            Patrick Connolly. USAFA &lsquo;16. Space Ops. Separated 2021.
             The path since then has been anything but straight &mdash; which is exactly the point.
           </p>
         </div>
@@ -39,23 +39,53 @@ export default function AboutPage() {
               Awareness Concept of Operations during the Air Force-to-Space Force transition.
             </p>
             <p>
-              I separated in 2021. The plan was nonprofit work &mdash; I went to Ethiopia with my wife
+              I separated in 2021. The plan was nonprofit work. My wife and I went to Ethiopia
               to help run a mission there. A civil war had other ideas, and we were evacuated.
-              Back in the US, I started a business with my brother-in-law. Then a French satellite
-              software startup called Leanspace took a chance on me &mdash; partly because USAFA
-              taught me Raptor, and they needed someone who could actually code.
             </p>
             <p>
-              I spent three years at Leanspace: Product Manager, Solutions Architect, then US Business
-              Development. I opened the American office, ran the capture that got us into the final
-              three of a Space Force contract (the only non-US vendor shortlisted), and helped
-              co-author ~&euro;14.5M in grants to CNES, ESA, and France 2030. The Series A closed.
-              I was based in Strasbourg the whole time.
+              Back in Houston I started a business with my brother-in-law. It didn&rsquo;t work.
+              By the end of that year I was a jobless veteran, fifty-five applications deep,
+              with zero responses. I applied to anything that paid &mdash; Director of Strategy,
+              grocery store bagger, and most of the things in between. My wife had just been diagnosed
+              with something the doctors thought might be cancer. We were paying $890/month for
+              health insurance and still writing $3,000 checks at the pharmacy. VA disability
+              didn&rsquo;t close the gap.
+            </p>
+            <p>
+              I had also told myself I would never work in space again, and never work in or near
+              the government again. Both promises were about to age poorly.
+            </p>
+            <p>
+              The first space job I applied to was Slingshot Aerospace. Three of the founders had been
+              in my squadron. Half their leadership was USAFA. Their job portal physically couldn&rsquo;t
+              receive my CV &mdash; I had to read it line-by-line over the phone to their HR lead.
+              They never replied. Months later, boarding a TGV in Paris on my way to a different job,
+              I&rsquo;d find Slingshot&rsquo;s rejection email waiting on a brand-new French phone.
+            </p>
+            <p>
+              That different job was Leanspace &mdash; a French satellite software startup. Three rounds
+              of interviews, then &ldquo;how soon can you move to France?&rdquo; Two weeks after the offer
+              I sold the car and the rest of our things. A month later we landed in Paris. I spent
+              three years there: Product Manager, then Solutions Architect, then US Business Development.
+              I opened the American office, ran the capture that got us into the final three of a Space
+              Force contract (the only non-US vendor shortlisted), and helped co-author ~&euro;14.5M in
+              grants to CNES, ESA, and France 2030. The Series A closed. I was based in Strasbourg the
+              whole time.
+            </p>
+            <p>
+              The first six months of that job, I was sure I&rsquo;d get fired. Imposter syndrome
+              is real and predictable, and it doesn&rsquo;t survive contact with brilliant people
+              who don&rsquo;t yet know what you&rsquo;re capable of. They eventually figure it out.
+              You just have to stay long enough.
             </p>
             <p>
               Now I&rsquo;m Director of New Space Initiatives at the International Space University &mdash;
               strategy and partnerships across space agencies, governments, and the commercial sector.
-              I&rsquo;m also in the inaugural cohort of the Coller Deep-Tech MBA at Tel Aviv University.
+            </p>
+            <p className="text-slate-300">
+              If you take one thing from that part of the story, take this: the system is not built
+              to receive you. The first companies that should hire you probably won&rsquo;t. Step anyway.
+              Everything follows from that.
             </p>
           </div>
         </section>

@@ -1,10 +1,14 @@
+import StageNav from "@/components/StageNav";
+import NinetyDayRibbon from "@/components/diagrams/NinetyDayRibbon";
+import TrustBars from "@/components/diagrams/TrustBars";
+
 export default function First90DaysPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
-      <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
+      <p className="text-emerald-400 text-sm font-medium tracking-wide uppercase mb-4">
         Stage 10 of 12 &mdash; Post-Separation
       </p>
-      <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
+      <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight text-balance">
         The First 90 Days & Beyond
       </h1>
       <p className="mt-4 text-lg text-slate-400 max-w-2xl">
@@ -27,6 +31,14 @@ export default function First90DaysPage() {
         </p>
       </div>
 
+      <p className="mt-4 inline-flex items-center gap-1.5 text-xs text-slate-500">
+        <svg aria-hidden="true" className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+          <circle cx="12" cy="12" r="9" />
+          <path strokeLinecap="round" d="M12 7v5l3 2" />
+        </svg>
+        ~4 min read
+      </p>
+
       {/* TL;DR */}
       <div className="mt-6 p-4 rounded-lg border border-slate-700 bg-slate-900/60">
         <p className="text-xs font-semibold text-blue-400 uppercase tracking-wide mb-2">TL;DR</p>
@@ -37,7 +49,7 @@ export default function First90DaysPage() {
             "Skim if: you've already started and have good feedback from your manager at 30 days",
           ].map((item) => (
             <li key={item} className="text-sm text-slate-400 flex gap-2">
-              <span className="text-slate-600 flex-shrink-0">—</span>
+              <span className="text-slate-500 flex-shrink-0">—</span>
               <span>{item}</span>
             </li>
           ))}
@@ -69,9 +81,10 @@ export default function First90DaysPage() {
 
       {/* The 90-Day Framework */}
       <section id="action-plan" className="mt-12">
-        <h2 className="text-2xl font-bold text-slate-100 mb-6">
+        <h2 className="text-2xl font-bold text-slate-100 mb-4">
           The 90-Day Action Plan
         </h2>
+        <NinetyDayRibbon />
         <p className="text-sm text-slate-400 mb-8">
           Watkins&rsquo; research (<em>The First 90 Days</em>, HBS Press)
           found that new hires who invest deliberately in their first 90 days
@@ -118,7 +131,7 @@ export default function First90DaysPage() {
                 "Begin building relationships outside your immediate team. Cross-functional relationships are structural gold (Burt, 2004).",
                 "Have the explicit expectations conversation with your manager if you haven't already.",
                 "Identify one area where you need to develop. Ask for it — conference, training, mentor, stretch assignment.",
-                "Run PEDL on your first 90 days. Two things going well. Two things to change. What's the one thing to take forward?",
+                "Run PEDL (Plan / Execute / Debrief / Learn) on your first 90 days. Two things going well. Two things to change. What's the one thing to take forward?",
               ],
             },
           ].map((phase) => (
@@ -137,7 +150,7 @@ export default function First90DaysPage() {
               <ul className="space-y-2">
                 {phase.actions.map((a, i) => (
                   <li key={i} className="flex gap-2 text-sm text-slate-400">
-                    <span className="text-slate-600 flex-shrink-0">&bull;</span>
+                    <span className="text-slate-500 flex-shrink-0">&bull;</span>
                     <span>{a}</span>
                   </li>
                 ))}
@@ -145,6 +158,7 @@ export default function First90DaysPage() {
             </div>
           ))}
         </div>
+        <TrustBars />
       </section>
 
       {/* The Identity Transition */}
@@ -286,7 +300,7 @@ export default function First90DaysPage() {
               <ul className="space-y-2">
                 {yr.items.map((item, i) => (
                   <li key={i} className="flex gap-2 text-sm text-slate-400">
-                    <span className="text-slate-600 flex-shrink-0">&bull;</span>
+                    <span className="text-slate-500 flex-shrink-0">&bull;</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -405,7 +419,7 @@ export default function First90DaysPage() {
 
       {/* Where people stall */}
       <div className="mt-8 border-l-2 border-amber-700/50 pl-5 py-1">
-        <p className="text-xs text-amber-600 uppercase tracking-wide mb-1">Where people stall here</p>
+        <p className="text-xs text-amber-500 uppercase tracking-wide mb-1">Where people stall here</p>
         <p className="text-sm text-slate-400 leading-relaxed">
           Trying to prove themselves immediately. You were hired for your potential, not your
           current knowledge of this company. Listen more than you talk.
@@ -426,6 +440,7 @@ export default function First90DaysPage() {
         >
           Stage 11: The Long Game →
         </a>
+        <StageNav current="/first-90-days" />
       </div>
 
     </div>

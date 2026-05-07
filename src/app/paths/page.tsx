@@ -128,7 +128,7 @@ export default function PathsPage() {
           <p className="text-blue-400 text-xs font-medium tracking-widest uppercase mb-3">
             Decision Tool
           </p>
-          <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
+          <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight text-balance">
             Five things USAFA pilots actually do
           </h1>
           <p className="mt-4 text-slate-400 leading-relaxed max-w-2xl">
@@ -207,26 +207,26 @@ export default function PathsPage() {
                   <p className="text-sm text-slate-400 mt-1 leading-relaxed">{path.oneLiner}</p>
                 </div>
               </div>
-              <p className="mt-3 text-xs text-slate-600 font-mono">{path.comp}</p>
+              <p className="mt-3 text-xs text-slate-500 font-mono">{path.comp}</p>
             </div>
 
             {/* Path body */}
             <div className="px-6 py-5 space-y-5">
               {/* Honest take */}
               <div>
-                <p className="text-xs text-slate-600 uppercase tracking-wide mb-2">The honest take</p>
+                <p className="text-xs text-slate-500 uppercase tracking-wide mb-2">The honest take</p>
                 <p className="text-sm text-slate-400 leading-relaxed">{path.honest}</p>
               </div>
 
               {/* Watch out */}
               <div className="border-l-2 border-amber-700/50 pl-4">
-                <p className="text-xs text-amber-600 uppercase tracking-wide mb-1">Watch out for</p>
+                <p className="text-xs text-amber-500 uppercase tracking-wide mb-1">Watch out for</p>
                 <p className="text-sm text-slate-500 leading-relaxed">{path.watchOut}</p>
               </div>
 
               {/* Which stages */}
               <div className="bg-slate-900/40 rounded-lg p-4">
-                <p className="text-xs text-slate-600 uppercase tracking-wide mb-1">Which stages matter most</p>
+                <p className="text-xs text-slate-500 uppercase tracking-wide mb-1">Which stages matter most</p>
                 <p className="text-blue-400 font-mono font-medium text-sm mb-1">{path.keyStages}</p>
                 <p className="text-xs text-slate-500 leading-relaxed">{path.keyStagesNote}</p>
               </div>
@@ -243,7 +243,7 @@ export default function PathsPage() {
               &ldquo;Keeping options open sounds strategic. It is often a rationalization for avoiding
               the discomfort of commitment.&rdquo;
             </p>
-            <p className="mt-4 text-sm text-slate-600">On optionality</p>
+            <p className="mt-4 text-sm text-slate-500">On optionality</p>
           </blockquote>
           <p className="mt-6 text-sm text-slate-500 max-w-2xl leading-relaxed">
             You don&rsquo;t have to know your answer before entering the pipeline. But you do have to

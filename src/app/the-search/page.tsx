@@ -2,6 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import StageNav from "@/components/StageNav";
+import SectionIcon from "@/components/SectionIcon";
+import SearchFunnel from "@/components/diagrams/SearchFunnel";
 
 type Stage =
   | "discovery"
@@ -23,13 +26,13 @@ interface Job {
 }
 
 const STAGES: { key: Stage; label: string; desc: string; color: string }[] = [
-  { key: "discovery", label: "Stage 0 — Discovery", desc: "Found it, not yet qualified", color: "slate" },
-  { key: "qualification", label: "Stage 1 — Qualify", desc: "Hard constraints check", color: "amber" },
-  { key: "research", label: "Stage 2 — Research", desc: "Org, role, positioning", color: "blue" },
-  { key: "networking", label: "Stage 3 — Network", desc: "2+ quality interactions", color: "violet" },
-  { key: "applied", label: "Stage 4 — Applied", desc: "Package submitted", color: "cyan" },
-  { key: "interview", label: "Stage 5 — Interview", desc: "Active conversations", color: "emerald" },
-  { key: "offer", label: "Stage 6 — Offer", desc: "Negotiation + decision", color: "green" },
+  { key: "discovery", label: "Step 0 — Discovery", desc: "Found it, not yet qualified", color: "slate" },
+  { key: "qualification", label: "Step 1 — Qualify", desc: "Hard constraints check", color: "amber" },
+  { key: "research", label: "Step 2 — Research", desc: "Org, role, positioning", color: "blue" },
+  { key: "networking", label: "Step 3 — Network", desc: "2+ quality interactions", color: "violet" },
+  { key: "applied", label: "Step 4 — Applied", desc: "Package submitted", color: "cyan" },
+  { key: "interview", label: "Step 5 — Interview", desc: "Active conversations", color: "emerald" },
+  { key: "offer", label: "Step 6 — Offer", desc: "Negotiation + decision", color: "green" },
   { key: "archived", label: "Archive", desc: "Closed / passed / declined", color: "slate" },
 ];
 
@@ -88,6 +91,34 @@ export default function TheSearchPage() {
     setJobs((prev) => prev.filter((j) => j.id !== id));
   }
 
+  function exportJobs() {
+    const blob = new Blob([JSON.stringify(jobs, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `jpos-pipeline-${new Date().toISOString().slice(0, 10)}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function importJobs(file: File) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const parsed = JSON.parse(String(reader.result));
+        if (!Array.isArray(parsed)) throw new Error("not an array");
+        const merged = [...jobs];
+        for (const j of parsed as Job[]) {
+          if (j && j.id && !merged.some((x) => x.id === j.id)) merged.push(j);
+        }
+        setJobs(merged);
+      } catch {
+        alert("That file doesn't look like a valid pipeline export.");
+      }
+    };
+    reader.readAsText(file);
+  }
+
   const stageColor = (key: Stage) => {
     const s = STAGES.find((s) => s.key === key);
     const map: Record<string, string> = {
@@ -126,18 +157,27 @@ export default function TheSearchPage() {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
       <div className="max-w-4xl">
-        <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
+        <p className="text-purple-400 text-sm font-medium tracking-wide uppercase mb-4">
           Stage 05 of 12 — The Search
         </p>
-        <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
+        <h1 className="flex items-center gap-3 text-3xl sm:text-4xl font-bold text-slate-100 leading-tight text-balance">
+          <SectionIcon name="pipeline" className="w-7 h-7 text-purple-400" />
           The Search
         </h1>
         <p className="mt-4 text-lg text-slate-400 max-w-2xl">
           The Job Pursuit Operating System. Every role you&rsquo;re tracking
-          moves through 7 stages. Gate before effort — no deep work until
+          moves through 7 steps. Gate before effort — no deep work until
           hard constraints pass.
         </p>
       </div>
+
+      <p className="mt-4 inline-flex items-center gap-1.5 text-xs text-slate-500">
+        <svg aria-hidden="true" className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+          <circle cx="12" cy="12" r="9" />
+          <path strokeLinecap="round" d="M12 7v5l3 2" />
+        </svg>
+        ~4 min read
+      </p>
 
       {/* TL;DR */}
       <div className="mt-6 p-4 rounded-lg border border-slate-700 bg-slate-900/60 max-w-4xl">
@@ -149,7 +189,7 @@ export default function TheSearchPage() {
             "Skim if: you already have multiple active conversations with target employers",
           ].map((item) => (
             <li key={item} className="text-sm text-slate-400 flex gap-2">
-              <span className="text-slate-600 flex-shrink-0">—</span>
+              <span className="text-slate-500 flex-shrink-0">—</span>
               <span>{item}</span>
             </li>
           ))}
@@ -162,7 +202,7 @@ export default function TheSearchPage() {
         <div className="flex flex-wrap gap-x-4 gap-y-1">
           {[
             ["#jpos-principles", "JPOS principles"],
-            ["#stage-gates", "Stage gates"],
+            ["#stage-gates", "Step gates"],
             ["#pipeline", "Your pipeline"],
             ["#weekly-cadence", "Weekly cadence"],
             ["#pedl", "PEDL debrief"],
@@ -194,16 +234,16 @@ export default function TheSearchPage() {
           <summary className="cursor-pointer text-sm text-slate-500 hover:text-slate-300 transition-colors flex items-center gap-2">
             <span className="group-open:hidden">▶</span>
             <span className="hidden group-open:inline">▼</span>
-            JPOS stage gates — what needs to be true to advance each stage
+            JPOS step gates — what needs to be true to advance each step
           </summary>
           <div className="mt-4 space-y-2">
             {[
-              { s: "Stage 0 → 1", gate: "Role is real, relevant, and has an actionable deadline." },
-              { s: "Stage 1 → 2", gate: "All hard constraints pass: work auth, comp floor, location, timeline, values." },
-              { s: "Stage 2 → 3", gate: "At least 60% of critical requirements have credible evidence in your story bank." },
-              { s: "Stage 3 → 4", gate: "At least 2 quality interactions, at least 1 internal or ecosystem signal of fit." },
-              { s: "Stage 4 → 5", gate: "Acknowledgment received or follow-up sent on schedule." },
-              { s: "Stage 5 → 6", gate: "Offer, hold, or rejection captured with explicit next action." },
+              { s: "Step 0 → 1", gate: "Role is real, relevant, and has an actionable deadline." },
+              { s: "Step 1 → 2", gate: "All hard constraints pass: work auth, comp floor, location, timeline, values." },
+              { s: "Step 2 → 3", gate: "At least 60% of critical requirements have credible evidence in your story bank." },
+              { s: "Step 3 → 4", gate: "At least 2 quality interactions, at least 1 internal or ecosystem signal of fit." },
+              { s: "Step 4 → 5", gate: "Acknowledgment received or follow-up sent on schedule." },
+              { s: "Step 5 → 6", gate: "Offer, hold, or rejection captured with explicit next action." },
             ].map((row) => (
               <div key={row.s} className="flex gap-4 text-xs">
                 <span className="text-blue-400 font-mono w-24 flex-shrink-0">{row.s}</span>
@@ -214,21 +254,48 @@ export default function TheSearchPage() {
         </details>
       </div>
 
-      {/* Add job button */}
+      {/* Funnel + Add job button */}
       <div id="pipeline" className="mt-10 max-w-4xl">
+        <SearchFunnel />
         {!showAdd ? (
-          <button
-            onClick={() => setShowAdd(true)}
-            className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-colors"
-          >
-            + Add role to pipeline
-          </button>
+          <div className="flex flex-wrap items-center gap-3">
+            <button
+              onClick={() => setShowAdd(true)}
+              className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-colors"
+            >
+              + Add role to pipeline
+            </button>
+            {jobs.length > 0 && (
+              <>
+                <button
+                  onClick={exportJobs}
+                  className="px-3 py-2 text-xs text-slate-400 hover:text-slate-100 border border-slate-700 hover:border-slate-500 rounded-lg transition-colors"
+                  title="Download your pipeline as JSON"
+                >
+                  Export ({jobs.length})
+                </button>
+                <label className="px-3 py-2 text-xs text-slate-400 hover:text-slate-100 border border-slate-700 hover:border-slate-500 rounded-lg transition-colors cursor-pointer">
+                  Import
+                  <input
+                    type="file"
+                    accept="application/json"
+                    className="hidden"
+                    onChange={(e) => {
+                      const f = e.target.files?.[0];
+                      if (f) importJobs(f);
+                      e.currentTarget.value = "";
+                    }}
+                  />
+                </label>
+              </>
+            )}
+          </div>
         ) : (
           <div className="bg-slate-900/70 border border-slate-700 rounded-xl p-5 flex flex-col sm:flex-row gap-3 items-end">
             <div className="flex-1">
               <label className="text-xs text-slate-500 mb-1 block">Role title</label>
               <input
-                className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-blue-500"
+                className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-blue-500"
                 placeholder="e.g. Program Manager"
                 value={newTitle}
                 onChange={(e) => setNewTitle(e.target.value)}
@@ -238,7 +305,7 @@ export default function TheSearchPage() {
             <div className="flex-1">
               <label className="text-xs text-slate-500 mb-1 block">Company</label>
               <input
-                className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-blue-500"
+                className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-blue-500"
                 placeholder="e.g. Lockheed Martin"
                 value={newCompany}
                 onChange={(e) => setNewCompany(e.target.value)}
@@ -265,13 +332,25 @@ export default function TheSearchPage() {
 
       {/* Pipeline Kanban */}
       <div className="mt-8 space-y-4">
-        {activeJobs.map((stage) => (
+        {jobs.length === 0 && (
+          <div className="border border-dashed border-slate-700 rounded-xl p-8 text-center bg-slate-900/30">
+            <p className="text-slate-300 font-medium mb-1">Your pipeline is empty.</p>
+            <p className="text-sm text-slate-500 max-w-md mx-auto leading-relaxed">
+              Add a role above. It moves through 7 steps — Discovery, Qualify, Research, Network, Applied, Interview, Offer.
+              Everything is saved to your browser only. No account needed.
+            </p>
+            <p className="text-xs text-slate-600 mt-3">
+              Tip: Export to JSON regularly so you don&rsquo;t lose your pipeline if you clear browser data.
+            </p>
+          </div>
+        )}
+        {jobs.length > 0 && activeJobs.map((stage) => (
           <div key={stage.key}>
             <div className={`flex items-center gap-2 mb-2`}>
               <span className={`text-xs font-semibold uppercase tracking-wide ${stageColor(stage.key)}`}>
                 {stage.label}
               </span>
-              <span className="text-xs text-slate-600">— {stage.desc}</span>
+              <span className="text-xs text-slate-500">— {stage.desc}</span>
               {stage.jobs.length > 0 && (
                 <span className={`ml-auto text-xs font-mono ${stageColor(stage.key)}`}>
                   {stage.jobs.length}
@@ -280,7 +359,7 @@ export default function TheSearchPage() {
             </div>
 
             {stage.jobs.length === 0 ? (
-              <div className={`border border-dashed ${stageBorderColor(stage.key)} rounded-xl p-4 text-xs text-slate-700 text-center`}>
+              <div className={`border border-dashed ${stageBorderColor(stage.key)} rounded-xl p-4 text-xs text-slate-500 text-center`}>
                 No roles in this stage
               </div>
             ) : (
@@ -295,7 +374,7 @@ export default function TheSearchPage() {
                         <p className="text-sm font-medium text-slate-200 truncate">{job.title}</p>
                         <p className="text-xs text-slate-500">{job.company}</p>
                         {job.notes && (
-                          <p className="text-xs text-slate-600 mt-1 truncate">{job.notes}</p>
+                          <p className="text-xs text-slate-500 mt-1 truncate">{job.notes}</p>
                         )}
                       </div>
                       <div className="flex items-center gap-1 flex-shrink-0">
@@ -307,7 +386,7 @@ export default function TheSearchPage() {
                         >
                           {STAGES.map((s) => (
                             <option key={s.key} value={s.key}>
-                              {s.key === "archived" ? "Archive" : s.label.replace("Stage ", "S")}
+                              {s.key === "archived" ? "Archive" : s.label.replace("Step ", "S")}
                             </option>
                           ))}
                         </select>
@@ -323,7 +402,7 @@ export default function TheSearchPage() {
                         </button>
                         <button
                           onClick={() => deleteJob(job.id)}
-                          className="text-xs text-slate-600 hover:text-red-400 px-1 py-1 transition-colors"
+                          className="text-xs text-slate-500 hover:text-red-400 px-1 py-1 transition-colors"
                           title="Delete"
                         >
                           ✕
@@ -333,7 +412,7 @@ export default function TheSearchPage() {
                     {editId === job.id && (
                       <div className="mt-3">
                         <textarea
-                          className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs text-slate-300 placeholder-slate-600 focus:outline-none focus:border-blue-500 resize-none"
+                          className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs text-slate-300 placeholder-slate-500 focus:outline-none focus:border-blue-500 resize-none"
                           rows={3}
                           placeholder="Notes, next action, contacts, gate status..."
                           value={editNotes}
@@ -365,7 +444,7 @@ export default function TheSearchPage() {
         {/* Archive */}
         {archivedJobs.length > 0 && (
           <details className="group">
-            <summary className="cursor-pointer text-xs text-slate-600 hover:text-slate-400 transition-colors flex items-center gap-2">
+            <summary className="cursor-pointer text-xs text-slate-500 hover:text-slate-400 transition-colors flex items-center gap-2">
               <span>Archive ({archivedJobs.length} roles)</span>
             </summary>
             <div className="mt-2 space-y-2">
@@ -374,7 +453,7 @@ export default function TheSearchPage() {
                   <div className="flex items-center justify-between gap-3">
                     <div>
                       <p className="text-sm text-slate-400">{job.title}</p>
-                      <p className="text-xs text-slate-600">{job.company}</p>
+                      <p className="text-xs text-slate-500">{job.company}</p>
                     </div>
                     <div className="flex gap-1">
                       <select
@@ -386,7 +465,7 @@ export default function TheSearchPage() {
                           <option key={s.key} value={s.key}>{s.label}</option>
                         ))}
                       </select>
-                      <button onClick={() => deleteJob(job.id)} className="text-xs text-slate-700 hover:text-red-400 px-1 py-1">✕</button>
+                      <button onClick={() => deleteJob(job.id)} className="text-xs text-slate-500 hover:text-red-400 px-1 py-1" aria-label="Delete">✕</button>
                     </div>
                   </div>
                 </div>
@@ -403,7 +482,7 @@ export default function TheSearchPage() {
         </h2>
         <div className="grid sm:grid-cols-5 gap-3">
           {[
-            { day: "Mon", task: "Pipeline triage. Stage gates. Planning." },
+            { day: "Mon", task: "Pipeline triage. Step gates. Planning." },
             { day: "Tue", task: "Research and positioning artifacts." },
             { day: "Wed", task: "Outreach and conversations." },
             { day: "Thu", task: "Applications and interview execution." },
@@ -442,14 +521,14 @@ export default function TheSearchPage() {
         </div>
       </section>
 
-      <p className="mt-4 max-w-4xl text-xs text-slate-600">
+      <p className="mt-4 max-w-4xl text-xs text-slate-500">
         Your pipeline data is stored locally in your browser. Nothing leaves
         your device.
       </p>
 
       {/* Where people stall */}
       <div className="mt-8 border-l-2 border-amber-700/50 pl-5 py-1">
-        <p className="text-xs text-amber-600 uppercase tracking-wide mb-1">Where people stall here</p>
+        <p className="text-xs text-amber-500 uppercase tracking-wide mb-1">Where people stall here</p>
         <p className="text-sm text-slate-400 leading-relaxed">
           Building a perfect tracking system instead of applying. The pipeline is a tool,
           not a goal. Applications create information. Nothing else does.
@@ -470,6 +549,7 @@ export default function TheSearchPage() {
         >
           Stage 06: Applications →
         </Link>
+        <StageNav current="/the-search" />
       </div>
 
     </div>

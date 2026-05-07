@@ -4,7 +4,7 @@ export default function BoldFacePage() {
       <p className="text-blue-400 text-sm font-medium tracking-wide uppercase mb-4">
         Drills
       </p>
-      <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
+      <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight text-balance">
         Bold Face
       </h1>
       <p className="mt-4 text-lg text-slate-400 max-w-2xl">
@@ -16,12 +16,20 @@ export default function BoldFacePage() {
         Memorize first. Make natural through repetition. Not &ldquo;scripted
         naturally&rdquo;&mdash;memorized, then made natural.
       </p>
-      <p className="mt-4 text-xs text-slate-600 italic max-w-2xl border-l-2 border-slate-800 pl-3">
+      <p className="mt-4 text-xs text-slate-500 italic max-w-2xl border-l-2 border-slate-800 pl-3">
         Not a pilot? Bold face is whatever you must know cold the moment
         it&rsquo;s needed &mdash; the first thing you say when the call comes,
         the first move you make when a deal is breaking, the first question
         you ask when a teammate is in crisis. If you have to look it up, it
         isn&rsquo;t bold face yet.
+      </p>
+
+      <p className="mt-4 inline-flex items-center gap-1.5 text-xs text-slate-500">
+        <svg aria-hidden="true" className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+          <circle cx="12" cy="12" r="9" />
+          <path strokeLinecap="round" d="M12 7v5l3 2" />
+        </svg>
+        ~4 min read
       </p>
 
       {/* Drill 1: The 60-Second Story */}
@@ -172,7 +180,7 @@ export default function BoldFacePage() {
                 convenience.&rdquo;
               </p>
             </div>
-            <p className="mt-3 text-xs text-slate-600">
+            <p className="mt-3 text-xs text-slate-500">
               Fellow USAFA grads on LinkedIn: 60-70% response rate. General
               cold outreach: 10-15%.
             </p>
@@ -184,23 +192,23 @@ export default function BoldFacePage() {
             </h3>
             <div className="space-y-2 text-sm">
               <div className="flex gap-3">
-                <span className="text-slate-600 font-mono text-xs w-12 flex-shrink-0">2 min</span>
+                <span className="text-slate-500 font-mono text-xs w-12 flex-shrink-0">2 min</span>
                 <span className="text-slate-400">Thank them. Why you reached out to <em>them specifically</em>.</span>
               </div>
               <div className="flex gap-3">
-                <span className="text-slate-600 font-mono text-xs w-12 flex-shrink-0">10 min</span>
+                <span className="text-slate-500 font-mono text-xs w-12 flex-shrink-0">10 min</span>
                 <span className="text-slate-400">Their story. How did they get here? What surprised them?</span>
               </div>
               <div className="flex gap-3">
-                <span className="text-slate-600 font-mono text-xs w-12 flex-shrink-0">10 min</span>
+                <span className="text-slate-500 font-mono text-xs w-12 flex-shrink-0">10 min</span>
                 <span className="text-slate-400">Your 2-3 specific, researched questions. Not &ldquo;What&rsquo;s it like to work there?&rdquo;</span>
               </div>
               <div className="flex gap-3">
-                <span className="text-slate-600 font-mono text-xs w-12 flex-shrink-0">3 min</span>
+                <span className="text-slate-500 font-mono text-xs w-12 flex-shrink-0">3 min</span>
                 <span className="text-slate-400">&ldquo;Who else would you suggest I speak with?&rdquo; <strong className="text-slate-300">This is the most important question.</strong></span>
               </div>
               <div className="flex gap-3">
-                <span className="text-slate-600 font-mono text-xs w-12 flex-shrink-0">24 hr</span>
+                <span className="text-slate-500 font-mono text-xs w-12 flex-shrink-0">24 hr</span>
                 <span className="text-slate-400">Thank-you message referencing something specific. Not optional.</span>
               </div>
             </div>
@@ -481,7 +489,7 @@ export default function BoldFacePage() {
           field assignment. The debrief is the product. (Kolb, 1984: the
           experience without the debrief is entertainment.)
         </p>
-        <p className="text-xs text-slate-600 mb-6 italic">
+        <p className="text-xs text-slate-500 mb-6 italic">
           PEDL is the same protocol Wings of Blue use after every jump &mdash;
           watch the video twice in silence, then each person names two goods
           and two betters about themselves before anyone else weighs in. The
