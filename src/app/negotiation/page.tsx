@@ -306,23 +306,7 @@ export default function NegotiationPage() {
         </p>
       </div>
 
-      {/* Navigation */}
-      <div className="mt-16 pt-8 border-t border-slate-800 flex flex-col sm:flex-row gap-3 justify-between">
-        <Link
-          href="/managing-the-pipeline"
-          className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-slate-200 transition-colors"
-        >
-          ← Stage 08: Managing the Pipeline
-        </Link>
-        <Link
-          href="/first-90-days"
-          className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-colors"
-        >
-          Stage 10: First 90 Days →
-        </Link>
-        <StageNav current="/negotiation" />
-      </div>
-
+      <StageNav current="/negotiation" />
     </div>
   );
 }

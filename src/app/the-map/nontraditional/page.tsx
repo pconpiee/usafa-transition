@@ -74,7 +74,7 @@ export default function NonTraditionalPath() {
           <p className="text-sm text-slate-300 leading-relaxed italic">
             A note on framing. The &ldquo;tradeoffs&rdquo; described on this
             page are tradeoffs against the conventional success metrics of
-            the other five paths. If your foundation is somewhere other than
+            the other six paths. If your foundation is somewhere other than
             compensation and external prestige, several of these tradeoffs
             are not tradeoffs at all &mdash; they are features. Read accordingly.
           </p>

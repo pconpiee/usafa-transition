@@ -26,6 +26,10 @@
   --font-mono: var(--font-jetbrains), ui-monospace, monospace;
 }
 
+html {
+  scroll-padding-top: 7rem;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;

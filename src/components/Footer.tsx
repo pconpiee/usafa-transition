@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 export default function Footer() {
@@ -27,20 +29,22 @@ export default function Footer() {
             <p className="text-slate-400 text-xs uppercase tracking-wide mb-2">Reach out</p>
             <ul className="space-y-1.5 text-xs">
               <li>
-                <a
-                  href="mailto:pb.connollys@gmail.com?subject=Blue%20Canopy%20feedback"
-                  className="text-slate-400 hover:text-blue-400 transition-colors"
-                >
-                  pb.connollys@gmail.com
-                </a>
+                <Link href="/the-reckoning#im-in" className="text-slate-400 hover:text-blue-400 transition-colors">
+                  Get in touch &rarr;
+                </Link>
               </li>
               <li>
-                <a
-                  href="mailto:pb.connollys@gmail.com?subject=Blue%20Canopy%20—%20found%20an%20error"
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (typeof window !== "undefined") {
+                      window.dispatchEvent(new CustomEvent("blue-canopy:open-feedback"));
+                    }
+                  }}
                   className="text-slate-400 hover:text-blue-400 transition-colors"
                 >
                   Report an error
-                </a>
+                </button>
               </li>
               <li><Link href="/about" className="text-slate-400 hover:text-blue-400 transition-colors">About this site</Link></li>
             </ul>

@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import FeedbackWidget from "@/components/FeedbackWidget";
 import SearchModal from "@/components/SearchModal";
 import BackToTop from "@/components/BackToTop";
+import MaybeStageTopBar from "@/components/MaybeStageTopBar";
 import "./globals.css";
 
 const inter = Inter({
@@ -59,7 +60,10 @@ export default function RootLayout({
         <a href="#main" className="skip-link">Skip to content</a>
         <Nav />
         <SearchModal />
-        <main id="main" className="flex-1 pt-16">{children}</main>
+        <main id="main" className="flex-1 pt-16">
+          <MaybeStageTopBar />
+          {children}
+        </main>
         <Footer />
         <BackToTop />
         <FeedbackWidget />

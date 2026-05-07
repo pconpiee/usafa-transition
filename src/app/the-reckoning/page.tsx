@@ -315,7 +315,7 @@ export default function TheReckoning() {
             </p>
             <p>
               Stage 03 &mdash; <Link href="/the-map" className="text-blue-400 hover:text-blue-300 underline underline-offset-2">The Map</Link> &mdash;
-              goes through all six paths with honest comp ranges and tradeoffs, including airlines vs. civilian careers.
+              goes through all seven industry paths with honest comp ranges and tradeoffs, including airlines vs. civilian careers.
               Do this identity work first, then read that.
             </p>
           </div>
@@ -349,20 +349,9 @@ export default function TheReckoning() {
           </ul>
         </section>
 
-        {/* Nav forward */}
-        <section className="border-t border-slate-800 pt-10">
-          <p className="text-sm text-slate-500 mb-6">
-            When you&rsquo;ve done the transition inventory and sat with it for a few days, move to Stage 02.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Link
-              href="/know-your-gifts"
-              className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-colors"
-            >
-              Stage 02: Know Your Gifts &rarr;
-            </Link>
-          </div>
-        </section>
+        <p className="text-sm text-slate-500 mt-10">
+          When you&rsquo;ve done the transition inventory and sat with it for a few days, move on.
+        </p>
 
         {/* I'm In form */}
         <ImInForm />

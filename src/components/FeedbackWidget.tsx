@@ -14,6 +14,12 @@ export default function FeedbackWidget() {
   useFocusTrap(dialogRef, open);
 
   useEffect(() => {
+    const opener = () => setOpen(true);
+    window.addEventListener("blue-canopy:open-feedback", opener);
+    return () => window.removeEventListener("blue-canopy:open-feedback", opener);
+  }, []);
+
+  useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setOpen(false);
@@ -114,7 +120,7 @@ export default function FeedbackWidget() {
                   />
                 </div>
                 {error && (
-                  <p role="alert" className="text-sm text-red-400">Something went wrong. Try again, or email pb.connollys@gmail.com.</p>
+                  <p role="alert" className="text-sm text-red-400">Something went wrong sending that. Try again in a moment.</p>
                 )}
                 <button
                   type="submit"

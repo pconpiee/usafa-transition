@@ -8,20 +8,16 @@ export default function BoldFacePage() {
         Bold Face
       </h1>
       <p className="mt-4 text-lg text-slate-400 max-w-2xl">
-        In the jet, bold face are the emergency procedures you memorize
-        cold&mdash;because when the engine flames out, you don&rsquo;t have time
-        to look them up. These are the bold face for your transition.
+        In the jet, bold face is what you memorize cold &mdash; the emergency
+        procedure you can&rsquo;t look up when the engine flames out. These
+        are the bold face for your transition. Memorize them, then make them
+        natural through repetition.
       </p>
-      <p className="mt-2 text-sm text-slate-500">
-        Memorize first. Make natural through repetition. Not &ldquo;scripted
-        naturally&rdquo;&mdash;memorized, then made natural.
-      </p>
-      <p className="mt-4 text-xs text-slate-500 italic max-w-2xl border-l-2 border-slate-800 pl-3">
-        Not a pilot? Bold face is whatever you must know cold the moment
+      <p className="mt-3 text-sm text-slate-500 max-w-2xl">
+        Didn&rsquo;t fly? Bold face is whatever you have to know cold the moment
         it&rsquo;s needed &mdash; the first thing you say when the call comes,
-        the first move you make when a deal is breaking, the first question
-        you ask when a teammate is in crisis. If you have to look it up, it
-        isn&rsquo;t bold face yet.
+        the first move when a deal is breaking. If you have to look it up,
+        it isn&rsquo;t bold face yet.
       </p>
 
       <p className="mt-4 inline-flex items-center gap-1.5 text-xs text-slate-500">

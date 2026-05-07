@@ -604,21 +604,10 @@ export default function TheMap() {
           </p>
         </section>
 
-        {/* Nav forward */}
-        <section className="border-t border-slate-800 pt-10">
-          <p className="text-sm text-slate-500 mb-6">
-            Once you have a direction (even a tentative one), Stage 04 is where the real work happens.
-            Networking is how you access the 56% that never gets posted.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Link href="/networking" className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-colors">
-              Stage 04: Networking &rarr;
-            </Link>
-            <Link href="/comp-translator" className="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-medium rounded-lg border border-slate-700 transition-colors">
-              Comp Translator
-            </Link>
-          </div>
-        </section>
+        <p className="text-sm text-slate-500 mt-10">
+          Once you have a direction (even a tentative one), Stage 04 is where the real work happens.
+          Networking is how you access the 56% that never gets posted.
+        </p>
 
         <StageNav current="/the-map" />
       </div>

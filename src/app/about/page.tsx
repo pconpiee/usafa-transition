@@ -33,59 +33,68 @@ export default function AboutPage() {
           <h2 className="text-xl font-bold text-slate-100 mb-4">The actual story</h2>
           <div className="space-y-4 text-slate-400 leading-relaxed">
             <p>
-              I didn&rsquo;t fly. I was a Space Operations Officer &mdash; five years operating the
-              $17.5B US Space Surveillance Network at the Combined Space Operations Center, tracking
-              threats to on-orbit assets, and helping write the Space Force&rsquo;s Space Domain
-              Awareness Concept of Operations during the Air Force-to-Space Force transition.
+              I didn&rsquo;t fly. I was a Space Operations Officer &mdash; five years of
+              night shifts watching satellites, then a few more helping the Air Force figure
+              out what the Space Force was supposed to be. It was meaningful work. I left
+              it anyway.
             </p>
             <p>
-              I separated in 2021. The plan was nonprofit work. My wife and I went to Ethiopia
-              to help run a mission there. A civil war had other ideas, and we were evacuated.
+              The plan after I separated was nonprofit work. My wife and I had a strong
+              sense we were supposed to go to Ethiopia and help run a mission there. So we
+              did. About six months in, a civil war started and we got evacuated.
             </p>
             <p>
-              Back in Houston I started a business with my brother-in-law. It didn&rsquo;t work.
-              By the end of that year I was a jobless veteran, fifty-five applications deep,
-              with zero responses. I applied to anything that paid &mdash; Director of Strategy,
-              grocery store bagger, and most of the things in between. My wife had just been diagnosed
-              with something the doctors thought might be cancer. We were paying $890/month for
-              health insurance and still writing $3,000 checks at the pharmacy. VA disability
-              didn&rsquo;t close the gap.
+              Back in Houston, I started a business with my brother-in-law. It didn&rsquo;t
+              work either. By the end of that year I was a jobless veteran, fifty-five job
+              applications deep, with zero responses. I was applying to anything that paid
+              &mdash; Director of Strategy down to grocery store bagger and a long list in
+              between. My wife had just been diagnosed with something the doctors thought
+              might be cancer. We were paying $890 a month for health insurance and still
+              writing $3,000 checks at the pharmacy. VA disability didn&rsquo;t close the
+              gap. I had also told myself I would never work in space again, and never
+              anywhere near the government again. Both of those promises were about to age
+              poorly.
             </p>
             <p>
-              I had also told myself I would never work in space again, and never work in or near
-              the government again. Both promises were about to age poorly.
+              The first space job I tried was Slingshot Aerospace. It looked like a layup
+              &mdash; three of their founders had been in my squadron, half their leadership
+              was USAFA, and their whole product was space domain awareness, which was
+              literally my job. Their portal couldn&rsquo;t physically receive my CV. I
+              ended up reading it line-by-line over the phone to their HR lead, who was kind
+              about it. They never replied.
             </p>
             <p>
-              The first space job I applied to was Slingshot Aerospace. Three of the founders had been
-              in my squadron. Half their leadership was USAFA. Their job portal physically couldn&rsquo;t
-              receive my CV &mdash; I had to read it line-by-line over the phone to their HR lead.
-              They never replied. Months later, boarding a TGV in Paris on my way to a different job,
-              I&rsquo;d find Slingshot&rsquo;s rejection email waiting on a brand-new French phone.
+              The job that did reply was Leanspace, a small French satellite software
+              startup I&rsquo;d never heard of. Three rounds of interviews and they asked
+              how soon I could move to France. My wife looked at me like I was crazy. Two
+              weeks after the offer we sold the car and most of what we owned. A month
+              later we landed in Paris.
             </p>
             <p>
-              That different job was Leanspace &mdash; a French satellite software startup. Three rounds
-              of interviews, then &ldquo;how soon can you move to France?&rdquo; Two weeks after the offer
-              I sold the car and the rest of our things. A month later we landed in Paris. I spent
-              three years there: Product Manager, then Solutions Architect, then US Business Development.
-              I opened the American office, ran the capture that got us into the final three of a Space
-              Force contract (the only non-US vendor shortlisted), and helped co-author ~&euro;14.5M in
-              grants to CNES, ESA, and France 2030. The Series A closed. I was based in Strasbourg the
-              whole time.
+              We were on a train pulling out of Paris, headed to my new job in Strasbourg,
+              when my brand-new French phone buzzed. It was Slingshot&rsquo;s rejection
+              email, finally arriving. The timing felt like a wink.
             </p>
             <p>
-              The first six months of that job, I was sure I&rsquo;d get fired. Imposter syndrome
-              is real and predictable, and it doesn&rsquo;t survive contact with brilliant people
-              who don&rsquo;t yet know what you&rsquo;re capable of. They eventually figure it out.
-              You just have to stay long enough.
+              I spent the next three years at Leanspace &mdash; Product Manager, then
+              Solutions Architect, then opening the American office. We made it to the final
+              three of a Space Force contract as the only non-US vendor shortlisted. I
+              helped raise around &euro;14.5M in grants and closed a Series A. For the first
+              six months of all that, I was sure I was about to get fired. Imposter syndrome
+              is real and predictable. It also doesn&rsquo;t survive contact with brilliant
+              people who haven&rsquo;t yet figured out what you&rsquo;re capable of. They
+              eventually do. You just have to stay long enough to let them.
             </p>
             <p>
-              Now I&rsquo;m Director of New Space Initiatives at the International Space University &mdash;
-              strategy and partnerships across space agencies, governments, and the commercial sector.
+              I&rsquo;m now Director of New Space Initiatives at the International Space
+              University &mdash; strategy and partnerships across space agencies,
+              governments, and commercial space.
             </p>
             <p className="text-slate-300">
-              If you take one thing from that part of the story, take this: the system is not built
-              to receive you. The first companies that should hire you probably won&rsquo;t. Step anyway.
-              Everything follows from that.
+              If you take one thing from that, take this: the system is not built to receive
+              you. The companies that should obviously hire you probably won&rsquo;t. The
+              right thing usually shows up sideways, on a timeline you didn&rsquo;t pick.
+              Step anyway. Everything follows from that.
             </p>
           </div>
         </section>
@@ -94,28 +103,28 @@ export default function AboutPage() {
           <h2 className="text-xl font-bold text-slate-100 mb-4">Why this site exists</h2>
           <div className="space-y-4 text-slate-400 leading-relaxed">
             <p>
-              Along the way I kept finding the same thing: the most boring-sounding skills were
-              the most transferable. Writing performance bullets for Airmen turned out to be the
-              same skill that helps junior salespeople win awards and senior developers get promoted.
-              The ability to brief a threat environment is the same as the ability to run a board
-              update. Identity, translated.
+              Most career advice skips the harder question. It teaches you to translate your
+              bullets, write a better LinkedIn, prepare for behavioral interviews. Useful,
+              but downstream. Upstream is who you are when the uniform comes off.
             </p>
             <p>
-              I also noticed that most people &mdash; not just veterans &mdash; don&rsquo;t know
-              what they want to be when they grow up. They follow the path of the people around them,
-              or chase something they decided at 16 and never actually investigated. I went into
-              the Air Force wanting to become a missionary. What I was actually chasing was
-              adventure, and a deep need to invest in people wherever they are and whatever they believe.
-              The missionary part was a form, not the function.
+              For me that question got answered before I separated. My identity is rooted in
+              God. That part stayed steady when everything around it shifted &mdash; Ethiopia,
+              the failed business, the move to France, the imposter syndrome. The wild
+              moves only look powerful in retrospect because the foundation underneath them
+              didn&rsquo;t move.
             </p>
             <p>
-              Blue Canopy exists because the USAFA community deserves a guide built specifically for
-              them &mdash; not a repurposed Army TAP deck, not generic career advice. Something that
-              knows what it means to leave a world where your identity, your peer group, your
-              vocabulary, and your sense of a good day were all defined by the same institution.
+              If you don&rsquo;t yet know where your identity is rooted, sit with that
+              before you sprint at the job search. It&rsquo;s the most important work you
+              can do, and the most skipped. No site can do it for you. Stage 01 is a place
+              to start, not a place to finish.
             </p>
             <p>
-              This is the map I wish someone had handed me at the gate.
+              If you do know &mdash; if your foundation is settled &mdash; this site is for
+              the rest of it. Translation. Networking. Comp. The honest map of where you
+              might go and what each path actually costs. I made most of the mistakes the
+              site warns about. This is the map I wish someone had handed me at the gate.
             </p>
           </div>
         </section>
@@ -123,15 +132,12 @@ export default function AboutPage() {
         {/* The hill */}
         <section className="border-l-4 border-blue-500 pl-5">
           <p className="text-slate-300 leading-relaxed italic">
-            &ldquo;There are lots of wars to fight. Lots of hills to die on. Choose wisely.&rdquo;
-          </p>
-          <p className="mt-3 text-slate-400 leading-relaxed italic">
-            A mentor told me once: &ldquo;Let love be the hill you die on.&rdquo;
+            &ldquo;There are lots of wars to fight. Let love be the hill you die on.&rdquo;
           </p>
           <p className="mt-4 text-slate-400 leading-relaxed">
-            That filter has shaped every yes since. It took me to Ethiopia during a civil war,
-            to France to help a satellite startup, and now to this site.
-            It will keep shaping what I say yes to.
+            A mentor said this to me once. It&rsquo;s the filter every yes has run through
+            since &mdash; Ethiopia during a civil war, France for a satellite startup, and
+            now this site.
           </p>
         </section>
 

@@ -13,15 +13,26 @@ const MAX_K = 800;
 
 function Bar({ range, color }: { range: [number, number]; color: string }) {
   const [lo, hi] = range;
-  const left = (lo / MAX_K) * 100;
-  const width = ((hi - lo) / MAX_K) * 100;
+  const cappedHi = Math.min(hi, MAX_K);
+  const left = Math.min((lo / MAX_K) * 100, 100);
+  const width = Math.max(((cappedHi - lo) / MAX_K) * 100, 0.6);
+  const overflows = hi > MAX_K;
   return (
-    <div className="relative h-3 bg-slate-900 rounded-sm border border-slate-800">
+    <div className="relative h-3 bg-slate-900 rounded-sm border border-slate-800 overflow-hidden">
       <div
         className="absolute inset-y-0 rounded-sm opacity-80"
-        style={{ left: `${left}%`, width: `${Math.max(width, 0.6)}%`, background: color }}
+        style={{ left: `${left}%`, width: `${Math.min(width, 100 - left)}%`, background: color }}
         aria-hidden="true"
       />
+      {overflows && (
+        <span
+          aria-hidden="true"
+          className="absolute right-0 top-1/2 -translate-y-1/2 text-[10px] font-mono leading-none px-1"
+          style={{ color }}
+        >
+          ▸
+        </span>
+      )}
     </div>
   );
 }

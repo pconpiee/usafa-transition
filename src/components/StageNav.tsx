@@ -1,5 +1,4 @@
 import Link from "next/link";
-import StageProgressBar from "@/components/diagrams/StageProgressBar";
 
 const stages = [
   { num: "01", href: "/the-reckoning", label: "Who Are You Now" },
@@ -23,11 +22,9 @@ export default function StageNav({ current }: { current: string }) {
   const next = idx < stages.length - 1 ? stages[idx + 1] : null;
 
   return (
-    <div className="mt-16 pt-8 border-t border-slate-800">
-    <StageProgressBar current={current} />
     <nav
       aria-label="Stage navigation"
-      className="mt-8 grid grid-cols-2 gap-4 text-sm"
+      className="mt-16 pt-8 border-t border-slate-800 grid grid-cols-2 gap-4 text-sm"
     >
       {prev ? (
         <Link
@@ -70,6 +67,5 @@ export default function StageNav({ current }: { current: string }) {
         </Link>
       )}
     </nav>
-    </div>
   );
 }

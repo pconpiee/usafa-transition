@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Paths | Blue Canopy",
   description:
-    "Five things USAFA pilots actually do after active duty — with honest trade-offs, real comp ranges, and a map to which stages matter most for your path.",
+    "Five archetypes USAFA pilots actually live after active duty — the zoomed-out lens. Each maps to one or more of the seven industry paths on the Map.",
 };
 
 const paths = [
@@ -129,12 +129,17 @@ export default function PathsPage() {
             Decision Tool
           </p>
           <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 leading-tight text-balance">
-            Five things USAFA pilots actually do
+            Five archetypes USAFA pilots actually live
           </h1>
           <p className="mt-4 text-slate-400 leading-relaxed max-w-2xl">
-            Most pilots leave active duty with two paths in mind: airlines or Guard. There are five.
-            This page expands the map before you enter the pipeline — because the right stages
-            depend on the right path.
+            Most pilots leave active duty thinking there are two options: airlines or Guard.
+            At the highest level there are five archetypes &mdash; five shapes a post-service life
+            tends to take. This is the zoomed-out lens.
+          </p>
+          <p className="mt-3 text-sm text-slate-500 max-w-2xl">
+            Each archetype maps to one or more of the seven specific industry paths in{" "}
+            <Link href="/the-map" className="text-blue-400 hover:text-blue-300">Stage 03 — The Map</Link>.
+            Use this page to choose the shape; use the Map to choose the industry.
           </p>
           <p className="mt-3 text-sm text-slate-500">
             This is a decision tool, not a recommendation engine. The right path is the one that

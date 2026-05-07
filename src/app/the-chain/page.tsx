@@ -185,20 +185,6 @@ export default function TheChainPage() {
         </div>
       </section>
 
-      {/* PTWOB sign-off */}
-      <section className="mt-16 border-t border-slate-800 pt-16">
-        <div className="text-center space-y-4">
-          <p className="text-slate-400 text-sm leading-relaxed max-w-lg mx-auto">
-            This site was built by Patrick Connolly, PTWOB #487 — separated 2021.
-            If it was useful, pass it on. If something is wrong, find him and
-            tell him. The whole point is that it keeps getting better.
-          </p>
-          <p className="text-lg text-slate-300 font-medium">
-            Blue Skies — 487
-          </p>
-        </div>
-      </section>
-
       {/* Full pipeline navigation */}
       <section className="mt-16 bg-slate-900/70 border border-slate-800 rounded-xl p-6">
         <h3 className="text-sm font-semibold text-slate-400 mb-4">
@@ -239,16 +225,17 @@ export default function TheChainPage() {
         </p>
       </div>
 
-      {/* Navigation */}
-      <div className="mt-12 pt-8 border-t border-slate-800">
-        <Link
-          href="/the-long-game"
-          className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-slate-200 transition-colors"
-        >
-          ← Stage 11: The Long Game
-        </Link>
-        <StageNav current="/the-chain" />
-      </div>
+      <StageNav current="/the-chain" />
+
+      {/* PTWOB sign-off — final sign-off, after stage nav */}
+      <section className="mt-16 border-t border-slate-800 pt-12 text-center space-y-4">
+        <p className="text-slate-400 text-sm leading-relaxed max-w-lg mx-auto">
+          This site was built by Patrick Connolly, PTWOB #487 &mdash; separated 2021.
+          If it was useful, pass it on. If something is wrong, find him and tell him.
+          The whole point is that it keeps getting better.
+        </p>
+        <p className="text-lg text-slate-300 font-medium">Blue Skies &mdash; 487</p>
+      </section>
 
     </div>
   );

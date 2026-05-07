@@ -7,49 +7,59 @@ const PARTS = [
 
 export default function TrustBars() {
   return (
-    <figure className="my-6">
-      <svg viewBox="0 0 400 180" role="img" aria-labelledby="trust-title" className="w-full h-auto max-w-md mx-auto">
-        <title id="trust-title">Trust = Ability + Benevolence + Integrity</title>
-        {/* Three stacking blocks rising to a Trust cap */}
-        {PARTS.map((p, i) => {
-          const x = 30 + i * 115;
-          return (
-            <g key={p.label}>
-              <rect
-                x={x}
-                y={60 - i * 0}
-                width={95}
-                height={70}
-                rx="6"
-                fill={p.color}
-                fillOpacity="0.18"
-                stroke={p.color}
-                strokeWidth="1.5"
-              />
-              <text x={x + 47} y={88} textAnchor="middle" fontSize="13" fontWeight="700" fill={p.color}>
+    <figure className="my-8" aria-labelledby="trust-title">
+      <p id="trust-title" className="text-center text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">
+        Observed Trust
+      </p>
+
+      {/* Equation row: [A] + [B] + [C] = Trust */}
+      <div className="flex items-stretch justify-center gap-2 sm:gap-3 max-w-2xl mx-auto">
+        {PARTS.map((p, i) => (
+          <div key={p.label} className="flex items-stretch gap-2 sm:gap-3 flex-1 min-w-0">
+            <div
+              className="flex-1 rounded-lg p-3 sm:p-4 text-center border-2 min-w-0"
+              style={{
+                background: `${p.color}15`,
+                borderColor: `${p.color}88`,
+              }}
+            >
+              <p
+                className="text-sm sm:text-base font-bold mb-1"
+                style={{ color: p.color }}
+              >
                 {p.label}
-              </text>
-              <text x={x + 47} y={106} textAnchor="middle" fontSize="9" fill="#94a3b8">
-                {p.note}
-              </text>
-              <text x={x + 47} y={150} textAnchor="middle" fontSize="14" fontWeight="700" fill="#475569">
-                {i < PARTS.length - 1 ? "+" : ""}
-              </text>
-            </g>
-          );
-        })}
-        <text x="200" y={40} textAnchor="middle" fontSize="13" fill="#cbd5e1" fontWeight="600">
-          Observed Trust
-        </text>
-        <line x1="30" y1="50" x2="370" y2="50" stroke="#334155" strokeWidth="1" />
-        <text x="200" y={172} textAnchor="middle" fontSize="9" fill="#64748b">
-          Mayer, Davis &amp; Schoorman (1995)
-        </text>
-      </svg>
-      <figcaption className="mt-2 text-xs text-slate-500 text-center">
-        All three are required. Two out of three reads as &ldquo;competent but not safe&rdquo; or
-        &ldquo;nice but not effective.&rdquo;
-      </figcaption>
+              </p>
+              <p className="text-[10px] sm:text-xs text-slate-400 leading-tight">{p.note}</p>
+            </div>
+            {i < PARTS.length - 1 && (
+              <span
+                aria-hidden="true"
+                className="self-center text-xl sm:text-2xl text-slate-500 font-light"
+              >
+                +
+              </span>
+            )}
+          </div>
+        ))}
+        <span aria-hidden="true" className="self-center text-xl sm:text-2xl text-slate-500 font-light">
+          =
+        </span>
+        <div
+          className="flex-1 rounded-lg p-3 sm:p-4 text-center border-2 min-w-0"
+          style={{
+            background: "#3b82f618",
+            borderColor: "#60a5fa",
+          }}
+        >
+          <p className="text-sm sm:text-base font-bold mb-1 text-blue-300">Trust</p>
+          <p className="text-[10px] sm:text-xs text-slate-400 leading-tight">earned, then maintained</p>
+        </div>
+      </div>
+
+      <p className="mt-4 text-center text-xs text-slate-500">
+        Mayer, Davis &amp; Schoorman (1995). All three required &mdash; two-out-of-three reads as
+        &ldquo;competent but not safe&rdquo; or &ldquo;nice but not effective.&rdquo;
+      </p>
     </figure>
   );
 }

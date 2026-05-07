@@ -620,23 +620,7 @@ export default function NetworkingPage() {
         </p>
       </div>
 
-      {/* Navigation */}
-      <div className="mt-16 pt-8 border-t border-slate-800 flex flex-col sm:flex-row gap-3 justify-between">
-        <Link
-          href="/the-map"
-          className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-slate-200 transition-colors"
-        >
-          ← Stage 03: The Map
-        </Link>
-        <Link
-          href="/the-search"
-          className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-colors"
-        >
-          Stage 05: The Search →
-        </Link>
-        <StageNav current="/networking" />
-      </div>
-
+      <StageNav current="/networking" />
     </div>
   );
 }

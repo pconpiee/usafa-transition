@@ -122,7 +122,7 @@ export default function ImInForm() {
               ))}
             </select>
             {error && (
-              <p role="alert" className="text-sm text-red-400">Something went wrong. Try again, or email pb.connollys@gmail.com.</p>
+              <p role="alert" className="text-sm text-red-400">Something went wrong sending that. Try again in a moment.</p>
             )}
             <button
               type="submit"

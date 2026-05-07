@@ -88,8 +88,30 @@
   @media print {
     body { background: white; }
     .wrap { max-width: none; padding: 10px; }
-    .phasebar, textarea.essay { display: none !important; }
+    .phasebar, textarea.essay, .tabs { display: none !important; }
     details.reveal { break-inside: avoid; }
+    .tab-panel { display: block !important; }
+  }
+  /* Tabs */
+  .tabs { display: flex; gap: 2px; margin: 0 0 28px; border-bottom: 2px solid var(--ink); }
+  .tabs button {
+    background: var(--paper-2); color: var(--ink-2);
+    border: 1px solid var(--rule); border-bottom: none;
+    padding: 10px 16px;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+    font-weight: 600; cursor: pointer; border-radius: 5px 5px 0 0;
+    margin-bottom: -2px;
+  }
+  .tabs button[aria-selected="true"] { background: var(--paper); color: var(--accent); border-bottom: 2px solid var(--paper); }
+  .tabs button:hover:not([aria-selected="true"]) { background: var(--accent-soft); color: var(--ink); }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+  .prompt-block {
+    background: #1d2330; color: #f0e9d6; padding: 16px 20px; border-radius: 6px;
+    font-family: "SF Mono", Menlo, monospace; font-size: 13px;
+    line-height: 1.55; white-space: pre-wrap; margin: 12px 0;
+    border-left: 3px solid var(--accent);
   }
 </style>
 </head>
@@ -97,17 +119,25 @@
 <div class="wrap">
 
 <header class="masthead">
-  <div class="eyebrow">Interview Workbook · Product Manager · Defense Tech</div>
-  <h1>Anduril — Product Manager Interview</h1>
-  <p style="margin:0; color: var(--muted); font-size: 15px;">Built for a USAFA A-10 pilot applying as a PM. Work through it — retrieval beats re-reading every time.</p>
+  <div class="eyebrow">Interview Workbook · Product Manager · Two Roles, Same Operator</div>
+  <h1>PM Interview Workbook</h1>
+  <p style="margin:0; color: var(--muted); font-size: 15px;">Built for a USAFA '14 A-10 pilot, separating 2026. Same person, two wildly different PM roles. Same prep philosophy — different texture. Retrieval beats re-reading every time.</p>
 </header>
+
+<div class="tabs" role="tablist" aria-label="Choose interview track">
+  <button role="tab" aria-selected="true" aria-controls="anduril" data-tab="anduril">Anduril (defense tech)</button>
+  <button role="tab" aria-selected="false" aria-controls="amazon" data-tab="amazon">Amazon (consumer tech)</button>
+  <button role="tab" aria-selected="false" aria-controls="claude" data-tab="claude">Build your own with Claude</button>
+</div>
+
+<section class="tab-panel active" id="anduril" role="tabpanel" aria-labelledby="anduril">
 
 <!-- ORIENTATION -->
 <section id="orient">
   <div class="meta">
     <dl>
       <dt>Role</dt><dd><strong>Product Manager</strong> — Anduril Industries (likely Lattice OS, autonomous systems, or sensor fusion product lines)</dd>
-      <dt>Your profile</dt><dd>USAFA '__ · B.Sc. Computer Science · A-10 Pilot · Weapons School graduate · Track &amp; Field athlete · Separated [year]</dd>
+      <dt>Your profile</dt><dd>USAFA '14 · B.Sc. Computer Science · A-10 Pilot · Weapons School graduate · Track &amp; Field athlete · Separating 2026</dd>
       <dt>The read</dt><dd>Anduril hires operators who can think in systems. You have the rarest combination they want: technical depth (CS degree + Raptor/coding background), real operational experience in contested airspace, and Weapons School credibility that signals you are among the top 1% of tactical thinkers in the Air Force.</dd>
       <dt>What they'll probe</dt><dd>Can you translate operator pain into product requirements? Can you ship? Can you work cross-functionally with engineers who may never have seen a real threat environment?</dd>
     </dl>
@@ -524,11 +554,234 @@
 </div>
 </section>
 
+<!-- ============================================================ -->
+<!-- AMAZON TAB                                                    -->
+<!-- ============================================================ -->
+<section class="tab-panel" id="amazon" role="tabpanel" aria-labelledby="amazon">
+
+<header style="margin-bottom: 20px;">
+  <div class="eyebrow" style="font-family: 'Helvetica Neue', Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.15em; font-size: 11px; color: var(--accent); font-weight: 700;">PM Track · Amazon · Consumer / Cloud</div>
+  <h2 style="margin: 6px 0 10px; border: none; padding: 0;">Amazon — Product Manager Interview</h2>
+  <p style="margin:0; color: var(--muted); font-size: 15px;">Same operator. Wildly different shape. Where Anduril hires you because you were the customer, Amazon hires you because you can become one.</p>
+</header>
+
+<div class="meta">
+  <dl>
+    <dt>Role</dt><dd><strong>Product Manager – Technical (PM-T)</strong> — Amazon (could be AWS, Devices, Logistics, Prime Video, Alexa, etc.)</dd>
+    <dt>Your profile</dt><dd>USAFA '14 · B.Sc. Computer Science · A-10 Pilot · Weapons School graduate · Track &amp; Field athlete · Separating 2026</dd>
+    <dt>The read</dt><dd>Amazon does <em>not</em> care that you flew the A-10. Amazon cares that you can deliver results, take ownership, dive deep, and hire and develop the best. Your job is to translate every operational story into evidence of one of the Leadership Principles. The military-to-PM-T leap is real but learnable.</dd>
+    <dt>Format</dt><dd>4–6 rounds. Behavioral STAR + Working Backwards exercise + writing sample + a "Bar Raiser" loop. Heavy use of LP-keyed behavioral questions.</dd>
+  </dl>
+</div>
+
+<div class="tldr">
+  <strong>The frame:</strong> Anduril is "you've been the customer." Amazon is "you have never been the customer, and that's fine — you ship faster than people who think they have." Your edge is <strong>operating tempo</strong>: you have run real missions on incomplete data and hit results. That's <em>Bias for Action</em>, <em>Deliver Results</em>, and <em>Earn Trust</em>. Translate every story to one LP per answer.
+</div>
+
+<h2>The Leadership Principles you should over-prepare</h2>
+<p>Amazon has 16 LPs. Three of them are where vets win and three are where vets get rejected. Pre-write a STAR-L story for each.</p>
+
+<div class="cards">
+  <div class="card">
+    <h4>Where vets win</h4>
+    <ul>
+      <li><strong>Deliver Results</strong> — sortie executed under pressure, mission accomplished with degraded resources</li>
+      <li><strong>Bias for Action</strong> — no perfect data, decision in 30 seconds, lives on the line</li>
+      <li><strong>Ownership</strong> — flight lead who carried the package, not the manager who delegated it</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>Where vets get rejected</h4>
+    <ul>
+      <li><strong>Customer Obsession</strong> — "we" wasn't a customer in the military. Pre-write a story where you sought out a user need without being asked.</li>
+      <li><strong>Dive Deep</strong> — "I had a sergeant handle that" is a fail. Find a story where you read the data yourself and changed the call.</li>
+      <li><strong>Disagree and Commit</strong> — military says "execute." Amazon wants the story where you pushed back, were overruled, and then ran hard with the decision anyway.</li>
+    </ul>
+  </div>
+</div>
+
+<h2>The story bank — 6 STAR-L stories you must walk in with</h2>
+<p>Each story should be 90 seconds, tagged to 1–2 LPs, and end with a one-line <strong>L</strong>earning. Write them out before you walk into a room.</p>
+
+<div class="essay-block">
+  <div class="stem">1. Customer Obsession — A time you sought out a user's actual problem (not the one you were briefed on)</div>
+  <div class="hint">Hint: a JTAC asking for a different effect than the ATO directed; a maintainer flagging a usability issue you took back to acquisitions; an Airman whose career problem you fought for.</div>
+  <textarea class="essay" placeholder="S — situation (1 sentence). T — what you owned. A — what YOU did, not the team. R — quantified result. L — what you took forward."></textarea>
+</div>
+
+<div class="essay-block">
+  <div class="stem">2. Deliver Results — A measurable outcome under impossible constraints</div>
+  <div class="hint">Hint: combat sortie metrics, training pipeline you built, exercise you ran, BD/grant numbers if you've worked civilian.</div>
+  <textarea class="essay" placeholder="S … T … A … R (with a number) … L"></textarea>
+</div>
+
+<div class="essay-block">
+  <div class="stem">3. Bias for Action — A decision made under high uncertainty</div>
+  <div class="hint">Hint: any tactical engagement decision; an investment call with incomplete intel.</div>
+  <textarea class="essay"></textarea>
+</div>
+
+<div class="essay-block">
+  <div class="stem">4. Dive Deep — A time you read the data yourself instead of trusting a summary</div>
+  <div class="hint">Hint: stan-eval data; a maintenance trend line you caught; a hiring metric you re-pulled.</div>
+  <textarea class="essay"></textarea>
+</div>
+
+<div class="essay-block">
+  <div class="stem">5. Disagree and Commit — A time you pushed back, lost, and executed anyway</div>
+  <div class="hint">This is the LP most vets fumble. Don't pick a story where you eventually got your way. Pick one where you didn't.</div>
+  <textarea class="essay"></textarea>
+</div>
+
+<div class="essay-block">
+  <div class="stem">6. Hire and Develop the Best — A person you grew, named, with a real growth arc</div>
+  <div class="hint">A wingman you turned into a flight lead; a 2Lt who became a credible IP; an Airman who got into OCS because of work you did.</div>
+  <textarea class="essay"></textarea>
+</div>
+
+<h2>The Working Backwards exercise</h2>
+<p>Amazon often gives PM candidates a Working Backwards prompt. You have 30–60 minutes to draft a 1-page <strong>PRFAQ</strong> (Press Release + FAQ) for a hypothetical product. The press release goes <em>first</em> — written as if the product already launched.</p>
+
+<div class="callout">
+  <span class="label">PR FAQ minimum sections</span>
+  Headline (one line, customer-facing). Subhead. Customer problem. Solution. Customer quote. CEO quote. How to get started. Top 3 customer FAQs. Top 3 internal FAQs (privacy, scaling, legal). 1 page max.
+</div>
+
+<details class="reveal">
+  <summary>Practice prompt: Design a product for transitioning military officers to find civilian jobs in defense tech.</summary>
+  <div class="answer">
+    <p>Notice the trap: you'd want to build the most complete product. Don't. Pick one user, one need, one MVP. Customer obsession is "deeply understand <em>this</em> user," not "serve everyone." Cut your scope. Write the press release for that minimum. The FAQs are where you show range.</p>
+    <textarea class="essay" placeholder="Draft your PRFAQ here. 1 page. Press release first. Customer quote that sounds like a real human, not a marketing line."></textarea>
+  </div>
+</details>
+
+<h2>Differences vs. Anduril, at a glance</h2>
+
+<table>
+  <thead>
+    <tr><th>Dimension</th><th>Anduril</th><th>Amazon</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Why they want you</td><td>You were the customer. You know what works under fire.</td><td>You ship results under pressure. You can become a customer expert fast.</td></tr>
+    <tr><td>The trap</td><td>Becoming the "war story guy" who can't write a spec.</td><td>Leading with rank or jet. Amazon doesn't grade those.</td></tr>
+    <tr><td>Format</td><td>Behavioral + product critique + a Lattice / autonomy hypothetical.</td><td>STAR-LP + Working Backwards + writing sample + Bar Raiser.</td></tr>
+    <tr><td>Vocabulary</td><td>JTAC, ROE, denied environment, kill chain.</td><td>Customer, mechanism, single-threaded leader, two-pizza team, working backwards.</td></tr>
+    <tr><td>What &ldquo;ownership&rdquo; means</td><td>You own the engagement.</td><td>You own the metric, the doc, the launch, the rollback, the post-mortem.</td></tr>
+    <tr><td>Compensation tier</td><td>Mid-six figures, light equity.</td><td>Top-tier total comp, RSUs vesting heavily in years 2–4.</td></tr>
+  </tbody>
+</table>
+
+<h2>Questions to ask them</h2>
+<ul>
+  <li>"Walk me through the last time this team disagreed and committed. What changed?"</li>
+  <li>"What does a 6-pager look like on this team? Can I see one?" <em>(Bold — but signals you understand the writing culture.)</em></li>
+  <li>"Which Leadership Principle is hardest for this org to live, honestly?"</li>
+  <li>"What's the metric this PM owns 12 months from start, and where is it today?"</li>
+  <li>"Who's the most demanding stakeholder? What do they expect?"</li>
+</ul>
+
+<h2>The 24 hours before</h2>
+<div class="checklist">
+  <label><input type="checkbox"/> Re-read the 16 Leadership Principles. Out loud.</label>
+  <label><input type="checkbox"/> Practice your 6 stories cold, against a timer. 90 seconds each.</label>
+  <label><input type="checkbox"/> Have a draft PRFAQ ready in case they ask you to walk through one.</label>
+  <label><input type="checkbox"/> Pre-write 5 questions for the panel. Not the same as Anduril's questions.</label>
+  <label><input type="checkbox"/> Read the team's product page. Identify one mechanism you'd improve.</label>
+  <label><input type="checkbox"/> Sleep 7+ hours. Don't cram.</label>
+</div>
+
+</section>
+
+<!-- ============================================================ -->
+<!-- CLAUDE TAB                                                    -->
+<!-- ============================================================ -->
+<section class="tab-panel" id="claude" role="tabpanel" aria-labelledby="claude">
+
+<header style="margin-bottom: 20px;">
+  <div class="eyebrow" style="font-family: 'Helvetica Neue', Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.15em; font-size: 11px; color: var(--accent); font-weight: 700;">Build Your Own · Any Role · 30 minutes</div>
+  <h2 style="margin: 6px 0 10px; border: none; padding: 0;">Build a custom interview workbook with Claude</h2>
+  <p style="margin:0; color: var(--muted); font-size: 15px;">The Anduril and Amazon workbooks above were built using the protocol on this page. You can build one for any role you're interviewing for in about 30 minutes. Here's how.</p>
+</header>
+
+<div class="tldr">
+  <strong>The protocol:</strong> Open <a href="https://claude.ai" style="color:#a8c4f0;">claude.ai</a>. Paste in (1) your background, (2) the job description, (3) the company's public materials, (4) the master prompt below. Iterate. Print. Practice.
+</div>
+
+<h2>Step 1 — Gather your inputs</h2>
+<p>Before you open Claude, collect these into a single document:</p>
+<ol>
+  <li><strong>Your background brief</strong> — 200–400 words. Rank, AFSC/MOS, key assignments, schools, education, separation date, target geography. The version you'd give a brand-new mentor in five minutes.</li>
+  <li><strong>The job description</strong> — paste the full thing. Don't paraphrase.</li>
+  <li><strong>Company artifacts</strong> — at least three. Examples: their About page, a recent press release, the founder's most recent podcast appearance, the product page for the team you're interviewing with, their public values or principles document. Three sources beats one.</li>
+  <li><strong>Two real stories from your career</strong> — one operational success, one failure you learned from. These anchor every behavioral answer Claude generates.</li>
+</ol>
+
+<h2>Step 2 — The master prompt</h2>
+<p>Paste this into Claude after pasting your inputs. Edit the role/company name to match yours.</p>
+
+<div class="prompt-block">You are an interview prep coach for a USAFA grad transitioning out of active duty.
+
+I have an interview for [ROLE] at [COMPANY]. I've pasted my background, the JD, and three company artifacts above.
+
+Build me an interview workbook with these sections:
+
+1. ORIENTATION — a one-paragraph read on why this company would hire someone with my profile, and where the translation gap is.
+2. THE COMPANY IN 90 SECONDS — what they do, what their stated values or principles are, and how their hiring loop tends to evaluate.
+3. THE TRANSLATION TABLE — a two-column table mapping 5 of my military experiences to specific competencies the JD calls out.
+4. STORY BANK — six STAR-L behavioral stories I should pre-write. For each, give me the prompt, which competency it covers, and a two-line hint pulled from my actual background.
+5. THE TECHNICAL/EXERCISE PORTION — what's likely (working backwards, system design, case study, product critique, etc.), with a practice prompt I can attempt.
+6. QUESTIONS TO ASK THEM — five sharp questions specific to this team / product / company.
+7. THE 24 HOURS BEFORE — a checklist.
+8. RED FLAGS in my background and how to handle each if it comes up.
+
+Be specific. Don't give me generic interview advice. Use the JD and company artifacts to ground every recommendation. Keep it to about 1500 words.</div>
+
+<h2>Step 3 — Iterate</h2>
+<p>Claude's first draft will be 80% there. The remaining 20% is the conversation. Three follow-ups worth running:</p>
+<ul>
+  <li><strong>"Re-write the story bank assuming I have never been a [X]."</strong> If you didn't fly, didn't deploy, didn't lead a squadron, say so. Claude will rebuild around what you actually did.</li>
+  <li><strong>"What are the three weakest stories in the bank? Replace them."</strong> The first draft is often padded. This question forces sharpness.</li>
+  <li><strong>"Now play the interviewer. Ask me five behavioral questions, one at a time, and grade my STAR-L answers against the LPs/competencies."</strong> Free practice partner. Don't skip this step.</li>
+</ul>
+
+<h2>Step 4 — Save and reuse</h2>
+<p>Once you've got a workbook you like, save the conversation. The next role you interview for, paste in the new JD and ask Claude to produce a new workbook in the same format. The protocol amortizes — your second workbook takes 10 minutes, not 30.</p>
+
+<div class="callout">
+  <span class="label">A real warning</span>
+  Claude is an excellent prep partner. It is a poor substitute for actually thinking about your stories. Type the STAR-L answers yourself. Speak them out loud. Time them. Get a human friend or coach to listen. AI gets you 80% of the way; you have to walk the last 20%.
+</div>
+
+<h2>What this protocol is NOT</h2>
+<ul>
+  <li><strong>Not a script.</strong> If you read AI-generated answers in the room, the interviewer will catch it. Use Claude to find the shape of your stories — not to write them.</li>
+  <li><strong>Not a substitute for reps.</strong> The point is to pre-load high-quality material so you spend the actual interview being present, not constructing.</li>
+  <li><strong>Not a guarantee.</strong> A great workbook still loses to bad sleep, a panic attack, or a bad culture fit. The workbook reduces variance — it doesn't eliminate it.</li>
+</ul>
+
+</section>
+
 <footer>
   <p>Blue Canopy · Stage 07 — Interview Prep · <a href="/interview-prep">Back to Interview Prep</a> · <a href="/">Home</a></p>
   <p>This workbook is a template — personalize every section with your specific stories before you use it. The frames and translations are the reusable parts; the content is yours.</p>
 </footer>
 
 </div>
+<script>
+(function() {
+  const buttons = document.querySelectorAll('.tabs button[role="tab"]');
+  const panels = document.querySelectorAll('.tab-panel');
+  function activate(id) {
+    buttons.forEach(b => b.setAttribute('aria-selected', b.dataset.tab === id ? 'true' : 'false'));
+    panels.forEach(p => p.classList.toggle('active', p.id === id));
+    if (history.replaceState) history.replaceState(null, '', '#' + id);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  buttons.forEach(b => b.addEventListener('click', () => activate(b.dataset.tab)));
+  // Honor hash on load
+  const initial = (window.location.hash || '').replace('#', '');
+  if (['anduril','amazon','claude'].includes(initial)) activate(initial);
+})();
+</script>
 </body>
 </html>

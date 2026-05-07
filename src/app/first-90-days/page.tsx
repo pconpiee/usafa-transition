@@ -426,23 +426,7 @@ export default function First90DaysPage() {
         </p>
       </div>
 
-      {/* Navigation */}
-      <div className="mt-16 pt-8 border-t border-slate-800 flex flex-col sm:flex-row gap-3 justify-between">
-        <a
-          href="/negotiation"
-          className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-slate-200 transition-colors"
-        >
-          ← Stage 09: Negotiation
-        </a>
-        <a
-          href="/the-long-game"
-          className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-colors"
-        >
-          Stage 11: The Long Game →
-        </a>
-        <StageNav current="/first-90-days" />
-      </div>
-
+      <StageNav current="/first-90-days" />
     </div>
   );
 }

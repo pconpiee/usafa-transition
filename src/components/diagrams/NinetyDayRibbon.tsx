@@ -1,8 +1,8 @@
 const PHASES = [
-  { weeks: "1–2", title: "Listen & Learn", color: "#60a5fa", goal: "Absorb. Don't impress." },
-  { weeks: "3–4", title: "Map the System", color: "#a78bfa", goal: "Understand the machine." },
-  { weeks: "5–8", title: "Early Win", color: "#22d3ee", goal: "Demonstrate ability." },
-  { weeks: "9–12", title: "Expand & Invest", color: "#34d399", goal: "Build cross-team relationships." },
+  { weeks: "1–2", title: "Listen & Learn", color: "#60a5fa", goal: "Absorb" },
+  { weeks: "3–4", title: "Map the System", color: "#a78bfa", goal: "Read the machine" },
+  { weeks: "5–8", title: "Early Win", color: "#22d3ee", goal: "Demonstrate ability" },
+  { weeks: "9–12", title: "Expand & Invest", color: "#34d399", goal: "Cross-team relationships" },
 ];
 
 export default function NinetyDayRibbon() {
